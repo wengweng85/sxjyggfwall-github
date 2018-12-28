@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.insigma.cloud.base.dao.login.ApiLoginMapper">
+
+    <!-- 根据用户名查询用户信息 -->
+    <select id="getUserByUsername" parameterType="String" resultType="com.insigma.mvc.model.SUser">
+        SELECT
+            a.userid,
+            a.username,
+            a.password,
+            a.usertype,
+            a.mobile,
+            a.email,
+            a.baseinfoid,
+            a.isblacklist,
+            b.name,
+            a.aae013,
+            b.aac002
+        FROM
+            s_user a, v_user_baseinfo b
+        WHERE
+            a.baseinfoid = b.baseinfoid  AND
+            ( a.username = #{username} OR a.mobile = #{username}) AND
+            a.enabled = '1'
+    </select>
+
+	<!-- 通过身份证获取会员表信息-->
+    <select id="getUserByAac002" parameterType="String" resultType="com.insigma.mvc.model.SUser">
+        SELECT
+            a.userid,
+            a.username,
+            a.password,
+            a.usertype,
+            a.mobile,
+            a.email,
+            a.baseinfoid,
+            a.isblacklist,
+            a.aae013
+        FROM
+            s_user a, v_user_baseinfo b
+        WHERE
+            a.baseinfoid = b.baseinfoid and
+            b.aac002 = #{aac002} AND
+            a.enabled = '1'
+    </select>
+
+    <!-- 根据USERID查询用户信息 -->
+    <select id="getUserByUserid" parameterType="String" resultType="com.insigma.mvc.model.SUser">
+        SELECT
+            a.userid,
+            a.username,
+            a.password,
+            a.usertype,
+            a.mobile,
+            a.email,
+            a.baseinfoid,
+            a.isblacklist,
+            b.name,
+            a.aae013,
+            b.aac002
+        FROM
+            s_user a, v_user_baseinfo b
+        WHERE
+            a.baseinfoid = b.baseinfoid  AND
+            a.userid = #{userid} AND a.enabled = '1'
+    </select>
+
+    <!-- 根据baseinfoid查询用户信息 -->
+    <select id="getUserByBaseinfoid" parameterType="String" resultType="com.insigma.mvc.model.SUser">
+        SELECT
+            a.userid,
+            a.username,
+            a.password,
+            a.usertype,
+            a.baseinfoid,
+            a.isblacklist,
+            b.name,
+            a.aae013,
+            b.aac002
+        FROM s_user a, v_user_baseinfo b
+        WHERE a.baseinfoid = b.baseinfoid 
+        AND a.baseinfoid = #{baseinfoid} AND a.enabled = '1'
+    </select>
+
+    <!-- 查询用户名和密码是否正确-->
+    <select id="getUserByUsernamePass" parameterType="String" resultType="com.insigma.mvc.model.SUser">
+        SELECT
+            a.userid,
+            a.username,
+            a.password,
+            a.usertype,
+            a.baseinfoid,
+            a.isblacklist,
+            b.name,
+            a.openId,
+            b.aac002
+        FROM
+            s_user a, v_user_baseinfo b
+        WHERE a.baseinfoid = b.baseinfoid 
+              AND  ( a.username = #{username} OR a.mobile = #{username}) AND a.password = #{password} AND a.enabled = '1'
+    </select>
+
+    <!-- 根据手机号查询用户信息 -->
+    <select id="getUserByMobile" parameterType="String" resultType="com.insigma.mvc.model.SUser">
+        SELECT
+            a.userid,
+            a.username,
+            a.password,
+            a.usertype,
+            a.mobile,
+            a.email,
+            a.baseinfoid,
+            a.isblacklist,
+            b.name,
+            a.aae013,
+            b.aac002
+        FROM
+          s_user a, v_user_baseinfo b
+        WHERE
+            a.baseinfoid = b.baseinfoid  AND
+            a.mobile = #{mobile} AND
+            a.enabled = '1'
+    </select>
+
+    <!-- 角色查询  -->
+    <select id="findRolesStr" parameterType="String" resultType="com.insigma.mvc.model.SRole">
+        SELECT b.rolecode as rolecode
+        FROM s_user a, s_role b, s_user_role c
+        WHERE  ( a.username = #{username} OR a.mobile = #{username}) AND a.userid = c.userid AND b.roleid = c.roleid
+    </select>
+
+    <!-- 权限查询  -->
+    <select id="findPermissionStr" parameterType="String" resultType="com.insigma.mvc.model.SPermission">
+        SELECT
+            DISTINCT d.permcode as permcode
+        FROM
+            s_user a, s_role b, s_user_role c, s_permission d, s_role_permission e
+        WHERE
+            ( a.username = #{username} OR a.mobile = #{username}) AND
+            a.userid = c.userid AND
+            b.roleid = c.roleid AND b.roleid = e.roleid AND
+            d.permissionid = e.permissionid
+        UNION
+        SELECT
+            DISTINCT c.permcode as permcode
+        FROM
+            s_user a, s_user_permission b, s_permission c
+        WHERE
+            (a.username = #{username} OR a.mobile = #{username}) AND
+            a.userid = b.userid AND
+            c.permissionid = b.permissionid
+    </select>
+
+    <!-- 更新-->
+    <update id="updateLogintimes" parameterType="com.insigma.mvc.model.SUser">
+        UPDATE s_user t
+        SET t.logintimes    =t.logintimes+ 1,
+            t.lastlogintime = sysdate,
+            t.lastloginip   = #{lastloginip}
+        WHERE t.userid = #{userid}
+    </update>
+
+    <!-- 保存 -->
+    <insert id="saveLoginHashInfo" parameterType="com.insigma.mvc.model.LoginInf">
+        INSERT INTO LOGININF (loginhash, logintime, ip, usergent, sessionid)
+        VALUES (#{loginhash}, sysdate, #{ip}, #{usergent}, #{sessionid})
+    </insert>
+
+    <!-- 查询 -->
+    <select id="findLoginInfoByhashcode" parameterType="String" resultType="com.insigma.mvc.model.LoginInf">
+        SELECT *
+        FROM LOGININF
+        WHERE loginhash = #{loginhash}
+    </select>
+
+    <!-- 根据openId获取帐号信息 -->
+    <select id="getSUserByOpenId" parameterType="String" resultType="com.insigma.mvc.model.SUser">
+        SELECT
+            a.userid,
+            a.username,
+            a.password,
+            a.usertype,
+            a.baseinfoid,
+            a.isblacklist,
+            b.name,
+            b.aac002,
+            b.eac012
+        FROM
+            s_user a,
+            v_user_baseinfo b
+        WHERE
+            a.baseinfoid = b.baseinfoid  AND
+            a.openId = #{openId} AND
+            a.enabled = '1'
+    </select>
+
+    <!-- 保存openId-->
+    <update id="saveOpenId" parameterType="com.insigma.mvc.model.SUser">
+        UPDATE
+            s_user
+        SET
+            openId = #{openId}
+        WHERE
+            userid = #{userid}
+    </update>
+
+
+   <select id="getUserByUserNameForGgfw" parameterType="com.insigma.mvc.model.SUser" resultType="com.insigma.mvc.model.SUser">
+        SELECT
+            a.userid,
+            a.username,
+            a.password,
+            a.usertype,
+            a.baseinfoid,
+            a.isblacklist,
+            a.name 
+        FROM
+            v_s_user  a
+        WHERE
+            a.username = #{username} AND
+            a.usertype=#{usertype} AND
+            a.enabled = '1'
+    </select>
+    
+    <insert id="addSUserForGgfw"  parameterType="com.insigma.mvc.model.SUser" >
+	    <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="userid"> 
+	            SELECT sys_guid() from dual
+	    </selectKey>
+	       insert into s_user(
+		        userid	,	
+				username	,
+				password	 ,
+				usertype	,
+				enabled	,
+				registtime	,
+				fromaddr		,
+				ismainaccount,
+				ISBLACKLIST,
+				baseinfoid,
+				email,
+				mobile,
+				name 	
+				
+	        )
+	        values (
+	            #{userid}	,	
+				#{username}	,
+				#{username}	 ,
+				#{usertype}	,
+				'1'	,
+				sysdate	,
+				'sxjyggfw'		,
+				'1',
+				'0',
+				#{baseinfoid},
+				#{email},
+				#{mobile},
+				#{name}	
+	        )
+    </insert>
+    
+    <select id="getAc01ByAac002ForGgfw" parameterType="String" resultType="com.insigma.mvc.model.Ac01">
+        SELECT
+            aac001 
+        FROM
+            ac01  a
+        WHERE
+            aac002 = #{aac002} 
+    </select>
+    
+    <select id="getAb01ByAab998ForGgfw" parameterType="String" resultType="com.insigma.mvc.model.Ab01">
+        SELECT
+            aab001 
+        FROM
+            ab01  a
+        WHERE
+            aab998 = #{aac002} 
+    </select>
+</mapper>

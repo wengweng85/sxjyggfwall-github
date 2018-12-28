@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/sxjy-cloud-base/sxjy-cloud-base.iml" filepath="$PROJECT_DIR$/sxjy-cloud-base/sxjy-cloud-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sxjy-cloud-common/sxjy-cloud-common.iml" filepath="$PROJECT_DIR$/sxjy-cloud-common/sxjy-cloud-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sxjy-cloud-server/sxjy-cloud-server.iml" filepath="$PROJECT_DIR$/sxjy-cloud-server/sxjy-cloud-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sxjy-cloud-zuul/sxjy-cloud-zuul.iml" filepath="$PROJECT_DIR$/sxjy-cloud-zuul/sxjy-cloud-zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sxjyggfwall.iml" filepath="$PROJECT_DIR$/sxjyggfwall.iml" />
+    </modules>
+  </component>
+</project>

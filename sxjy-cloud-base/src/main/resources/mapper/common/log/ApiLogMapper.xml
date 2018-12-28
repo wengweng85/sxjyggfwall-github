@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.insigma.cloud.base.dao.common.log.ApiLogMapper">
+   
+
+    <!-- 保存错误异常日志 -->
+    <insert id="saveSysErrorLog" parameterType="SErrorLog">
+        <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="logid">
+            SELECT sys_guid() from dual
+        </selectKey>
+        insert into S_ERRORLOG(
+	        logid,
+	        logtime,
+	        stackmsg,
+	        message,
+	        exceptiontype,
+	        usergent,
+	        ipaddr,
+	        url,
+	        cookie
+        )
+        values (
+	        #{logid,jdbcType=VARCHAR} ,
+	        sysdate,
+	        #{stackmsg,jdbcType=CLOB} ,
+	        #{message,jdbcType=VARCHAR} ,
+	        #{exceptiontype,jdbcType=VARCHAR} ,
+	        #{usergent,jdbcType=VARCHAR} ,
+	        #{ipaddr,jdbcType=VARCHAR} ,
+	        #{url,jdbcType=VARCHAR} ,
+	        #{cookie,jdbcType=VARCHAR}
+        )
+    </insert>
+
+
+	<select id="getErrorLogList" resultType="SErrorLog">
+		SELECT
+		    logid,
+	        logtime,
+	        stackmsg,
+	        message,
+	        exceptiontype,
+	        usergent,
+	        ipaddr,
+	        url,
+	        cookie
+	    from S_ERRORLOG
+	</select>
+
+</mapper>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.insigma.cloud.base.dao.common.fileupload.ApiFileUploadMapper">
+  
+ <!-- 获取文件类型信息 -->
+    <select id="selectFileByUserId" resultType="com.insigma.mvc.model.SuploadFile" parameterType="com.insigma.mvc.model.SuploadFile">
+        SELECT
+            aaa001,
+            aaa002,
+            aaa003,
+            aaa004,
+            aaa005,
+            aaa006,
+            aaa007,
+            to_char(aaa008,'yyyy-MM-dd hh24:mi:ss') aaa008,
+            aaa009
+        FROM
+          s_uploadfile a
+        WHERE
+          a.aaa002 = #{aaa002} 
+          <if test="aaa004 != null">
+	         and a.aaa004 = #{aaa004}
+	      </if>
+          <if test="aaa010!= null">
+	         and   a.aaa010 = #{aaa010} 
+	      </if>
+	      <if test="aaa011!= null">
+	         and   a.aaa011 = #{aaa011} 
+	      </if>
+            and a.aaa009='1'
+    </select>
+
+    <!-- 删除文件记录 -->
+    <delete id="deleteFileByID" parameterType="com.insigma.mvc.model.SuploadFile" >
+        DELETE FROM s_uploadfile t WHERE t.aaa004=#{aaa004} and t.aaa002=#{aaa002} and  t.aaa010 = #{aaa010} 
+    </delete>
+
+    <!--查询上传图片多少个-->
+    <select id="getFileCount" parameterType="com.insigma.mvc.model.SuploadFile" resultType="int">
+        SELECT
+        count(1)
+        FROM
+        s_uploadfile a
+        WHERE
+            a.aaa002 = #{aaa002} and a.aaa004 = #{aaa004}  and a.aaa010 =#{aaa010} and a.aaa009='1'
+    </select>
+
+
+    <!-- 获取文件类型信息 -->
+    <select id="selectFileByUser" resultType="com.insigma.mvc.model.SuploadFile" parameterType="com.insigma.mvc.model.SuploadFile">
+        SELECT
+        aaa001,
+        aaa002,
+        aaa003,
+        aaa004,
+        aaa005,
+        aaa006,
+        aaa007,
+        to_char(aaa008,'yyyy-MM-dd hh24:mi:ss') aaa008,
+        aaa009
+        FROM
+        s_uploadfile a
+        WHERE
+        a.aaa002 = #{aaa002} 
+          <if test="aaa010!= null">
+	         and   a.aaa010 = #{aaa010} 
+	      </if>
+         and a.aaa009='1'
+    </select>
+    
+    
+      <!-- 保存业务记录 -->
+     <insert id="saveFileMessage"  parameterType="com.insigma.mvc.model.SuploadFile">
+        <selectKey resultType="String" order="BEFORE" keyProperty="aaa001">
+            SELECT sys_guid() from dual
+        </selectKey>
+        INSERT INTO
+          S_UPLOADFILE(aaa001, aaa002, aaa003, aaa004, aaa005, aaa006, aaa007,aaa008,aaa009,aaa010,aaa011)
+        VALUES
+          (#{aaa001}, #{aaa002}, #{aaa003}, #{aaa004},  #{aaa005},#{aaa006},#{aaa007},sysdate, '1',#{aaa010},#{aaa011})
+    </insert>
+    <!-- 通过id查询-->
+    <select id="getSuploadFileByID" parameterType="String" resultType="com.insigma.mvc.model.SuploadFile">
+        SELECT
+            a.aaa001,
+            a.aaa002,
+            a.aaa003,
+            a.aaa004,
+            a.aaa005,
+            a.aaa007
+        FROM
+        s_uploadfile a
+        WHERE
+        a.aaa001=#{aaa001}
+    </select>
+</mapper>

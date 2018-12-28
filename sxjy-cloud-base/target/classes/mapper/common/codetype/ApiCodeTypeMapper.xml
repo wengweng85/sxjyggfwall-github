@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.insigma.cloud.base.dao.common.codetype.ApiCodeTypeMapper">
+
+    <!-- 得到代码类型列表 -->
+    <select id="getInitcodetypeList" resultType="CodeType">
+        SELECT aaa100 code_type
+        FROM v_code_type
+    </select>
+
+
+    <!-- 得到代码类型信息 -->
+    <select id="getCodeTypeInfo" parameterType="String" resultType="CodeType">
+        SELECT
+            code_type,
+            code_root_value
+        FROM code_type
+        WHERE code_type = #{code_type}
+    </select>
+
+    <!--通过v_aa10获取代码列表  -->
+    <select id="getInitCodeValueList" parameterType="CodeType" resultType="CodeValue">
+        SELECT
+            aaa102 code_value,
+            aaa103 code_name,
+            aaa105 sub_code_value,
+            '' code_describe
+        FROM v_aa10
+        WHERE aaa100 = #{code_type}
+         <if test="filter != null">
+	         and ${filter}
+	      </if>
+        ORDER BY aaa102
+    </select>
+    
+     <select id="getSelectCodeValueList" parameterType="String" resultType="SelectCode">
+        SELECT
+            aaa102 value,
+            aaa103 title 
+        FROM v_aa10
+        WHERE aaa100 = #{code_type}
+        ORDER BY aaa102
+    </select>
+
+    <!-- app用于将地区中文转为代码值 -->
+    <select id="getByParentName" parameterType="String" resultType="CodeValue">
+        SELECT
+            code_value,
+            code_name
+        FROM
+            code_value
+        WHERE
+            code_type = 'AAB301' AND
+            code_name = #{code_name}
+    </select>
+
+    <!--根据父类代码获取子类代码列表  -->
+    <select id="getChildrenByParentId" parameterType="String" resultType="CodeValue">
+        SELECT
+            code_value,
+            code_name
+        FROM
+            code_value
+        WHERE
+            code_type = #{code_type} AND
+            sub_code_value = #{code_value}
+        ORDER BY
+            code_value
+    </select>
+    
+    
+    <!-- 通过代码类型获取对应代码 -->
+	<select id="queryCodeValueByCodeTypeAndParent" parameterType="CodeValue" resultType="CodeValue" >
+		 select aaa102 code_value ,aaa103 code_name,aaa105 sub_code_value  from v_aa10 where aaa100=#{code_type} and aaa105=#{par_code_value} order by aaa102
+	</select>
+	
+	<!-- 代码树 -->
+	<select id="getCodeValueTree"  parameterType="CodeValue" resultType="CodeValue" >
+		select 
+		code_type ,
+		code_value id,
+		code_name  name, 
+		code_column_name code_describe,
+		sub_code_value pid,
+		decode(sign((select count(*) from code_value s where s.sub_code_value=t.code_value)),'1','true','false') isparent
+		from 
+		code_value t where t.code_type=#{code_type} and sub_code_value=#{sub_code_value} order by t.code_value
+	</select>
+
+</mapper>

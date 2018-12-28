@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.insigma.cloud.base.dao.common.item.ApiItemMapper">
+
+	<sql id="item_query">
+		SELECT
+		ITEM_ID,
+		ITEM_CODE,
+		ITEM_NAME,
+		ITEM_SUBMIT_TYPE,
+
+		BUSINESS_SYSTEM_URL_PREFIX || (SELECT BUSINESS_SYSTEM_URL FROM ITEM_INTERFACE_CONFIG WHERE  INTERFACE_TYPE = 'shenbao' ) BUSINESS_SENDDECLAREINFO,
+		BSPLATFORM_URL_PREFIX      || (SELECT BSPLATFORM_URL FROM ITEM_INTERFACE_CONFIG WHERE  INTERFACE_TYPE = 'shenbao' ) BSPLATFORM_SENDDECLAREINFO,
+
+		BUSINESS_SYSTEM_URL_PREFIX || (SELECT BUSINESS_SYSTEM_URL FROM ITEM_INTERFACE_CONFIG WHERE  INTERFACE_TYPE = 'jiancce' ) BUSINESS_DECLARECHECK,
+		BSPLATFORM_URL_PREFIX      || (SELECT BSPLATFORM_URL FROM ITEM_INTERFACE_CONFIG WHERE  INTERFACE_TYPE = 'jiancce' ) BSPLATFORM_DECLARECHECK,
+
+		BSPLATFORM_URL_PREFIX      || (SELECT BSPLATFORM_URL FROM ITEM_INTERFACE_CONFIG WHERE  INTERFACE_TYPE = 'cailiao' ) BSPLATFORM_MATERIAL
+
+		FROM ITEM_LIST
+
+	</sql>
+
+	<select id="getItemList" resultType="com.insigma.mvc.model.Item" >
+		<include refid="item_query"></include>
+	</select>
+
+	<select id="getItemById"  resultType="com.insigma.mvc.model.Item" parameterType="String">
+		<include refid="item_query"></include>
+		where item_id=#{item_id,jdbcType=VARCHAR}
+	</select>
+
+	<select id="getItemMeterial"  resultType="com.insigma.mvc.model.ItemMaterial" parameterType="String">
+		select
+		t.item_id,
+		t.material_code,
+		t.material_name,
+		t.necessity
+		from ITEM_MATERIAL_LIST t
+		where  item_id=#{item_id}
+	</select>
+</mapper>
