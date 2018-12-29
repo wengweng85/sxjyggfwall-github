@@ -46,12 +46,11 @@ public class ApiCodeTypeServiceImpl implements ApiCodeTypeService {
 
     @Override
     public List<CodeValue> getMulticodeValuebyType(String code_type) {
-        /*CodeType codetype = apiCodeTypeMapper.getCodeTypeInfo(code_type);
+        CodeType codetype = apiCodeTypeMapper.getCodeTypeInfo(code_type);
         if (codetype.getCode_root_value() == null) {
             return null;
         }
-        return getChildredCodeValueList(code_type, codetype.getCode_root_value());*/
-        return null;
+        return getChildredCodeValueList(code_type, codetype.getCode_root_value());
     }
 
 

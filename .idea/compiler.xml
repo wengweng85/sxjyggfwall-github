@@ -9,14 +9,18 @@
         <module name="sxjy-cloud-base" />
         <module name="sxjy-cloud-common" />
         <module name="sxjy-cloud-server" />
+        <module name="sxjy-cloud-sxjysy" />
         <module name="sxjy-cloud-zuul" />
+        <module name="sxjyggfw-common-model" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="sxjy-cloud-base" target="1.8" />
       <module name="sxjy-cloud-common" target="1.8" />
       <module name="sxjy-cloud-server" target="1.8" />
+      <module name="sxjy-cloud-sxjysy" target="1.8" />
       <module name="sxjy-cloud-zuul" target="1.8" />
+      <module name="sxjyggfw-common-model" target="1.5" />
       <module name="sxjyggfwall" target="1.5" />
     </bytecodeTargetLevel>
   </component>

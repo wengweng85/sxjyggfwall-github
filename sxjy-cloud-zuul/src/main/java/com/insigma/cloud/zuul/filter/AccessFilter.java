@@ -104,6 +104,6 @@ public class AccessFilter extends ZuulFilter {
                 return true;
             }
         }
-        return flag;
+        return true;
     }
 }
