@@ -16,10 +16,11 @@ public class AuthIntercepter extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String token = request.getHeader(CommonConstants.CONTEXT_TOKEN);
-        SUser suser = JWT.unsign(token, SUser.class);
+        String accesstoken = request.getHeader(CommonConstants.CONTEXT_TOKEN);
+        logger.info("accesstoken="+accesstoken);
+        SUser suser = JWT.unsign(accesstoken, SUser.class);
         SUserUtil.setCurrentUser(suser);
-        logger.info("------设置token"+Thread.currentThread().getId());
+        logger.info("------current thread id-----"+Thread.currentThread().getId());
         return super.preHandle(request, response, handler);
     }
 

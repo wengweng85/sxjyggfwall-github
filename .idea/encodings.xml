@@ -23,6 +23,7 @@
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/vercode/ApiVercodeController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/login/ApiLoginController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/rpctest/ApiRpcTestController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/rpctest/ApiRpcTestController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/dao/common/log/ApiLogMapper.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/service/common/codetype/ApiCodeTypeService.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/service/common/codevalidator/ApiCodeValidatorService.java" charset="GBK" />
