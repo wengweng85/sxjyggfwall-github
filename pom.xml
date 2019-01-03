@@ -15,9 +15,10 @@
 	<module>sxjy-cloud-common</module>
 	<module>sxjy-cloud-server</module>
 	<module>sxjy-cloud-zuul</module>
-    
+
+    <module>sxjy-cloud-auth</module>
 	<module>sxjy-cloud-base</module>
-	<module>sxjy-cloud-sxjyjysy</module>
+	<module>sxjy-cloud-sxjysy</module>
   </modules>
   <!-- 发布命令   mvn deploy -Dmaven.test.skip=true -->
   <!-- nexus私服配置 -->

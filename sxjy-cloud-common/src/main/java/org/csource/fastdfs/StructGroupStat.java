@@ -82,7 +82,7 @@ public class StructGroupStat extends StructBase
   protected int storageHttpPort; //storage server HTTP port
   protected int activeCount;     //active storage server count
   protected int currentWriteServer; //current storage server index to upload file
-  protected int storePathCount;     //store base path count of each storage server
+  protected int storePathCount;     //store auth path count of each storage server
   protected int subdirCountPerPath; //sub dir count per store path
 	protected int currentTrunkFileId; //current trunk file id
 	
@@ -168,8 +168,8 @@ public class StructGroupStat extends StructBase
   }
   
 /**
-* get store base path count of each storage server
-* @return store base path count of each storage server
+* get store auth path count of each storage server
+* @return store auth path count of each storage server
 */
   public int getStorePathCount()
   {

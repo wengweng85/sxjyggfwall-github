@@ -2,10 +2,6 @@ package com.insigma.cloud.common.constants;
 
 public class CommonConstants {
     public final static String CONTEXT_TOKEN="Authorization";
-    public final static String CONTEXT_USERNAME="contextUsername";
-    public final static String CONTEXT_USER_ID="contextUserId";
-    public final static String CONTEXT_NAME="contextName";
-    public final static String JWT_PRIVATE_KEY ="6yhn^YHN";
-    public final static String RENEWAL_TIME =  "renewalTime";
+    public final static String CURRENT_USER_INFO="CURRENT_USER_INFO";
     public final static String TOKEN = "token";
 }

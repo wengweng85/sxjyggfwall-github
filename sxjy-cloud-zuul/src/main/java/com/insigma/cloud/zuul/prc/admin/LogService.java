@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 
 @Headers("Content-Type:application/json")
-@FeignClient(name = "api-base", configuration = FeignIntercepter.class)
+@FeignClient(name = "api-auth", configuration = FeignIntercepter.class)
 public interface LogService {
     @PostMapping("/api/errorlog/list")
     AjaxReturnMsg all(@RequestBody SErrorLog sErrorLog);

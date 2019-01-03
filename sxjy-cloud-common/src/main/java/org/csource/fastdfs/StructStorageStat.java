@@ -289,7 +289,7 @@ public class StructStorageStat extends StructBase
 	protected int uploadPriority;  //upload priority
 	protected Date joinTime; //storage join timestamp (create timestamp)
 	protected Date upTime;   //storage service started timestamp
-	protected int storePathCount;  //store base path count of each storage server
+	protected int storePathCount;  //store auth path count of each storage server
 	protected int subdirCountPerPath;
 	protected int storagePort;
 	protected int storageHttpPort; //storage http server port
@@ -441,8 +441,8 @@ public class StructStorageStat extends StructBase
   }
 
 /**
-* get store base path count of each storage server
-* @return store base path count of each storage server
+* get store auth path count of each storage server
+* @return store auth path count of each storage server
 */
   public int getStorePathCount()
   {

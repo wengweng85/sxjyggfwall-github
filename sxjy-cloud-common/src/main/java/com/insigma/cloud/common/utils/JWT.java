@@ -23,7 +23,7 @@ public class JWT {
 
     private static final String PAYLOAD = "payload";
 
-    private static final long MAX_AGE = 1000 * 60 * 60 * 24 * 7; //7天
+    private static final long MAX_AGE = 1000 * 60 * 60 * 24 * 1; //7天
     //加密，传入一个对象和有效期
     public static <T> String sign(T object) {
         try {

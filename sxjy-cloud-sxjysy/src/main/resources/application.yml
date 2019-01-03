@@ -9,7 +9,7 @@ server:
   #context-path: /
 spring:
   application:
-    name: api-sxjyjysy
+    name: api-sxjysy
   datasource:
     url: jdbc:oracle:thin:@192.168.181.101:1521:orcl
     username: sxjyjysy
@@ -42,6 +42,11 @@ spring:
     # 合并多个DruidDataSource的监控数据
     useGlobalDataSourceStat: true
     ###############以上为配置druid添加的配置########################################
+    zipkin:
+      base-url: http://localhost:9411
+      sleuth:
+          sampler:
+          percentage: 1.0
 mybatis:
   mapper-locations: mapper/**/*Mapper.xml
   typeAliasesPackage: com.insigma.mvc.model

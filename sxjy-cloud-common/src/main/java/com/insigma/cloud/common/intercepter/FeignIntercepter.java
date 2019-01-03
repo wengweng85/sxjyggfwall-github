@@ -1,7 +1,7 @@
 package com.insigma.cloud.common.intercepter;
 
 import com.insigma.cloud.common.constants.CommonConstants;
-import com.insigma.cloud.common.context.FilterContextHandler;
+import com.insigma.cloud.common.context.SUserUtil;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import org.slf4j.Logger;
@@ -13,6 +13,6 @@ public class FeignIntercepter implements RequestInterceptor {
     @Override
     public void apply(RequestTemplate requestTemplate) {
         logger.info("------feign set token --------" + Thread.currentThread().getId());
-        requestTemplate.header(CommonConstants.CONTEXT_TOKEN, FilterContextHandler.getToken());
+        requestTemplate.header(CommonConstants.CONTEXT_TOKEN, SUserUtil.getCurrentUser().getToken());
     }
 }

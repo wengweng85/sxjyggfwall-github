@@ -1,6 +1,5 @@
 package com.insigma.cloud.zuul.component;
 
-import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.netflix.hystrix.exception.HystrixTimeoutException;
 import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.http.HttpHeaders;
