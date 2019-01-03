@@ -27,7 +27,7 @@ public class ApiLoginController {
      * @return
      * @throws Exception
      */
-    @ApiOperation(value = "根据身份证号码或统一社会信用代码登录", notes = "根据身份证号码或统一社会信用代码登录")
+    @ApiOperation(value = "根据用户名获取用户信息", notes = "根据用户名获取用户信息")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public AjaxReturnMsg login(HttpServletRequest request, @RequestBody SUser suser_input) throws Exception {
       SUser suser=apiLoginService.login(request,suser_input);

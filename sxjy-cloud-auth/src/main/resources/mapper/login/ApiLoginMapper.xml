@@ -20,11 +20,9 @@
             v_s_user a
         WHERE
             (a.username = #{username} OR a.mobile = #{username}) AND
+            a.password=#{password} AND
             a.enabled = '1'
     </select>
-
-
-
 
     <!-- 角色查询  -->
     <select id="findRolesStr" parameterType="String" resultType="com.insigma.mvc.model.SRole">
@@ -36,31 +34,31 @@
     <!-- 权限查询  -->
     <select id="findPermissionStr" parameterType="String" resultType="com.insigma.mvc.model.SPermission">
         SELECT
-            DISTINCT d.permcode as permcode
+        DISTINCT d.permcode as permcode
         FROM
-            s_user a, s_role b, s_user_role c, s_permission d, s_role_permission e
+        s_user a, s_role b, s_user_role c, s_permission d, s_role_permission e
         WHERE
-            ( a.username = #{username} OR a.mobile = #{username}) AND
-            a.userid = c.userid AND
-            b.roleid = c.roleid AND b.roleid = e.roleid AND
-            d.permissionid = e.permissionid
+        ( a.username = #{username} OR a.mobile = #{username}) AND
+        a.userid = c.userid AND
+        b.roleid = c.roleid AND b.roleid = e.roleid AND
+        d.permissionid = e.permissionid
         UNION
         SELECT
-            DISTINCT c.permcode as permcode
+        DISTINCT c.permcode as permcode
         FROM
-            s_user a, s_user_permission b, s_permission c
+        s_user a, s_user_permission b, s_permission c
         WHERE
-            (a.username = #{username} OR a.mobile = #{username}) AND
-            a.userid = b.userid AND
-            c.permissionid = b.permissionid
+        (a.username = #{username} OR a.mobile = #{username}) AND
+        a.userid = b.userid AND
+        c.permissionid = b.permissionid
     </select>
 
     <!-- 更新-->
     <update id="updateLogintimes" parameterType="com.insigma.mvc.model.SUser">
         UPDATE s_user t
         SET t.logintimes    =t.logintimes+ 1,
-            t.lastlogintime = sysdate,
-            t.lastloginip   = #{lastloginip}
+        t.lastlogintime = sysdate,
+        t.lastloginip   = #{lastloginip}
         WHERE t.userid = #{userid}
     </update>
 
@@ -78,75 +76,75 @@
     </select>
 
 
-   <select id="getUserByUserNameForGgfw" parameterType="com.insigma.mvc.model.SUser" resultType="com.insigma.mvc.model.SUser">
+    <select id="getUserByUserNameForGgfw" parameterType="com.insigma.mvc.model.SUser" resultType="com.insigma.mvc.model.SUser">
         SELECT
-            a.userid,
-            a.username,
-            a.password,
-            a.usertype,
-            a.baseinfoid,
-            a.isblacklist,
-            a.name 
+        a.userid,
+        a.username,
+        a.password,
+        a.usertype,
+        a.baseinfoid,
+        a.isblacklist,
+        a.name
         FROM
-            v_s_user  a
+        v_s_user  a
         WHERE
-            a.username = #{username} AND
-            a.usertype=#{usertype} AND
-            a.enabled = '1'
+        a.username = #{username} AND
+        a.usertype=#{usertype} AND
+        a.enabled = '1'
     </select>
-    
+
     <insert id="addSUserForGgfw"  parameterType="com.insigma.mvc.model.SUser" >
-	    <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="userid"> 
-	            SELECT sys_guid() from dual
-	    </selectKey>
-	       insert into s_user(
-		        userid	,	
-				username	,
-				password	 ,
-				usertype	,
-				enabled	,
-				registtime	,
-				fromaddr		,
-				ismainaccount,
-				ISBLACKLIST,
-				baseinfoid,
-				email,
-				mobile,
-				name 	
-				
-	        )
-	        values (
-	            #{userid}	,	
-				#{username}	,
-				#{username}	 ,
-				#{usertype}	,
-				'1'	,
-				sysdate	,
-				'sxjyggfw'		,
-				'1',
-				'0',
-				#{baseinfoid},
-				#{email},
-				#{mobile},
-				#{name}	
-	        )
+        <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="userid">
+            SELECT sys_guid() from dual
+        </selectKey>
+        insert into s_user(
+        userid	,
+        username	,
+        password	 ,
+        usertype	,
+        enabled	,
+        registtime	,
+        fromaddr		,
+        ismainaccount,
+        ISBLACKLIST,
+        baseinfoid,
+        email,
+        mobile,
+        name
+
+        )
+        values (
+        #{userid}	,
+        #{username}	,
+        #{username}	 ,
+        #{usertype}	,
+        '1'	,
+        sysdate	,
+        'sxjyggfw'		,
+        '1',
+        '0',
+        #{baseinfoid},
+        #{email},
+        #{mobile},
+        #{name}
+        )
     </insert>
-    
+
     <select id="getAc01ByAac002ForGgfw" parameterType="String" resultType="com.insigma.mvc.model.Ac01">
         SELECT
-            aac001 
+        aac001
         FROM
-            ac01  a
+        ac01  a
         WHERE
-            aac002 = #{aac002} 
+        aac002 = #{aac002}
     </select>
-    
+
     <select id="getAb01ByAab998ForGgfw" parameterType="String" resultType="com.insigma.mvc.model.Ab01">
         SELECT
-            aab001 
+        aab001
         FROM
-            ab01  a
+        ab01  a
         WHERE
-            aab998 = #{aac002} 
+        aab998 = #{aac002}
     </select>
 </mapper>

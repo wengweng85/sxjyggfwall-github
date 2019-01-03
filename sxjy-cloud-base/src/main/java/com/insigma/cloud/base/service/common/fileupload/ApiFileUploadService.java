@@ -20,7 +20,7 @@ public interface ApiFileUploadService {
 	    
 	    void deleteFileByID(String aaa001);
 
-	    SuploadFile uploadImage(HttpServletRequest request, MultipartFile multipartFile) throws Exception;
+	    SuploadFile uploadImage(MultipartFile file,String file_name,String file_bus_type, String file_bus_id, String fileRandomFlag, String desc) throws Exception;
 
 		//PageInfo<SuploadFile> selectFileByUserId(String aaa002, String aaa004);
 

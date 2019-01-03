@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.insigma.cloud.base.dao.common.fileupload.ApiFileUploadMapper;
 import com.insigma.cloud.base.service.common.fileupload.ApiFileUploadService;
+import com.insigma.cloud.common.context.SUserUtil;
 import com.insigma.cloud.common.fastdfs.FastDFSClient;
 import com.insigma.mvc.model.FileNumberInfo;
 import com.insigma.mvc.model.SuploadFile;
@@ -12,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -104,25 +104,21 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
 
 
     /**
-     * 上传附件图片
-     * @param request
-     * @param multipartFile
+     *  上传附件图片
+     * @param file
+     * @param file_name
+     * @param file_bus_type
+     * @param file_bus_id
+     * @param fileRandomFlag
+     * @param desc
+     * @return
+     * @throws Exception
      */
     @Override
-    public SuploadFile uploadImage(HttpServletRequest request, MultipartFile multipartFile) throws Exception {
-        String userid = request.getParameter("userid");
-        String file_name = request.getParameter("file_name");
-        String file_bus_type = request.getParameter("file_bus_type");
-        String file_bus_id = request.getParameter("file_bus_id"); //业务类型
-        String fileRandomFlag = request.getParameter("fileRandomFlag"); //业务类型
-        boolean b=request.getParameter("desc")==null||"".equals(request.getParameter("desc"));
-        String desc=null;
-        if(!b) {
-            desc = URLDecoder.decode(request.getParameter("desc"), "utf-8");
-        }
-        SuploadFile suploadFile = uploadFilejy(multipartFile,file_bus_type, file_name, userid,file_bus_id,fileRandomFlag);
+    public SuploadFile uploadImage(MultipartFile file,String file_name,String file_bus_type, String file_bus_id, String fileRandomFlag, String desc) throws Exception{
+        String userid = SUserUtil.getCurrentUser().getUserid();
+        SuploadFile suploadFile = uploadFilejy(file,file_bus_type, file_name, userid,file_bus_id,fileRandomFlag);
         return suploadFile;
-
     }
 
 

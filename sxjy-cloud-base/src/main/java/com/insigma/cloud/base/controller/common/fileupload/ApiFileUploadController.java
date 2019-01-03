@@ -34,8 +34,15 @@ public class ApiFileUploadController {
      * @return
      */
     @RequestMapping(value = "/uploadFile/uploadImage",method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public AjaxReturnMsg uploadImage(HttpServletRequest request, @RequestParam("uploadFile") MultipartFile multipartFile) throws Exception {
-        return AjaxReturnMsg.success(apiFileUploadService.uploadImage(request, multipartFile));
+    public AjaxReturnMsg uploadImage(
+            @RequestParam("uploadFile") MultipartFile file ,
+            @RequestParam("file_name") String file_name,
+            @RequestParam("file_bus_type") String file_bus_type,
+            @RequestParam("file_bus_id") String file_bus_id,
+            @RequestParam("fileRandomFlag") String fileRandomFlag,
+            @RequestParam(value = "desc",required = false) String desc
+    ) throws Exception {
+        return AjaxReturnMsg.success(apiFileUploadService.uploadImage( file,file_name,file_bus_type,file_bus_id,fileRandomFlag,desc));
     }
 
     /**

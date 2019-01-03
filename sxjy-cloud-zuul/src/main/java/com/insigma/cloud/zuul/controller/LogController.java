@@ -1,7 +1,7 @@
 package com.insigma.cloud.zuul.controller;
 
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
-import com.insigma.cloud.zuul.prc.admin.LogService;
+import com.insigma.cloud.zuul.rpc.admin.LogService;
 import com.insigma.mvc.model.SErrorLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
