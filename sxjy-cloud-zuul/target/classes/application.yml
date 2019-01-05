@@ -1,12 +1,8 @@
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8001/eureka/
-server:
-  port: 8002
 spring:
   application:
-    name: zuul
+    name: api-gateway
+  profiles:
+      active: dev
   servlet:
     multipart:
       max-file-size: 100Mb
@@ -23,7 +19,11 @@ hystrix:
         execution:
           isolation:
               thread:
-                 timeoutInMilliseconds: 5000
+                 timeoutInMilliseconds: 245000
+zuul:
+    SendErrorFilter:
+        error:
+            disable: true
 
 
 

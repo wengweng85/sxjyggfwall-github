@@ -28,6 +28,8 @@ public class CloudZuulApplication {
 		return new AccessFilter();
 	}
 
+
+
 	@Bean
 	public CorsFilter corsFilter() {
 		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

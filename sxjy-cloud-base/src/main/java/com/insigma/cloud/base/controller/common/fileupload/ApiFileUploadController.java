@@ -1,5 +1,6 @@
 package com.insigma.cloud.base.controller.common.fileupload;
 
+import com.github.pagehelper.PageInfo;
 import com.insigma.cloud.base.service.common.fileupload.ApiFileUploadService;
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.mvc.model.FileNumberInfo;
@@ -25,13 +26,17 @@ public class ApiFileUploadController {
 
     @Resource
     private ApiFileUploadService apiFileUploadService;
- 
+
     /**
      * 上传文件
-     *
-     * @param request
-     * @param
+     * @param file
+     * @param file_name
+     * @param file_bus_type
+     * @param file_bus_id
+     * @param fileRandomFlag
+     * @param desc
      * @return
+     * @throws Exception
      */
     @RequestMapping(value = "/uploadFile/uploadImage",method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public AjaxReturnMsg uploadImage(
@@ -48,11 +53,11 @@ public class ApiFileUploadController {
     /**
      * 获取文件
      */
-    /*@RequestMapping(value = "/getFileUploadInfo", method = RequestMethod.POST)
+    @RequestMapping(value = "/getFileUploadInfo", method = RequestMethod.POST)
     public AjaxReturnMsg getUploadInfo(@RequestBody SuploadFile suploadFile) throws Exception {
         PageInfo<SuploadFile> pageinfo = apiFileUploadService.selectFileByUserId(suploadFile.getAaa002(),suploadFile.getAaa004());
-        return this.success(pageinfo);
-    }*/
+        return AjaxReturnMsg.success(pageinfo);
+    }
 
     /**
      * 删除文件

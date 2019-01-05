@@ -1,11 +1,10 @@
 package com.insigma.cloud.base.service.common.fileupload;
 
-import com.insigma.cloud.common.dto.AjaxReturnMsg;
+import com.github.pagehelper.PageInfo;
 import com.insigma.mvc.model.FileNumberInfo;
 import com.insigma.mvc.model.SuploadFile;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
@@ -22,7 +21,7 @@ public interface ApiFileUploadService {
 
 	    SuploadFile uploadImage(MultipartFile file,String file_name,String file_bus_type, String file_bus_id, String fileRandomFlag, String desc) throws Exception;
 
-		//PageInfo<SuploadFile> selectFileByUserId(String aaa002, String aaa004);
+		PageInfo<SuploadFile> selectFileByUserId(String aaa002, String aaa004);
 
 		List<SuploadFile> getAllFileByUserId(String aaa002, String aaa010, String aaa011);
 		

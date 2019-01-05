@@ -63,7 +63,7 @@ public class ApiFallbackProvider implements FallbackProvider {
 
             @Override
             public InputStream getBody() throws IOException {
-                String bodyText = String.format("{\"syscode\": 999,\"success\": false,\"message\": \"Service unavailable:%s\"}", message);
+                String bodyText = String.format("{\"syscode\": 500,\"success\": false,\"message\": \"Service unavailable:%s\"}", message);
                 return new ByteArrayInputStream(bodyText.getBytes());
             }
 

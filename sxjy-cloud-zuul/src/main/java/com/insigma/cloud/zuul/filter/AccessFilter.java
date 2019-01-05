@@ -24,7 +24,7 @@ public class AccessFilter extends ZuulFilter {
 
     private Logger logger = Logger.getLogger(AccessFilter.class.toString());
 
-    private String ignorePath = "/api-auth";
+    private String ignorePath = "/api-noauth";
 
     @Override
     public String filterType() {
@@ -113,7 +113,8 @@ public class AccessFilter extends ZuulFilter {
         boolean flag = false;
         for (String s : ignorePath.split(",")) {
             if (requestUri.startsWith(s)) {
-                return true;
+                flag= true;
+                break;
             }
         }
         return flag;

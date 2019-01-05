@@ -1,45 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/common/codetype/ApiCodeTypeController.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/common/vercode/ApiVercodeController.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/login/ApiLoginController.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/rpctest/ApiRpcTestController.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/dao/common/svercord/ApiSvercordMapper.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/dao/login/ApiLoginMapper.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/service/common/codetype/ApiCodeTypeService.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/service/common/codevalidator/ApiCodeValidatorService.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/service/common/svercord/ApiSvercordService.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/service/login/ApiLoginService.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/serviceimpl/common/codevalidator/ApiCodeValidatorServiceImpl.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/serviceimpl/login/ApiLoginServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/codetype/ApiCodeTypeController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/fileupload/ApiFileUploadController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/item/ApiItemController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/log/ApiLogController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/suggest/ApiSuggestSearchController.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/vercode/ApiVercodeController.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/login/ApiLoginController.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/rpctest/ApiRpcTestController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/rpctest/ApiRpcTestController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/dao/common/log/ApiLogMapper.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/service/common/codetype/ApiCodeTypeService.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/service/common/codevalidator/ApiCodeValidatorService.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/service/common/item/ApiItemService.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/service/common/log/ApiLogService.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/service/common/svercord/ApiSvercordService.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/service/login/ApiLoginService.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/serviceimpl/common/codevalidator/ApiCodeValidatorServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/serviceimpl/common/fileupload/ApiFileUploadServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/serviceimpl/common/log/ApiLogServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/serviceimpl/common/suggest/ApiSuggestSearchServiceImpl.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/serviceimpl/login/ApiLoginServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/AjaxReturnMsg.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/MessageType.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/utils/JWT.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-noauth" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/controller/common/codetype/ApiCodeTypeController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/controller/common/vercode/ApiVercodeController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/controller/login/ApiLoginController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/dao/common/svercord/ApiSvercordMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/dao/login/ApiLoginMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/service/common/codetype/ApiCodeTypeService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/service/common/codevalidator/ApiCodeValidatorService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/service/common/svercord/ApiSvercordService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/service/login/ApiLoginService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/serviceimpl/common/codevalidator/ApiCodeValidatorServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/serviceimpl/login/ApiLoginServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-sxjysy" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/java/com/insigma/cloud/sxjyjysy/controller/ApiAc11Controller.java" charset="GBK" />

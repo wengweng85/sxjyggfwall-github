@@ -258,6 +258,14 @@ public class AjaxReturnMsg   {
      * 异常返回
      * @return
      */
+    public static AjaxReturnMsg error500(String message){
+        return error(SysCode.SYS_API_EXCEPTION,message);
+    }
+
+    /**
+     * 异常返回
+     * @return
+     */
     public static AjaxReturnMsg error40003(){
         return error(SysCode.SYS_TOKEN_EMPTY);
     }
