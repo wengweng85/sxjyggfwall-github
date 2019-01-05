@@ -61,7 +61,8 @@ public class AccessFilter extends ZuulFilter {
             return null;
         }
         try {
-            SUser suser = JWT.unsign(accessToken, SUser.class);
+            //截取掉"bearer "
+            SUser suser = JWT.unsign(accessToken.substring(7, accessToken.length()), SUser.class);
             SUserUtil.setCurrentUser(suser);
         } catch (Exception e) {
             setFailedRequest(AjaxReturnMsg.error40004(), 200);

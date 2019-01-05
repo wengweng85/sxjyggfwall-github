@@ -138,7 +138,6 @@ public class AjaxReturnMsg   {
         AjaxReturnMsg dto = new AjaxReturnMsg();
         dto.setSuccess(true);
         dto.setObj(o);
-        System.out.println(JSON.toJSON(dto));
         return dto;
     }
 

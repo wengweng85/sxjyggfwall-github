@@ -8,11 +8,11 @@
         <option value="$PROJECT_DIR$/../sxjyggfwall/sxjyggfw-common-model/pom.xml" />
         <option value="$PROJECT_DIR$/ZipkinServer/pom.xml" />
         <option value="$PROJECT_DIR$/sxjy-cloud-auth/pom.xml" />
+        <option value="$PROJECT_DIR$/sxjy-cloud-noauth/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/sxjy-cloud-noauth/pom.xml" />
         <option value="$PROJECT_DIR$/sxjy-cloud-zipkin/pom.xml" />
       </set>
     </option>

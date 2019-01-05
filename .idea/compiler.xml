@@ -8,11 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="sxjy-cloud-base" />
         <module name="sxjy-cloud-common" />
+        <module name="sxjy-cloud-noauth" />
         <module name="sxjy-cloud-server" />
         <module name="sxjy-cloud-sxjysy" />
-        <module name="sxjy-cloud-zipkin" />
         <module name="sxjy-cloud-zuul" />
-        <module name="ZipkinServer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -25,9 +24,7 @@
       <module name="sxjy-cloud-sxjysy" target="1.8" />
       <module name="sxjy-cloud-zipkin" target="1.8" />
       <module name="sxjy-cloud-zuul" target="1.8" />
-      <module name="sxjyggfw-common-model" target="1.5" />
       <module name="sxjyggfwall" target="1.5" />
-      <module name="ZipkinServer" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -2,99 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="1022436b-de42-44da-9834-4f6690d78fb5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_insigma_sxjyggfw_common_model_1_0_0_SNAPSHOT.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sxjy-cloud-base/src/main/resources/application-dev.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sxjy-cloud-base/src/main/resources/application-pro.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/application-dev.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/application.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/resources/application-dev.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application-dev.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application-pro.yml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_4_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_4_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_4_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_0_0_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_4_0_2_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_4_2_7_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_4_2_7_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_0_api_1_0_1_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_18_1_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_1_0_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_1_spec_1_0_1_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_2_8_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_2_8_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_2_8_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_2_8_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_2_8_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/.settings/org.eclipse.core.resources.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/.settings/org.eclipse.m2e.core.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/CloudAuthApplication.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/common/codetype/ApiCodeTypeController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/common/vercode/ApiVercodeController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/login/ApiLoginController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/dao/common/codetype/ApiCodeTypeMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/dao/common/codevalidator/ApiCodeValidatorMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/dao/common/svercord/ApiSvercordMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/dao/login/ApiLoginMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/service/common/codetype/ApiCodeTypeService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/service/common/codevalidator/ApiCodeValidatorService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/service/common/svercord/ApiSvercordService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/service/login/ApiLoginService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/serviceimpl/common/codetype/ApiCodeTypeServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/serviceimpl/common/codevalidator/ApiCodeValidatorServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/serviceimpl/common/svercord/ApiSvercordServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/serviceimpl/login/ApiLoginServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/sxjy-cloud-auth.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/target/classes/mapper/common/codetype/ApiCodeTypeMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/target/classes/mapper/common/codevalidator/ApiCodeValidatorMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/target/classes/mapper/common/svercord/ApiSvercordMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/target/classes/mapper/login/ApiLoginMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/com/insigma/cloud/zuul/prc/admin/LogService.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/base/controller/common/fileupload/ApiFileUploadController.class" afterPath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/base/controller/common/fileupload/ApiFileUploadController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/base/controller/common/suggest/ApiSuggestSearchController.class" afterPath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/base/controller/common/suggest/ApiSuggestSearchController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/base/service/common/fileupload/ApiFileUploadService.class" afterPath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/base/service/common/fileupload/ApiFileUploadService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/target/classes/com/insigma/cloud/common/dto/AjaxReturnMsg.class" afterPath="$PROJECT_DIR$/sxjy-cloud-common/target/classes/com/insigma/cloud/common/dto/AjaxReturnMsg.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/target/classes/com/insigma/cloud/common/utils/JWT.class" afterPath="$PROJECT_DIR$/sxjy-cloud-common/target/classes/com/insigma/cloud/common/utils/JWT.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/com/insigma/cloud/zuul/CloudZuulApplication.class" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/com/insigma/cloud/zuul/CloudZuulApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/com/insigma/cloud/zuul/component/ApiFallbackProvider$1.class" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/com/insigma/cloud/zuul/component/ApiFallbackProvider$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/com/insigma/cloud/zuul/controller/LogController.class" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/com/insigma/cloud/zuul/controller/LogController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/com/insigma/cloud/zuul/filter/AccessFilter.class" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/com/insigma/cloud/zuul/filter/AccessFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/target/test-classes/com/insigma/cloud/zuul/ClouddoZuulApplicationTests.class" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/target/test-classes/com/insigma/cloud/zuul/ClouddoZuulApplicationTests.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sxjy-cloud-noauth/sxjy-cloud-noauth.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_insigma_wxjy_common_model_1_0_2_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_insigma_wxjy_common_model_1_0_2_SNAPSHOT.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/fileupload/ApiFileUploadController.java" afterPath="$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/fileupload/ApiFileUploadController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/suggest/ApiSuggestSearchController.java" afterPath="$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/suggest/ApiSuggestSearchController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/service/common/fileupload/ApiFileUploadService.java" afterPath="$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/service/common/fileupload/ApiFileUploadService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-base/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-base/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-base/sxjy-cloud-base.iml" afterPath="$PROJECT_DIR$/sxjy-cloud-base/sxjy-cloud-base.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/application.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/application.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/AjaxReturnMsg.java" afterPath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/AjaxReturnMsg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/utils/JWT.java" afterPath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/utils/JWT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/sxjy-cloud-common.iml" afterPath="$PROJECT_DIR$/sxjy-cloud-common/sxjy-cloud-common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/sxjy-cloud-sxjysy.iml" afterPath="$PROJECT_DIR$/sxjy-cloud-sxjysy/sxjy-cloud-sxjysy.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/target/classes/application.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-sxjysy/target/classes/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/CloudZuulApplication.java" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/CloudZuulApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/component/ApiFallbackProvider.java" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/component/ApiFallbackProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/intercepter/AuthIntercepter.java" afterPath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/intercepter/AuthIntercepter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/mapper/login/ApiLoginMapper.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/mapper/login/ApiLoginMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/AccessFilter.java" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/AccessFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/src/test/java/com/insigma/cloud/zuul/ClouddoZuulApplicationTests.java" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/src/test/java/com/insigma/cloud/zuul/ClouddoZuulApplicationTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/sxjy-cloud-zuul.iml" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/sxjy-cloud-zuul.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/application.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/application.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/pom.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-noauth/pom.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/application-pro.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/mapper/common/codetype/ApiCodeTypeMapper.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/mapper/common/codetype/ApiCodeTypeMapper.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/mapper/common/codevalidator/ApiCodeValidatorMapper.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/mapper/common/codevalidator/ApiCodeValidatorMapper.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/mapper/common/svercord/ApiSvercordMapper.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/mapper/common/svercord/ApiSvercordMapper.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/mapper/login/ApiLoginMapper.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/mapper/login/ApiLoginMapper.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/target/classes/application.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/resources/application-pro.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/sxjy-cloud-zuul/target/" />
     <ignored path="$PROJECT_DIR$/sxjy-cloud-server/target/" />
@@ -106,7 +24,6 @@
     <ignored path="$PROJECT_DIR$/sxjy-cloud-zipkin/target/" />
     <ignored path="$PROJECT_DIR$/microservice-sleuth-zipkin-server/target/" />
     <ignored path="$PROJECT_DIR$/ZipkinServer/target/" />
-    <ignored path="$PROJECT_DIR$/sxjy-cloud-auth/target/" />
     <ignored path="$PROJECT_DIR$/sxjy-cloud-noauth/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -118,44 +35,54 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ApiCodeTypeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/controller/common/codetype/ApiCodeTypeController.java">
+      <file leaf-file-name="ApiLoginMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/mapper/login/ApiLoginMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="54" column="5" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="772">
+              <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
               <folding>
-                <marker date="1546676981302" expanded="true" signature="2068:2452" ph="..." />
-                <marker date="1546676981302" expanded="true" signature="2091:2424" ph="..." />
-                <marker date="1546676981302" expanded="true" signature="2116:2400" ph="..." />
-                <marker date="1546676981302" expanded="true" signature="2465:2812" ph="..." />
-                <marker date="1546676981302" expanded="true" signature="2611:2799" ph="..." />
-                <marker date="1546676981302" expanded="true" signature="2632:2780" ph="..." />
-                <marker date="1546676981302" expanded="true" signature="2855:3071" ph="..." />
-                <marker date="1546676981302" expanded="true" signature="2876:3051" ph="..." />
-                <marker date="1546676981302" expanded="true" signature="3157:3603" ph="..." />
-                <marker date="1546676981302" expanded="true" signature="3178:3355" ph="..." />
-                <marker date="1546676981302" expanded="true" signature="3385:3573" ph="..." />
+                <marker date="1546682721811" expanded="true" signature="358:703" ph="SELECT a.use... v_s_user" />
+                <marker date="1546682721811" expanded="true" signature="823:980" ph="select b.rol... s_user" />
+                <marker date="1546682721811" expanded="true" signature="1112:1985" ph="select * fro... url" />
+                <marker date="1546682721811" expanded="true" signature="1136:1572" ph="select disti... s_user" />
+                <marker date="1546682721811" expanded="true" signature="1595:1950" ph="select disti... s_user" />
+                <marker date="1546682721811" expanded="true" signature="2103:2275" ph="UPDATE s_use... " />
+                <marker date="1546682721811" expanded="true" signature="2398:2539" ph="INSERT INTO LOGININF... " />
+                <marker date="1546682721811" expanded="true" signature="2688:2757" ph="SELECT * FRO... LOGININF" />
+                <marker date="1546682721811" expanded="true" signature="2910:3197" ph="SELECT a.use... v_s_user" />
+                <marker date="1546682721811" expanded="true" signature="4118:4209" ph="SELECT aac00... ac01" />
+                <marker date="1546682721811" expanded="true" signature="4337:4428" ph="SELECT aab00... ab01" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApiLoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/controller/login/ApiLoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccessFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/AccessFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="63" column="26" lean-forward="false" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthIntercepter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/intercepter/AuthIntercepter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -179,7 +106,14 @@
       <find>accessFilter</find>
       <find>connectionProperties</find>
       <find>ignorePath</find>
+      <find>sxjy-cloud-noauth</find>
+      <find>apiLoginService</find>
+      <find>code</find>
+      <find>JWT.unsign</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -192,34 +126,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/intercepter/AuthIntercepter.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/rpc/admin/LogService.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/controller/LogController.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-base/src/main/resources/fdfs_client.properties" />
         <option value="$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/serviceimpl/common/fileupload/ApiFileUploadServiceImpl.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-base/src/main/resources/application-pro.yml" />
         <option value="$PROJECT_DIR$/sxjy-cloud-base/src/main/resources/ehcache.xml" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/application-pro.yml" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/application-dev.yml" />
         <option value="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/resources/application-dev.yml" />
         <option value="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/resources/application-pro.yml" />
         <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/test/java/com/insigma/cloud/zuul/ClouddoZuulApplicationTests.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application-pro.yml" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/service/login/ApiLoginService.java" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/serviceimpl/login/ApiLoginServiceImpl.java" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/mapper/login/ApiLoginMapper.xml" />
         <option value="$PROJECT_DIR$/../sxjyggfwall/sxjyggfw-common-model/src/main/java/com/insigma/mvc/model/catalogue/Common.java" />
         <option value="$PROJECT_DIR$/../sxjyggfwall/sxjyggfw-common-model/src/main/java/com/insigma/mvc/model/catalogue/ServiceCollection.java" />
         <option value="$PROJECT_DIR$/../sxjyggfwall/sxjyggfw-common-model/src/main/java/com/insigma/mvc/model/catalogue/ServiceDesk.java" />
         <option value="$PROJECT_DIR$/../sxjyggfwall/sxjyggfw-common-model/src/main/java/com/insigma/mvc/model/catalogue/ServiceScore.java" />
         <option value="$PROJECT_DIR$/../sxjyggfwall/sxjyggfw-common-model/src/main/java/com/insigma/mvc/model/PageInfoSxjyggfw.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/handler/GlobalExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/GlobalExceptionHandler.java" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/config/GlobalExceptionHandler.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/WrapperResponseGlobalFilter.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/component/ApiFallbackProvider.java" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/AjaxReturnMsg.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application-dev.yml" />
         <option value="$PROJECT_DIR$/sxjy-cloud-zuul/pom.xml" />
         <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/SendNewErrorFilter.java" />
@@ -232,17 +157,21 @@
         <option value="$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/fileupload/ApiFileUploadController.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/service/common/fileupload/ApiFileUploadService.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/suggest/ApiSuggestSearchController.java" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/login/ApiLoginController.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-common/pom.xml" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/common/codetype/ApiCodeTypeController.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-base/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/AccessFilter.java" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/CloudNoAuthApplication.java" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/controller/common/codetype/ApiCodeTypeController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-noauth/pom.xml" />
+        <option value="$PROJECT_DIR$/.idea/compiler.xml" />
+        <option value="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/service/login/ApiLoginService.java" />
+        <option value="$MAVEN_REPOSITORY$/com/insigma/wxjy-common-model/1.0.2-SNAPSHOT/wxjy-common-model-1.0.2-SNAPSHOT.jar!/com/insigma/mvc/model/AccessToken.class" />
+        <option value="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/serviceimpl/login/ApiLoginServiceImpl.java" />
+        <option value="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/controller/common/codetype/ApiCodeTypeController.java" />
+        <option value="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/service/common/codetype/ApiCodeTypeService.java" />
+        <option value="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/serviceimpl/common/codetype/ApiCodeTypeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/AjaxReturnMsg.java" />
+        <option value="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/mapper/login/ApiLoginMapper.xml" />
+        <option value="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/controller/login/ApiLoginController.java" />
+        <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/AccessFilter.java" />
+        <option value="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/intercepter/AuthIntercepter.java" />
       </list>
     </option>
   </component>
@@ -264,7 +193,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
+    <option name="x" value="-11" />
     <option name="y" value="-2" />
     <option name="width" value="1932" />
     <option name="height" value="1056" />
@@ -311,6 +240,198 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="sxjy-cloud-zuul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjy-cloud-zuul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjy-cloud-zuul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjy-cloud-zuul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insigma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zuul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjy-cloud-zuul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insigma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zuul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rpc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjy-cloud-zuul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insigma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zuul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="filter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="sxjy-cloud-noauth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -333,6 +454,300 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjy-cloud-noauth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjy-cloud-noauth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insigma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjy-cloud-noauth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insigma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjy-cloud-noauth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insigma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjy-cloud-noauth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insigma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjy-cloud-noauth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insigma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="login" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjyggfwall-github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sxjy-cloud-noauth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insigma" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -342,10 +757,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sxjy-cloud-noauth" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sxjy-cloud-noauth" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -366,7 +781,6 @@
       <recent name="D:\产品研发\陕西公共服务\sxjyggfwall\sxjyggfw-common-model\src\main\java\com\insigma\mvc\model" />
       <recent name="D:\产品研发\陕西公共服务\sxjyggfwall-github\sxjy-cloud-zuul\src\main\resources" />
       <recent name="D:\产品研发\陕西公共服务\sxjyggfwall-github\sxjy-cloud-sxjysy\src\main\resources" />
-      <recent name="D:\产品研发\陕西公共服务\sxjyggfwall-github\sxjy-cloud-auth\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -381,7 +795,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.CloudNoAuthApplication">
     <configuration default="false" name="CloudSxjyjysyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.insigma.cloud.base.CloudSxjyjysyApplication" />
       <module name="sxjy-cloud-sxjysy" />
@@ -391,12 +805,6 @@
     <configuration default="false" name="CloudSxjyjysyApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.insigma.cloud.sxjyjysy.CloudSxjyjysyApplication" />
       <module name="sxjy-cloud-sxjysy" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="CloudNoAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.insigma.cloud.auth.CloudNoAuthApplication" />
-      <module name="sxjy-cloud-noauth" />
       <envs />
       <method />
     </configuration>
@@ -828,7 +1236,7 @@
       <envs />
       <method />
     </configuration>
-    <list size="8">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.CloudZuulApplication" />
       <item index="1" class="java.lang.String" itemvalue="Spring Boot.CloudServerApplication" />
       <item index="2" class="java.lang.String" itemvalue="Spring Boot.CloudBaseApplication" />
@@ -836,14 +1244,12 @@
       <item index="4" class="java.lang.String" itemvalue="Spring Boot.CloudSxjyjysyApplication" />
       <item index="5" class="java.lang.String" itemvalue="Spring Boot.CloudSxjyjysyApplication (1)" />
       <item index="6" class="java.lang.String" itemvalue="Spring Boot.CloudNoAuthApplication" />
-      <item index="7" class="java.lang.String" itemvalue="Spring Boot.CloudNoAuthApplication" />
     </list>
     <recent_temporary>
-      <list size="4">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Spring Boot.CloudNoAuthApplication" />
-        <item index="1" class="java.lang.String" itemvalue="Spring Boot.CloudNoAuthApplication" />
-        <item index="2" class="java.lang.String" itemvalue="Spring Boot.CloudSxjyjysyApplication (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Spring Boot.CloudSxjyjysyApplication" />
+        <item index="1" class="java.lang.String" itemvalue="Spring Boot.CloudSxjyjysyApplication (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Spring Boot.CloudSxjyjysyApplication" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
@@ -880,15 +1286,15 @@
       <workItem from="1546414163679" duration="4473000" />
       <workItem from="1546494912760" duration="16360000" />
       <workItem from="1546564801673" duration="21936000" />
-      <workItem from="1546671913029" duration="2590000" />
+      <workItem from="1546671913029" duration="11906000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56126000" />
+    <option name="totallyTimeSpent" value="65442000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="-2" width="1932" height="1056" extended-state="0" />
+    <frame x="-11" y="-2" width="1932" height="1056" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -909,12 +1315,13 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27114967" sideWeight="0.79754275" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46312365" sideWeight="0.79754275" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Mybatis datasource" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22649573" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27136752" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -922,43 +1329,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0058635394" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5856833" sideWeight="0.20245726" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20940171" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0058635394" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37787515" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22342733" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45336226" sideWeight="0.79754275" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Mybatis datasource" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053304" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -1004,64 +1375,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/config/GlobalExceptionHandler.java" />
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/component/ApiFallbackProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="65" column="16" lean-forward="true" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/1.5.6.RELEASE/spring-boot-autoconfigure-1.5.6.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/web/BasicErrorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1444">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-netflix-zuul/2.0.1.RELEASE/spring-cloud-netflix-zuul-2.0.1.RELEASE.jar!/org/springframework/cloud/netflix/zuul/filters/post/SendErrorFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-netflix-zuul/2.0.1.RELEASE/spring-cloud-netflix-zuul-2.0.1.RELEASE-sources.jar!/org/springframework/cloud/netflix/zuul/filters/post/SendErrorFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="28" lean-forward="false" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/application-dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application-dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/com/insigma/cloud/zuul/CloudZuulApplication.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/SendNewErrorFilter.java" />
     <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/com/insigma/cloud/zuul/filter/SendNewErrorFilter.class" />
     <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/ErrorFilter.java" />
     <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/controller/ErrorHandlerController.java" />
@@ -1103,7 +1416,7 @@
         <state relative-caret-position="216">
           <caret line="130" column="55" lean-forward="false" selection-start-line="130" selection-start-column="55" selection-end-line="130" selection-end-column="55" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1136,41 +1449,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/serviceimpl/login/ApiLoginServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/service/login/ApiLoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/controller/login/ApiLoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/AjaxReturnMsg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/fileupload/ApiFileUploadController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="107" column="53" lean-forward="false" selection-start-line="107" selection-start-column="53" selection-end-line="107" selection-end-column="53" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1214,7 +1498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="153" column="0" lean-forward="false" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1250,7 +1533,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="25" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1274,7 +1556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1282,27 +1563,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/AccessFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="26" column="40" lean-forward="false" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/target/classes/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
@@ -1310,54 +1574,205 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/CloudNoAuthApplication.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/test/java/com/insigma/cloud/base/CloudLogApplicationTests.java">
+    <entry file="file://$PROJECT_DIR$/sxjyggfwall.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-365">
+          <caret line="265" column="0" lean-forward="false" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+          <folding>
+            <marker date="1546687879131" expanded="true" signature="104257:104358" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104257:104373" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104257:105107" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104257:105122" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104257:104338" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104257:104304" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104257:104282" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104408:104714" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104427:104699" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104501:104679" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104541:104645" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104562:104623" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104766:105093" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104785:105078" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104880:105058" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104920:105024" ph="..." />
+            <marker date="1546687879131" expanded="true" signature="104941:105002" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1576">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/CloudNoAuthApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/insigma/wxjy-common-model/1.0.2-SNAPSHOT/wxjy-common-model-1.0.2-SNAPSHOT.jar!/com/insigma/mvc/model/AccessToken.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/serviceimpl/login/ApiLoginServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="84" column="56" lean-forward="false" selection-start-line="84" selection-start-column="56" selection-end-line="84" selection-end-column="56" />
+          <folding>
+            <element signature="e#1218#1219#0" expanded="true" />
+            <element signature="e#1271#1272#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/service/login/ApiLoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/service/common/codetype/ApiCodeTypeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding>
+            <marker date="1546499403512" expanded="true" signature="162:202" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/serviceimpl/common/codetype/ApiCodeTypeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/controller/common/codetype/ApiCodeTypeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="54" column="5" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+        <state relative-caret-position="510">
+          <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/pom.xml">
+    <entry file="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/AjaxReturnMsg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="161">
+          <caret line="130" column="7" lean-forward="true" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/mapper/login/ApiLoginMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="772">
+          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
           <folding>
-            <marker date="1546676981302" expanded="true" signature="2068:2452" ph="..." />
-            <marker date="1546676981302" expanded="true" signature="2091:2424" ph="..." />
-            <marker date="1546676981302" expanded="true" signature="2116:2400" ph="..." />
-            <marker date="1546676981302" expanded="true" signature="2465:2812" ph="..." />
-            <marker date="1546676981302" expanded="true" signature="2611:2799" ph="..." />
-            <marker date="1546676981302" expanded="true" signature="2632:2780" ph="..." />
-            <marker date="1546676981302" expanded="true" signature="2855:3071" ph="..." />
-            <marker date="1546676981302" expanded="true" signature="2876:3051" ph="..." />
-            <marker date="1546676981302" expanded="true" signature="3157:3603" ph="..." />
-            <marker date="1546676981302" expanded="true" signature="3178:3355" ph="..." />
-            <marker date="1546676981302" expanded="true" signature="3385:3573" ph="..." />
+            <marker date="1546682721811" expanded="true" signature="358:703" ph="SELECT a.use... v_s_user" />
+            <marker date="1546682721811" expanded="true" signature="823:980" ph="select b.rol... s_user" />
+            <marker date="1546682721811" expanded="true" signature="1112:1985" ph="select * fro... url" />
+            <marker date="1546682721811" expanded="true" signature="1136:1572" ph="select disti... s_user" />
+            <marker date="1546682721811" expanded="true" signature="1595:1950" ph="select disti... s_user" />
+            <marker date="1546682721811" expanded="true" signature="2103:2275" ph="UPDATE s_use... " />
+            <marker date="1546682721811" expanded="true" signature="2398:2539" ph="INSERT INTO LOGININF... " />
+            <marker date="1546682721811" expanded="true" signature="2688:2757" ph="SELECT * FRO... LOGININF" />
+            <marker date="1546682721811" expanded="true" signature="2910:3197" ph="SELECT a.use... v_s_user" />
+            <marker date="1546682721811" expanded="true" signature="4118:4209" ph="SELECT aac00... ac01" />
+            <marker date="1546682721811" expanded="true" signature="4337:4428" ph="SELECT aab00... ab01" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/sxjy-cloud-noauth/src/main/java/com/insigma/cloud/auth/controller/login/ApiLoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        <state relative-caret-position="442">
+          <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/AccessFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="63" column="26" lean-forward="false" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/intercepter/AuthIntercepter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1414,7 +1829,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>sxjyggfwall</last-edited>
+          <last-edited>sxjy-cloud-noauth</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
