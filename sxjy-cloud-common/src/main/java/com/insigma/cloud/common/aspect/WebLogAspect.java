@@ -17,7 +17,7 @@ import java.util.Arrays;
 public class WebLogAspect {
     private static final Logger logger = LoggerFactory.getLogger(WebLogAspect.class);
 
-    @Pointcut("execution( * com.insigma..controller.*.*(..))")//ä¸¤ä¸ª..ä»£è¡¨æ‰€æœ‰å­ç›®å½•ï¼Œæœ€åæ‹¬å·é‡Œçš„ä¸¤ä¸ª..ä»£è¡¨æ‰€æœ‰å‚æ•°
+    @Pointcut("execution( * com.insigma..controller.*.*(..))")//Á½¸ö..´ú±íËùÓĞ×ÓÄ¿Â¼£¬×îºóÀ¨ºÅÀïµÄÁ½¸ö..´ú±íËùÓĞ²ÎÊı
     public void logPointCut() {
     }
 
@@ -25,25 +25,24 @@ public class WebLogAspect {
     public void doBefore(JoinPoint joinPoint){
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = requestAttributes.getRequest();
-        logger.info("è¯·æ±‚åœ°å€ : " +request.getRequestURL().toString());
+        logger.info("ÇëÇóµØÖ· : " +request.getRequestURL().toString());
         logger.info("HTTP METHOD : " + request.getMethod());
-        // è·å–çœŸå®çš„ipåœ°å€
+        // »ñÈ¡ÕæÊµµÄipµØÖ·
         //logger.info("IP : " + IPAddressUtil.getClientIpAddress(request));
-        logger.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "."
-                + joinPoint.getSignature().getName());
-        logger.info("å‚æ•° : " + Arrays.toString(joinPoint.getArgs()));
+        logger.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
+        logger.info("²ÎÊı : " + Arrays.toString(joinPoint.getArgs()));
     }
-    @AfterReturning(returning = "ret", pointcut = "logPointCut()")// returningçš„å€¼å’ŒdoAfterReturningçš„å‚æ•°åä¸€è‡´
+    @AfterReturning(returning = "ret", pointcut = "logPointCut()")// returningµÄÖµºÍdoAfterReturningµÄ²ÎÊıÃûÒ»ÖÂ
     public void doAfterReturning(Object ret) throws Throwable {
-        // å¤„ç†å®Œè¯·æ±‚ï¼Œè¿”å›å†…å®¹(è¿”å›å€¼å¤ªå¤æ‚æ—¶ï¼Œæ‰“å°çš„æ˜¯ç‰©ç†å­˜å‚¨ç©ºé—´çš„åœ°å€)
-        logger.debug("è¿”å›å€¼ : " + ret);
+        // ´¦ÀíÍêÇëÇó£¬·µ»ØÄÚÈİ(·µ»ØÖµÌ«¸´ÔÓÊ±£¬´òÓ¡µÄÊÇÎïÀí´æ´¢¿Õ¼äµÄµØÖ·)
+        logger.debug("·µ»ØÖµ : " + ret);
     }
 
     @Around("logPointCut()")
     public Object doAround(ProceedingJoinPoint pjp) throws Throwable {
         long startTime = System.currentTimeMillis();
-        Object ob = pjp.proceed();// ob ä¸ºæ–¹æ³•çš„è¿”å›å€¼
-        logger.info("è€—æ—¶ : " + (System.currentTimeMillis() - startTime));
+        Object ob = pjp.proceed();// ob Îª·½·¨µÄ·µ»ØÖµ
+        logger.info("ºÄÊ± : " + (System.currentTimeMillis() - startTime));
         return ob;
     }
 }

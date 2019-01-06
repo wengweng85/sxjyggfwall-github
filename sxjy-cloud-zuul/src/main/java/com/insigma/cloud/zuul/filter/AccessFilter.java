@@ -4,7 +4,7 @@ import com.insigma.cloud.common.constants.CommonConstants;
 import com.insigma.cloud.common.context.SUserUtil;
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.cloud.common.utils.JSONUtils;
-import com.insigma.cloud.common.utils.JWT;
+import com.insigma.cloud.common.utils.JWT_Server;
 import com.insigma.mvc.model.SUser;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
@@ -24,7 +24,7 @@ public class AccessFilter extends ZuulFilter {
 
     private Logger logger = Logger.getLogger(AccessFilter.class.toString());
 
-    private String ignorePath = "/api-noauth";
+    private String ignorePath = "/api-auth";
 
     @Override
     public String filterType() {
@@ -62,7 +62,7 @@ public class AccessFilter extends ZuulFilter {
         }
         try {
             //截取掉"bearer "
-            SUser suser = JWT.unsign(accessToken.substring(7, accessToken.length()), SUser.class);
+            SUser suser = JWT_Server.unsign(accessToken.substring(7, accessToken.length()), SUser.class);
             SUserUtil.setCurrentUser(suser);
         } catch (Exception e) {
             setFailedRequest(AjaxReturnMsg.error40004(), 200);
@@ -70,7 +70,7 @@ public class AccessFilter extends ZuulFilter {
         }
         SUserUtil.setToken(accessToken);
         Set<String> headers = (Set<String>) ctx.get("ignoredHeaders");
-        //We need our JWT tokens relayed to resource servers
+        //We need our JWT_Server tokens relayed to resource servers
         //添加自己header
 //        ctx.addZuulRequestHeader(CommonConstants.CONTEXT_TOKEN, accessToken);
         //移除忽略token
@@ -78,7 +78,7 @@ public class AccessFilter extends ZuulFilter {
         return null;
 //        RequestContext ctx = RequestContext.getCurrentContext();
 //        Set<String> headers = (Set<String>) ctx.get("ignoredHeaders");
-//        // We need our JWT tokens relayed to resource servers
+//        // We need our JWT_Server tokens relayed to resource servers
 //        headers.remove("authorization");
 //        return null;
     }
@@ -92,6 +92,8 @@ public class AccessFilter extends ZuulFilter {
         RequestContext ctx = RequestContext.getCurrentContext();
         ctx.setResponseStatusCode(code);
         HttpServletResponse response = ctx.getResponse();
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json; charset=utf-8");
         PrintWriter out = null;
         try{
             out = response.getWriter();
@@ -101,6 +103,10 @@ public class AccessFilter extends ZuulFilter {
             out.flush();
         }catch(IOException e){
             e.printStackTrace();
+        } finally {
+            if (out != null) {
+                out.close();
+            }
         }
         ctx.setSendZuulResponse(false);
     }

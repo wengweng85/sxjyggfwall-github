@@ -1,9 +1,11 @@
 package com.insigma.cloud.common.dto;
 
-import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageInfo;
+import com.insigma.cloud.common.utils.JSONUtils;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 
@@ -17,6 +19,8 @@ import java.util.HashMap;
 
 @ApiModel(value="接口通用返回类形态为json")
 public class AjaxReturnMsg   {
+
+    private static final Logger logger = LoggerFactory.getLogger(AjaxReturnMsg.class);
 
     private static final long serialVersionUID = 1L;
 
@@ -98,6 +102,7 @@ public class AjaxReturnMsg   {
         dto.setSuccess(false);
         dto.setMessage(fielderror.getDefaultMessage());
         dto.setObj(fielderror.getField());
+        logger.info(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -111,6 +116,7 @@ public class AjaxReturnMsg   {
         AjaxReturnMsg dto = new AjaxReturnMsg();
         dto.setSuccess(true);
         dto.setMessage(message);
+        logger.info(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -125,6 +131,7 @@ public class AjaxReturnMsg   {
         dto.setSuccess(true);
         dto.setMessage(message);
         dto.setObj(obj);
+        logger.info(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -138,6 +145,7 @@ public class AjaxReturnMsg   {
         AjaxReturnMsg dto = new AjaxReturnMsg();
         dto.setSuccess(true);
         dto.setObj(o);
+        logger.info(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -152,6 +160,7 @@ public class AjaxReturnMsg   {
         dto.setSuccess(true);
         dto.setObj(pageinfo);
         dto.setTotal(pageinfo.getTotal());
+        logger.info(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -191,6 +200,7 @@ public class AjaxReturnMsg   {
         AjaxReturnMsg dto = new AjaxReturnMsg();
         dto.setSuccess(false);
         dto.setMessage(message);
+        logger.info(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -206,6 +216,7 @@ public class AjaxReturnMsg   {
         dto.setSuccess(false);
         dto.setMessage(message);
         dto.setObj(obj);
+        logger.info(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -219,6 +230,7 @@ public class AjaxReturnMsg   {
         AjaxReturnMsg dto = new AjaxReturnMsg();
         dto.setSuccess(false);
         dto.setObj(obj);
+        logger.info(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -233,6 +245,7 @@ public class AjaxReturnMsg   {
         dto.setSuccess(false);
         dto.setSyscode(syscode.getCode());
         dto.setMessage(msg);
+        logger.info(JSONUtils.beanToJson(dto));
         return dto;
     }
 

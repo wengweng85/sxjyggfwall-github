@@ -7,14 +7,9 @@
         <option value="$PROJECT_DIR$/sxjy-cloud-sxjysy/pom.xml" />
         <option value="$PROJECT_DIR$/../sxjyggfwall/sxjyggfw-common-model/pom.xml" />
         <option value="$PROJECT_DIR$/ZipkinServer/pom.xml" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-auth/pom.xml" />
         <option value="$PROJECT_DIR$/sxjy-cloud-noauth/pom.xml" />
+        <option value="$PROJECT_DIR$/../../陕西公共服务for银海/sxjyggfw-common-model/pom.xml" />
       </list>
-    </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/sxjy-cloud-zipkin/pom.xml" />
-      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">

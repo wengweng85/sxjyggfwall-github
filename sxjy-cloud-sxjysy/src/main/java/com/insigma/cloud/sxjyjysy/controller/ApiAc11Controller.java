@@ -21,7 +21,6 @@ import javax.annotation.Resource;
  */
 @RestController
 @Api(description = "ac11")
-@RequestMapping(value = "/api")
 public class ApiAc11Controller  {
 
     @Resource

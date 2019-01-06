@@ -16,7 +16,7 @@
 	<module>sxjy-cloud-server</module>
 	<module>sxjy-cloud-zuul</module>
 
-
+    <module>sxjy-cloud-auth</module>
 	<module>sxjy-cloud-base</module>
 	<module>sxjy-cloud-sxjysy</module>
   </modules>

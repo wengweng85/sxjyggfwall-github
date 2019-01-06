@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="sxjy-cloud-auth" />
         <module name="sxjy-cloud-base" />
         <module name="sxjy-cloud-common" />
-        <module name="sxjy-cloud-noauth" />
         <module name="sxjy-cloud-server" />
         <module name="sxjy-cloud-sxjysy" />
         <module name="sxjy-cloud-zuul" />
+        <module name="sxjyggfw-common-model" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,7 +25,9 @@
       <module name="sxjy-cloud-sxjysy" target="1.8" />
       <module name="sxjy-cloud-zipkin" target="1.8" />
       <module name="sxjy-cloud-zuul" target="1.8" />
+      <module name="sxjyggfw-common-model" target="1.5" />
       <module name="sxjyggfwall" target="1.5" />
+      <module name="wxjy-web-common" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
