@@ -2,90 +2,97 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="1022436b-de42-44da-9834-4f6690d78fb5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_4_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_4_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_4_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_0_0_GA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_4_0_2_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_4_2_7_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_4_2_7_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_0_api_1_0_1_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_18_1_GA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_1_0_GA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_1_spec_1_0_1_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_2_8_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_2_8_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_2_8_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_2_8_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_2_8_RELEASE.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_insigma_sxjyggfw_common_model_1_0_0_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/CloudBaseApplication.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/config/JacksonConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-base/src/test/java/com/insigma/cloud/base/CloudLogApplicationTests.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/base/CloudBaseApplication.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/base/config/AuthConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/base/config/JacksonConfig$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/base/config/JacksonConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/base/config/MybatisConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/config/JacksonConfig$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/config/JacksonConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-base/target/test-classes/com/insigma/cloud/base/CloudLogApplicationTests.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/utils/JWT.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-common/src/test/java/com/bootdo/clouddocommon/ClouddoCommonApplicationTests.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-common/target/classes/com/insigma/cloud/common/utils/JWT.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-common/target/test-classes/com/bootdo/clouddocommon/ClouddoCommonApplicationTests.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/target/classes/application-dev.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/target/classes/application-pro.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/target/classes/application.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/target/classes/mapper/common/codetype/ApiCodeTypeMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/target/classes/mapper/common/codevalidator/ApiCodeValidatorMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/target/classes/mapper/common/svercord/ApiSvercordMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/target/classes/mapper/login/ApiLoginMapper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/java/com/insigma/cloud/config/JacksonConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/java/com/insigma/cloud/sxjyjysy/CloudSxjyjysyApplication.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/test/java/com/insigma/cloud/base/CloudLogApplicationTests.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/target/classes/com/insigma/cloud/config/JacksonConfig$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/target/classes/com/insigma/cloud/config/JacksonConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/target/classes/com/insigma/cloud/sxjyjysy/CloudSxjyjysyApplication.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/target/test-classes/com/insigma/cloud/base/CloudLogApplicationTests.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/config/AuthConfig.class" afterPath="$PROJECT_DIR$/sxjy-cloud-base/target/classes/com/insigma/cloud/config/AuthConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/target/classes/com/insigma/cloud/common/aspect/WebLogAspect.class" afterPath="$PROJECT_DIR$/sxjy-cloud-common/target/classes/com/insigma/cloud/common/aspect/WebLogAspect.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/target/classes/com/insigma/cloud/common/dto/AjaxReturnMsg.class" afterPath="$PROJECT_DIR$/sxjy-cloud-common/target/classes/com/insigma/cloud/common/dto/AjaxReturnMsg.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/target/classes/com/insigma/cloud/common/intercepter/AuthIntercepter.class" afterPath="$PROJECT_DIR$/sxjy-cloud-common/target/classes/com/insigma/cloud/common/intercepter/AuthIntercepter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/target/classes/com/insigma/cloud/config/AuthConfig.class" afterPath="$PROJECT_DIR$/sxjy-cloud-sxjysy/target/classes/com/insigma/cloud/config/AuthConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/target/classes/com/insigma/cloud/sxjyjysy/controller/ApiAc11Controller.class" afterPath="$PROJECT_DIR$/sxjy-cloud-sxjysy/target/classes/com/insigma/cloud/sxjyjysy/controller/ApiAc11Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/com/insigma/cloud/zuul/filter/AccessFilter.class" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/com/insigma/cloud/zuul/filter/AccessFilter.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__bouncycastle_bcmail_jdk14_138.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__bouncycastle_bcprov_jdk14_138.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_jpush_api_jiguang_common_1_1_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_jpush_api_jpush_client_3_3_9.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_dubbo_2_6_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_37.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_caucho_hessian_4_0_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fernandospr_javapns_jdk16_2_2_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_04.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_insigma_wxjy_common_1_0_7_SNAPSHOT.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_itext_asian_5_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_itextpdf_itextpdf_5_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_lowagie_itext_2_0_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_3_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_5_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_4_1_6_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_jsp_api_2_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_1_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_8_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_2_10_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_core_2_5_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_web_2_0_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ezmorph_ezmorph_1_0_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_json_lib_json_lib_jdk15_2_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ognl_ognl_3_2_6.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_all_5_10_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_1_10_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_launcher_1_10_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_email_1_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_4_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_16.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_16.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_16.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_core_1_3_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_ehcache_1_3_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_spring_1_3_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_3_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_annotations_api_7_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_api_7_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_catalina_7_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_coyote_7_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_juli_7_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_servlet_api_7_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_util_7_0_30.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_6_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_6_10.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk16_1_46.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_16.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_4_0_5_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_annotations_1_2_0_Beta1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_netty_netty_3_2_5_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_8_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_lazyluke_log4jdbc_remix_0_2_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_2_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_2_2_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_jobs_2_2_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_13.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_13.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_1_3_0_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_2_8_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_2_8_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jms_4_2_8_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_4_2_8_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_4_2_8_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_2_8_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_2_8_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_2_8_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xhtmlrenderer_core_renderer_R8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__taglibs_standard_1_1_2.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_insigma_wxjy_common_model_1_0_2_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_insigma_wxjy_common_model_1_0_2_SNAPSHOT.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/config/AuthConfig.java" afterPath="$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/config/AuthConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-base/sxjy-cloud-base.iml" afterPath="$PROJECT_DIR$/sxjy-cloud-base/sxjy-cloud-base.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/aspect/WebLogAspect.java" afterPath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/aspect/WebLogAspect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/AjaxReturnMsg.java" afterPath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/AjaxReturnMsg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/intercepter/AuthIntercepter.java" afterPath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/intercepter/AuthIntercepter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/sxjy-cloud-common.iml" afterPath="$PROJECT_DIR$/sxjy-cloud-common/sxjy-cloud-common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/java/com/insigma/cloud/config/AuthConfig.java" afterPath="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/java/com/insigma/cloud/config/AuthConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/java/com/insigma/cloud/sxjyjysy/controller/ApiAc11Controller.java" afterPath="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/java/com/insigma/cloud/sxjyjysy/controller/ApiAc11Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/resources/mapper/ApiAc11Mapper.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/resources/mapper/ApiAc11Mapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/sxjy-cloud-sxjysy.iml" afterPath="$PROJECT_DIR$/sxjy-cloud-sxjysy/sxjy-cloud-sxjysy.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/target/classes/mapper/ApiAc11Mapper.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-sxjysy/target/classes/mapper/ApiAc11Mapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/AccessFilter.java" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/AccessFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/sxjy-cloud-zuul.iml" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/sxjy-cloud-zuul.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/pom.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-auth/pom.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/application-dev.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/application-dev.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/application-pro.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/application-pro.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/application.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/mapper/common/codetype/ApiCodeTypeMapper.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/mapper/common/codetype/ApiCodeTypeMapper.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/mapper/common/codevalidator/ApiCodeValidatorMapper.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/mapper/common/codevalidator/ApiCodeValidatorMapper.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/mapper/common/svercord/ApiSvercordMapper.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/mapper/common/svercord/ApiSvercordMapper.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/src/main/resources/mapper/login/ApiLoginMapper.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/mapper/token/ApiLoginMapper.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-noauth/sxjy-cloud-noauth.iml" afterPath="$PROJECT_DIR$/sxjy-cloud-auth/sxjy-cloud-auth.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/sxjy-cloud-zuul/target/" />
     <ignored path="$PROJECT_DIR$/sxjy-cloud-server/target/" />
@@ -119,127 +126,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ApiAc11Mapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/resources/mapper/ApiAc11Mapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="61" lean-forward="false" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
-              <folding>
-                <marker date="1546764893336" expanded="true" signature="246:382" ph="select eec00... ac11" />
-                <marker date="1546764893336" expanded="true" signature="493:494" ph="select eec00... ac11" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ac11.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../陕西公共服务for银海/sxjyggfw-common-model/src/main/java/com/insigma/mvc/model/Ac11.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AjaxReturnMsg.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/AjaxReturnMsg.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="104" column="19" lean-forward="false" selection-start-line="104" selection-start-column="19" selection-end-line="104" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CloudAuthApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/CloudAuthApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/MessageType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SysCode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/SysCode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-              <folding>
-                <element signature="e#658#659#0" expanded="false" />
-                <element signature="e#676#677#0" expanded="false" />
-                <element signature="e#713#714#0" expanded="false" />
-                <element signature="e#736#737#0" expanded="false" />
-                <element signature="e#764#765#0" expanded="false" />
-                <element signature="e#782#783#0" expanded="false" />
-                <element signature="e#819#820#0" expanded="false" />
-                <element signature="e#842#843#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserToken.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/UserToken.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CloudSxjyjysyApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/java/com/insigma/cloud/CloudSxjyjysyApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <element signature="e#726#727#0" expanded="true" />
-                <element signature="e#792#793#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JacksonConfig.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/config/JacksonConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebLogAspect.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/aspect/WebLogAspect.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="85" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -353,30 +240,6 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="sxjyggfw-common-model" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="sxjyggfw-common-model" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Lifecycle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
           <option name="myItemId" value="sxjy-cloud-auth" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
@@ -391,7 +254,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
+    <option name="x" value="-11" />
     <option name="y" value="-2" />
     <option name="width" value="1932" />
     <option name="height" value="1056" />
@@ -670,7 +533,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../陕西公共服务for银海/sxjyggfw-common-model" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sxjyggfwall/wxjy-web-common" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -1209,15 +1072,15 @@
       <workItem from="1546671913029" duration="12453000" />
       <workItem from="1546688978519" duration="214000" />
       <workItem from="1546691426680" duration="1934000" />
-      <workItem from="1546752801727" duration="13308000" />
+      <workItem from="1546752801727" duration="15094000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81445000" />
+    <option name="totallyTimeSpent" value="83231000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="-2" width="1932" height="1056" extended-state="1" />
+    <frame x="-11" y="-2" width="1932" height="1056" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1237,12 +1100,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5075922" sideWeight="0.79754275" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4110629" sideWeight="0.79754275" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Mybatis datasource" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2457265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13621795" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959402" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1368,13 +1231,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="130" column="20" lean-forward="false" selection-start-line="130" selection-start-column="20" selection-end-line="130" selection-end-column="20" />
-          <folding>
-            <element signature="e#1692#1705#0" expanded="false" />
-            <element signature="e#1765#1778#0" expanded="false" />
-            <element signature="e#3701#3714#0" expanded="false" />
-            <element signature="e#4050#4063#0" expanded="false" />
-            <element signature="e#4361#4374#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1741,7 +1598,7 @@
     <entry file="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/CloudAuthApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1782,7 +1639,7 @@
     <entry file="file://$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/java/com/insigma/cloud/CloudSxjyjysyApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="e#726#727#0" expanded="true" />
             <element signature="e#792#793#0" expanded="true" />
@@ -1792,8 +1649,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/config/JacksonConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+        <state relative-caret-position="243">
+          <caret line="33" column="36" lean-forward="false" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
           <folding />
         </state>
       </provider>
