@@ -102,7 +102,7 @@ public class AjaxReturnMsg   {
         dto.setSuccess(false);
         dto.setMessage(fielderror.getDefaultMessage());
         dto.setObj(fielderror.getField());
-        logger.info(JSONUtils.beanToJson(dto));
+        logger.debug(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -116,7 +116,7 @@ public class AjaxReturnMsg   {
         AjaxReturnMsg dto = new AjaxReturnMsg();
         dto.setSuccess(true);
         dto.setMessage(message);
-        logger.info(JSONUtils.beanToJson(dto));
+        logger.debug(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -131,7 +131,7 @@ public class AjaxReturnMsg   {
         dto.setSuccess(true);
         dto.setMessage(message);
         dto.setObj(obj);
-        logger.info(JSONUtils.beanToJson(dto));
+        logger.debug(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -145,7 +145,7 @@ public class AjaxReturnMsg   {
         AjaxReturnMsg dto = new AjaxReturnMsg();
         dto.setSuccess(true);
         dto.setObj(o);
-        logger.info(JSONUtils.beanToJson(dto));
+        logger.debug(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -160,7 +160,7 @@ public class AjaxReturnMsg   {
         dto.setSuccess(true);
         dto.setObj(pageinfo);
         dto.setTotal(pageinfo.getTotal());
-        logger.info(JSONUtils.beanToJson(dto));
+        logger.debug(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -200,7 +200,7 @@ public class AjaxReturnMsg   {
         AjaxReturnMsg dto = new AjaxReturnMsg();
         dto.setSuccess(false);
         dto.setMessage(message);
-        logger.info(JSONUtils.beanToJson(dto));
+        logger.debug(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -216,7 +216,7 @@ public class AjaxReturnMsg   {
         dto.setSuccess(false);
         dto.setMessage(message);
         dto.setObj(obj);
-        logger.info(JSONUtils.beanToJson(dto));
+        logger.debug(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -230,7 +230,7 @@ public class AjaxReturnMsg   {
         AjaxReturnMsg dto = new AjaxReturnMsg();
         dto.setSuccess(false);
         dto.setObj(obj);
-        logger.info(JSONUtils.beanToJson(dto));
+        logger.debug(JSONUtils.beanToJson(dto));
         return dto;
     }
 
@@ -245,7 +245,7 @@ public class AjaxReturnMsg   {
         dto.setSuccess(false);
         dto.setSyscode(syscode.getCode());
         dto.setMessage(msg);
-        logger.info(JSONUtils.beanToJson(dto));
+        logger.debug(JSONUtils.beanToJson(dto));
         return dto;
     }
 

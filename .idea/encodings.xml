@@ -26,14 +26,25 @@
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/serviceimpl/common/log/ApiLogServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/serviceimpl/common/suggest/ApiSuggestSearchServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/advice/MyRequestBodyAdvice.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/advice/MyResponseBodyAdvice.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/aspect/WebLogAspect.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/AjaxReturnMsg.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/MessageType.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/Base64Utils.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/CharUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/EncryptTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/MD5Util.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/PublicKeyMap.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/RSAUtils.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/RSAUtilsTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/SHA1Util.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/SignUtils.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/utils/JWT_Server.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-sxjysy" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/java/com/insigma/cloud/sxjyjysy/controller/ApiAc11Controller.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-zuul" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../sxjyggfwall/wxjy-web-common" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/wxjy-web-common" charset="GBK" />
   </component>
 </project>

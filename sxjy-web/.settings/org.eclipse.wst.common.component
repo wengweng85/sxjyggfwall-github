@@ -7,9 +7,6 @@
         <dependent-module archiveName="wxjy-web-common-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/wxjy-web-common/wxjy-web-common">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="sxjyggfw-common-model-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sxjyggfw-common-model/sxjyggfw-common-model">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="java-output-path" value="/sxjy-web/target/classes"/>
         <property name="context-root" value="sxjy-web"/>
     </wb-module>

@@ -8,13 +8,14 @@ import com.insigma.cloud.common.utils.JWT_Server;
 import com.insigma.mvc.model.SUser;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Set;
-import java.util.logging.Logger;
 
 /**
  * accesfilter
@@ -22,7 +23,7 @@ import java.util.logging.Logger;
  */
 public class AccessFilter extends ZuulFilter {
 
-    private Logger logger = Logger.getLogger(AccessFilter.class.toString());
+    private final static Logger logger = LoggerFactory.getLogger(AccessFilter.class);
 
     private String ignorePath = "/api-auth";
 
@@ -47,12 +48,12 @@ public class AccessFilter extends ZuulFilter {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         final String requestUri = request.getRequestURI();
-        logger.info("requestUri="+requestUri);
+        logger.debug("requestUri="+requestUri);
         if (isStartWith(requestUri)) {
             return null;
         }
         String accessToken = request.getHeader(CommonConstants.CONTEXT_TOKEN);
-        logger.info("accessToken="+accessToken);
+        logger.debug("accessToken="+accessToken);
         if(null == accessToken || accessToken == ""){
             accessToken = request.getParameter(CommonConstants.TOKEN);
         }

@@ -13,7 +13,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: com.insigma:wxjy-common:1.0.7-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.insigma:wxjy-common-model:1.0.2-SNAPSHOT" level="project" />
