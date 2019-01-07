@@ -16,17 +16,29 @@ public class CommonExceptionHandler {
 
     private static final Logger logger = LoggerFactory.getLogger(CommonExceptionHandler.class);
 
+    /**
+     * exception
+     * @param e
+     * @return
+     */
     @ExceptionHandler(value=Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     AjaxReturnMsg exception(Exception e) {
-        logger.debug(e.getMessage());
-        return AjaxReturnMsg.error(e);
+        logger.error(e.getMessage());
+        e.printStackTrace();
+        return AjaxReturnMsg.error500();
     }
 
+    /**
+     * appexception
+     * @param e
+     * @return
+     */
     @ExceptionHandler(value=AppException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    AjaxReturnMsg appexception(Exception e) {
-        logger.debug(e.getMessage());
-        return AjaxReturnMsg.error(e);
+    AjaxReturnMsg appexception(AppException e) {
+        logger.error(e.getMessage());
+        e.printStackTrace();
+        return AjaxReturnMsg.error500();
     }
 }

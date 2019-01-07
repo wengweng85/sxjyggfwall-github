@@ -19,7 +19,8 @@
         FROM
             v_s_user a
         WHERE
-            a.username = #{username}  AND a.enabled = '1'
+            a.username = #{username} AND
+            a.password = #{password}
     </select>
 
     <!-- 个人用户角色查询  -->
