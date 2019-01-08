@@ -122,8 +122,8 @@
                 <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
                 </button>
                 <div class="btn-group roll-nav roll-right">
-                    <button class="dropdown J_tabClose" data-toggle="dropdown" title="<c:if test="${not empty suser.groupname}">${suser.groupname}-</c:if>${suser.username}">
-                        <c:if test="${not empty suser.groupname}">${suser.groupname}-</c:if>${suser.username}
+                    <button class="dropdown J_tabClose" data-toggle="dropdown" title="${suser.username}">
+                        ${suser.username}
                     </button>
                     <ul role="menu" class="dropdown-menu dropdown-menu-right">
                         <li>

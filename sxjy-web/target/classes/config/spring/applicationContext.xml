@@ -33,7 +33,7 @@
     </bean>
 
     <bean id="httpRequestUtils" class="com.insigma.http.HttpRequestUtils">
-        <constructor-arg index="0" value="${zuul_base_url}"/>
+        <constructor-arg index="0" value="${gateway_base_url}"/>
         <constructor-arg index="1" value="${isencrpty}"/>
     </bean>
   

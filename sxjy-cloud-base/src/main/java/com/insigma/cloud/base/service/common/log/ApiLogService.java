@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 @Repository
 public interface ApiLogService {
 
-    String sysErrorLog(Exception e, HttpServletRequest request);
+    String addSysErrorLog(SErrorLog sErrorLog);
     PageInfo<SErrorLog>  getErrorLogList(SErrorLog sErrorLog);
 
 }

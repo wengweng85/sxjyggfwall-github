@@ -23,7 +23,8 @@ hystrix:
 zuul:
     SendErrorFilter:
         error:
-            disable: true
-
+            disable: false
+    # 不向后端服务传递的敏感头信息
+    sensitiveHeaders:
 
 

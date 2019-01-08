@@ -5,6 +5,8 @@ import com.insigma.cloud.common.context.SUserUtil;
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.cloud.common.utils.JSONUtils;
 import com.insigma.cloud.common.utils.JWT_Server;
+import com.insigma.cloud.common.utils.JwtUtils;
+import com.insigma.mvc.model.AccessToken;
 import com.insigma.mvc.model.SUser;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
@@ -34,7 +36,7 @@ public class AccessFilter extends ZuulFilter {
 
     @Override
     public int filterOrder() {
-        return 10000;
+        return 1;
     }
 
     @Override
@@ -52,37 +54,27 @@ public class AccessFilter extends ZuulFilter {
         if (isStartWith(requestUri)) {
             return null;
         }
-        String accessToken = request.getHeader(CommonConstants.CONTEXT_TOKEN);
-        logger.debug("accessToken="+accessToken);
-        if(null == accessToken || accessToken == ""){
-            accessToken = request.getParameter(CommonConstants.TOKEN);
+        String token = request.getHeader(CommonConstants.CONTEXT_TOKEN);
+        logger.debug("token="+token);
+        if(null == token || token == ""){
+            token = request.getParameter(CommonConstants.TOKEN);
         }
-        if (null == accessToken) {
-            setFailedRequest(AjaxReturnMsg.error40003(), 200);
+        if (null == token) {
+            setFailedRequest(AjaxReturnMsg.error403(), 200);
             return null;
         }
         try {
-            //截取掉"bearer "
-            SUser suser = JWT_Server.unsign(accessToken.substring(7, accessToken.length()), SUser.class);
-            SUserUtil.setCurrentUser(suser);
+            //截取掉"Bearer "
+            JwtUtils.getInfoFromToken(token.substring(7, token.length()));
+            SUserUtil.setToken(token);
         } catch (Exception e) {
-            setFailedRequest(AjaxReturnMsg.error40004(), 200);
+            setFailedRequest(AjaxReturnMsg.error404(), 200);
             return null;
         }
-        SUserUtil.setToken(accessToken);
-        Set<String> headers = (Set<String>) ctx.get("ignoredHeaders");
-        //We need our JWT_Server tokens relayed to resource servers
-        //添加自己header
-//        ctx.addZuulRequestHeader(CommonConstants.CONTEXT_TOKEN, accessToken);
-        //移除忽略token
-        headers.remove("authorization");
         return null;
-//        RequestContext ctx = RequestContext.getCurrentContext();
-//        Set<String> headers = (Set<String>) ctx.get("ignoredHeaders");
-//        // We need our JWT_Server tokens relayed to resource servers
-//        headers.remove("authorization");
-//        return null;
     }
+
+
 
     /**
      * setFailedRequest

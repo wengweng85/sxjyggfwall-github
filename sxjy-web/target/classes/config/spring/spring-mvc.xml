@@ -56,8 +56,6 @@
     <!-- 对静态资源文件的访问  方案一 （二选一） -->
     <mvc:default-servlet-handler/>
     
-     <!-- 登录hashcode校验 -->
-     <!-- 配置Token拦截器，防止用户重复提交数据 -->
      <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**" />

@@ -32,31 +32,6 @@ public class SUserUtil {
         return map.get(key);
     }
 
-    /**
-     *  setCurrentUser
-     * @param suser
-     */
-    public static void setCurrentUser(SUser suser) {
-        set(CommonConstants.CURRENT_USER_INFO,suser);
-    }
-
-
-    /**
-     *  setCurrentUser
-     */
-    public static void removeCurrentUser() {
-        set(CommonConstants.CURRENT_USER_INFO,null);
-    }
-
-    /**
-     * getCurrentUser
-     * @return
-     */
-    public static SUser getCurrentUser() {
-        Object value = get(CommonConstants.CURRENT_USER_INFO);
-        return (SUser)value;
-    }
-
     public static String getToken() {
         Object value = get(CommonConstants.CONTEXT_TOKEN);
         return returnObjectValue(value);
@@ -64,6 +39,35 @@ public class SUserUtil {
 
     public static void setToken(String token) {
         set(CommonConstants.CONTEXT_TOKEN, token);
+    }
+
+    public static String getUserID() {
+        Object value = get(CommonConstants.CONTEXT_USER_ID);
+        return returnObjectValue(value);
+    }
+
+    public static String getUsername() {
+        Object value = get(CommonConstants.CONTEXT_USERNAME);
+        return returnObjectValue(value);
+    }
+
+
+    public static String getName() {
+        Object value = get(CommonConstants.CONTEXT_NAME);
+        return returnObjectValue(value);
+    }
+
+
+    public static void setName(String name) {
+        set(CommonConstants.CONTEXT_NAME, name);
+    }
+
+    public static void setUserID(String userID) {
+        set(CommonConstants.CONTEXT_USER_ID, userID);
+    }
+
+    public static void setUsername(String username) {
+        set(CommonConstants.CONTEXT_USERNAME, username);
     }
 
 

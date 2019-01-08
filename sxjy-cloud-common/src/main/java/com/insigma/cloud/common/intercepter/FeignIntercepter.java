@@ -8,11 +8,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class FeignIntercepter implements RequestInterceptor {
-    private static final Logger logger = LoggerFactory.getLogger(RequestInterceptor.class);
+    private static final Logger logger = LoggerFactory.getLogger(FeignIntercepter.class);
 
     @Override
     public void apply(RequestTemplate requestTemplate) {
-        logger.info("------current thread id-----"+Thread.currentThread().getId());
-        requestTemplate.header(CommonConstants.CONTEXT_TOKEN, SUserUtil.getCurrentUser().getToken());
+        logger.debug("------current thread id-----"+Thread.currentThread().getId());
+        requestTemplate.header(CommonConstants.CONTEXT_TOKEN, SUserUtil.getToken());
     }
 }

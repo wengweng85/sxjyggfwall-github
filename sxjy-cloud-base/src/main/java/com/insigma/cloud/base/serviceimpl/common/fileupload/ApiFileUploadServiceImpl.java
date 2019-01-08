@@ -116,7 +116,7 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
      */
     @Override
     public SuploadFile uploadImage(MultipartFile file,String file_name,String file_bus_type, String file_bus_id, String fileRandomFlag, String desc) throws Exception{
-        String userid = SUserUtil.getCurrentUser().getUserid();
+        String userid = SUserUtil.getUserID();
         SuploadFile suploadFile = uploadFilejy(file,file_bus_type, file_name, userid,file_bus_id,fileRandomFlag);
         return suploadFile;
     }
