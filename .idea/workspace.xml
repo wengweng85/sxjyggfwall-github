@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="1022436b-de42-44da-9834-4f6690d78fb5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-web/target/classes/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/.classpath" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/.project" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/.settings/org.eclipse.core.resources.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/.settings/org.eclipse.m2e.core.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/.settings/org.eclipse.wst.common.component" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/.settings/org.eclipse.wst.common.project.facet.core.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/.svn/entries" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/.svn/format" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/.svn/wc.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/src/main/java/com/insigma/common/interceptor/TokenInterceptor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/src/main/java/com/insigma/common/interceptor/TokenUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/src/main/java/com/insigma/mvc/URLConstraintsSxjyGgfw.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/src/main/java/com/insigma/shiro/realm/WebLoginShiroSxjyGgfwRealm.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/src/main/java/com/insigma/token/TokenThread.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/target/classes/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/target/m2e-wtp/web-resources/META-INF/maven/com.insigma/sxjy-web/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/target/m2e-wtp/web-resources/META-INF/maven/com.insigma/sxjy-web/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/target/maven-archiver/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wxjy-web-common/wxjy-web-common.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-web/.settings/org.eclipse.wst.common.component" afterPath="$PROJECT_DIR$/sxjy-web/.settings/org.eclipse.wst.common.component" />
     </list>
     <ignored path="$PROJECT_DIR$/sxjy-cloud-zuul/target/" />
     <ignored path="$PROJECT_DIR$/sxjy-cloud-server/target/" />
@@ -1384,15 +1354,15 @@
       <workItem from="1546836558808" duration="25328000" />
       <workItem from="1546911621996" duration="35002000" />
       <workItem from="1546997403230" duration="1424000" />
-      <workItem from="1546999185465" duration="20445000" />
+      <workItem from="1546999185465" duration="20472000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166461000" />
+    <option name="totallyTimeSpent" value="166488000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
