@@ -8,10 +8,26 @@
         <option value="$PROJECT_DIR$/../sxjyggfwall/sxjyggfw-common-model/pom.xml" />
         <option value="$PROJECT_DIR$/ZipkinServer/pom.xml" />
         <option value="$PROJECT_DIR$/sxjy-cloud-noauth/pom.xml" />
-        <option value="$PROJECT_DIR$/../../陕西公共服务for银海/sxjyggfw-common-model/pom.xml" />
         <option value="$PROJECT_DIR$/../sxjyggfwall/wxjy-web-common/pom.xml" />
         <option value="$USER_HOME$/git/spring-cloud-zuul-ratelimit/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$USER_HOME$/git/spring-cloud-zuul-ratelimit/pom.xml" />
+        <option value="$USER_HOME$/git/spring-cloud-zuul-ratelimit/spring-cloud-starter-zuul-ratelimit/pom.xml" />
+        <option value="$USER_HOME$/git/spring-cloud-zuul-ratelimit/spring-cloud-zuul-ratelimit-core/pom.xml" />
+        <option value="$USER_HOME$/git/spring-cloud-zuul-ratelimit/spring-cloud-zuul-ratelimit-coverage/pom.xml" />
+        <option value="$USER_HOME$/git/spring-cloud-zuul-ratelimit/spring-cloud-zuul-ratelimit-dependencies/pom.xml" />
+        <option value="$USER_HOME$/git/spring-cloud-zuul-ratelimit/spring-cloud-zuul-ratelimit-tests/bucket4j-hazelcast/pom.xml" />
+        <option value="$USER_HOME$/git/spring-cloud-zuul-ratelimit/spring-cloud-zuul-ratelimit-tests/bucket4j-ignite/pom.xml" />
+        <option value="$USER_HOME$/git/spring-cloud-zuul-ratelimit/spring-cloud-zuul-ratelimit-tests/bucket4j-infinispan/pom.xml" />
+        <option value="$USER_HOME$/git/spring-cloud-zuul-ratelimit/spring-cloud-zuul-ratelimit-tests/bucket4j-jcache/pom.xml" />
+        <option value="$USER_HOME$/git/spring-cloud-zuul-ratelimit/spring-cloud-zuul-ratelimit-tests/consul/pom.xml" />
+        <option value="$USER_HOME$/git/spring-cloud-zuul-ratelimit/spring-cloud-zuul-ratelimit-tests/redis/pom.xml" />
+        <option value="$USER_HOME$/git/spring-cloud-zuul-ratelimit/spring-cloud-zuul-ratelimit-tests/security-context/pom.xml" />
+        <option value="$USER_HOME$/git/spring-cloud-zuul-ratelimit/spring-cloud-zuul-ratelimit-tests/springdata/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">

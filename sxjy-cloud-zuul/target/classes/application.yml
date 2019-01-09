@@ -13,6 +13,11 @@ ribbon:
 feign:
     hystrix:
       enabled: true
+logging:
+  level:
+    root: info
+    com.insigma: debug
+  learning: trace
 hystrix:
     command:
       default:
@@ -20,6 +25,7 @@ hystrix:
           isolation:
               thread:
                  timeoutInMilliseconds: 245000
+
 zuul:
     SendErrorFilter:
         error:

@@ -12,12 +12,12 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 @SpringBootApplication(scanBasePackages = "com.insigma.cloud")
 @MapperScan(basePackages = {"com.insigma.cloud.*.dao"})
-public class CloudSxjyjysyApplication /*extends SpringBootServletInitializer*/  {
+public class CloudSxjysyApplication /*extends SpringBootServletInitializer*/  {
 
 
 
 	public static void main(String[] args) {
-		SpringApplication.run(CloudSxjyjysyApplication.class, args);
+		SpringApplication.run(CloudSxjysyApplication.class, args);
 	}
 
 	/*@Override

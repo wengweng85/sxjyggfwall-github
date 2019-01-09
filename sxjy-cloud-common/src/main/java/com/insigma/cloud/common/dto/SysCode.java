@@ -13,7 +13,10 @@ public enum SysCode  {
 	SYS_USERID_ERROR(405,"登录信息与token信息不匹配,非法请求请确认"),
 	SYS_SERVICEURL_ERROR(406,"没有访问此服务的权限或地址地址,请确认"),
 	SYS_API_RATELIMIT(407,"访问次数受限"),
-	SYS_API_EXCEPTION(500,"接口异常");
+	SYS_API_EXCEPTION(500,"接口异常"),
+	SYS_SIGN_PARAM_EMPTY(501,"签名参数为空或缺失"),
+	SYS_SIGN_TIMESTAMP_EXPIRE(502,"请求已过期"),
+	SYS_SIGN_ERROR(503,"非法请求,验签失败");
 
 	private int code;
 	private String name;

@@ -6,24 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="bucket4j-hazelcast" />
-        <module name="bucket4j-ignite" />
-        <module name="bucket4j-infinispan" />
-        <module name="bucket4j-jcache" />
-        <module name="consul" />
-        <module name="redis" />
-        <module name="security-context" />
-        <module name="spring-cloud-zuul-ratelimit" />
-        <module name="spring-cloud-zuul-ratelimit-core" />
-        <module name="spring-cloud-zuul-ratelimit-coverage" />
-        <module name="springdata" />
         <module name="sxjy-cloud-auth" />
         <module name="sxjy-cloud-base" />
         <module name="sxjy-cloud-common" />
         <module name="sxjy-cloud-server" />
         <module name="sxjy-cloud-sxjysy" />
         <module name="sxjy-cloud-zuul" />
-        <module name="sxjyggfw-common-model" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

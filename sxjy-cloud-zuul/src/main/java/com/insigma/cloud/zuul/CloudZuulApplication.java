@@ -1,6 +1,7 @@
 package com.insigma.cloud.zuul;
 
 import com.insigma.cloud.zuul.filter.AccessFilter;
+import com.insigma.cloud.zuul.filter.SignatrueFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -21,6 +22,12 @@ public class CloudZuulApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CloudZuulApplication.class, args);
+	}
+
+
+	@Bean
+	public SignatrueFilter signatrueFilter(){
+		return new SignatrueFilter();
 	}
 
 	@Bean
