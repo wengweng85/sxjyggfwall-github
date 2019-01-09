@@ -24,7 +24,6 @@
         <module name="sxjy-cloud-sxjysy" />
         <module name="sxjy-cloud-zuul" />
         <module name="sxjyggfw-common-model" />
-        <module name="wxjy-web-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
