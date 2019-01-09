@@ -35,7 +35,6 @@ public class CommonExceptionHandler {
      * @return
      */
     @ExceptionHandler(value=Exception.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     AjaxReturnMsg exception(Exception e, HttpServletRequest request) {
         logger.error(e.getMessage());
         //e.printStackTrace();
@@ -49,7 +48,6 @@ public class CommonExceptionHandler {
      * @return
      */
     @ExceptionHandler(value=AppException.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     AjaxReturnMsg appexception(AppException e, HttpServletRequest request) {
         logger.error(e.getMessage());
         e.printStackTrace();
@@ -86,7 +84,7 @@ public class CommonExceptionHandler {
             }
             sErrorLog.setCookie(cookie.length() > 500 ? cookie.substring(0, 499) : cookie);
         }
-        logRpcService.save(sErrorLog);
+        logRpcService.saveSErrLog(sErrorLog);
     }
 
     /**

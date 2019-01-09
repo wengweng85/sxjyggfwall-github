@@ -1,15 +1,49 @@
 package com.insigma.http;
 
-import com.insigma.common.rsa.RSAUtils;
-import com.insigma.common.util.SUserUtil;
-import com.insigma.json.JsonDateValueProcessor;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InterruptedIOException;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Field;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.net.UnknownHostException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeMap;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLException;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
 import net.sf.json.util.PropertyFilter;
+
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.*;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpEntityEnclosingRequest;
+import org.apache.http.HttpRequest;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.ParseException;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.client.config.AuthSchemes;
@@ -43,20 +77,10 @@ import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.CharsetUtils;
 import org.apache.http.util.EntityUtils;
 
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLException;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
-import java.io.*;
-import java.lang.reflect.Field;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.net.UnknownHostException;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.Map.Entry;
+import com.insigma.common.rsa.RSAUtils;
+import com.insigma.common.rsa.SignUtils;
+import com.insigma.common.util.SUserUtil;
+import com.insigma.json.JsonDateValueProcessor;
 
 /**
  * Http辅助工具类</br>
@@ -227,7 +251,7 @@ public class HttpHelper {
             httpClient = createHttpClient();
         }
         log.info("get请求url:" + url);
-        HttpGet get = new HttpGet(url);
+        HttpGet get = new HttpGet(urlSign(url));
         if (SUserUtil.getCurrentUser() != null) {
             get.setHeader("Authorization", "Bearer " + SUserUtil.getCurrentUser().getToken());
         }
@@ -308,7 +332,7 @@ public class HttpHelper {
     	if (httpClient == null) {
             httpClient = createHttpClient();
         }
-        HttpPost post = new HttpPost(url);
+        HttpPost post = new HttpPost(urlSign(url));
         if (SUserUtil.getCurrentUser() != null) {
             post.setHeader("Authorization", "Bearer " + SUserUtil.getCurrentUser().getToken());
         }
@@ -374,7 +398,7 @@ public class HttpHelper {
         CloseableHttpClient httpClient = null;
         try {
             httpClient = createHttpClient();
-            HttpPost httpPost = new HttpPost(url);
+            HttpPost httpPost = new HttpPost(urlSign(url));
             if (SUserUtil.getCurrentUser() != null) {
                 httpPost.setHeader("Authorization", "Bearer " + SUserUtil.getCurrentUser().getToken());
             }
@@ -436,7 +460,7 @@ public class HttpHelper {
         CloseableHttpClient httpClient = null;
         try {
             httpClient = createHttpClient();
-            HttpPost httpPost = new HttpPost(url);
+            HttpPost httpPost = new HttpPost(urlSign(url));
             if (SUserUtil.getCurrentUser() != null) {
             	httpPost.setHeader("Authorization", "Bearer " + SUserUtil.getCurrentUser().getToken());
             }
@@ -486,7 +510,7 @@ public class HttpHelper {
      * 执行文件上传(以二进制流方式)
      *
      * @param httpClient      HttpClient客户端实例，传入null会自动创建一个
-     * @param remoteFileUrl   远程接收文件的地址
+     * @param url   远程接收文件的地址
      * @param localFilePath   本地文件地址
      * @param charset         请求编码，默认UTF-8
      * @param closeHttpClient 执行请求结束后是否关闭HttpClient客户端实例
@@ -494,7 +518,7 @@ public class HttpHelper {
      * @throws ClientProtocolException
      * @throws IOException
      */
-    public static HttpResult executeUploadFileStream(CloseableHttpClient httpClient, String remoteFileUrl, String localFilePath, String charset, boolean closeHttpClient,boolean isencrpty) throws ClientProtocolException, Exception {
+    public static HttpResult executeUploadFileStream(CloseableHttpClient httpClient, String url, String localFilePath, String charset, boolean closeHttpClient,boolean isencrpty) throws ClientProtocolException, Exception {
         CloseableHttpResponse httpResponse = null;
         FileInputStream fis = null;
         ByteArrayOutputStream baos = null;
@@ -514,7 +538,7 @@ public class HttpHelper {
             }
             resultBytes = baos.toByteArray();
             ByteArrayEntity byteArrayEntity = new ByteArrayEntity(resultBytes, ContentType.APPLICATION_OCTET_STREAM);
-            HttpPost httpPost = new HttpPost(remoteFileUrl);
+            HttpPost httpPost = new HttpPost(urlSign(url));
             if (SUserUtil.getCurrentUser() != null) {
             	httpPost.setHeader("Authorization", "Bearer " + SUserUtil.getCurrentUser().getToken());
             }
@@ -567,7 +591,7 @@ public class HttpHelper {
         FileOutputStream fout = null;
         CloseableHttpClient httpClient = null;
         try {
-            HttpGet httpget = new HttpGet(url);
+            HttpGet httpget = new HttpGet(urlSign(url));
             log.info("get请求url:" + url);
             if (SUserUtil.getCurrentUser() != null) {
                 httpget.setHeader("Authorization", "Bearer " + SUserUtil.getCurrentUser().getToken());
@@ -656,7 +680,7 @@ public class HttpHelper {
      * 执行文件下载
      *
      * @param httpClient      HttpClient客户端实例，传入null会自动创建一个
-     * @param remoteFileUrl   远程下载文件地址
+     * @param url   远程下载文件地址
      * @param localFilePath   本地存储文件地址
      * @param charset         请求编码，默认UTF-8
      * @param closeHttpClient 执行请求结束后是否关闭HttpClient客户端实例
@@ -664,14 +688,14 @@ public class HttpHelper {
      * @throws ClientProtocolException
      * @throws IOException
      */
-    public static boolean executeDownloadFile(CloseableHttpClient httpClient, String remoteFileUrl, String localFilePath, String charset, boolean closeHttpClient) throws ClientProtocolException, IOException {
+    public static boolean executeDownloadFile(CloseableHttpClient httpClient, String url, String localFilePath, String charset, boolean closeHttpClient) throws ClientProtocolException, IOException {
         CloseableHttpResponse response = null;
         InputStream in = null;
         FileOutputStream fout = null;
         try {
-            HttpGet httpget = new HttpGet(remoteFileUrl);
+            HttpGet httpget = new HttpGet(urlSign(url));
             response = httpClient.execute(httpget);
-            log.info("get请求url:" + remoteFileUrl);
+            log.info("get请求url:" + url);
             HttpEntity entity = response.getEntity();
             if (entity == null) {
                 return false;
@@ -1037,5 +1061,21 @@ public class HttpHelper {
                 }
             }
         }
+    }
+
+
+    /**
+     * 请求地址数字签名
+     * @param url
+     * @return
+     */
+    public static String urlSign(String url){
+        if(url.indexOf("?")!=-1){
+             url+= "&"+SignUtils.signature();
+        }else{
+             url+= "?"+SignUtils.signature();
+        }
+        log.info("请求地址签名:" + url);
+        return url;
     }
 }

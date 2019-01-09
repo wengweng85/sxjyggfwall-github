@@ -9,4 +9,9 @@ public class CommonConstants {
     public final static String JWT_PRIVATE_KEY ="sxjy-cloud";
     public final static String EXPIRES_TIME =  "expires";
     public final static String TOKEN = "token";
+
+    //签名相关参数
+    public final static String SIGN_SIGNATURE="signature";
+    public final static String SIGN_TIMESTAMP="timestamp";
+    public final static String SIGN_NONCE="nonce";
 }

@@ -1,5 +1,6 @@
 package com.insigma.cloud.sxjyjysy.controller;
 
+import com.insigma.cloud.common.annotation.UserLog;
 import com.insigma.cloud.common.context.SUserUtil;
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.cloud.common.exception.AppException;
@@ -19,7 +20,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.annotation.Resource;
 
 /**
- * 事项及对应附件记录表
  * @author admin
  *
  */
@@ -37,8 +37,9 @@ public class ApiAc11Controller  {
      * @return
      * @throws AppException
      */
+    @UserLog("获取ac11列表")
     @ApiOperation(value = "ac11", notes = "ac11", produces = MediaType.APPLICATION_JSON_VALUE)
-    @PostMapping(value = "/ac11s")
+    @PostMapping(value = "/ac11s", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg list(@RequestBody Ac11 ac11) throws AppException {
         return AjaxReturnMsg.success(apiAc11Service.getList(ac11));
     }
@@ -48,11 +49,12 @@ public class ApiAc11Controller  {
      * @return
      * @throws AppException
      */
+    @UserLog("获取ac11明细")
     @ApiOperation(value = "ac11", notes = "ac11", produces = MediaType.APPLICATION_JSON_VALUE)
-    @PostMapping(value = "/ac11")
+    @PostMapping(value = "/ac11", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg detail(@RequestBody Ac11 ac11) throws AppException {
-        throw new AppException("发生异常了");
-        //return AjaxReturnMsg.success(apiAc11Service.getById(ac11.getEec001()));
+        //throw new AppException("发生异常了");
+        return AjaxReturnMsg.success(apiAc11Service.getById(ac11.getEec001()));
     }
 
 }

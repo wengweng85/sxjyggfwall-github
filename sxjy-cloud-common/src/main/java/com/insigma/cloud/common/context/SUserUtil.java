@@ -2,7 +2,6 @@ package com.insigma.cloud.common.context;
 
 
 import com.insigma.cloud.common.constants.CommonConstants;
-import com.insigma.mvc.model.SUser;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +11,7 @@ import java.util.Map;
  */
 public class SUserUtil {
 
-    public static ThreadLocal<Map<String, Object>> threadLocal = new ThreadLocal<Map<String, Object>>();
+    public static ThreadLocal<Map<String, Object>> threadLocal = new InheritableThreadLocal <Map<String, Object>>();
 
     public static void set(String key, Object value) {
         Map<String, Object> map = threadLocal.get();
@@ -41,7 +40,7 @@ public class SUserUtil {
         set(CommonConstants.CONTEXT_TOKEN, token);
     }
 
-    public static String getUserID() {
+    public static String getUserId() {
         Object value = get(CommonConstants.CONTEXT_USER_ID);
         return returnObjectValue(value);
     }
@@ -62,7 +61,7 @@ public class SUserUtil {
         set(CommonConstants.CONTEXT_NAME, name);
     }
 
-    public static void setUserID(String userID) {
+    public static void setUserId(String userID) {
         set(CommonConstants.CONTEXT_USER_ID, userID);
     }
 

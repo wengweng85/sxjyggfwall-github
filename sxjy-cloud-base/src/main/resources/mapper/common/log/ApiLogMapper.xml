@@ -1,51 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.insigma.cloud.base.dao.common.log.ApiLogMapper">
-   
-
-    <!-- 保存错误异常日志 -->
-    <insert id="saveSysErrorLog" parameterType="SErrorLog">
-        <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="logid">
-            SELECT sys_guid() from dual
-        </selectKey>
-        insert into S_ERRORLOG(
-	        logid,
-	        logtime,
-	        stackmsg,
-	        message,
-	        exceptiontype,
-	        usergent,
-	        ipaddr,
-	        url,
-	        cookie
-        )
-        values (
-	        #{logid,jdbcType=VARCHAR} ,
-	        sysdate,
-	        #{stackmsg,jdbcType=CLOB} ,
-	        #{message,jdbcType=VARCHAR} ,
-	        #{exceptiontype,jdbcType=VARCHAR} ,
-	        #{usergent,jdbcType=VARCHAR} ,
-	        #{ipaddr,jdbcType=VARCHAR} ,
-	        #{url,jdbcType=VARCHAR} ,
-	        #{cookie,jdbcType=VARCHAR}
-        )
-    </insert>
+	<!-- 保存错误异常日志 -->
+	<insert id="saveSErrorLog" parameterType="SErrorLog">
+		<selectKey resultType="java.lang.String" order="BEFORE" keyProperty="logid">
+			SELECT sys_guid() from dual
+		</selectKey>
+		insert into S_ERRORLOG(
+			logid,
+			logtime,
+			stackmsg,
+			message,
+			exceptiontype,
+			usergent,
+			ipaddr,
+			url,
+			cookie,
+			userid
+		)
+		values (
+			#{logid,jdbcType=VARCHAR} ,
+			sysdate,
+			#{stackmsg,jdbcType=CLOB} ,
+			#{message,jdbcType=VARCHAR} ,
+			#{exceptiontype,jdbcType=VARCHAR} ,
+			#{usergent,jdbcType=VARCHAR} ,
+			#{ipaddr,jdbcType=VARCHAR} ,
+			#{url,jdbcType=VARCHAR} ,
+			#{cookie,jdbcType=VARCHAR},
+			#{userid,jdbcType=VARCHAR}
+		)
+	</insert>
 
 
 	<select id="getErrorLogList" resultType="SErrorLog">
 		SELECT
-		    logid,
-	        logtime,
-	        stackmsg,
-	        message,
-	        exceptiontype,
-	        usergent,
-	        ipaddr,
-	        url,
-	        cookie
-	    from S_ERRORLOG
+			logid,
+			logtime,
+			stackmsg,
+			message,
+			exceptiontype,
+			usergent,
+			ipaddr,
+			url,
+			cookie
+		from S_ERRORLOG
 	</select>
+
+
+	<!-- 保存运行日志 -->
+	<insert id="saveSLog" parameterType="SLog">
+		<selectKey resultType="java.lang.String" order="BEFORE" keyProperty="logid">
+			SELECT sys_guid() from dual
+		</selectKey>
+		insert into s_log(
+			logid ,
+			interfacetype ,
+			message ,
+			logtime ,
+			cost ,
+			stackmsg ,
+			exceptiontype ,
+			usergent ,
+			ipaddr ,
+			referer ,
+			url ,
+			userid ,
+			cookie ,
+			appkey ,
+			queryparam ,
+			method ,
+			success ,
+			responsemsg,
+			token
+		)
+		values (
+			#{logid, jdbcType=VARCHAR} ,
+			#{interfacetype,jdbcType=VARCHAR} ,
+			#{message,jdbcType=VARCHAR} ,
+			sysdate ,
+			#{cost,jdbcType=VARCHAR} ,
+			#{stackmsg,jdbcType=CLOB} ,
+			#{exceptiontype,jdbcType=VARCHAR} ,
+			#{usergent,jdbcType=VARCHAR} ,
+			#{ipaddr,jdbcType=VARCHAR} ,
+			#{referer,jdbcType=VARCHAR} ,
+			#{url,jdbcType=VARCHAR} ,
+			#{userid,jdbcType=VARCHAR} ,
+			#{cookie,jdbcType=VARCHAR} ,
+			#{appkey,jdbcType=VARCHAR} ,
+			#{queryparam,jdbcType=CLOB} ,
+			#{method,jdbcType=VARCHAR} ,
+			#{success,jdbcType=VARCHAR} ,
+			#{responsemsg,jdbcType=CLOB},
+			#{token,jdbcType=VARCHAR}
+		)
+	</insert>
+
+
+	<!-- 保存用户操作日志 -->
+	<insert id="saveUserLog" parameterType="SUserLog">
+		<selectKey resultType="java.lang.String" order="BEFORE" keyProperty="logid">
+			SELECT sys_guid() from dual
+		</selectKey>
+		insert into S_USERLOG(
+			logid,
+			optype,
+			logstime,
+			logetime,
+			message,
+			opstatus,
+			opreason,
+			aae011,
+			aae012,
+			eec117,
+			eec118,
+			eec119
+		)
+		values (
+			#{logid, jdbcType=VARCHAR},
+			#{optype, jdbcType=VARCHAR},
+			#{logstime, jdbcType=TIMESTAMP},
+			#{logetime, jdbcType=TIMESTAMP},
+			#{message, jdbcType=VARCHAR},
+			#{opstatus, jdbcType=VARCHAR},
+			#{opreason, jdbcType=VARCHAR},
+			#{aae011, jdbcType=VARCHAR},
+			#{aae012, jdbcType=VARCHAR},
+			#{eec117, jdbcType=VARCHAR},
+			#{eec118, jdbcType=VARCHAR},
+			#{eec119, jdbcType=VARCHAR}
+		)
+	</insert>
 
 </mapper>

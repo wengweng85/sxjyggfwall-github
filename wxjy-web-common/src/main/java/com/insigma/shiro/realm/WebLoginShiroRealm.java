@@ -80,11 +80,11 @@ public class WebLoginShiroRealm extends AuthorizingRealm {
 					map.put("password", MD5Util.MD5Encode(String.valueOf(customtoken.getPassword())));
 					AccessToken accessToken = (AccessToken) httpRequestUtils.httpPostObject(URLConstraints.API_TOKEN,map,AccessToken.class);
 					String token= accessToken.getToken();
-					log.debug("user="+token);
 					/*suser = JWT.unsign(token, SUser.class);
 					suser.setToken(token);*/
 					suser=new SUser();
-					suser.setToken(token);
+					suser.setUsername(accessToken.getUsername()); 
+					suser.setToken(accessToken.getToken());
 					suser.setName(accessToken.getName());
 					authenticationInfo = new SimpleAuthenticationInfo (suser.getUsername(), MD5Util.MD5Encode(String.valueOf(customtoken.getPassword())), getName()); //realm name
 				} catch (Exception e) {
@@ -102,12 +102,6 @@ public class WebLoginShiroRealm extends AuthorizingRealm {
 			default:
 				break;
 		}
-		if (suser == null || !suser.getUsertype().equals(suser.getUsertype())) {
-            throw new UnknownAccountException();//没找到帐号
-        }
-        if ("1".equals(suser.getIsblacklist())) {
-            throw new LockedAccountException(); //帐号锁定，黑名单
-        }
 
 		//根据用户名获取用户信息
 		try {

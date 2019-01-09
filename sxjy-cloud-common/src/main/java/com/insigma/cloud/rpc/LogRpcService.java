@@ -3,6 +3,8 @@ package com.insigma.cloud.rpc;
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.cloud.common.intercepter.FeignIntercepter;
 import com.insigma.mvc.model.SErrorLog;
+import com.insigma.mvc.model.SLog;
+import com.insigma.mvc.model.SUserLog;
 import feign.Headers;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.scheduling.annotation.Async;
@@ -13,6 +15,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 @FeignClient(name = "api-base", configuration = FeignIntercepter.class)
 public interface LogRpcService {
 
+    @Async
     @PostMapping("errorlog")
-    AjaxReturnMsg save(SErrorLog sErrorLog);
+    AjaxReturnMsg saveSErrLog(SErrorLog sErrorLog);
+
+    @Async
+    @PostMapping("slog")
+    AjaxReturnMsg saveSLog(SLog sLog);
+
+    @Async
+    @PostMapping("userlog")
+    AjaxReturnMsg saveSUserLog(SUserLog sUserLog);
 }

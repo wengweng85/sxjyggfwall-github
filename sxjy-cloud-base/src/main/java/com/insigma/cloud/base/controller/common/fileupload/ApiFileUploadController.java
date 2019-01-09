@@ -2,6 +2,7 @@ package com.insigma.cloud.base.controller.common.fileupload;
 
 import com.github.pagehelper.PageInfo;
 import com.insigma.cloud.base.service.common.fileupload.ApiFileUploadService;
+import com.insigma.cloud.common.annotation.UserLog;
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.mvc.model.FileNumberInfo;
 import com.insigma.mvc.model.SuploadFile;
@@ -38,6 +39,7 @@ public class ApiFileUploadController {
      * @return
      * @throws Exception
      */
+    @UserLog("上传文件")
     @RequestMapping(value = "/uploadFile/uploadImage",method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public AjaxReturnMsg uploadImage(
             @RequestParam("uploadFile") MultipartFile file ,

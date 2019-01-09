@@ -98,13 +98,7 @@ public class WebLoginShiroSxjyGgfwRealm extends AuthorizingRealm {
 			default:
 				break;
 		}
-		if (suser == null || !suser.getUsertype().equals(suser.getUsertype())) {
-            throw new UnknownAccountException();//没找到帐号
-        }
-        if ("1".equals(suser.getIsblacklist())) {
-            throw new LockedAccountException(); //帐号锁定，黑名单
-        }
-
+		
 		//根据用户名获取用户信息
 		try {
 			HashMap map=new HashMap();

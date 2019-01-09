@@ -5,6 +5,8 @@ import com.github.pagehelper.PageInfo;
 import com.insigma.cloud.base.dao.common.log.ApiLogMapper;
 import com.insigma.cloud.base.service.common.log.ApiLogService;
 import com.insigma.mvc.model.SErrorLog;
+import com.insigma.mvc.model.SLog;
+import com.insigma.mvc.model.SUserLog;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -27,8 +29,8 @@ public class ApiLogServiceImpl implements ApiLogService {
      * 应用异常日志
      */
     @Override
-    public String addSysErrorLog(SErrorLog sErrorLog)  {
-        logMapper.saveSysErrorLog(sErrorLog);
+    public String saveSErrorLog(SErrorLog sErrorLog)  {
+        logMapper.saveSErrorLog(sErrorLog);
         return sErrorLog.getLogid();
     }
 
@@ -40,5 +42,24 @@ public class ApiLogServiceImpl implements ApiLogService {
         return pageinfo;
     }
 
+
+    /**
+     * 运行日志
+     */
+    @Override
+    public String saveSLog(SLog sLog)  {
+        logMapper.saveSLog(sLog);
+        return sLog.getLogid();
+    }
+
+
+    /**
+     * 用户日志
+     */
+    @Override
+    public String saveUserLog(SUserLog sUserLog)  {
+        logMapper.saveUserLog(sUserLog);
+        return sUserLog.getLogid();
+    }
 
 }
