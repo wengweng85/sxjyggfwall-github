@@ -9,6 +9,9 @@
         <module name="sxjy-cloud-auth" />
         <module name="sxjy-cloud-base" />
         <module name="sxjy-cloud-common" />
+        <module name="sxjy-cloud-config" />
+        <module name="sxjy-cloud-config-client" />
+        <module name="sxjy-cloud-config-server" />
         <module name="sxjy-cloud-server" />
         <module name="sxjy-cloud-sxjysy" />
         <module name="sxjy-cloud-zuul" />
@@ -32,6 +35,9 @@
       <module name="sxjy-cloud-auth" target="1.8" />
       <module name="sxjy-cloud-base" target="1.8" />
       <module name="sxjy-cloud-common" target="1.8" />
+      <module name="sxjy-cloud-config" target="1.8" />
+      <module name="sxjy-cloud-config-client" target="1.8" />
+      <module name="sxjy-cloud-config-server" target="1.8" />
       <module name="sxjy-cloud-noauth" target="1.8" />
       <module name="sxjy-cloud-server" target="1.8" />
       <module name="sxjy-cloud-sxjysy" target="1.8" />

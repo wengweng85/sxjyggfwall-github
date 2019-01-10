@@ -19,3 +19,12 @@
 *.tar.gz
 *.rar
 *.svn-base
+
+
+# Folders #
+
+target
+sxjy-cloud-view
+.mvn
+.idea
+ 
