@@ -18,7 +18,7 @@ import java.util.HashMap;
  */
 
 @ApiModel(value="接口通用返回类形态为json")
-public class AjaxReturnMsg   {
+public class AjaxReturnMsg  {
 
     private static final Logger logger = LoggerFactory.getLogger(AjaxReturnMsg.class);
 
@@ -85,6 +85,7 @@ public class AjaxReturnMsg   {
         this.total = total;
     }
 
+
     private AjaxReturnMsg() {
         this.syscode = SysCode.SYS_CODE_200.getCode(); // 系统返回状态码,默认200
         this.success = true; // 业务状态码，默认为true
@@ -138,6 +139,18 @@ public class AjaxReturnMsg   {
     /**
      * 成功返回
      *
+     * @param map
+     * @return
+     */
+    public static AjaxReturnMsg success(HashMap map) {
+        AjaxReturnMsg dto = new AjaxReturnMsg();
+        dto.setObj(map);
+        return dto;
+    }
+
+    /**
+     * 成功返回
+     *
      * @param o
      * @return
      */
@@ -148,6 +161,7 @@ public class AjaxReturnMsg   {
         logger.debug(JSONUtils.beanToJson(dto));
         return dto;
     }
+
 
     /**
      * 成功返回 返回分页面信息 用于接口返回

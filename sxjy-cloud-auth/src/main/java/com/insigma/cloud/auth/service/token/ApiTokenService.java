@@ -22,11 +22,12 @@ public interface ApiTokenService {
     //获取用户权限集合
     List<SPermission> findPermissionStr(String username);
 
+    //获取菜单树
+    List<SPermission> findMenuTree(String username);
+
     //获取token
     AccessToken getToken( SUser suser) throws Exception;
 
-    //刷新token
-    /*AccessToken refreshToken(String token) throws Exception;*/
 
     
     

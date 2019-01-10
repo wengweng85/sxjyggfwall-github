@@ -1,7 +1,9 @@
 package com.insigma.cloud.common.context;
 
 
+import com.alibaba.fastjson.JSONArray;
 import com.insigma.cloud.common.constants.CommonConstants;
+import com.insigma.mvc.model.SPermission;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -77,5 +79,4 @@ public class SUserUtil {
     public static void remove() {
         threadLocal.remove();
     }
-
 }

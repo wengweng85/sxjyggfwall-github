@@ -41,6 +41,13 @@ public interface ApiUserMapper {
      */
     List<SPermission> findPermissionStr(String username);
 
+    /**
+     * 获取菜单树
+     * @param username
+     * @return
+     */
+    List<SPermission> findMenuTree(String username);
+
 
     /**
      * 记录登录信息
