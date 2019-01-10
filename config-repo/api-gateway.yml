@@ -28,3 +28,15 @@ hystrix:
 cloud:
     config:
       uri: http://localhost:7001/                         #指定Spring Cloud Config开放的项目端口
+zuul:
+     # 不向后端服务传递的敏感头信息
+    sensitiveHeaders: Cookie,Set-Cookie,Authorization
+    SendErrorFilter:
+        error:
+            disable: false
+    SignatrueFilter:
+        pre:
+          disable: true          #禁用名为SignatrueFilter的过滤器
+     AccessFilter:
+        pre:
+          disable: true          #禁用名为SignatrueFilter的过滤器
