@@ -51,11 +51,13 @@
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/SignUtils.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/utils/JWT_Server.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-config-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-config-client/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-config-client/src/main/resources/application.yml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-config-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-sxjysy" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/java/com/insigma/cloud/sxjyjysy/controller/ApiAc11Controller.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-zuul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application.yml" charset="GBK" />
   </component>
 </project>

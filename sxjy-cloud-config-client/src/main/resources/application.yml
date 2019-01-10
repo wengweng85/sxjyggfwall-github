@@ -1,6 +1,6 @@
 spring:
   application:
-    name: sxjy-cloud-config-client                     #指定了配置文件的应用名
+    name: cloud-config-client                     #指定了配置文件的应用名
   cloud:
     config:
       uri: http://localhost:7001/        #Config server的uri

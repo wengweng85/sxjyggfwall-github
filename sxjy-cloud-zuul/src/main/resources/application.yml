@@ -17,7 +17,6 @@ logging:
   level:
     root: info
     com.insigma: debug
-  learning: trace
 hystrix:
     command:
       default:
@@ -25,6 +24,15 @@ hystrix:
           isolation:
               thread:
                  timeoutInMilliseconds: 245000
-cloud:
-    config:
-      uri: http://localhost:7001/                         #指定Spring Cloud Config开放的项目端口
+zuul:
+    sensitiveHeaders:  Cookie,Set-Cookie,Authorization
+    SendErrorFilter:
+        error:
+            disable: false
+    SignatrueFilter:
+        pre:
+          disable: true
+    TokenFilter:
+        pre:
+          disable: false
+

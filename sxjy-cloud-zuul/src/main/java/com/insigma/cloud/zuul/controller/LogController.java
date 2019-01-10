@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @version V1.0
+ *
  */
 @RestController
 public class LogController {

@@ -14,12 +14,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * token 过滤 accesfilter
+ * token 过滤 tokenFilter
  * @Author admin
  */
-public class AccessFilter extends ZuulFilter {
+public class TokenFilter extends ZuulFilter {
 
-    private final static Logger logger = LoggerFactory.getLogger(AccessFilter.class);
+    private final static Logger logger = LoggerFactory.getLogger(TokenFilter.class);
 
     private String ignorePath = "/api-auth";
 

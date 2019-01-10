@@ -1,13 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
 server:
   port: 7001
 spring:
   application:
-    name: sxjy-cloud-config-server
+    name: cloud-config-server
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/wengweng85/sxjyggfwall-github
-          search-paths: config-repo
-          username:     #账号密码写真实的快一些我觉得，不使用也能访问有点慢
-          password:
+         git:
+            uri: https://github.com/hellxz/SpringCloudlearn
+            searchPaths: config-repo
+            username: username  #账号密码写真实的快一些我觉得，不使用也能访问有点慢
+            password: password

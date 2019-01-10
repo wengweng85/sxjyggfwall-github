@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: com.insigma:sxjyggfw-common-model:1.0.0-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/insigma/sxjyggfw-common-model/1.0.0-SNAPSHOT/sxjyggfw-common-model-1.0.0-20190106.090041-4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/insigma/sxjyggfw-common-model/1.0.0-SNAPSHOT/sxjyggfw-common-model-1.0.0-20190109.095830-5.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/com/insigma/sxjyggfw-common-model/1.0.0-SNAPSHOT/sxjyggfw-common-model-1.0.0-20190106.090041-4-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/insigma/sxjyggfw-common-model/1.0.0-SNAPSHOT/sxjyggfw-common-model-1.0.0-20190109.095830-5-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/insigma/sxjyggfw-common-model/1.0.0-SNAPSHOT/sxjyggfw-common-model-1.0.0-20190106.090041-4-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/insigma/sxjyggfw-common-model/1.0.0-SNAPSHOT/sxjyggfw-common-model-1.0.0-20190109.095830-5-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

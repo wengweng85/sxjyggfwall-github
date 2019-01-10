@@ -1,42 +1,11 @@
-spring:
-  application:
-    name: api-gateway
-  profiles:
-      active: dev
-  servlet:
-    multipart:
-      max-file-size: 100Mb
-      max-request-size: 100Mb
-ribbon:
-    ReadTimeout: 60000
-    ConnectTimeout: 60000
-feign:
-    hystrix:
-      enabled: true
-logging:
-  level:
-    root: info
-    com.insigma: debug
-  learning: trace
-hystrix:
-    command:
-      default:
-        execution:
-          isolation:
-              thread:
-                 timeoutInMilliseconds: 245000
-cloud:
-    config:
-      uri: http://localhost:7001/                         #指定Spring Cloud Config开放的项目端口
 zuul:
-     # 不向后端服务传递的敏感头信息
-    sensitiveHeaders: Cookie,Set-Cookie,Authorization
+    sensitiveHeaders:  Cookie,Set-Cookie,Authorization
     SendErrorFilter:
         error:
-            disable: false
+          disable: false
     SignatrueFilter:
         pre:
-          disable: true          #禁用名为SignatrueFilter的过滤器
-     AccessFilter:
+          disable: true
+    AccessFilter:
         pre:
-          disable: true          #禁用名为SignatrueFilter的过滤器
+          disable: true

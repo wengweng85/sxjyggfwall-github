@@ -17,7 +17,6 @@ logging:
   level:
     root: info
     com.insigma: debug
-  learning: trace
 hystrix:
     command:
       default:
@@ -25,12 +24,15 @@ hystrix:
           isolation:
               thread:
                  timeoutInMilliseconds: 245000
-
 zuul:
+    sensitiveHeaders:  Cookie,Set-Cookie,Authorization
     SendErrorFilter:
         error:
             disable: false
-    # 不向后端服务传递的敏感头信息
-    sensitiveHeaders:
-
+    SignatrueFilter:
+        pre:
+          disable: true
+    TokenFilter:
+        pre:
+          disable: false
 
