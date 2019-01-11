@@ -9,12 +9,15 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.redis.core.RedisTemplate;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  * SignatrueFilter 签名验证过滤器
@@ -24,6 +27,9 @@ public class SignatrueFilter extends ZuulFilter {
 
     private final static Logger logger = LoggerFactory.getLogger(SignatrueFilter.class);
 
+
+    @Resource
+    private RedisTemplate<String, String> redisTemplate;
 
     @Override
     public String filterType() {
@@ -52,14 +58,23 @@ public class SignatrueFilter extends ZuulFilter {
         logger.debug(String.format("signature:%s,timestamp:%s,nonce:%s",signature,timestamp,nonce));
         if(null!=signature&&null!=timestamp&&null!=nonce){
             if(SignUtils.checkSignature(signature,timestamp,nonce)){
-                //计算接口时间是否过期
-                Date nowTime = new Date(System.currentTimeMillis());
-                Date timestamp_Time= new Date(new Long(timestamp));
-                logger.debug("nowTime :{} timestamp_Time : {}" ,nowTime.toLocaleString(),timestamp_Time.toLocaleString());
-                if(timestamp_Time.after(nowTime)){
-                    return null;
+                //判断此签名是否出现,做幂等设计
+                String redis_sign=redisTemplate.opsForValue().get(signature);
+                if(redis_sign==null){
+                    //5分钟过期。因为5分钟后签名过期
+                    redisTemplate.opsForValue().set(signature,"1",SignUtils.TIMESTAMP, TimeUnit.MILLISECONDS);
+                    //计算接口时间是否过期
+                    Date nowTime = new Date(System.currentTimeMillis());
+                    Date timestamp_Time= new Date(new Long(timestamp));
+                    logger.debug("nowTime :{} timestamp_Time : {}" ,nowTime.toLocaleString(),timestamp_Time.toLocaleString());
+                    if(timestamp_Time.after(nowTime)){
+                        return null;
+                    }else{
+                        setFailedRequest(AjaxReturnMsg.error(SysCode.SYS_SIGN_TIMESTAMP_EXPIRE), 200);
+                        return null;
+                    }
                 }else{
-                    setFailedRequest(AjaxReturnMsg.error(SysCode.SYS_SIGN_TIMESTAMP_EXPIRE), 200);
+                    setFailedRequest(AjaxReturnMsg.error500("重复的请求") , 200);
                     return null;
                 }
             }else{

@@ -34,7 +34,7 @@ public class IndexController extends MvcHelper {
         ModelAndView modelAndView=new ModelAndView("index/admin_index");
         modelAndView.addObject("SYS_TITLE", "公共服务平台");
         modelAndView.addObject("suser", SUserUtil.getCurrentUser());
-    	modelAndView.addObject("permlist",SUserUtil.getCurrentUser().getSpermlist());
+        modelAndView.addObject("permlist",request.getSession().getAttribute(SUserUtil.SHIRO_CURRENT_PERM_LIST_INFO));
         return modelAndView;
     }
 
