@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1022436b-de42-44da-9834-4f6690d78fb5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/redis/RedisObjectSerializer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/utils/NumberSort.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/config/RedisConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-auth/sxjy-cloud-auth.iml" afterPath="$PROJECT_DIR$/sxjy-cloud-auth/sxjy-cloud-auth.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-base/sxjy-cloud-base.iml" afterPath="$PROJECT_DIR$/sxjy-cloud-base/sxjy-cloud-base.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/pom.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-common/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/SignUtils.java" afterPath="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/SignUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-common/sxjy-cloud-common.iml" afterPath="$PROJECT_DIR$/sxjy-cloud-common/sxjy-cloud-common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-sxjysy/sxjy-cloud-sxjysy.iml" afterPath="$PROJECT_DIR$/sxjy-cloud-sxjysy/sxjy-cloud-sxjysy.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/pom.xml" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/SignatrueFilter.java" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/SignatrueFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application-dev.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application-dev.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/sxjy-cloud-zuul.iml" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/sxjy-cloud-zuul.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/application-dev.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/application-dev.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/application.yml" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/target/classes/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-web/src/main/java/com/insigma/mvc/controller/index/IndexController.java" afterPath="$PROJECT_DIR$/sxjy-web/src/main/java/com/insigma/mvc/controller/index/IndexController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sxjy-web/target/m2e-wtp/web-resources/META-INF/maven/com.insigma/sxjy-web/pom.properties" afterPath="$PROJECT_DIR$/sxjy-web/target/m2e-wtp/web-resources/META-INF/maven/com.insigma/sxjy-web/pom.properties" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/config/HystrixConfiguration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/controller/LogController.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/config/HystrixConfiguration.java" afterPath="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/config/HystrixConfig.java" />
     </list>
     <ignored path="$PROJECT_DIR$/sxjy-cloud-zuul/target/" />
     <ignored path="$PROJECT_DIR$/sxjy-cloud-server/target/" />
@@ -87,6 +71,28 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HystrixConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/config/HystrixConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/controller/TestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -140,11 +146,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application-dev.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application-dev.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application-dev.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="111">
+              <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -155,26 +161,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="97">
               <caret line="89" column="16" lean-forward="false" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/SignUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ValueOperations.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.0.9.RELEASE/spring-data-redis-2.0.9.RELEASE.jar!/org/springframework/data/redis/core/ValueOperations.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -242,9 +228,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/wxjy-web-common/src/main/java/com/insigma/common/util/SignUtils.java" />
-        <option value="$PROJECT_DIR$/wxjy-web-common/src/main/java/com/insigma/http/HttpHelper.java" />
-        <option value="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/CharUtil.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/constants/CommonConstants.java" />
         <option value="$MAVEN_REPOSITORY$/com/insigma/sxjyggfw-common-model/1.0.0-SNAPSHOT/sxjyggfw-common-model-1.0.0-SNAPSHOT.pom" />
         <option value="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/rpc/TestRpcAc11Service.java" />
@@ -293,6 +276,9 @@
         <option value="$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/SignUtils.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/filter/SignatrueFilter.java" />
         <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application-dev.yml" />
+        <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/config/HystrixConfiguration.java" />
+        <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/config/HystrixConfig.java" />
+        <option value="$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/controller/TestController.java" />
       </list>
     </option>
   </component>
@@ -2050,12 +2036,12 @@
       <workItem from="1546999185465" duration="21738000" />
       <workItem from="1547026770479" duration="3689000" />
       <workItem from="1547093364255" duration="21822000" />
-      <workItem from="1547170039910" duration="8320000" />
+      <workItem from="1547170039910" duration="9110000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201585000" />
+    <option name="totallyTimeSpent" value="202375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-2" width="1932" height="1056" extended-state="0" />
@@ -2079,7 +2065,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.54338396" sideWeight="0.79754275" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35032538" sideWeight="0.79754275" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Mybatis datasource" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -2202,21 +2188,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-base/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="57" column="34" lean-forward="false" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/resources/application-dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/application-dev.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2607,14 +2578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/config/RedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/CloudZuulApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
@@ -2657,8 +2620,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application-dev.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="111">
+          <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/config/RedisConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/config/HystrixConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/java/com/insigma/cloud/zuul/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="27" />
           <folding />
         </state>
       </provider>

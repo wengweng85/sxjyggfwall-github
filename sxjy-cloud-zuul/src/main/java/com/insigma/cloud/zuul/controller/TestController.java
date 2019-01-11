@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  *
  */
 @RestController
-public class LogController {
+public class TestController {
     @Autowired
     LogService logService;
 

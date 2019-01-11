@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
  * Created by admin on 2018/11/16.
  */
 @Configurable
-public class HystrixConfiguration {
+public class HystrixConfig {
 
     @Bean(name = "hystrixRegistrationBean")
     public ServletRegistrationBean servletRegistrationBean() {
