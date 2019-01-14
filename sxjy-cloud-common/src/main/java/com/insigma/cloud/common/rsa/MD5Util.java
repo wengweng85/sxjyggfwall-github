@@ -43,8 +43,5 @@ public class MD5Util
     return resultString;
   }
 
-  public static void main(String[] args) {
-    String param="{\"app_user_syn_id\":\"123456\",\"mobile\":\"13767304752\",\"fullName\":\"ŒÃ…‹ª‘\",\"idNumber\":\"362326198702244545\"}";
-    System.out.println(MD5Encode("123456"));
-  }
+
 }

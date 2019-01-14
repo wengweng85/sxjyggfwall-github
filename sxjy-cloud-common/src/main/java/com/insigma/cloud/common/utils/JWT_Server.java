@@ -59,10 +59,6 @@ public class JWT_Server {
         }
     }
 
-    public static void main(String [] args){
-        System.out.println( new Date(1546934648905L).toLocaleString());
-        System.out.println( new Date().toLocaleString());
 
-    }
 
 }

@@ -223,9 +223,6 @@ public class SignUtils {
 		return s;
 	}
 
-	public static void main(String [] args){
-		String param=signature();
-		System.out.println(param);
-	}
+
 
 }

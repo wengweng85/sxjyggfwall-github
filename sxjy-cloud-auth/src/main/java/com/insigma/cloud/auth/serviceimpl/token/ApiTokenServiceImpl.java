@@ -59,9 +59,9 @@ public class ApiTokenServiceImpl implements ApiTokenService {
 
 
     @Override
-    public AccessToken getToken(SUser suser) throws Exception {
+    public AccessToken getToken(String username,String password) throws Exception {
         AccessToken accessToken = null;
-        SUser user = apiUserMapper.getUserByUsername(suser.getUsername(), suser.getPassword());
+        SUser user = apiUserMapper.getUserByUsername(username, password);
         if (user != null) {
             apiUserMapper.updateLogintimes(user);
             //给用户jwt加密生成token
@@ -89,7 +89,7 @@ public class ApiTokenServiceImpl implements ApiTokenService {
 
         //过滤掉按钮节点
         for(int i=0;i<permlist.size();i++) {
-            if(permlist.get(i).getPermtype().equals("3")){
+            if("3".equals(permlist.get(i).getPermtype())){
                 permlist.remove(i);
                 i--;
             }
@@ -98,7 +98,7 @@ public class ApiTokenServiceImpl implements ApiTokenService {
         //先将第一级节点过滤出来
         for(int i=0;i<permlist.size();i++) {
             //如果是第一级
-            if(permlist.get(i).getParentid().equals("0")||permlist.get(i).getParentid().matches("\\w{0,12}") ){
+            if("0".equals(permlist.get(i).getParentid())||permlist.get(i).getParentid().matches("\\w{0,12}") ){
                 firstTempPermlist.add(permlist.get(i));
                 permlist.remove(i);
                 i--;

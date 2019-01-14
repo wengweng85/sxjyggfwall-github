@@ -51,6 +51,8 @@
 	</dependencyManagement>
 
 	<build>
+		<!-- 应与application.properties(或application.yml)中context-path保持一致 -->
+		<finalName>api-server</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

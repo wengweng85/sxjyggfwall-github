@@ -41,12 +41,6 @@ public interface ApiUserMapper {
      */
     List<SPermission> findPermissionStr(String username);
 
-    /**
-     * »ñÈ¡²Ëµ¥Ê÷
-     * @param username
-     * @return
-     */
-    List<SPermission> findMenuTree(String username);
 
 
     /**

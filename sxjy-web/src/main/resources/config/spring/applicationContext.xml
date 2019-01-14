@@ -27,7 +27,8 @@
     <bean id="propertyConfigurer" class="com.insigma.config.CustomizedPropertyConfigurer">
         <property name="locations">
             <list>
-                <value>classpath:/config/app/app.properties</value>
+                  <value>classpath:/config/app/app.properties</value>
+                  <value>classpath:/config/shiro/shiro.properties</value>
             </list>
         </property>
     </bean>

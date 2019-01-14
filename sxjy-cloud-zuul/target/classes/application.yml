@@ -25,13 +25,13 @@ hystrix:
               thread:
                  timeoutInMilliseconds: 245000
 zuul:
-    sensitiveHeaders:  Cookie,Set-Cookie,Authorization
+    sensitiveHeaders:
     SendErrorFilter:
         error:
             disable: false
     SignatrueFilter:
         pre:
-          disable: false
+          disable: true
     TokenFilter:
         pre:
           disable: false

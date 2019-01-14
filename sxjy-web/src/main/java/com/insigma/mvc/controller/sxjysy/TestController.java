@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.insigma.http.HttpRequestUtils;
-import com.insigma.mvc.APIURLConstraints;
+import com.insigma.mvc.ApiUriContraints;
 import com.insigma.mvc.MvcHelper;
 import com.insigma.mvc.model.Ac11;
 import com.insigma.resolver.AppException;
@@ -42,7 +42,7 @@ public class TestController extends MvcHelper {
 	public Ac11 treedata(HttpServletRequest request, HttpServletResponse response,@PathVariable String id) throws AppException {
 	    HashMap map=new HashMap();
 	    map.put("eec001", id);
-	    Ac11 ac11 = (Ac11)httpRequestUtils.httpPostObject(APIURLConstraints.API_AC11_DETAIL, map,Ac11.class);
+	    Ac11 ac11 = (Ac11)httpRequestUtils.httpPostObject(ApiUriContraints.API_AC11_DETAIL, map,Ac11.class);
 		return ac11;
 	}
 }

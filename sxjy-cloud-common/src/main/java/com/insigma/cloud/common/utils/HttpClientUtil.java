@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ÀûÓÃHttpClient½øÐÐpostÇëÇóµÄ¹¤¾ßÀà
+ * ï¿½ï¿½ï¿½ï¿½HttpClientï¿½ï¿½ï¿½ï¿½postï¿½ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author xxx
  *
  */
@@ -65,7 +65,7 @@ public class HttpClientUtil {
 		try{
 			httpClient = new SSLClient();
 			httpPost = new HttpPost(url);
-			//ÉèÖÃ²ÎÊý
+			//ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½
 			List<NameValuePair> list = new ArrayList<NameValuePair>();
 			if(map!=null){
 				Iterator iterator = map.entrySet().iterator();
@@ -130,17 +130,17 @@ public class HttpClientUtil {
 	 * @return
 	 */
 	public static String doPostJson(String url, String json) {
-		// ´´½¨Httpclient¶ÔÏó
+		// ï¿½ï¿½ï¿½ï¿½Httpclientï¿½ï¿½ï¿½ï¿½
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		CloseableHttpResponse response = null;
 		String result = "";
 		try {
-			// ´´½¨Http PostÇëÇó
+			// ï¿½ï¿½ï¿½ï¿½Http Postï¿½ï¿½ï¿½ï¿½
 			HttpPost httpPost = new HttpPost(url);
-			// ´´½¨ÇëÇóÄÚÈÝ
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			StringEntity entity = new StringEntity(json, ContentType.APPLICATION_JSON);
 			httpPost.setEntity(entity);
-			// Ö´ÐÐhttpÇëÇó
+			// Ö´ï¿½ï¿½httpï¿½ï¿½ï¿½ï¿½
 			response = httpClient.execute(httpPost);
 			if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
 				HttpEntity resEntity = response.getEntity();
@@ -173,9 +173,5 @@ public class HttpClientUtil {
 		return doGet(url,CHARTSET);
 	}
 
-	public static void main(String [] a){
-		HttpClientUtil httpClientUtil = new HttpClientUtil();
-		httpClientUtil.doGet("http://www.epsoft.com.cn/", "utf-8");
-	}
 }
 

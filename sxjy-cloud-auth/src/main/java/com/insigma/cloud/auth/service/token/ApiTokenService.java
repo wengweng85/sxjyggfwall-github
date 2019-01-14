@@ -26,7 +26,7 @@ public interface ApiTokenService {
     List<SPermission> findMenuTree(String username);
 
     //ªÒ»°token
-    AccessToken getToken( SUser suser) throws Exception;
+    AccessToken getToken(String username,String password) throws Exception;
 
 
     

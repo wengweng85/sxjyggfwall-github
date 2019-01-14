@@ -69,8 +69,8 @@ public class ApiCodeTypeController  {
     })
     @RequestMapping(value = "/codetype/getChildrenByParentId", method = RequestMethod.POST)
     public AjaxReturnMsg getChildrenByParentId(@RequestBody CodeValue codevalue) throws Exception {
-        String code_value = new String(codevalue.getCode_value().getBytes("iso-8859-1"), "utf-8");
-        return AjaxReturnMsg.success(apiCodeTypeService.getChildrenByParentId(codevalue.getCode_type(), code_value));
+        String codeValue = new String(codevalue.getCode_value().getBytes("iso-8859-1"), "utf-8");
+        return AjaxReturnMsg.success(apiCodeTypeService.getChildrenByParentId(codevalue.getCode_type(), codeValue));
     }
 
 

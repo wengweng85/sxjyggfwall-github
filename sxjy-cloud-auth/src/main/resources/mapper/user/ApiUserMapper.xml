@@ -15,8 +15,10 @@
         FROM
             v_s_user a
         WHERE
-        a.username = #{username} AND
-        a.password = #{password}
+        a.username = #{username}
+        <if test="password!=null">
+            and a.password = #{password}
+        </if>
     </select>
 
     <!-- 个人用户角色查询  -->

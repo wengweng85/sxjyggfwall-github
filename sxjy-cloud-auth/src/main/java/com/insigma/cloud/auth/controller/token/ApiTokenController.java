@@ -37,13 +37,14 @@ public class ApiTokenController {
     @ApiOperation(value = "获取认证token", notes = "获取认证token")
     @RequestMapping(value = "/token", method = RequestMethod.POST)
     public AjaxReturnMsg gettoken(@RequestBody SUser suser) throws Exception {
-        AccessToken accessToken=apiLoginService.getToken(suser);
+        AccessToken accessToken=apiLoginService.getToken(suser.getUsername(),suser.getPassword());
         if(accessToken!=null){
             return AjaxReturnMsg.success(accessToken);
         }else{
             return AjaxReturnMsg.fail("认证失败");
         }
     }
+
 
     /**
      * 获取认证token及菜单
@@ -53,7 +54,7 @@ public class ApiTokenController {
     @ApiOperation(value = "获取认证token及菜单", notes = "获取认证token及菜单")
     @RequestMapping(value = "/tokenmenus", method = RequestMethod.POST)
     public AjaxReturnMsg tokenAndmenus(@RequestBody SUser suser) throws Exception {
-        AccessToken accessToken=apiLoginService.getToken(suser);
+        AccessToken accessToken=apiLoginService.getToken(suser.getUsername(),suser.getPassword());
         if(accessToken!=null){
             List<SPermission> menuTree=apiLoginService.findMenuTree(suser.getUsername());
             HashMap map=new HashMap();
@@ -65,6 +66,7 @@ public class ApiTokenController {
             return AjaxReturnMsg.fail("认证失败");
         }
     }
+
 
     /**
      * 获取菜单

@@ -10,6 +10,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * RedisConfig
+ * @author admin
  */
 @Configuration
 public class RedisConfig {
@@ -17,8 +18,8 @@ public class RedisConfig {
     public RedisTemplate<String, Object> getRedisTemplate( RedisConnectionFactory factory) {
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<String, Object>();
         redisTemplate.setConnectionFactory(factory);
-        redisTemplate.setKeySerializer(new StringRedisSerializer()); // key的序列化类型
-        redisTemplate.setValueSerializer(new RedisObjectSerializer()); // value的序列化类型
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setValueSerializer(new RedisObjectSerializer());
         return redisTemplate;
     }
 }

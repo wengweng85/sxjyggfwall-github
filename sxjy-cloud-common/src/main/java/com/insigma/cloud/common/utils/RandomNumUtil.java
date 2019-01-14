@@ -5,7 +5,7 @@ import java.util.Random;
 public class RandomNumUtil {
 
 	/**
-	 * Éú³ÉÑéÖ¤Âë
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½
 	 * @param size
 	 * @return
 	 */
@@ -19,7 +19,7 @@ public class RandomNumUtil {
 		return sb.toString();
 	}
 
-	public static String getRandomString(int length) { //length±íÊ¾Éú³É×Ö·û´®µÄ³¤¶È
+	public static String getRandomString(int length) { //lengthï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½
 		String base = "abcdefghijklmnopqrstuvwxyz0123456789";
 		Random random = new Random();
 		StringBuffer sb = new StringBuffer();
@@ -29,8 +29,5 @@ public class RandomNumUtil {
 		}
 		return sb.toString();
 	}
-	
-	public static void main(String [] a){
-		System.out.println(getRandomNum(6));
-	}
+
 }

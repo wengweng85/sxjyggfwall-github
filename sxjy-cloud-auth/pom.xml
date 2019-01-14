@@ -48,12 +48,17 @@
             <version>1.1.1</version>
         </dependency>
 
+       <!-- <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>-->
+
         <dependency>
             <groupId>com.insigma</groupId>
             <artifactId>sxjy-cloud-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
 
     </dependencies>
 
@@ -71,7 +76,7 @@
 
     <build>
         <!-- 应与application.properties(或application.yml)中context-path保持一致 -->
-        <finalName>sxjyggfw-cloud-auth</finalName>
+        <finalName>api-auth</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

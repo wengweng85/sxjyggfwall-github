@@ -402,14 +402,4 @@ public class EncryptUtil {
         return hs.toUpperCase().substring(0,16);
     }
 
-
-    /**
-     * main
-     * @param args
-     * @throws Exception
-     */
-    public static void main(String[] args) throws Exception{
-        String inputStr = "{\"aac002\":\"420624198411037915\"}";
-        System.out.println(encryptAndSign(inputStr));
-    }
 }

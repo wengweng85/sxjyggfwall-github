@@ -14,7 +14,7 @@ import java.util.List;
 @Mapper
 public interface ApiCodeTypeMapper {
 
-	CodeType  getCodeTypeInfo(String code_type);
+	CodeType  getCodeTypeInfo(String codeType);
 	
     List<CodeType> getInitcodetypeList();
 
