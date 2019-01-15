@@ -15,6 +15,7 @@
         <module name="sxjy-cloud-server" />
         <module name="sxjy-cloud-sxjysy" />
         <module name="sxjy-cloud-zuul" />
+        <module name="wxjy-web-resource" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -46,6 +47,7 @@
       <module name="sxjyggfw-common-model" target="1.5" />
       <module name="sxjyggfwall" target="1.5" />
       <module name="wxjy-web-common" target="1.7" />
+      <module name="wxjy-web-resource" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

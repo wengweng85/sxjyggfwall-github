@@ -53,8 +53,8 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
     </context:component-scan>
 
-    <!-- 对静态资源文件的访问  方案一 （二选一） -->
-    <mvc:default-servlet-handler/>
+    <!-- 静态资源访问jar包 -->
+    <mvc:resources mapping="/resource/**" location="classpath:/META-INF/resources/resource/"></mvc:resources>
     
      <mvc:interceptors>
         <mvc:interceptor>
