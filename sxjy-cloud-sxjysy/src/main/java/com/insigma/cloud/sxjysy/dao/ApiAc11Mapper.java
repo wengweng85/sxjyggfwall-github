@@ -1,4 +1,4 @@
-package com.insigma.cloud.sxjyjysy.dao;
+package com.insigma.cloud.sxjysy.dao;
 
 import com.insigma.mvc.model.Ac11;
 import org.apache.ibatis.annotations.Mapper;

@@ -1,9 +1,9 @@
-package com.insigma.cloud.sxjyjysy.serviceimpl;
+package com.insigma.cloud.sxjysy.serviceimpl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.insigma.cloud.sxjyjysy.dao.ApiAc11Mapper;
-import com.insigma.cloud.sxjyjysy.service.ApiAc11Service;
+import com.insigma.cloud.sxjysy.dao.ApiAc11Mapper;
+import com.insigma.cloud.sxjysy.service.ApiAc11Service;
 import com.insigma.mvc.model.Ac11;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

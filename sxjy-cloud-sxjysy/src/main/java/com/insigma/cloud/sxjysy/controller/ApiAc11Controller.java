@@ -1,10 +1,9 @@
-package com.insigma.cloud.sxjyjysy.controller;
+package com.insigma.cloud.sxjysy.controller;
 
 import com.insigma.cloud.common.annotation.UserLog;
-import com.insigma.cloud.common.context.SUserUtil;
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.cloud.common.exception.AppException;
-import com.insigma.cloud.sxjyjysy.service.ApiAc11Service;
+import com.insigma.cloud.sxjysy.service.ApiAc11Service;
 import com.insigma.mvc.model.Ac11;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -13,9 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.annotation.Resource;
 

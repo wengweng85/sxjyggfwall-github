@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="sxjy-cloud-auth" />
         <module name="sxjy-cloud-base" />
+        <module name="sxjy-cloud-catalogue" />
         <module name="sxjy-cloud-common" />
         <module name="sxjy-cloud-config" />
         <module name="sxjy-cloud-config-client" />
@@ -15,6 +16,7 @@
         <module name="sxjy-cloud-server" />
         <module name="sxjy-cloud-sxjysy" />
         <module name="sxjy-cloud-zuul" />
+        <module name="sxjyggfw-common-model" />
         <module name="wxjy-web-resource" />
       </profile>
     </annotationProcessing>
@@ -35,6 +37,7 @@
       <module name="springdata" target="1.8" />
       <module name="sxjy-cloud-auth" target="1.8" />
       <module name="sxjy-cloud-base" target="1.8" />
+      <module name="sxjy-cloud-catalogue" target="1.8" />
       <module name="sxjy-cloud-common" target="1.8" />
       <module name="sxjy-cloud-config" target="1.8" />
       <module name="sxjy-cloud-config-client" target="1.8" />

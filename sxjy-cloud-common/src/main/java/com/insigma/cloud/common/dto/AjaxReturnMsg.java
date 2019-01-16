@@ -34,8 +34,6 @@ public class AjaxReturnMsg  {
     private int code;
     @ApiModelProperty(name="业务返回对象集合",value="业务返回对象集合")
     private Object obj; //对象
-    @ApiModelProperty(name="分页对象之总数",value="分页对象之总数")
-    private Long total; //分页面对象之总数
 
     public int getSyscode() {
         return syscode;
@@ -75,14 +73,6 @@ public class AjaxReturnMsg  {
 
     public void setObj(Object obj) {
         this.obj = obj;
-    }
-
-    public Long getTotal() {
-        return total;
-    }
-
-    public void setTotal(Long total) {
-        this.total = total;
     }
 
 
@@ -173,7 +163,6 @@ public class AjaxReturnMsg  {
         AjaxReturnMsg dto = new AjaxReturnMsg();
         dto.setSuccess(true);
         dto.setObj(pageinfo);
-        dto.setTotal(pageinfo.getTotal());
         logger.debug(JSONUtils.beanToJson(dto));
         return dto;
     }

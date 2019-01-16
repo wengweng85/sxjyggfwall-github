@@ -20,6 +20,8 @@
 	<module>sxjy-cloud-base</module>
 	<module>sxjy-cloud-sxjysy</module>
 
+    <module>sxjy-cloud-catalogue</module>
+
     <!--cloud-config-->
     <module>sxjy-cloud-config-server</module>
     <module>sxjy-cloud-config-client</module>

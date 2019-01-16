@@ -29,3 +29,5 @@ sxjy-cloud-view
 .idea
 sxjy-web
  
+*.class
+*.class

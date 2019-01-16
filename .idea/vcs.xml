@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../陕西公共服务for银海/sxjyggfw-common-model" vcs="svn" />
   </component>
 </project>

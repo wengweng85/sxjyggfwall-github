@@ -7,9 +7,6 @@ spring:
      multipart:
        max-file-size: 30Mb
        max-request-size: 30Mb
-  jackson:
-       date-format: yyyy-MM-dd
-       time-zone: GMT+8
 mybatis:
   mapper-locations: mapper/**/*Mapper.xml
   typeAliasesPackage: com.insigma.mvc.model

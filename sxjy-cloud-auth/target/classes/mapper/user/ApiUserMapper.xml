@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.insigma.cloud.auth.dao.user.ApiUserMapper">
-
     <!-- 根据用户名查询用户信息 -->
     <select id="getUserByUsername" parameterType="String" resultType="SUser">
         SELECT
@@ -16,9 +15,7 @@
             v_s_user a
         WHERE
         a.username = #{username}
-        <if test="password!=null">
-            and a.password = #{password}
-        </if>
+        and a.password = #{password}
     </select>
 
     <!-- 个人用户角色查询  -->

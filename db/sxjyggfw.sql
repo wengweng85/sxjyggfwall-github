@@ -1,10 +1,36 @@
----------------------------------------------
--- Export file for user SXJYGGFW@ORCL101   --
--- Created by wengsh on 2019/1/9, 14:36:10 --
----------------------------------------------
+----------------------------------------------
+-- Export file for user SXJYGGFW@ORCL101    --
+-- Created by wengsh on 2019/1/15, 18:12:33 --
+----------------------------------------------
 
 set define off
 spool sxjyggfw.log
+
+prompt
+prompt Creating table CODE_TYPE_SORT
+prompt =============================
+prompt
+create table CODE_TYPE_SORT
+(
+  type_sort_id    VARCHAR2(36) not null,
+  type_sort_code  VARCHAR2(36),
+  type_sort_name  VARCHAR2(50),
+  type_sort_desc  VARCHAR2(200),
+  type_sort_order NUMBER
+)
+;
+comment on table CODE_TYPE_SORT
+  is '[0078]业务代码类型表';
+comment on column CODE_TYPE_SORT.type_sort_id
+  is '代码类型编号(编码规则:uuid)';
+comment on column CODE_TYPE_SORT.type_sort_code
+  is '代码类型编码(编码规则:6-12位字母)';
+comment on column CODE_TYPE_SORT.type_sort_name
+  is '代码类型名称';
+comment on column CODE_TYPE_SORT.type_sort_desc
+  is '代码类型描述';
+comment on column CODE_TYPE_SORT.type_sort_order
+  is '代码类型组内排序号';
 
 prompt
 prompt Creating table ITEM_INTERFACE_CONFIG
@@ -840,6 +866,872 @@ alter table SER_SCORE
   add primary key (SCORE_ID);
 
 prompt
+prompt Creating table SYS_API_CHANNEL
+prompt ==============================
+prompt
+create table SYS_API_CHANNEL
+(
+  channel_id       VARCHAR2(36) not null,
+  channel_code     VARCHAR2(36),
+  channel_name     VARCHAR2(100),
+  channel_type     VARCHAR2(36),
+  channel_describe VARCHAR2(100),
+  channel_icon     VARCHAR2(100),
+  channel_status   VARCHAR2(10),
+  userid           VARCHAR2(100),
+  addtime          DATE,
+  auditid          VARCHAR2(100),
+  audittime        DATE,
+  channel_appkey   VARCHAR2(100)
+)
+;
+comment on table SYS_API_CHANNEL
+  is '接口管理之渠道基本信息表';
+comment on column SYS_API_CHANNEL.channel_id
+  is '渠道基本信息表编号,生成规则uuid';
+comment on column SYS_API_CHANNEL.channel_code
+  is '渠道编码编码规则QD+序列';
+comment on column SYS_API_CHANNEL.channel_name
+  is '渠道名称';
+comment on column SYS_API_CHANNEL.channel_type
+  is '渠道类型';
+comment on column SYS_API_CHANNEL.channel_describe
+  is '渠道描述';
+comment on column SYS_API_CHANNEL.channel_icon
+  is '渠道图标';
+comment on column SYS_API_CHANNEL.channel_status
+  is '渠道状态(待审核、开启、注销)';
+comment on column SYS_API_CHANNEL.userid
+  is '经办人编码';
+comment on column SYS_API_CHANNEL.addtime
+  is '经办时间';
+comment on column SYS_API_CHANNEL.auditid
+  is '审核人';
+comment on column SYS_API_CHANNEL.audittime
+  is '审核时间';
+comment on column SYS_API_CHANNEL.channel_appkey
+  is '渠道KEY';
+alter table SYS_API_CHANNEL
+  add constraint PK_SYS_API_CHANNEL primary key (CHANNEL_ID);
+
+prompt
+prompt Creating table SYS_API_CHANNEL_INTERFACE
+prompt ========================================
+prompt
+create table SYS_API_CHANNEL_INTERFACE
+(
+  channel_interface_id VARCHAR2(36) not null,
+  channel_id           VARCHAR2(36),
+  interface_id         VARCHAR2(36),
+  userid               VARCHAR2(100),
+  addtime              DATE,
+  isvalid              VARCHAR2(36)
+)
+;
+comment on table SYS_API_CHANNEL_INTERFACE
+  is '接口管理之渠道与接口关联表';
+comment on column SYS_API_CHANNEL_INTERFACE.channel_interface_id
+  is '关联表编号(uuid)';
+comment on column SYS_API_CHANNEL_INTERFACE.channel_id
+  is '渠道编号';
+comment on column SYS_API_CHANNEL_INTERFACE.interface_id
+  is '接口编号';
+comment on column SYS_API_CHANNEL_INTERFACE.userid
+  is '经办人编码';
+comment on column SYS_API_CHANNEL_INTERFACE.addtime
+  is '经办时间';
+comment on column SYS_API_CHANNEL_INTERFACE.isvalid
+  is '是否有效';
+alter table SYS_API_CHANNEL_INTERFACE
+  add constraint PK_SYS_API_CHANNEL_INTERFACE primary key (CHANNEL_INTERFACE_ID);
+
+prompt
+prompt Creating table SYS_API_INTERFACE
+prompt ================================
+prompt
+create table SYS_API_INTERFACE
+(
+  interface_id          VARCHAR2(36) not null,
+  interface_code        VARCHAR2(100) not null,
+  interface_url         VARCHAR2(200) not null,
+  interface_type        VARCHAR2(10) not null,
+  interface_name        VARCHAR2(200) not null,
+  isoffical             VARCHAR2(10) not null,
+  interface_network     VARCHAR2(10) not null,
+  interface_potocol     VARCHAR2(100),
+  interface_status      VARCHAR2(10),
+  userid                VARCHAR2(100),
+  addtime               DATE,
+  auditid               VARCHAR2(100),
+  audittime             DATE,
+  interface_detail_type VARCHAR2(10)
+)
+;
+comment on table SYS_API_INTERFACE
+  is '服务管理-服务基本信息表';
+comment on column SYS_API_INTERFACE.interface_id
+  is '服务基本信息编号(uuid)';
+comment on column SYS_API_INTERFACE.interface_code
+  is '服务基本信息编码生成规则JK+序列';
+comment on column SYS_API_INTERFACE.interface_url
+  is '服务地址';
+comment on column SYS_API_INTERFACE.interface_type
+  is '服务大类类型';
+comment on column SYS_API_INTERFACE.interface_name
+  is '服务名称';
+comment on column SYS_API_INTERFACE.isoffical
+  is '是否正式接口服务';
+comment on column SYS_API_INTERFACE.interface_network
+  is '服务支持网络类型(内网、互联网)';
+comment on column SYS_API_INTERFACE.interface_potocol
+  is '服务协议(rest、webservice、socket、hessian、dubbo)';
+comment on column SYS_API_INTERFACE.interface_status
+  is '服务状态(待审核、开启、注销)';
+comment on column SYS_API_INTERFACE.userid
+  is '经办人编码';
+comment on column SYS_API_INTERFACE.addtime
+  is '经办时间';
+comment on column SYS_API_INTERFACE.auditid
+  is '审核人';
+comment on column SYS_API_INTERFACE.audittime
+  is '审核时间';
+comment on column SYS_API_INTERFACE.interface_detail_type
+  is '服务小类类型';
+alter table SYS_API_INTERFACE
+  add constraint PK_S_API_INTERFACE primary key (INTERFACE_ID);
+
+prompt
+prompt Creating table SYS_BUS_FILE_RECORD
+prompt ==================================
+prompt
+create table SYS_BUS_FILE_RECORD
+(
+  bus_uuid      VARCHAR2(36) not null,
+  file_uuid     VARCHAR2(36) not null,
+  file_bus_id   VARCHAR2(36) not null,
+  file_bus_type VARCHAR2(36) not null,
+  bus_status    VARCHAR2(36),
+  bus_addtime   DATE
+)
+;
+comment on table SYS_BUS_FILE_RECORD
+  is '系统管理之业务文件记录表';
+comment on column SYS_BUS_FILE_RECORD.bus_uuid
+  is '业务文件记录表编号';
+comment on column SYS_BUS_FILE_RECORD.file_uuid
+  is '文件上传记录表编号';
+comment on column SYS_BUS_FILE_RECORD.file_bus_id
+  is '文件所属业务编号';
+comment on column SYS_BUS_FILE_RECORD.file_bus_type
+  is '文件所属业务业务类型';
+comment on column SYS_BUS_FILE_RECORD.bus_status
+  is '文件上传状态';
+comment on column SYS_BUS_FILE_RECORD.bus_addtime
+  is '业务发生时间';
+alter table SYS_BUS_FILE_RECORD
+  add constraint PK_SYS_BUS_FILE_RECORD primary key (BUS_UUID);
+
+prompt
+prompt Creating table SYS_ERRORLOG
+prompt ===========================
+prompt
+create table SYS_ERRORLOG
+(
+  logid         VARCHAR2(36) not null,
+  logtime       DATE,
+  stackmsg      CLOB,
+  message       VARCHAR2(2000),
+  exceptiontype VARCHAR2(100),
+  usergent      VARCHAR2(1000),
+  ipaddr        VARCHAR2(200),
+  referer       VARCHAR2(1000),
+  url           VARCHAR2(1000),
+  userid        VARCHAR2(32),
+  cookie        VARCHAR2(1000)
+)
+;
+comment on table SYS_ERRORLOG
+  is '系统管理之网站运行异常日志';
+comment on column SYS_ERRORLOG.logid
+  is '日志编号(uuid)';
+comment on column SYS_ERRORLOG.logtime
+  is '发生时间';
+comment on column SYS_ERRORLOG.stackmsg
+  is '异常栈信息';
+comment on column SYS_ERRORLOG.message
+  is '日志标题';
+comment on column SYS_ERRORLOG.exceptiontype
+  is '异常类型';
+comment on column SYS_ERRORLOG.usergent
+  is 'user-agent';
+comment on column SYS_ERRORLOG.ipaddr
+  is '客户端ip地址';
+comment on column SYS_ERRORLOG.referer
+  is 'refer';
+comment on column SYS_ERRORLOG.url
+  is '请求的地址';
+comment on column SYS_ERRORLOG.userid
+  is '当前操作人员id';
+comment on column SYS_ERRORLOG.cookie
+  is 'cookie';
+alter table SYS_ERRORLOG
+  add constraint PK_SYS_ERRORLOG primary key (LOGID);
+
+prompt
+prompt Creating table SYS_EXCELTYPE
+prompt ============================
+prompt
+create table SYS_EXCELTYPE
+(
+  businesstype VARCHAR2(20) not null,
+  typename     VARCHAR2(100) not null,
+  vsbeanname   VARCHAR2(100) not null,
+  mincolumns   VARCHAR2(100)
+)
+;
+comment on table SYS_EXCELTYPE
+  is '系统管理之excel数据导入状态表上传EXCEL文件业务类型参数表';
+comment on column SYS_EXCELTYPE.businesstype
+  is 'excel上传业务类型编号';
+comment on column SYS_EXCELTYPE.typename
+  is 'excel上传业务类型名称';
+comment on column SYS_EXCELTYPE.vsbeanname
+  is 'excel解析处理业务类名 如fuPingExcelImportService';
+comment on column SYS_EXCELTYPE.mincolumns
+  is 'excel解析列宽度 如 6';
+alter table SYS_EXCELTYPE
+  add constraint PK_SYS_EXCELTYPE primary key (BUSINESSTYPE);
+
+prompt
+prompt Creating table SYS_EXCEL_BATCH
+prompt ==============================
+prompt
+create table SYS_EXCEL_BATCH
+(
+  excel_batch_id            VARCHAR2(36) not null,
+  excel_batch_number        VARCHAR2(36),
+  excel_batch_total_count   NUMBER(10),
+  excel_batch_error_count   NUMBER(10),
+  excel_batch_begin_time    DATE,
+  excel_batch_end_time      DATE,
+  excel_batch_cost          NUMBER(10),
+  excel_batch_file_path     VARCHAR2(500),
+  excel_batch_file_length   NUMBER(10),
+  excel_batch_excel_type    VARCHAR2(36),
+  excel_batch_aae011        VARCHAR2(20),
+  excel_batch_status        VARCHAR2(3),
+  excel_batch_data_status   NUMBER(3),
+  excel_batch_rt_code       VARCHAR2(20),
+  excel_batch_rt_msg        VARCHAR2(200),
+  excel_batch_file_name     VARCHAR2(200),
+  excel_error_file_path     VARCHAR2(200),
+  excel_error_file_download VARCHAR2(200)
+)
+;
+comment on table SYS_EXCEL_BATCH
+  is '系统管理之excel数据导入状态表';
+comment on column SYS_EXCEL_BATCH.excel_batch_id
+  is 'excel导入状态表编号(uuid)';
+comment on column SYS_EXCEL_BATCH.excel_batch_number
+  is 'excel导入批次号。生成规则年月日时分秒毫秒';
+comment on column SYS_EXCEL_BATCH.excel_batch_total_count
+  is 'excel导入数据总量';
+comment on column SYS_EXCEL_BATCH.excel_batch_error_count
+  is 'excel导入数据错误数量';
+comment on column SYS_EXCEL_BATCH.excel_batch_begin_time
+  is 'excel导入数据开始时间';
+comment on column SYS_EXCEL_BATCH.excel_batch_end_time
+  is 'excel导入数据结束时间';
+comment on column SYS_EXCEL_BATCH.excel_batch_cost
+  is 'excel导入数据耗费时间(秒）';
+comment on column SYS_EXCEL_BATCH.excel_batch_file_path
+  is 'excel导入文件路径';
+comment on column SYS_EXCEL_BATCH.excel_batch_file_length
+  is 'excel导入文件大小';
+comment on column SYS_EXCEL_BATCH.excel_batch_excel_type
+  is 'excel导入类型';
+comment on column SYS_EXCEL_BATCH.excel_batch_aae011
+  is 'excel导入经办人';
+comment on column SYS_EXCEL_BATCH.excel_batch_status
+  is 'excel导入状态导入步骤(-1默认状态 0转换xlsx 1导入临时表 2解析临时表 3导入完成 4导入失败)';
+comment on column SYS_EXCEL_BATCH.excel_batch_data_status
+  is 'excel导入数据状态(0-100)';
+comment on column SYS_EXCEL_BATCH.excel_batch_rt_code
+  is 'excel导入数据校验是否成功';
+comment on column SYS_EXCEL_BATCH.excel_batch_rt_msg
+  is 'excel导入数据校验错误原因';
+comment on column SYS_EXCEL_BATCH.excel_batch_file_name
+  is 'excel导入文件原文件名';
+comment on column SYS_EXCEL_BATCH.excel_error_file_path
+  is 'excel导出文件文件路径';
+comment on column SYS_EXCEL_BATCH.excel_error_file_download
+  is 'excel导出文件文件生成状（0正在生成 1生成成功可下载 2 生成失败）';
+alter table SYS_EXCEL_BATCH
+  add constraint PK_SYS_EXCEL_BATCH primary key (EXCEL_BATCH_ID);
+
+prompt
+prompt Creating table SYS_FILE_RECORD
+prompt ==============================
+prompt
+create table SYS_FILE_RECORD
+(
+  file_uuid     VARCHAR2(36) not null,
+  file_name     VARCHAR2(200),
+  file_length   VARCHAR2(32),
+  file_addtime  DATE,
+  file_path     VARCHAR2(200),
+  file_status   VARCHAR2(32),
+  file_md5      VARCHAR2(32),
+  file_type     VARCHAR2(32),
+  file_bus_id   VARCHAR2(32),
+  file_bus_type VARCHAR2(32)
+)
+;
+comment on table SYS_FILE_RECORD
+  is '系统管理之文件上传记录表';
+comment on column SYS_FILE_RECORD.file_uuid
+  is '文件上传记录表编号(uuid)';
+comment on column SYS_FILE_RECORD.file_name
+  is '文件名称';
+comment on column SYS_FILE_RECORD.file_length
+  is '文件大小单位(byte)';
+comment on column SYS_FILE_RECORD.file_addtime
+  is '文件上传时间';
+comment on column SYS_FILE_RECORD.file_path
+  is '文件上传角色路径';
+comment on column SYS_FILE_RECORD.file_status
+  is '文件状态(0无效 1有效审核通过)';
+comment on column SYS_FILE_RECORD.file_md5
+  is '文件md5,用于判断是否重复上传';
+comment on column SYS_FILE_RECORD.file_type
+  is '文件类型';
+comment on column SYS_FILE_RECORD.file_bus_id
+  is '文件所属业务编号';
+comment on column SYS_FILE_RECORD.file_bus_type
+  is '文件所属业务业务类型';
+alter table SYS_FILE_RECORD
+  add constraint PK_SYS_FILE_RECORD primary key (FILE_UUID);
+
+prompt
+prompt Creating table SYS_GRID
+prompt =======================
+prompt
+create table SYS_GRID
+(
+  abz182     VARCHAR2(20) not null,
+  aab301     VARCHAR2(20),
+  ab_bf022   VARCHAR2(100),
+  abz181     VARCHAR2(20),
+  aae005     VARCHAR2(30),
+  ab_bf023   VARCHAR2(100),
+  ab_bf026   VARCHAR2(3),
+  ab_bf027   NUMBER(8),
+  aae100     VARCHAR2(3),
+  aae006     VARCHAR2(100),
+  aae004     VARCHAR2(20),
+  ab_bf024   VARCHAR2(100),
+  abf013     NUMBER(8),
+  abf014     NUMBER(8),
+  ab_bf025   VARCHAR2(20),
+  abf057     VARCHAR2(20),
+  ab_bf023_1 VARCHAR2(300),
+  isgrid     VARCHAR2(3)
+)
+;
+comment on table SYS_GRID
+  is '业务表之网格信息表';
+comment on column SYS_GRID.abz182
+  is '网格编号';
+comment on column SYS_GRID.aab301
+  is '行政区划-对应s_group表groupid';
+comment on column SYS_GRID.ab_bf022
+  is '上级网格编号';
+comment on column SYS_GRID.abz181
+  is '所属机构';
+comment on column SYS_GRID.aae005
+  is '联系电话';
+comment on column SYS_GRID.ab_bf023
+  is '网格名称';
+comment on column SYS_GRID.ab_bf026
+  is '网格级别';
+comment on column SYS_GRID.ab_bf027
+  is '专委数';
+comment on column SYS_GRID.aae100
+  is '有效标志';
+comment on column SYS_GRID.aae006
+  is '联系地址';
+comment on column SYS_GRID.aae004
+  is '联系人';
+comment on column SYS_GRID.ab_bf024
+  is '监控范围';
+comment on column SYS_GRID.abf013
+  is '人数';
+comment on column SYS_GRID.abf014
+  is '网格人员数';
+comment on column SYS_GRID.ab_bf025
+  is '网格负责人';
+comment on column SYS_GRID.abf057
+  is '排序编号';
+comment on column SYS_GRID.ab_bf023_1
+  is '网格名称（定位用）';
+comment on column SYS_GRID.isgrid
+  is '是否是网格';
+create index IDX_S_GRID on SYS_GRID (AB_BF022);
+alter table SYS_GRID
+  add constraint PK_SYS_GRID primary key (ABZ182);
+
+prompt
+prompt Creating table SYS_GROUP_TABLE
+prompt ==============================
+prompt
+create table SYS_GROUP_TABLE
+(
+  groupid      VARCHAR2(32) not null,
+  description  VARCHAR2(500),
+  parentid     VARCHAR2(32),
+  org          VARCHAR2(8),
+  districtcode VARCHAR2(32),
+  license      VARCHAR2(20),
+  groupname    VARCHAR2(100) not null,
+  principal    VARCHAR2(32),
+  shortname    VARCHAR2(50),
+  address      VARCHAR2(150),
+  tel          VARCHAR2(30),
+  linkman      VARCHAR2(30),
+  grouptype    VARCHAR2(3),
+  chargedept   VARCHAR2(50),
+  otherinfo    VARCHAR2(2000),
+  owner        VARCHAR2(32),
+  status       CHAR(1),
+  createdate   DATE,
+  grouplevel   VARCHAR2(32)
+)
+;
+comment on table SYS_GROUP_TABLE
+  is '系统管理之机构信息表';
+comment on column SYS_GROUP_TABLE.groupid
+  is '机构ID';
+comment on column SYS_GROUP_TABLE.description
+  is '用户组描述';
+comment on column SYS_GROUP_TABLE.parentid
+  is '上级结构ID';
+comment on column SYS_GROUP_TABLE.org
+  is '系统机构编码';
+comment on column SYS_GROUP_TABLE.districtcode
+  is '地区代码';
+comment on column SYS_GROUP_TABLE.license
+  is '机构组织机构编码';
+comment on column SYS_GROUP_TABLE.groupname
+  is '用户组名称';
+comment on column SYS_GROUP_TABLE.principal
+  is '机构负责人';
+comment on column SYS_GROUP_TABLE.shortname
+  is '简称';
+comment on column SYS_GROUP_TABLE.address
+  is '地址';
+comment on column SYS_GROUP_TABLE.tel
+  is '电话';
+comment on column SYS_GROUP_TABLE.linkman
+  is '联系人';
+comment on column SYS_GROUP_TABLE.grouptype
+  is '主机构类型(1行政区划 2残联机构)';
+comment on column SYS_GROUP_TABLE.chargedept
+  is '主管部门';
+comment on column SYS_GROUP_TABLE.otherinfo
+  is '其他信息';
+comment on column SYS_GROUP_TABLE.owner
+  is '创建者';
+comment on column SYS_GROUP_TABLE.status
+  is '状态';
+comment on column SYS_GROUP_TABLE.createdate
+  is '创建时间';
+comment on column SYS_GROUP_TABLE.grouplevel
+  is '机构等级(1省、2市、3区县 4镇街道 5村社区)';
+alter table SYS_GROUP_TABLE
+  add constraint PK_SYS_GROUP primary key (GROUPID);
+
+prompt
+prompt Creating table SYS_LOG
+prompt ======================
+prompt
+create table SYS_LOG
+(
+  logid         VARCHAR2(36) not null,
+  logtype       VARCHAR2(20),
+  message       VARCHAR2(2000),
+  logtime       DATE,
+  cost          VARCHAR2(100),
+  stackmsg      CLOB,
+  exceptiontype VARCHAR2(100),
+  usergent      VARCHAR2(1000) not null,
+  ipaddr        VARCHAR2(200) not null,
+  referer       VARCHAR2(1000),
+  url           VARCHAR2(1000) not null,
+  userid        VARCHAR2(36),
+  cookie        VARCHAR2(1000),
+  appkey        VARCHAR2(1000),
+  method        VARCHAR2(20) not null,
+  success       VARCHAR2(1000),
+  responsemsg   CLOB,
+  queryparam    CLOB,
+  token         VARCHAR2(4000),
+  interfacetype VARCHAR2(20)
+)
+;
+comment on table SYS_LOG
+  is '就业公共服务业务表之接口访问日志记录表';
+comment on column SYS_LOG.logid
+  is '日志编号(uuid)';
+comment on column SYS_LOG.logtype
+  is '日志操作类型代码';
+comment on column SYS_LOG.message
+  is '日志标题';
+comment on column SYS_LOG.logtime
+  is '发生时间';
+comment on column SYS_LOG.cost
+  is '请求耗费时间(毫秒)';
+comment on column SYS_LOG.stackmsg
+  is '异常栈信息';
+comment on column SYS_LOG.exceptiontype
+  is '异常类型名称';
+comment on column SYS_LOG.usergent
+  is '代理信息';
+comment on column SYS_LOG.ipaddr
+  is '客户端ip地址';
+comment on column SYS_LOG.referer
+  is '地址来源';
+comment on column SYS_LOG.url
+  is '请求的地址';
+comment on column SYS_LOG.userid
+  is '当前操作人员编号';
+comment on column SYS_LOG.cookie
+  is '状态码';
+comment on column SYS_LOG.appkey
+  is '接口key';
+comment on column SYS_LOG.method
+  is '请求方法类型名称';
+comment on column SYS_LOG.success
+  is '请求是否成功代码';
+comment on column SYS_LOG.responsemsg
+  is '返回信息';
+comment on column SYS_LOG.queryparam
+  is '请求参数信息';
+comment on column SYS_LOG.token
+  is '请求jwt认证码';
+comment on column SYS_LOG.interfacetype
+  is '接口类型代码';
+alter table SYS_LOG
+  add constraint PK_SYS_LOG primary key (LOGID);
+
+prompt
+prompt Creating table SYS_LOGININF
+prompt ===========================
+prompt
+create table SYS_LOGININF
+(
+  loginhash VARCHAR2(32),
+  logintime DATE,
+  ip        VARCHAR2(100),
+  usergent  VARCHAR2(1000),
+  sessionid VARCHAR2(100)
+)
+;
+comment on table SYS_LOGININF
+  is '系统管理之登录状态记录表';
+comment on column SYS_LOGININF.loginhash
+  is '登录信息hash信息sessionid+ip+agent';
+comment on column SYS_LOGININF.logintime
+  is '登录时间';
+comment on column SYS_LOGININF.ip
+  is '用户ip';
+comment on column SYS_LOGININF.usergent
+  is 'usergent';
+comment on column SYS_LOGININF.sessionid
+  is 'sessionid';
+
+prompt
+prompt Creating table SYS_PARAM
+prompt ========================
+prompt
+create table SYS_PARAM
+(
+  paramid      VARCHAR2(36) not null,
+  paramtype    VARCHAR2(50),
+  paramvalue   VARCHAR2(200),
+  paramname    VARCHAR2(200),
+  paramisvalid VARCHAR2(3)
+)
+;
+comment on table SYS_PARAM
+  is '系统管理之参数配置表';
+comment on column SYS_PARAM.paramid
+  is '参数编号(uuid)';
+comment on column SYS_PARAM.paramtype
+  is '参数类型';
+comment on column SYS_PARAM.paramvalue
+  is '参数值';
+comment on column SYS_PARAM.paramname
+  is '参数中文说明';
+comment on column SYS_PARAM.paramisvalid
+  is '参数是否有效';
+alter table SYS_PARAM
+  add constraint PK_SYS_PARAM primary key (PARAMID);
+
+prompt
+prompt Creating table SYS_PERMISSION
+prompt =============================
+prompt
+create table SYS_PERMISSION
+(
+  permissionid  VARCHAR2(36) not null,
+  permname      VARCHAR2(100),
+  permtype      VARCHAR2(100),
+  url           VARCHAR2(1000),
+  parentid      VARCHAR2(32),
+  enabled       VARCHAR2(3),
+  sortnum       VARCHAR2(32),
+  permdescribe  VARCHAR2(200),
+  permcode      VARCHAR2(200),
+  updatetime    DATE,
+  iconcss       VARCHAR2(100),
+  deleteable    VARCHAR2(10),
+  isblanktarget VARCHAR2(10)
+)
+;
+comment on table SYS_PERMISSION
+  is '系统管理之功能模块配置表';
+comment on column SYS_PERMISSION.permissionid
+  is '权限表编号,编号规则uuid ';
+comment on column SYS_PERMISSION.permname
+  is '权限名称';
+comment on column SYS_PERMISSION.permtype
+  is '权限类型(1 节点 2叶子 3 按钮)';
+comment on column SYS_PERMISSION.url
+  is '叶子结点对应功能url(相对地址)';
+comment on column SYS_PERMISSION.parentid
+  is '父权限编号';
+comment on column SYS_PERMISSION.enabled
+  is '是否有效标志';
+comment on column SYS_PERMISSION.sortnum
+  is '排序页面';
+comment on column SYS_PERMISSION.permdescribe
+  is '权限描述';
+comment on column SYS_PERMISSION.permcode
+  is '权限编码';
+comment on column SYS_PERMISSION.updatetime
+  is '权限最后更新时间';
+comment on column SYS_PERMISSION.iconcss
+  is '图标样式';
+comment on column SYS_PERMISSION.deleteable
+  is '是否可以删除(管理员权限才可以)';
+comment on column SYS_PERMISSION.isblanktarget
+  is '打开窗口方式(_blank)';
+alter table SYS_PERMISSION
+  add constraint PK_SYS_PERMISSION_K primary key (PERMISSIONID);
+
+prompt
+prompt Creating table SYS_ROLE
+prompt =======================
+prompt
+create table SYS_ROLE
+(
+  roleid       VARCHAR2(36) not null,
+  rolename     VARCHAR2(200),
+  roledescribe VARCHAR2(200),
+  enabled      VARCHAR2(20),
+  rolecode     VARCHAR2(200),
+  updatetime   DATE
+)
+;
+comment on table SYS_ROLE
+  is '系统管理之用户角色信息表 ';
+comment on column SYS_ROLE.roleid
+  is '角色编号编号规则uuid';
+comment on column SYS_ROLE.rolename
+  is '角色名称';
+comment on column SYS_ROLE.roledescribe
+  is '角色描述';
+comment on column SYS_ROLE.enabled
+  is '是否有效标志';
+comment on column SYS_ROLE.rolecode
+  is '角色编码';
+comment on column SYS_ROLE.updatetime
+  is '最后更新时间';
+alter table SYS_ROLE
+  add constraint PK_SYS_ROLE_K primary key (ROLEID);
+
+prompt
+prompt Creating table SYS_ROLE_PERMISSION
+prompt ==================================
+prompt
+create table SYS_ROLE_PERMISSION
+(
+  id           VARCHAR2(32) not null,
+  roleid       VARCHAR2(32),
+  permissionid VARCHAR2(32)
+)
+;
+comment on table SYS_ROLE_PERMISSION
+  is '系统管理之角色与权限关联表';
+comment on column SYS_ROLE_PERMISSION.id
+  is '流水号 uuid ';
+comment on column SYS_ROLE_PERMISSION.roleid
+  is '角色id';
+comment on column SYS_ROLE_PERMISSION.permissionid
+  is '权限编号';
+alter table SYS_ROLE_PERMISSION
+  add constraint PK_SYS_ROLE_PERMISSION primary key (ID);
+
+prompt
+prompt Creating table SYS_SENSITIVEWORD
+prompt ================================
+prompt
+create table SYS_SENSITIVEWORD
+(
+  wordid   VARCHAR2(36) not null,
+  wordname VARCHAR2(200)
+)
+;
+comment on table SYS_SENSITIVEWORD
+  is '系统管理功能之系统敏感关键字库';
+comment on column SYS_SENSITIVEWORD.wordid
+  is '主键';
+comment on column SYS_SENSITIVEWORD.wordname
+  is '关键字名字';
+alter table SYS_SENSITIVEWORD
+  add constraint PK_SYS_SENSITIVEWORD primary key (WORDID);
+
+prompt
+prompt Creating table SYS_USERGROUPREF_TABLE
+prompt =====================================
+prompt
+create table SYS_USERGROUPREF_TABLE
+(
+  usergroupid VARCHAR2(32) not null,
+  userid      VARCHAR2(32),
+  groupid     VARCHAR2(32)
+)
+;
+comment on table SYS_USERGROUPREF_TABLE
+  is '系统管理之用户机构关联表';
+comment on column SYS_USERGROUPREF_TABLE.usergroupid
+  is 'ID';
+comment on column SYS_USERGROUPREF_TABLE.userid
+  is '用户ID';
+comment on column SYS_USERGROUPREF_TABLE.groupid
+  is '组ID';
+alter table SYS_USERGROUPREF_TABLE
+  add constraint PK_SYS_USERGROUPREF primary key (USERGROUPID);
+
+prompt
+prompt Creating table SYS_USER_PERMISSION
+prompt ==================================
+prompt
+create table SYS_USER_PERMISSION
+(
+  id           VARCHAR2(32) not null,
+  userid       VARCHAR2(32) not null,
+  permissionid VARCHAR2(32) not null
+)
+;
+comment on table SYS_USER_PERMISSION
+  is '系统管理之用户与权限关联表';
+comment on column SYS_USER_PERMISSION.id
+  is '用户与权限关联表编号';
+comment on column SYS_USER_PERMISSION.userid
+  is '用户表流水号';
+comment on column SYS_USER_PERMISSION.permissionid
+  is '权限编号';
+alter table SYS_USER_PERMISSION
+  add constraint PK_SYS_USER_PERMISSION primary key (ID);
+
+prompt
+prompt Creating table SYS_USER_ROLE
+prompt ============================
+prompt
+create table SYS_USER_ROLE
+(
+  id     VARCHAR2(32) not null,
+  userid VARCHAR2(32) not null,
+  roleid VARCHAR2(32) not null
+)
+;
+comment on table SYS_USER_ROLE
+  is '系统管理之用户与角色关联表';
+comment on column SYS_USER_ROLE.id
+  is '流水号';
+comment on column SYS_USER_ROLE.userid
+  is '用户id';
+comment on column SYS_USER_ROLE.roleid
+  is '角色id';
+alter table SYS_USER_ROLE
+  add constraint PK_SYS_USER_ROLE primary key (ID);
+
+prompt
+prompt Creating table SYS_USER_TABLE
+prompt =============================
+prompt
+create table SYS_USER_TABLE
+(
+  userid     VARCHAR2(32) not null,
+  password   VARCHAR2(64) not null,
+  username   VARCHAR2(50) not null,
+  enabled    VARCHAR2(1) not null,
+  isleader   VARCHAR2(1),
+  cnname     VARCHAR2(32) not null,
+  owner      VARCHAR2(32),
+  macaddr    VARCHAR2(300),
+  usertype   VARCHAR2(2),
+  otherinfo  VARCHAR2(2000),
+  createdate DATE,
+  mobile     VARCHAR2(32),
+  phone      VARCHAR2(32),
+  email      VARCHAR2(32),
+  address    VARCHAR2(300),
+  salt       VARCHAR2(64),
+  abz182     VARCHAR2(20)
+)
+;
+comment on table SYS_USER_TABLE
+  is '系统管理之平台用户表';
+comment on column SYS_USER_TABLE.userid
+  is '用户ID';
+comment on column SYS_USER_TABLE.password
+  is '密码(md5)';
+comment on column SYS_USER_TABLE.username
+  is '登录名';
+comment on column SYS_USER_TABLE.enabled
+  is '用户是否有效(1有效 0无效)';
+comment on column SYS_USER_TABLE.isleader
+  is '是否主账户';
+comment on column SYS_USER_TABLE.cnname
+  is '用户中文名称';
+comment on column SYS_USER_TABLE.owner
+  is '创建者';
+comment on column SYS_USER_TABLE.macaddr
+  is '网卡地址';
+comment on column SYS_USER_TABLE.usertype
+  is '主用户类型(1.管理用户、2.服务工作者-网格长 3.服务工作者-网格员 4.服务工作者-专职委员)';
+comment on column SYS_USER_TABLE.otherinfo
+  is '其它信息';
+comment on column SYS_USER_TABLE.createdate
+  is '创建时间';
+comment on column SYS_USER_TABLE.mobile
+  is '手机号码';
+comment on column SYS_USER_TABLE.phone
+  is '联系电话';
+comment on column SYS_USER_TABLE.email
+  is '邮箱地址';
+comment on column SYS_USER_TABLE.address
+  is '联系地址';
+comment on column SYS_USER_TABLE.salt
+  is '密码加密盐';
+comment on column SYS_USER_TABLE.abz182
+  is '网格编号';
+alter table SYS_USER_TABLE
+  add constraint PK_SYS_USER primary key (USERID);
+
+prompt
 prompt Creating table S_EMAILLOG
 prompt =========================
 prompt
@@ -1338,6 +2230,32 @@ alter table S_SMSLOG
   add constraint PK_S_SMSLOG primary key (ID);
 
 prompt
+prompt Creating table S_SYSTYPE
+prompt ========================
+prompt
+create table S_SYSTYPE
+(
+  systypeid   VARCHAR2(36),
+  systypecode VARCHAR2(36),
+  sysname     VARCHAR2(200),
+  sysdesc     VARCHAR2(500),
+  sysurl      VARCHAR2(200)
+)
+;
+comment on table S_SYSTYPE
+  is '就业公共服务(外网)-(框架表)应用系统类型表';
+comment on column S_SYSTYPE.systypeid
+  is '应用系统类型编号(编码规则:UUID)';
+comment on column S_SYSTYPE.systypecode
+  is '应用系统类型块编码(编码规则:S+5位数字)';
+comment on column S_SYSTYPE.sysname
+  is '应用系统名称';
+comment on column S_SYSTYPE.sysdesc
+  is '应用系统描述';
+comment on column S_SYSTYPE.sysurl
+  is '应用系统访问地址';
+
+prompt
 prompt Creating table S_UPLOADFILE
 prompt ===========================
 prompt
@@ -1691,21 +2609,85 @@ create or replace synonym CODE_VALUE
   for SXJYRM.CODE_VALUE;
 
 prompt
+prompt Creating synonym SMT_GROUP
+prompt ==========================
+prompt
+create or replace synonym SMT_GROUP
+  for SXJYUC.SMT_GROUP;
+
+prompt
+prompt Creating synonym SMT_USER
+prompt =========================
+prompt
+create or replace synonym SMT_USER
+  for SXJYUC.SMT_USER;
+
+prompt
+prompt Creating synonym SMT_USERGROUPREF
+prompt =================================
+prompt
+create or replace synonym SMT_USERGROUPREF
+  for SXJYUC.SMT_USERGROUPREF;
+
+prompt
+prompt Creating view SYS_GROUP
+prompt =======================
+prompt
+create or replace force view sys_group as
+select GROUPID,
+       DESCRIPTION,
+       PARENTID,
+       ORG,
+       DISTRICTCODE,
+       LICENSE,
+       name   GROUPNAME,
+       PRINCIPAL,
+       SHORTNAME,
+       ADDRESS,
+       TEL,
+       LINKMAN,
+       type   GROUPTYPE,
+       CHARGEDEPT,
+       OTHERINFO,
+       OWNER,
+       STATUS,
+       CREATEDATE
+  from SMT_GROUP;
+
+prompt
+prompt Creating view SYS_USER
+prompt ======================
+prompt
+create or replace force view sys_user as
+select USERID,PASSWD PASSWORD,LOGINNAME USERNAME, USEFUL ENABLED,ISLEADER,USERNAME CNNAME,OWNER,MACADDR,USERTYPE,OTHERINFO,CREATEDATE ,'1' ABZ182,'' ADDRESS,'' EMAIL ,'' phone
+    from SMT_USER;
+
+prompt
+prompt Creating view SYS_USERGROUPREF
+prompt ==============================
+prompt
+create or replace force view sys_usergroupref as
+select "USERGROUPID","USERID","GROUPID"
+    from
+   smt_usergroupref;
+
+prompt
 prompt Creating view V_AA10
 prompt ====================
 prompt
 create or replace force view v_aa10 as
-select code_type aaa100, code_value aaa102,  code_name aaa103, nvl(SUB_CODE_VALUE,'1') aaa105,null as aaa027,code_name as eaa101 from code_value t
+select code_type aaa100, code_value aaa102, code_name aaa103, SUB_CODE_VALUE aaa105 ,nvl(CODE_COLUMN_NAME,code_name)  aaa106  from code_value t  where t.code_type not in ('AAB301','AAC183_1','AAC200','AAC180') and exists (select 1 from code_type c where c.code_type=t.code_type )
+UNION ALL
+select 'AAB800' aaa100, code_value aaa102, code_name aaa103, SUB_CODE_VALUE aaa105, nvl(CODE_COLUMN_NAME,code_name)  aaa106 from code_value t where t.code_type='AAB301' AND T.CODE_LEVEL='1'
 union all
-select 'AAB800' aaa100, code_value aaa102,  code_name aaa103, SUB_CODE_VALUE  aaa105,null as aaa027,code_name as eaa101 from code_value t where t.code_type='AAB301' AND T.CODE_LEVEL='1'
+select 'AAB801' aaa100, code_value aaa102, code_name aaa103, SUB_CODE_VALUE aaa105, nvl(CODE_COLUMN_NAME,code_name)  aaa106 from code_value t where t.code_type='AAB301' AND T.CODE_LEVEL='2'
+AND t.SUB_CODE_VALUE='610000'
 union all
-select 'AAB801' aaa100, code_value aaa102,  code_name aaa103, SUB_CODE_VALUE aaa105,null as aaa027,code_name as eaa101 from code_value t where t.code_type='AAB301' AND T.CODE_LEVEL='2'
+select 'AAB802' aaa100, code_value aaa102, code_name aaa103, SUB_CODE_VALUE aaa105, nvl(CODE_COLUMN_NAME,code_name)  aaa106  from code_value t where t.code_type='AAB301' AND T.CODE_LEVEL='3'
 union all
-select 'AAB802' aaa100, code_value aaa102,  code_name aaa103, SUB_CODE_VALUE aaa105,null as aaa027,code_name as eaa101 from code_value t where t.code_type='AAB301' AND T.CODE_LEVEL='3'
+select 'CODETYPESORT',TYPE_SORT_CODE,TYPE_SORT_NAME,''aaa148 ,'' aaa106  from code_type_sort
 union all
-select 'AAB803' aaa100, code_value aaa102,  code_name aaa103, SUB_CODE_VALUE aaa105,null as aaa027,code_name as eaa101 from code_value t where t.code_type='AAB301' AND T.CODE_LEVEL='4'
-union all
-select 'AAB804' aaa100, code_value aaa102,  code_name aaa103, SUB_CODE_VALUE aaa105,null as aaa027,code_name as eaa101 from code_value t where t.code_type='AAB301' AND T.CODE_LEVEL='5';
+select 'SYSTYPECODE',SYSTYPECODE,SYSNAME,''aaa148 ,'' aaa106  from s_systype;
 
 prompt
 prompt Creating view V_CODE_TYPE

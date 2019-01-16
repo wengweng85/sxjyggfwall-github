@@ -1,7 +1,6 @@
 package com.insigma.cloud.common.utils;
 
 import com.insigma.cloud.common.constants.CommonConstants;
-import com.insigma.cloud.common.dto.UserToken;
 import com.insigma.mvc.model.AccessToken;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

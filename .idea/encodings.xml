@@ -15,7 +15,6 @@
     <file url="file://$USER_HOME$/git/spring-cloud-zuul-ratelimit/spring-cloud-zuul-ratelimit-tests/springdata" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../../git工作空间/wxjy-web-resource" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/cas/CasTokenController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/common/codetype/ApiCodeTypeController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/common/vercode/ApiVercodeController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/token/ApiTokenController.java" charset="GBK" />
@@ -41,6 +40,12 @@
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/serviceimpl/common/fileupload/ApiFileUploadServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/serviceimpl/common/log/ApiLogServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/serviceimpl/common/suggest/ApiSuggestSearchServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/java/com/insigma/cloud/catalogue/controller/ServiceCatalogueController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/java/com/insigma/cloud/catalogue/dao/ServiceCatalogueMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/java/com/insigma/cloud/catalogue/service/ServiceCatalogueService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/java/com/insigma/cloud/catalogue/serviceimpl/ServiceCatalogueServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/resources/mapper/ServiceCatalogueMapper.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/aspect/SysLogAspect.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/AjaxReturnMsg.java" charset="GBK" />
@@ -58,7 +63,7 @@
     <file url="file://$PROJECT_DIR$/sxjy-cloud-config-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-sxjysy" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/java/com/insigma/cloud/sxjyjysy/controller/ApiAc11Controller.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-sxjysy/src/main/java/com/insigma/cloud/sxjysy/controller/ApiAc11Controller.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-zuul" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-zuul/src/main/resources/application.yml" charset="GBK" />
   </component>

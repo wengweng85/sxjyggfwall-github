@@ -224,7 +224,7 @@
     </orderEntry>
     <orderEntry type="library" name="Maven: com.oracle:ojdbc7:12.1.0.1.0" level="project" />
     <orderEntry type="library" name="Maven: com.insigma:wxjy-common-model:1.0.2-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.insigma:sxjyggfw-common-model:1.0.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="sxjyggfw-common-model" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-entitymanager:5.2.17.Final" level="project" />
     <orderEntry type="library" name="Maven: dom4j:dom4j:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.1.Final" level="project" />

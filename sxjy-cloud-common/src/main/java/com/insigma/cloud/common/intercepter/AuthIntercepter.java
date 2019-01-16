@@ -65,7 +65,7 @@ public class AuthIntercepter extends HandlerInterceptorAdapter {
         PrintWriter out = null;
         try{
             out = response.getWriter();
-            String result= JSONUtils.beanToJson(AjaxReturnMsg.error403());
+            String result= JSONUtils.beanToJson(body);
             out.write(result);
             out.flush();
         }catch(IOException e){

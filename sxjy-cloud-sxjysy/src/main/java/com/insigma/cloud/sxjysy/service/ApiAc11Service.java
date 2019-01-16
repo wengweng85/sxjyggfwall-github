@@ -1,4 +1,4 @@
-package com.insigma.cloud.sxjyjysy.service;
+package com.insigma.cloud.sxjysy.service;
 
 import com.github.pagehelper.PageInfo;
 import com.insigma.mvc.model.Ac11;
