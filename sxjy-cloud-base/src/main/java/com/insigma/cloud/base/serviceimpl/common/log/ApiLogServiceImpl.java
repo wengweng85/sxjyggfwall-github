@@ -8,6 +8,8 @@ import com.insigma.mvc.model.SErrorLog;
 import com.insigma.mvc.model.SLog;
 import com.insigma.mvc.model.SUserLog;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.text.SimpleDateFormat;
@@ -18,6 +20,7 @@ import java.util.List;
  */
 
 @Service
+@Transactional(propagation = Propagation.REQUIRED)
 public class ApiLogServiceImpl implements ApiLogService {
 
     @Resource

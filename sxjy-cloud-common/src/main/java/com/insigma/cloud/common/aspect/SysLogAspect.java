@@ -92,6 +92,7 @@ public class SysLogAspect {
         } catch (Exception e) {
             sLog.setQueryparam(Arrays.toString(joinPoint.getArgs()));
         }
+        sLog.setUserid(SUserUtil.getUserId()!=null?SUserUtil.getUserId():"0000000");
         sLog.setUrl(request.getRequestURL().toString());
         // …Ë÷√IPµÿ÷∑
         sLog.setIpaddr (IPUtils.getIpAddr(request));

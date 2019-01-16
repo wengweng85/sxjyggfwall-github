@@ -20,6 +20,13 @@ public class MybatisConfig {
         p.setProperty("offsetAsPageNum", "true");
         p.setProperty("rowBoundsWithCount", "true");
         p.setProperty("reasonable", "true");
+
+        //延迟加载启动，默认是false
+        p.setProperty("lazyLoadingEnabled","true");
+        //积极的懒加载，false的话按需加载，默认是true
+        p.setProperty("aggressiveLazyLoading","false");
+        //二级缓存
+        p.setProperty("cacheEnabled","true");
         pageHelper.setProperties(p);
         return pageHelper;
     }

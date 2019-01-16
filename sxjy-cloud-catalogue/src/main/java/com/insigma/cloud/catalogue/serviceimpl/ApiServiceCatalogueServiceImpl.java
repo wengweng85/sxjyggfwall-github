@@ -7,6 +7,8 @@ import com.insigma.cloud.catalogue.service.ApiServiceCatalogueService;
 import com.insigma.mvc.model.catalogue.*;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -15,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
+@Transactional(propagation = Propagation.REQUIRED)
 public class ApiServiceCatalogueServiceImpl implements ApiServiceCatalogueService {
 
     @Resource
@@ -135,36 +138,37 @@ public class ApiServiceCatalogueServiceImpl implements ApiServiceCatalogueServic
      */
     @Override
     public Map getById(String cataId, String userId) throws Exception {
-        if (StringUtils.isNotEmpty(userId)) { // 保存用户的浏览记录
+        ServiceCatalogue catalogue = serviceCatalogueMapper.getById(cataId, userId);
+        Map<String, Object> map = new HashMap<>();
+        if (catalogue!=null) {
+            // 设立依据
+            if (StringUtils.isNotEmpty(catalogue.getCata_establish())) {
+                catalogue.setCata_establish(catalogue.getCata_establish().replaceAll("\\n", "<br>"));
+            }
+            // 受理条件
+            if (StringUtils.isNotEmpty(catalogue.getCata_hand_term())) {
+                catalogue.setCata_hand_term(catalogue.getCata_hand_term().replaceAll("\\n", "<br>"));
+            }
+            // 申请材料
+            if (StringUtils.isNotEmpty(catalogue.getCata_app_material())) {
+                catalogue.setCata_app_material(catalogue.getCata_app_material().replaceAll("\\n", "<br>"));
+            }
+            List<ServiceCatalogueDetail> detailList = serviceCatalogueMapper.getListByCataId(cataId);
+
+            for (ServiceCatalogueDetail detail : detailList) {
+                List<ServiceCatalogueAttach> attachList = serviceCatalogueMapper.getListByDetailId(detail.getCata_detail_id());
+                detail.setAttachList(attachList);
+            }
+
+            // 保存用户的浏览记录
             ServiceBrowse browse = new ServiceBrowse();
             browse.setCata_id(cataId);
             browse.setUserId(userId);
             serviceCatalogueMapper.saveBrowse(browse);
-        }
 
-        ServiceCatalogue catalogue = serviceCatalogueMapper.getById(cataId, userId);
-        // 设立依据
-        if (StringUtils.isNotBlank(catalogue.getCata_establish())) {
-            catalogue.setCata_establish(catalogue.getCata_establish().replaceAll("\\n", "<br>"));
+            map.put("catalogue", catalogue);
+            map.put("detailList", detailList);
         }
-        // 受理条件
-        if (StringUtils.isNotBlank(catalogue.getCata_hand_term())) {
-            catalogue.setCata_hand_term(catalogue.getCata_hand_term().replaceAll("\\n", "<br>"));
-        }
-        // 申请材料
-        if (StringUtils.isNotBlank(catalogue.getCata_app_material())) {
-            catalogue.setCata_app_material(catalogue.getCata_app_material().replaceAll("\\n", "<br>"));
-        }
-        List<ServiceCatalogueDetail> detailList = serviceCatalogueMapper.getListByCataId(cataId);
-
-        for (ServiceCatalogueDetail detail: detailList) {
-            List<ServiceCatalogueAttach> attachList = serviceCatalogueMapper.getListByDetailId(detail.getCata_detail_id());
-            detail.setAttachList(attachList);
-        }
-
-        Map<String, Object> map = new HashMap<>();
-        map.put("catalogue", catalogue);
-        map.put("detailList", detailList);
         return map;
     }
 

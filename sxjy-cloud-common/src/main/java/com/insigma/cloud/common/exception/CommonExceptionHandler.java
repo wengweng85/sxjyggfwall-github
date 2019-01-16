@@ -37,7 +37,7 @@ public class CommonExceptionHandler {
     @ExceptionHandler(value=Exception.class)
     AjaxReturnMsg exception(Exception e, HttpServletRequest request) {
         logger.error(e.getMessage());
-        //e.printStackTrace();
+        e.printStackTrace();
         saveErrorLog(e,request);
         return AjaxReturnMsg.error500();
     }
@@ -48,7 +48,7 @@ public class CommonExceptionHandler {
      * @return
      */
     @ExceptionHandler(value=AppException.class)
-    AjaxReturnMsg appexception(AppException e, HttpServletRequest request) {
+    AjaxReturnMsg appException(AppException e, HttpServletRequest request) {
         logger.error(e.getMessage());
         e.printStackTrace();
         saveErrorLog(e,request);
@@ -65,6 +65,7 @@ public class CommonExceptionHandler {
         if (e.getMessage() != null) {
             sErrorLog.setMessage(e.getMessage().length() > 500 ? e.getMessage().substring(0, 499) : e.getMessage());
         }
+        sErrorLog.setUserid(SUserUtil.getUserId()!=null?SUserUtil.getUserId():"0000000");
         sErrorLog.setStackmsg(getStackMsg(e));
         sErrorLog.setExceptiontype(e.getClass().getName());
         String ip = IPUtils.getIpAddr(request);

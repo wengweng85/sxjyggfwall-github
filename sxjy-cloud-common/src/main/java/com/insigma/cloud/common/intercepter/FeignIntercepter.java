@@ -13,6 +13,8 @@ public class FeignIntercepter implements RequestInterceptor {
     @Override
     public void apply(RequestTemplate requestTemplate) {
         logger.debug("Thread.currentThread().getName()="+Thread.currentThread().getName());
-        requestTemplate.header(CommonConstants.CONTEXT_TOKEN, SUserUtil.getToken());
+        if(null!=SUserUtil.getToken()){
+            requestTemplate.header(CommonConstants.CONTEXT_TOKEN, SUserUtil.getToken());
+        }
     }
 }

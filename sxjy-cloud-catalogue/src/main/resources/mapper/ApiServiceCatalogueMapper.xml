@@ -3,8 +3,23 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.insigma.cloud.catalogue.dao.ApiServiceCatalogueMapper">
 
+    <!--
+        cache标签内属性：
+        eviction：定义缓存移除机制（算法），默认为LRU（最近最少使用），它会清除最少使用的数据，还有一种FIFO（先进先出），它会清除最先进来的数据。
+        flushInterval：定义缓存刷新周期，单位为毫秒。
+        size：标识缓存cache中容纳的最大元素，默认为1024。
+        readOnly：默认为false，可配置为true缓存只读
+    -->
+
+    <cache >
+        <property name="eviction" value="LRU" />
+        <property name="flushInterval" value="6000000" />
+        <property name="size" value="1024" />
+        <property name="readOnly" value="false" />
+    </cache>
+
     <!-- 服务目录的所有事项 -->
-    <select id="getCatalogueList" resultType="ServiceCatalogue">
+    <select id="getCatalogueList" resultType="ServiceCatalogue" >
         SELECT
         cata_id,
         cata_code,
@@ -20,7 +35,7 @@
     </select>
 
     <!-- 服务目录业务分类 -->
-    <select id="getBusTypeList" parameterType="String" resultType="ServiceBusType">
+    <select id="getBusTypeList" parameterType="String" resultType="ServiceBusType" >
         SELECT
         bus_type_id,
         bus_area_code,
@@ -48,7 +63,7 @@
     </select>
 
     <!-- 受理部门分类 -->
-    <select id="getDepartmentList" resultType="ServiceDepartment">
+    <select id="getDepartmentList" resultType="ServiceDepartment" >
         SELECT
         department_id,
         department_address,
@@ -68,7 +83,7 @@
         status = '1'
     </select>
 
-    <select id="searchCatalogue" resultType="ServiceCatalogue" parameterType="SearchCondition">
+    <select id="searchCatalogue" resultType="ServiceCatalogue" parameterType="SearchCondition" >
         SELECT
         cata_id,
         cata_name,
@@ -181,8 +196,8 @@
     </select>
 
     <!-- 收藏事项 -->
-    <insert id="saveCollect" parameterType="ServiceCollection">
-        <selectKey resultType="String" order="BEFORE" keyProperty="collect_id">
+    <insert id="saveCollect" parameterType="ServiceCollection" flushCache="false">
+        <selectKey resultType="String" order="BEFORE" keyProperty="collect_id" >
             SELECT sys_guid() FROM dual
         </selectKey>
         INSERT INTO SER_COLLECT
@@ -192,8 +207,8 @@
     </insert>
 
     <!-- 保存事项浏览记录 -->
-    <insert id="saveBrowse" parameterType="ServiceBrowse">
-        <selectKey resultType="String" order="BEFORE" keyProperty="browse_id">
+    <insert id="saveBrowse" parameterType="ServiceBrowse" flushCache="false">
+        <selectKey resultType="String" order="BEFORE" keyProperty="browse_id" >
             SELECT sys_guid() FROM dual
         </selectKey>
         INSERT INTO SER_BROWSE
@@ -203,7 +218,7 @@
     </insert>
 
     <!-- 删除收藏的事项 -->
-    <delete id="deleteCollect" parameterType="String">
+    <delete id="deleteCollect" parameterType="String" flushCache="false">
         DELETE FROM SER_COLLECT WHERE CATA_ID = #{cataId}
     </delete>
 

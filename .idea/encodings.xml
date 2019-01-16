@@ -48,6 +48,8 @@
     <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/resources/mapper/ApiServiceCatalogueMapper.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/aspect/SysLogAspect.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/context/MyApplicationContextUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/context/MyApplicationContextUtil.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/AjaxReturnMsg.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/MessageType.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/SysCode.java" charset="GBK" />

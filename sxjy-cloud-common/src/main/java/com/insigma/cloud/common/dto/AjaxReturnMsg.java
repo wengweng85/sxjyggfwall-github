@@ -12,7 +12,7 @@ import org.springframework.validation.FieldError;
 import java.util.HashMap;
 
 /**
- * ajax信息返回
+ * 信息返回
  *
  * @author admin
  */

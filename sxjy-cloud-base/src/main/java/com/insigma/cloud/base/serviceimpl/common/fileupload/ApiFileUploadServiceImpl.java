@@ -10,6 +10,8 @@ import com.insigma.mvc.model.FileNumberInfo;
 import com.insigma.mvc.model.SuploadFile;
 import org.apache.commons.io.IOUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
@@ -24,6 +26,7 @@ import java.util.List;
  * ApiFileUploadServiceImpl
  */
 @Service
+@Transactional(propagation = Propagation.REQUIRED)
 public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
 
     @Resource

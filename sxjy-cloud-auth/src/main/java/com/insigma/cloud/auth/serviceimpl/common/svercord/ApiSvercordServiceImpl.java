@@ -3,12 +3,15 @@ import com.insigma.cloud.auth.dao.common.svercord.ApiSvercordMapper;
 import com.insigma.cloud.auth.service.common.svercord.ApiSvercordService;
 import com.insigma.mvc.model.Svercord;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Transactional(propagation = Propagation.REQUIRED)
 public class ApiSvercordServiceImpl implements ApiSvercordService {
 	
 	@Resource

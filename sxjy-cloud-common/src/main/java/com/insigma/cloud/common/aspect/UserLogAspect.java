@@ -1,6 +1,7 @@
 package com.insigma.cloud.common.aspect;
 
 import com.insigma.cloud.common.annotation.UserLog;
+import com.insigma.cloud.common.context.SUserUtil;
 import com.insigma.cloud.common.utils.HttpContextUtils;
 import com.insigma.cloud.rpc.LogRpcService;
 import com.insigma.mvc.model.SUserLog;
@@ -70,6 +71,7 @@ public class UserLogAspect {
         HttpServletRequest request = HttpContextUtils.getHttpServletRequest();
         // 系统当前时间
         Date date = new Date();
+        sUserLog.setAae011(SUserUtil.getUserId()!=null?SUserUtil.getUserId():"0000000");
         // 开始时间
         sUserLog.setLogstime(date);
         // 结束时间
