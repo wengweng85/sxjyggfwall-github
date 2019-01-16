@@ -6,7 +6,7 @@ import com.insigma.mvc.model.catalogue.ServiceCollection;
 
 import java.util.Map;
 
-public interface ServiceCatalogueService {
+public interface ApiServiceCatalogueService {
 
     Map getIndex() throws Exception;
 

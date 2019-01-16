@@ -2,7 +2,6 @@ package com.insigma.cloud.common.intercepter;
 
 import com.insigma.cloud.common.constants.CommonConstants;
 import com.insigma.cloud.common.context.SUserUtil;
-import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.cloud.common.utils.JSONUtils;
 import com.insigma.cloud.common.utils.JwtUtils;
 import com.insigma.mvc.model.AccessToken;
@@ -16,21 +15,18 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * 权限过滤器
+ * 权限过滤器 非必须
+ * 如果header中没有token也可通过校验
  */
-public class AuthIntercepter extends HandlerInterceptorAdapter {
-    private static final Logger logger = LoggerFactory.getLogger(AuthIntercepter.class);
+public class AuthUnNecessaryIntercepter extends HandlerInterceptorAdapter {
+    private static final Logger logger = LoggerFactory.getLogger(AuthUnNecessaryIntercepter.class);
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         final String requestUri = request.getRequestURI();
         logger.debug("requestUri="+requestUri);
         String token = request.getHeader(CommonConstants.CONTEXT_TOKEN);
-        //logger.debug("token="+token);
-        if (null == token) {
-            setFailedRequest(AjaxReturnMsg.error403(),response);
-            return false;
-        }else{
+        if (null != token) {
             try {
                 //截取掉"Bearer "
                 AccessToken accessToken = JwtUtils.getInfoFromToken(token.substring(7, token.length()));
@@ -40,8 +36,6 @@ public class AuthIntercepter extends HandlerInterceptorAdapter {
                 SUserUtil.setName(accessToken.getName());
                 SUserUtil.setUserId(accessToken.getUserid());
             } catch (Exception e) {
-                setFailedRequest(AjaxReturnMsg.error404(), response);
-                return false;
             }
         }
         return super.preHandle(request, response, handler);

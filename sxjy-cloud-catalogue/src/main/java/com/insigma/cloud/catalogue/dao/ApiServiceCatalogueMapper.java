@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 @Mapper
-public interface ServiceCatalogueMapper {
+public interface ApiServiceCatalogueMapper {
 
     List<ServiceBusType> getBusTypeList(@Param("type") String type);
 

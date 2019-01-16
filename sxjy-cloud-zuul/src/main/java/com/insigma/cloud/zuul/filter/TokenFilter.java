@@ -21,7 +21,7 @@ public class TokenFilter extends ZuulFilter {
 
     private final static Logger logger = LoggerFactory.getLogger(TokenFilter.class);
 
-    private String ignorePath = "/api-auth";
+    private String ignorePath = "/api-auth,/api-cata";
 
     @Override
     public String filterType() {

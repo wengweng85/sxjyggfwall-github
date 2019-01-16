@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.insigma.cloud.catalogue.dao.ServiceCatalogueMapper">
+<mapper namespace="com.insigma.cloud.catalogue.dao.ApiServiceCatalogueMapper">
 
     <!-- 服务目录的所有事项 -->
     <select id="getCatalogueList" resultType="ServiceCatalogue">

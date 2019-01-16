@@ -41,11 +41,11 @@
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/serviceimpl/common/log/ApiLogServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/serviceimpl/common/suggest/ApiSuggestSearchServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/java/com/insigma/cloud/catalogue/controller/ServiceCatalogueController.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/java/com/insigma/cloud/catalogue/dao/ServiceCatalogueMapper.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/java/com/insigma/cloud/catalogue/service/ServiceCatalogueService.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/java/com/insigma/cloud/catalogue/serviceimpl/ServiceCatalogueServiceImpl.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/resources/mapper/ServiceCatalogueMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/java/com/insigma/cloud/catalogue/controller/ApiServiceCatalogueController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/java/com/insigma/cloud/catalogue/dao/ApiServiceCatalogueMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/java/com/insigma/cloud/catalogue/service/ApiServiceCatalogueService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/java/com/insigma/cloud/catalogue/serviceimpl/ApiServiceCatalogueServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-catalogue/src/main/resources/mapper/ApiServiceCatalogueMapper.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/aspect/SysLogAspect.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/AjaxReturnMsg.java" charset="GBK" />

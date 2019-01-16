@@ -20,11 +20,11 @@
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
-    <link href="<%=path%>/resource/hplus/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<%=path%>/resource/hplus/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<%=path%>/resource/hplus/css/animate.min.css" rel="stylesheet">
-    <link href="<%=path%>/resource/hplus/css/style.min.css" rel="stylesheet">
-    <link href="<%=path%>/resource/hplus/css/rc.css" rel="stylesheet">
+    <link href="<%=path%>/webjars/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=path%>/webjars/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<%=path%>/webjars/css/animate.min.css" rel="stylesheet">
+    <link href="<%=path%>/webjars/css/style.min.css" rel="stylesheet">
+    <link href="<%=path%>/webjars/css/rc.css" rel="stylesheet">
 </head>
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
     <div id="wrapper">
@@ -156,14 +156,14 @@
         </div>
         <!--右侧部分结束-->
     </div>
-    <script src="<%=path%>/resource/hplus/js/jquery.min.js"></script>
-    <script src="<%=path%>/resource/hplus/js/bootstrap.min.js"></script>
-	<script src="<%=path%>/resource/hplus/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="<%=path%>/resource/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="<%=path%>/resource/hplus/js/plugins/layer/layer.min.js"></script>
-    <script src="<%=path%>/resource/hplus/js/hplus.min.js"></script>
-    <script src="<%=path%>/resource/hplus/js/bootstrap-contextmenu.js"></script>
-    <script src="<%=path%>/resource/hplus/js/contabs.js"></script>
+    <script src="<%=path%>/webjars/js/jquery.min.js"></script>
+    <script src="<%=path%>/webjars/js/bootstrap.min.js"></script>
+	<script src="<%=path%>/webjars/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="<%=path%>/webjars/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="<%=path%>/webjars/js/plugins/layer/layer.min.js"></script>
+    <script src="<%=path%>/webjars/js/hplus.min.js"></script>
+    <script src="<%=path%>/webjars/js/bootstrap-contextmenu.js"></script>
+    <script src="<%=path%>/webjars/js/contabs.js"></script>
 
     <script type="text/javascript">
     

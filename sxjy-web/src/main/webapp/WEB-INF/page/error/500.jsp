@@ -9,9 +9,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>500异常  Internal Server Error</title>
-    <link href="<%=path%>/resource/js/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet">
-    <link href="<%=path%>/resource/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<%=path%>/resource/css/style.min.css" rel="stylesheet">
+    <link href="<%=path%>/webjars/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=path%>/webjars//css/font-awesome.min.css" rel="stylesheet">
+    <link href="<%=path%>/webjars//css/style.min.css" rel="stylesheet">
 </head>
 
 <body class="gray-bg">
@@ -24,8 +24,8 @@
             <br/><a href="<%=path%>/" class="btn btn-primary m-t">主页</a>
         </div>
     </div>
-    <script src="<%=path%>/resource/js/jQuery/jquery-2.0.0.min.js"></script>
-    <script src="<%=path%>/resource/js/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+     <script src="<%=path%>/webjars/js/jQuery/jquery-2.0.0.min.js"></script>
+    <script src="<%=path%>/webjars/js/bootstrap.min.js"></script>
 </body>
 </html>
 
