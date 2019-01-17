@@ -17,6 +17,10 @@ public class AuthConfig extends WebMvcConfigurationSupport {
     public void addInterceptors(InterceptorRegistry registry) {
         InterceptorRegistration addInterceptor = registry.addInterceptor(authIntercepter());
         // 排除配置
-        addInterceptor.excludePathPatterns("/**");
+        addInterceptor.excludePathPatterns("/v2/api-docs");
+        addInterceptor.excludePathPatterns("/swagger-resources");
+        addInterceptor.excludePathPatterns("/configuration/**");
+        // 拦截配置
+        addInterceptor.addPathPatterns("/**");
     }
 }

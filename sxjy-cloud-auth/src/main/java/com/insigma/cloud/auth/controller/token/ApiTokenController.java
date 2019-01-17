@@ -1,12 +1,12 @@
 package com.insigma.cloud.auth.controller.token;
 
-import com.alibaba.druid.support.json.JSONUtils;
 import com.alibaba.fastjson.JSONArray;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.insigma.cloud.auth.service.token.ApiTokenService;
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.cloud.common.dto.CasUser;
-import com.insigma.cloud.common.rsa.MD5Util;
+import com.insigma.cloud.common.utils.JSONUtils;
 import com.insigma.mvc.model.AccessToken;
 import com.insigma.mvc.model.SPermission;
 import com.insigma.mvc.model.SRole;
@@ -126,12 +126,12 @@ public class ApiTokenController {
         LOGGER.debug("request headers: {}", httpHeaders);
         Object result = null;
         CasUser casUser = null;
-        AccessToken accessToken=null;
+        SUser sUser=null;
         try {
             casUser = obtainUserFormHeader(httpHeaders);
             if (casUser != null) {
-                accessToken=apiLoginService.getToken(casUser.getUsername(), casUser.getPassword());
-                if(accessToken==null){
+                sUser=apiLoginService.getUser(casUser.getUsername(), casUser.getPassword());
+                if(sUser==null){
                     //密码不匹配
                     result= new ResponseEntity(HttpStatus.BAD_REQUEST);
                 }
@@ -158,8 +158,9 @@ public class ApiTokenController {
         }
         LOGGER.info("[{}] login is ok", casUser.getUsername());
         HashMap map=new HashMap();
-        map.put("token",accessToken.getToken());
+        map.put("token","");
         casUser.setAttributes(map);
+        casUser.setUsername(JSONUtils.writeValueAsString(sUser));
         result=casUser;
         //成功返回json
         //将数据输出到客户端

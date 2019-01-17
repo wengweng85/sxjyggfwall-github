@@ -106,7 +106,7 @@
 				/excelconfig/**=authc
 				/sys/**=authc
 				/cas/login = casFilter
-				/cas/loginOut = logoutFilter
+				/cas/logout = logoutFilter
 			</value>
 		</property>
    </bean> 

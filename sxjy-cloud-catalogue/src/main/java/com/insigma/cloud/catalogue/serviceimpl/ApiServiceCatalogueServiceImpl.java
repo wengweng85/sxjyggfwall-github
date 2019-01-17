@@ -1,16 +1,23 @@
 package com.insigma.cloud.catalogue.serviceimpl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.insigma.cloud.catalogue.dao.ApiServiceCatalogueMapper;
 import com.insigma.cloud.catalogue.service.ApiServiceCatalogueService;
+import com.insigma.cloud.common.context.SUserUtil;
+import com.insigma.cloud.common.dto.AjaxReturnMsg;
+import com.insigma.mvc.model.SUser;
 import com.insigma.mvc.model.catalogue.*;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -44,13 +51,15 @@ public class ApiServiceCatalogueServiceImpl implements ApiServiceCatalogueServic
      */
     @Override
     public Map getPersonCataList(SearchCondition searchCondition) throws Exception {
+        //设置当前用户id
+        searchCondition.setUserId(SUserUtil.getUserId());
         Map<String, Object> map = new HashMap<>();
         List<ServiceBusType> busTypeList =  serviceCatalogueMapper.getBusTypeList("1");
         List<ServiceDepartment> departmentList =  serviceCatalogueMapper.getDepartmentList();
         map.put("busTypeList", busTypeList);
         map.put("departmentList", departmentList);
-
         Map<String, Object> listMap = new LinkedHashMap<>();
+
         switch (searchCondition.getSearchType()) {
             case "1":
                 if (StringUtils.isNotEmpty(searchCondition.getBusTypeId())) {
@@ -91,6 +100,8 @@ public class ApiServiceCatalogueServiceImpl implements ApiServiceCatalogueServic
      */
     @Override
     public Map getComCataList(SearchCondition searchCondition) throws Exception {
+        //设置当前用户id
+        searchCondition.setUserId(SUserUtil.getUserId());
         Map<String, Object> map = new HashMap<>();
         List<ServiceBusType> busTypeList =  serviceCatalogueMapper.getBusTypeList("2");
         List<ServiceDepartment> departmentList =  serviceCatalogueMapper.getDepartmentList();
@@ -137,7 +148,9 @@ public class ApiServiceCatalogueServiceImpl implements ApiServiceCatalogueServic
      * @throws Exception
      */
     @Override
-    public Map getById(String cataId, String userId) throws Exception {
+    public Map getById(String cataId) throws Exception {
+        //设置当前用户id
+        String userId=SUserUtil.getUserId();
         ServiceCatalogue catalogue = serviceCatalogueMapper.getById(cataId, userId);
         Map<String, Object> map = new HashMap<>();
         if (catalogue!=null) {
@@ -180,11 +193,11 @@ public class ApiServiceCatalogueServiceImpl implements ApiServiceCatalogueServic
      */
     @Override
     public Map list(SearchCondition searchCondition) throws Exception {
+        searchCondition.setUserId(SUserUtil.getUserId());
         Map<String, Object> map = new HashMap<>();
         Map<String, Object> list = new HashMap<>();
         List<ServiceBusType> busTypeList =  serviceCatalogueMapper.getBusTypeList(null);
         map.put("busTypeList", busTypeList);
-
         for (ServiceBusType busType: busTypeList) {
             searchCondition.setBusTypeId(busType.getBus_type_id());
             List<ServiceCatalogue> itemList = serviceCatalogueMapper.searchCatalogue(searchCondition);
@@ -201,6 +214,7 @@ public class ApiServiceCatalogueServiceImpl implements ApiServiceCatalogueServic
      */
     @Override
     public void toggleCollect(ServiceCollection collection) throws Exception {
+        collection.setUserId(SUserUtil.getUserId());
         ServiceCollection serviceCollection =  serviceCatalogueMapper.getCollectByCataIdAndUserId(collection);
         //未收藏
         if (null == serviceCollection) {
@@ -218,9 +232,12 @@ public class ApiServiceCatalogueServiceImpl implements ApiServiceCatalogueServic
      */
     @Override
     public PageInfo getFavoriteList(ServiceCollection collection) throws Exception {
+        collection.setUserId(SUserUtil.getUserId());
         PageHelper.startPage(collection.getCurpage(), collection.getLimit());
         List<ServiceCollection> list =  serviceCatalogueMapper.getListByUserId(collection.getUserId());
         PageInfo<ServiceCollection> pageInfo = new PageInfo<>(list);
         return pageInfo;
     }
+
+
 }

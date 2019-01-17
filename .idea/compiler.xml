@@ -16,8 +16,6 @@
         <module name="sxjy-cloud-server" />
         <module name="sxjy-cloud-sxjysy" />
         <module name="sxjy-cloud-zuul" />
-        <module name="sxjyggfw-common-model" />
-        <module name="wxjy-web-resource" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

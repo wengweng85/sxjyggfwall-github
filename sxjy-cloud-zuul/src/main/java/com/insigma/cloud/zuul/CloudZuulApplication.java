@@ -1,5 +1,6 @@
 package com.insigma.cloud.zuul;
 
+import com.insigma.cloud.zuul.filter.RateLimitFilter;
 import com.insigma.cloud.zuul.filter.SignatrueFilter;
 import com.insigma.cloud.zuul.filter.TokenFilter;
 import org.springframework.boot.SpringApplication;
@@ -24,6 +25,11 @@ public class CloudZuulApplication {
 		SpringApplication.run(CloudZuulApplication.class, args);
 	}
 
+
+	@Bean
+	public RateLimitFilter rateLimitFilter(){
+		return new RateLimitFilter();
+	}
 
 	@Bean
 	public SignatrueFilter signatrueFilter(){

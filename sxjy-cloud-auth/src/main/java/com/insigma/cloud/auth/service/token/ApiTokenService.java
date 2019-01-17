@@ -28,6 +28,10 @@ public interface ApiTokenService {
     //获取token
     AccessToken getToken(String username,String password) throws Exception;
 
+    //获取token
+    SUser getUser(String username,String password) throws Exception;
+
+
 
     
     

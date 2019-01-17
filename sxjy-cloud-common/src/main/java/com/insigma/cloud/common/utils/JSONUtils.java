@@ -2,6 +2,9 @@ package com.insigma.cloud.common.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -82,4 +85,17 @@ public class JSONUtils {
 		}
 		return JSON.parseObject(json, Map.class);
 	}
+
+	/**
+	 * 使用objectMapper转换对象为字符串
+	 * @param clazz
+	 * @return
+	 * @throws JsonProcessingException
+	 */
+	public static String writeValueAsString(Object clazz) throws JsonProcessingException {
+		ObjectMapper objectMapper=new ObjectMapper();
+		objectMapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
+		return objectMapper.writeValueAsString(clazz);
+	}
+
 }

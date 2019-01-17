@@ -1,6 +1,6 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8001/eureka/
+      defaultZone: http://192.168.70.34:8001/eureka/
 server:
   port: 8002

@@ -49,8 +49,7 @@ public class ApiServiceCatalogueController {
     @ApiOperation(value = "事项详情", notes = "事项详情", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "/detail", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg detail(@RequestBody ServiceCatalogue serviceCatalogue) throws Exception {
-        return  AjaxReturnMsg.success(serviceDirectoryService.getById(serviceCatalogue.getCata_id(), serviceCatalogue.getUserId()));
+        return  AjaxReturnMsg.success(serviceDirectoryService.getById(serviceCatalogue.getCata_id()));
     }
-
 
 }

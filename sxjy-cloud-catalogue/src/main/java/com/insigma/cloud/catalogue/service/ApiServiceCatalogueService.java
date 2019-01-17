@@ -14,7 +14,7 @@ public interface ApiServiceCatalogueService {
 
     Map getComCataList(SearchCondition searchCondition) throws Exception;
 
-    Map getById(String cataId, String userId) throws Exception;
+    Map getById( String userId) throws Exception;
 
     Map list(SearchCondition searchCondition) throws Exception;
 

@@ -2,7 +2,7 @@ spring:
   application:
     name: api-base
   profiles:
-      active: dev
+      active: pro
   servlet:
      multipart:
        max-file-size: 30Mb

@@ -7,25 +7,6 @@ spring:
      multipart:
        max-file-size: 30Mb
        max-request-size: 30Mb
-  jackson:
-    #日期格式化
-    date-format: yyyy-MM-dd
-    time-zone: GMT+8
-    serialization:
-       #格式化输出
-      indent_output: true
-      #忽略无法转换的对象
-      fail_on_empty_beans: false
-    #设置空如何序列化
-    default-property-inclusion: NON_EMPTY
-    deserialization:
-      #允许对象忽略json中不存在的属性
-      fail_on_unknown_properties: true
-    parser:
-      #允许出现特殊字符和转义符
-      allow_unquoted_control_chars: true
-      #允许出现单引号
-      allow_single_quotes: true
 mybatis:
   mapper-locations: mapper/**/*Mapper.xml
   typeAliasesPackage: com.insigma.mvc.model

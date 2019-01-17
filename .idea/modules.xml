@@ -11,9 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/sxjy-cloud-server/sxjy-cloud-server.iml" filepath="$PROJECT_DIR$/sxjy-cloud-server/sxjy-cloud-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/sxjy-cloud-sxjysy/sxjy-cloud-sxjysy.iml" filepath="$PROJECT_DIR$/sxjy-cloud-sxjysy/sxjy-cloud-sxjysy.iml" />
       <module fileurl="file://$PROJECT_DIR$/sxjy-cloud-zuul/sxjy-cloud-zuul.iml" filepath="$PROJECT_DIR$/sxjy-cloud-zuul/sxjy-cloud-zuul.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../陕西公共服务for银海/sxjyggfw-common-model/sxjyggfw-common-model.iml" filepath="$PROJECT_DIR$/../../陕西公共服务for银海/sxjyggfw-common-model/sxjyggfw-common-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/sxjyggfwall.iml" filepath="$PROJECT_DIR$/sxjyggfwall.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../git工作空间/wxjy-web-resource/wxjy-web-resource.iml" filepath="$PROJECT_DIR$/../../git工作空间/wxjy-web-resource/wxjy-web-resource.iml" />
     </modules>
   </component>
 </project>

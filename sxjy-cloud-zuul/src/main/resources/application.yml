@@ -2,7 +2,7 @@ spring:
   application:
     name: api-gateway
   profiles:
-      active: dev
+      active: pro
   servlet:
     multipart:
       max-file-size: 100Mb

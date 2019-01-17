@@ -1,7 +1,7 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8001/eureka/
+      defaultZone: http://192.168.70.34:8001/eureka/
 server:
   #端口号
   port: 8083
@@ -10,8 +10,8 @@ server:
 spring:
   datasource:
     url: jdbc:oracle:thin:@192.168.181.101:1521:orcl
-    username: sxjyrm
-    password: sxjyrm
+    username: sxjyggfw
+    password: sxjyggfw
     driver-class-name: oracle.jdbc.driver.OracleDriver
     ###################以下为druid增加的配置###########################
     type: com.alibaba.druid.pool.DruidDataSource

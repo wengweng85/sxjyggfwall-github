@@ -78,6 +78,30 @@ public class ApiTokenServiceImpl implements ApiTokenService {
         return accessToken;
     }
 
+    @Override
+    public SUser getUser(String username,String password) throws Exception {
+        AccessToken accessToken = null;
+        SUser user = apiUserMapper.getUserByUsername(username, password);
+        if (user != null) {
+            apiUserMapper.updateLogintimes(user);
+            //过期时间
+            user.setExpires(System.currentTimeMillis() + JWT_Server.MAX_AGE);
+            //给用户jwt加密生成token
+            accessToken = new AccessToken();
+            accessToken.setUserid(user.getUserid());
+            accessToken.setUsername(user.getUsername());
+            accessToken.setName(user.getName());
+            //过期时间
+            accessToken.setExpires(System.currentTimeMillis() + JWT_Server.MAX_AGE);
+            String token = JwtUtils.generateToken(accessToken);
+            logger.debug("jwt=" + token);
+            user.setToken(token);
+            //隐藏密码
+            user.setPassword("");
+        }
+        return user;
+    }
+
 
     /**
      * 过滤菜单
