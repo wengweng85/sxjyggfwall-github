@@ -21,13 +21,13 @@
     <!-- 服务目录的所有事项 -->
     <select id="getCatalogueList" resultType="ServiceCatalogue" >
         SELECT
-        cata_id,
-        cata_code,
-        cata_name,
-        cata_is_net,
-        cata_url
+            cata_id,
+            cata_code,
+            cata_name,
+            cata_is_net,
+            cata_url
         FROM
-        ser_catalogue a
+            ser_catalogue a
         WHERE
         status = '1'
         ORDER BY
@@ -37,27 +37,27 @@
     <!-- 服务目录业务分类 -->
     <select id="getBusTypeList" parameterType="String" resultType="ServiceBusType" >
         SELECT
-        bus_type_id,
-        bus_area_code,
-        bus_type_code,
-        bus_type_name,
-        bus_type_sort,
-        bus_type_pingyin,
-        bus_type_desc,
-        bus_type_bigimg,
-        (SELECT count(1) FROM SER_CATALOGUE WHERE BUS_TYPE_ID = t.BUS_TYPE_ID
-        <choose>
-            <when test="type == 1">
-                AND consumer_type_id = 'C7E6972E3B9000017FA138C01BFCABD0'
-            </when>
-            <when test="type == 2">
-                AND consumer_type_id = 'C7E697275AA0000166EE31666FC0CD90'
-            </when>
-        </choose>) count
+            bus_type_id,
+            bus_area_code,
+            bus_type_code,
+            bus_type_name,
+            bus_type_sort,
+            bus_type_pingyin,
+            bus_type_desc,
+            bus_type_bigimg,
+            (SELECT count(1) FROM SER_CATALOGUE WHERE BUS_TYPE_ID = t.BUS_TYPE_ID
+            <choose>
+                <when test="type == 1">
+                    AND consumer_type_id = 'C7E6972E3B9000017FA138C01BFCABD0'
+                </when>
+                <when test="type == 2">
+                    AND consumer_type_id = 'C7E697275AA0000166EE31666FC0CD90'
+                </when>
+            </choose>) count
         FROM
-        ser_bus_type t
+            ser_bus_type t
         WHERE
-        status = '1'
+            status = '1'
         ORDER BY
         bus_type_sort
     </select>
@@ -65,22 +65,22 @@
     <!-- 受理部门分类 -->
     <select id="getDepartmentList" resultType="ServiceDepartment" >
         SELECT
-        department_id,
-        department_address,
-        department_longitude,
-        department_latitude,
-        department_tel,
-        department_linkman,
-        userid,
-        createtime,
-        status,
-        department_name,
-        groupId,
-        department_name_abb
+            department_id,
+            department_address,
+            department_longitude,
+            department_latitude,
+            department_tel,
+            department_linkman,
+            userid,
+            createtime,
+            status,
+            department_name,
+            groupId,
+            department_name_abb
         FROM
-        ser_department
+            ser_department
         WHERE
-        status = '1'
+            status = '1'
     </select>
 
     <select id="searchCatalogue" resultType="ServiceCatalogue" parameterType="SearchCondition" >
@@ -118,52 +118,52 @@
 
     <select id="getById" parameterType="String" resultType="ServiceCatalogue">
         SELECT
-        cata_id,
-        cata_code,
-        cata_name,
-        cata_pingyin,
-        cata_desc,
-        cata_sort,
-        (SELECT bus_type_name FROM ser_bus_type WHERE bus_type_id = a.bus_type_id) bus_type_name,
-        (SELECT event_type_name FROM ser_event_type WHERE event_type_id = a.event_type_id) event_type_name,
-        (SELECT consumer_type_name FROM ser_consumer_type WHERE consumer_type_id = a.consumer_type_id) consumer_type_name,
-        (SELECT power_type_name FROM ser_power_type WHERE power_type_id = a.power_type_id) power_type_name,
-        (SELECT department_name FROM ser_department WHERE department_id = a.department_id) department_name,
-        (SELECT department_tel FROM ser_department WHERE department_id = a.department_id) department_tel,
-        (SELECT department_linkman FROM ser_department WHERE department_id = a.department_id) department_linkman,
-        cata_hand_time_limit,
-        cata_promise_time_limit,
-        cata_complaint_tel,
-        cata_is_net,
-        (SELECT department_address FROM ser_department WHERE department_id = a.department_id) department_address,
-        (SELECT department_route FROM ser_department WHERE department_id = a.department_id) department_route,
-        (SELECT department_work_time FROM ser_department WHERE department_id = a.department_id) department_work_time,
-        (SELECT department_longitude FROM ser_department WHERE department_id = a.department_id) department_longitude,
-        (SELECT department_latitude FROM ser_department WHERE department_id = a.department_id) department_latitude,
-        cata_video_url,
-        cata_is_charge,
-        cata_establish,
-        cata_hand_term,
-        cata_app_material,
-        cata_process,
-        cata_process_pic,
-        cata_url,
-        (CASE WHEN (SELECT count(1) FROM SER_COLLECT where CATA_ID = #{cataId} AND USERID = #{userId}) = 1 THEN '1' ELSE '0' END) is_collect
+            cata_id,
+            cata_code,
+            cata_name,
+            cata_pingyin,
+            cata_desc,
+            cata_sort,
+            (SELECT bus_type_name FROM ser_bus_type WHERE bus_type_id = a.bus_type_id) bus_type_name,
+            (SELECT event_type_name FROM ser_event_type WHERE event_type_id = a.event_type_id) event_type_name,
+            (SELECT consumer_type_name FROM ser_consumer_type WHERE consumer_type_id = a.consumer_type_id) consumer_type_name,
+            (SELECT power_type_name FROM ser_power_type WHERE power_type_id = a.power_type_id) power_type_name,
+            (SELECT department_name FROM ser_department WHERE department_id = a.department_id) department_name,
+            (SELECT department_tel FROM ser_department WHERE department_id = a.department_id) department_tel,
+            (SELECT department_linkman FROM ser_department WHERE department_id = a.department_id) department_linkman,
+            cata_hand_time_limit,
+            cata_promise_time_limit,
+            cata_complaint_tel,
+            cata_is_net,
+            (SELECT department_address FROM ser_department WHERE department_id = a.department_id) department_address,
+            (SELECT department_route FROM ser_department WHERE department_id = a.department_id) department_route,
+            (SELECT department_work_time FROM ser_department WHERE department_id = a.department_id) department_work_time,
+            (SELECT department_longitude FROM ser_department WHERE department_id = a.department_id) department_longitude,
+            (SELECT department_latitude FROM ser_department WHERE department_id = a.department_id) department_latitude,
+            cata_video_url,
+            cata_is_charge,
+            cata_establish,
+            cata_hand_term,
+            cata_app_material,
+            cata_process,
+            cata_process_pic,
+            cata_url,
+            (CASE WHEN (SELECT count(1) FROM SER_COLLECT where CATA_ID = #{cataId} AND USERID = #{userId}) = 1 THEN '1' ELSE '0' END) is_collect
         FROM
-        ser_catalogue a
+            ser_catalogue a
         WHERE
         a.cata_id = #{cataId}
     </select>
 
     <select id="getListByCataId" resultType="ServiceCatalogueDetail">
         SELECT
-        cata_detail_id,
-        cata_detail_name,
-        cata_detail_desc
+            cata_detail_id,
+            cata_detail_name,
+            cata_detail_desc
         FROM
         SER_CATALOGUE_DETAIL
         WHERE
-        cata_id = #{cataId}
+           cata_id = #{cataId}
         ORDER BY
         cata_detail_sort
     </select>
@@ -171,15 +171,15 @@
 
     <select id="getListByDetailId" resultType="ServiceCatalogueAttach">
         SELECT
-        cata_attch_id,
-        cata_attch_name,
-        cata_attch_desc,
-        cata_attch_file_location,
-        cata_attch_filetype
+            cata_attch_id,
+            cata_attch_name,
+            cata_attch_desc,
+            cata_attch_file_location,
+            cata_attch_filetype
         FROM
         SER_CATALOGUE_ATTACH
         WHERE
-        cata_detail_id = #{detailId}
+            cata_detail_id = #{detailId}
         ORDER BY
         cata_attch_sort
     </select>
@@ -224,30 +224,30 @@
 
     <select id="getListByUserId" resultType="ServiceCollection" parameterType="String">
         SELECT
-        CATA_ID,
-        to_char(CREATETIME, 'yyyy-MM-dd') createTime,
-        (SELECT CATA_NAME FROM SER_CATALOGUE WHERE CATA_ID = t.CATA_ID) cata_name,
-        (SELECT CATA_URL FROM SER_CATALOGUE WHERE CATA_ID = t.CATA_ID) cata_url
+            CATA_ID,
+            to_char(CREATETIME, 'yyyy-MM-dd') createTime,
+            (SELECT CATA_NAME FROM SER_CATALOGUE WHERE CATA_ID = t.CATA_ID) cata_name,
+            (SELECT CATA_URL FROM SER_CATALOGUE WHERE CATA_ID = t.CATA_ID) cata_url
         FROM
-        SER_COLLECT t
+            SER_COLLECT t
         WHERE
-        t.STATUS = '1' AND
-        t.USERID = #{userId}
+            t.STATUS = '1' AND
+            t.USERID = #{userId}
         ORDER BY
         t.CREATETIME DESC
     </select>
 
     <select id="getHotCataList" resultType="ServiceCatalogue">
         SELECT
-        cata_id,
-        cata_name,
-        cata_bigimg
-        FROM (SELECT tt.*, ROWNUM AS rowno
-        FROM (   SELECT
-        c.cata_id,
-        c.cata_name,
-        c.cata_bigimg,
-        (select count(*) from ser_browse s where s.status='1' and s.cata_id=c.cata_id) browse_count
+            cata_id,
+            cata_name,
+            cata_bigimg
+            FROM (SELECT tt.*, ROWNUM AS rowno
+            FROM (   SELECT
+            c.cata_id,
+            c.cata_name,
+            c.cata_bigimg,
+            (select count(*) from ser_browse s where s.status='1' and s.cata_id=c.cata_id) browse_count
         FROM
         ser_catalogue c
         where c.status = '1'
@@ -257,5 +257,55 @@
         WHERE table_alias.rowno &gt;= 0
     </select>
 
+    <!--启动事项-->
+    <insert id="startCataDesk" parameterType="ServiceDesk">
+        <selectKey resultType="String" order="BEFORE" keyProperty="desk_id" >
+            SELECT sys_guid() FROM dual
+        </selectKey>
+        insert into ser_desk(
+            desk_id	,
+            desk_code	,
+            cata_id	,
+            userid	,
+            createtime	,
+            status	,
+            desk_desc	,
+            yw_id,
+            version
+        )
+        VALUES (
+             #{desk_id,jdbcType=VARCHAR}	,
+             #{desk_code,jdbcType=VARCHAR}	,
+             #{cata_id,jdbcType=VARCHAR}	,
+             #{userid,jdbcType=VARCHAR}	,
+             sysdate	,
+             #{status,jdbcType=VARCHAR}	,
+             #{desk_desc,jdbcType=VARCHAR}	,
+             #{yw_id,jdbcType=VARCHAR},
+             '1.0'
+        )
+    </insert>
 
+
+    <!--更新事项办理状态-->
+    <update id="updateCataDesk" parameterType="ServiceDesk">
+        update ser_desk set  status=#{status},version=version+1 where desk_code=#{desk_code}
+    </update>
+
+    <!--事项办理状态查询-->
+    <select id="queryCataDeskList" parameterType="ServiceDesk" resultType="ServiceDesk">
+        select
+            a.desk_code,
+            a.createtime,
+            a.status,
+            a.desk_desc,
+            b.cata_name
+        from SER_DESK a,ser_catalogue b
+        where a.cata_id=b.cata_id
+              and userid=#{userid}
+        <if test="desk_code != '' and desk_code != null">
+            desk_code #{desk_code}
+        </if>
+        order by createtime desc
+    </select>
 </mapper>

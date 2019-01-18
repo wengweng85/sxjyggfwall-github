@@ -6,16 +6,19 @@ import com.insigma.mvc.model.catalogue.ServiceCollection;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
 /**
- * 个人服务目录的接口
+ * 个人事项服务
  */
 @RestController
 @RequestMapping("/person/catalogue")
-@Api(description = "个人服务目录的接口")
+@Api(description = "个人事项服务")
 public class ApiPersonCataController {
 
     @Resource
@@ -41,7 +44,7 @@ public class ApiPersonCataController {
      * @throws Exception
      */
     @ApiOperation(value = "我收藏的事项列表（分页）", notes = "我收藏的事项列表（分页）")
-    @RequestMapping(value = "/getFavoriteList", method = RequestMethod.POST)
+    @PostMapping(value = "/getFavoriteList", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getFavoriteList(@RequestBody ServiceCollection collection) throws Exception {
         return AjaxReturnMsg.success(serviceCatalogueService.getFavoriteList(collection));
     }

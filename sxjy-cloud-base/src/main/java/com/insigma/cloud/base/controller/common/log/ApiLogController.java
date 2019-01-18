@@ -34,7 +34,7 @@ public class ApiLogController  {
      * @throws AppException
      */
     @ApiOperation(value = "获取所有异常日志", notes = "获取所有异常日志", produces = MediaType.APPLICATION_JSON_VALUE)
-    @PostMapping(value = "/errorlogs")
+    @PostMapping(value = "/errorlogs", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getErrorLogList(@RequestBody SErrorLog sErrorLog) throws AppException {
         return AjaxReturnMsg.success(apiLogService.getErrorLogList(sErrorLog));
     }
@@ -45,7 +45,7 @@ public class ApiLogController  {
      * @throws AppException
      */
     @ApiOperation(value = "保存异常日志", notes = "保存异常日志", produces = MediaType.APPLICATION_JSON_VALUE)
-    @PostMapping(value = "/errorlog")
+    @PostMapping(value = "/errorlog", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg saveSErrorLog(@RequestBody SErrorLog sErrorLog) throws AppException {
         return AjaxReturnMsg.success(apiLogService.saveSErrorLog(sErrorLog));
     }
@@ -57,7 +57,7 @@ public class ApiLogController  {
      * @throws AppException
      */
     @ApiOperation(value = "保存运行日志", notes = "保存运行日志", produces = MediaType.APPLICATION_JSON_VALUE)
-    @PostMapping(value = "/slog")
+    @PostMapping(value = "/slog", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg saveSLog(@RequestBody SLog sLog) throws AppException {
         return AjaxReturnMsg.success(apiLogService.saveSLog(sLog));
     }
@@ -68,7 +68,7 @@ public class ApiLogController  {
      * @throws AppException
      */
     @ApiOperation(value = "保存用户操作日志", notes = "保存用户操作日志", produces = MediaType.APPLICATION_JSON_VALUE)
-    @PostMapping(value = "/userlog")
+    @PostMapping(value = "/userlog", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg saveUserLog(@RequestBody SUserLog sUserLog) throws AppException {
         sUserLog.setAae011(SUserUtil.getUserId());
         return AjaxReturnMsg.success(apiLogService.saveUserLog(sUserLog));

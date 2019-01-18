@@ -34,4 +34,11 @@ public interface ApiServiceCatalogueMapper {
     List<ServiceCollection> getListByUserId(String userId);
 
     List<ServiceCatalogue> getHotCataList();
+
+    String startCataDesk(ServiceDesk serviceDesk) ;
+
+    int updateCataDesk(ServiceDesk serviceDesk);
+
+    List<ServiceDesk> queryCataDeskList(ServiceDesk serviceDesk);
+
 }

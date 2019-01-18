@@ -18,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,8 +45,8 @@ public class ApiTokenController {
      * @return
      * @throws Exception
      */
-    @ApiOperation(value = "获取认证token", notes = "获取认证token")
-    @RequestMapping(value = "/token", method = RequestMethod.POST)
+    @ApiOperation(value = "获取认证token", notes = "获取认证token",produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/token",produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg gettoken(@RequestBody SUser suser) throws Exception {
         AccessToken accessToken=apiLoginService.getToken(suser.getUsername(),suser.getPassword());
         if(accessToken!=null){
@@ -61,8 +62,8 @@ public class ApiTokenController {
      * @return
      * @throws Exception
      */
-    @ApiOperation(value = "获取认证token及菜单", notes = "获取认证token及菜单")
-    @RequestMapping(value = "/tokenmenus", method = RequestMethod.POST)
+    @ApiOperation(value = "获取认证token及菜单", notes = "获取认证token及菜单",produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/tokenmenus", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg tokenAndmenus(@RequestBody SUser suser) throws Exception {
         AccessToken accessToken=apiLoginService.getToken(suser.getUsername(),suser.getPassword());
         if(accessToken!=null){
@@ -84,7 +85,7 @@ public class ApiTokenController {
      * @throws Exception
      */
     @ApiOperation(value = "获取菜单", notes = "获取菜单")
-    @RequestMapping(value = "/menus", method = RequestMethod.POST)
+    @PostMapping(value = "/menus", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg menus(@RequestBody SUser suser) throws Exception {
         List<SPermission> menuTree=apiLoginService.findMenuTree(suser.getUsername());
         return AjaxReturnMsg.success(menuTree);
@@ -95,8 +96,8 @@ public class ApiTokenController {
      * @return
      * @throws Exception
      */
-    @ApiOperation(value = "根据用户名获取用户角色", notes = "根据用户名获取用户角色")
-    @RequestMapping(value = "/roles", method = RequestMethod.POST)
+    @ApiOperation(value = "根据用户名获取用户角色", notes = "根据用户名获取用户角色",produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/roles", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg roles(@RequestBody SUser suser) throws Exception {
         List<SRole> roleList=apiLoginService.findRolesStr(suser.getUsername());
         return AjaxReturnMsg.success(roleList);
@@ -107,8 +108,8 @@ public class ApiTokenController {
      * @return
      * @throws Exception
      */
-    @ApiOperation(value = "根据用户名获取用户权限", notes = "根据用户名获取用户权限")
-    @RequestMapping(value = "/permissions", method = RequestMethod.POST)
+    @ApiOperation(value = "根据用户名获取用户权限", notes = "根据用户名获取用户权限",produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/permissions",produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg permissions(@RequestBody SUser suser) throws Exception {
         List<SPermission> permissionList=apiLoginService.findPermissionStr(suser.getUsername());
         return AjaxReturnMsg.success(permissionList);
@@ -119,8 +120,8 @@ public class ApiTokenController {
      * @return
      * @throws Exception
      */
-    @ApiOperation(value = "cas单点登录", notes = "cas单点登录")
-    @RequestMapping(value = "/cas", method = RequestMethod.POST)
+    @ApiOperation(value = "cas单点登录", notes = "cas单点登录", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/cas" , produces = MediaType.APPLICATION_JSON_VALUE)
     public void castoken(@RequestHeader HttpHeaders httpHeaders,HttpServletResponse response) throws Exception {
         LOGGER.info("Rest api login.");
         LOGGER.debug("request headers: {}", httpHeaders);

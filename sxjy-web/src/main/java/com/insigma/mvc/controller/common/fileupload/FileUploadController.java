@@ -43,7 +43,7 @@ public class FileUploadController extends MvcHelper {
      *
      * @param
      */
-    @RequestMapping("/uploadFiles/{type}/{businessType}/{fileRandomFlag}")
+    @PostMapping("/uploadFiles/{type}/{businessType}/{fileRandomFlag}")
     public String upload(@PathVariable String type,@PathVariable String businessType,@PathVariable String fileRandomFlag, ModelMap modelMap){
         modelMap.put("fileStyle",type);
         modelMap.put("businessType",businessType);
@@ -61,7 +61,7 @@ public class FileUploadController extends MvcHelper {
      */
 
     @ResponseBody
-    @RequestMapping("/uploadFile/uploadImage/{fileStyle}/{businessType}/{fileRandomFlag}")
+    @PostMapping("/uploadFile/uploadImage/{fileStyle}/{businessType}/{fileRandomFlag}")
     public AjaxReturnMsg uploadImage(HttpServletRequest request,@PathVariable(value = "fileStyle") String fileStyle,@PathVariable(value = "businessType") String businessType,@PathVariable(value = "fileRandomFlag") String fileRandomFlag) {
         try {
         	SUser suser = (SUser) request.getSession().getAttribute(SUserUtil.SHIRO_CURRENT_USER_INFO);
@@ -77,7 +77,7 @@ public class FileUploadController extends MvcHelper {
      * 获取上传文件数量和限制
      */
     @ResponseBody
-    @RequestMapping("/getUploadFileNumberInfo/{fileStyle}/{businessType}/{fileRandomFlag}")
+    @PostMapping("/getUploadFileNumberInfo/{fileStyle}/{businessType}/{fileRandomFlag}")
     public AjaxReturnMsg getUploadFileNumberInfo(HttpSession session,@PathVariable String fileStyle,@PathVariable String businessType,@PathVariable String fileRandomFlag) throws Exception {
         SUser suser = (SUser) session.getAttribute(SUserUtil.SHIRO_CURRENT_USER_INFO);
         String aac002 = suser.getUsername();
@@ -94,7 +94,7 @@ public class FileUploadController extends MvcHelper {
      * 获取上传文件信息列表(新)
      */
     @ResponseBody
-    @RequestMapping("/getFileUploadInfoList")
+    @PostMapping("/getFileUploadInfoList")
     public List<SuploadFile> getFileUploadInfoList(HttpServletRequest request,HttpSession session) throws Exception {
         String filetype = request.getParameter("fileStyle");
         String businessType = request.getParameter("businessType");
@@ -113,7 +113,7 @@ public class FileUploadController extends MvcHelper {
      * 获取上传文件信息
      */
     @ResponseBody
-    @RequestMapping("/getFileUploadInfo")
+    @PostMapping("/getFileUploadInfo")
     public AjaxReturnMsg getUploadInfo(HttpServletRequest request,HttpSession session) throws Exception {
         String filetype = request.getParameter("filetype");
         SUser suser = (SUser) session.getAttribute(SUserUtil.SHIRO_CURRENT_USER_INFO);
@@ -132,7 +132,7 @@ public class FileUploadController extends MvcHelper {
      * @throws Exception
      */
     @ResponseBody
-    @RequestMapping("/fileUploadInfo/delete/{fileStyle}/{businessType}/{fileRandomFlag}")
+    @PostMapping("/fileUploadInfo/delete/{fileStyle}/{businessType}/{fileRandomFlag}")
     public AjaxReturnMsg delUpLoadFile(HttpSession session,@PathVariable String fileStyle,@PathVariable String businessType,@PathVariable String fileRandomFlag) throws Exception {
         SUser suser = (SUser) session.getAttribute(SUserUtil.SHIRO_CURRENT_USER_INFO);
         HashMap<String, String> map = new HashMap<>();

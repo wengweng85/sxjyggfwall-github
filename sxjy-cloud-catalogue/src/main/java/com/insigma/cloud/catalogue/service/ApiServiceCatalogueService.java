@@ -3,7 +3,9 @@ package com.insigma.cloud.catalogue.service;
 import com.github.pagehelper.PageInfo;
 import com.insigma.mvc.model.catalogue.SearchCondition;
 import com.insigma.mvc.model.catalogue.ServiceCollection;
+import com.insigma.mvc.model.catalogue.ServiceDesk;
 
+import java.util.List;
 import java.util.Map;
 
 public interface ApiServiceCatalogueService {
@@ -21,4 +23,10 @@ public interface ApiServiceCatalogueService {
     void toggleCollect(ServiceCollection collection) throws Exception;
 
     PageInfo getFavoriteList(ServiceCollection collection) throws Exception;
+
+    String startCataDesk(ServiceDesk serviceDesk);
+
+    int updateCataDesk(ServiceDesk serviceDesk);
+
+    List<ServiceDesk> queryCataDeskList(ServiceDesk serviceDesk);
 }

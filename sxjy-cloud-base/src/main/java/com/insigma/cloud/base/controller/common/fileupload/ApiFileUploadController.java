@@ -40,7 +40,7 @@ public class ApiFileUploadController {
      * @throws Exception
      */
     @UserLog("上传文件")
-    @RequestMapping(value = "/uploadFile/uploadImage",method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(value = "/uploadFile/uploadImage", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public AjaxReturnMsg uploadImage(
             @RequestParam("uploadFile") MultipartFile file ,
             @RequestParam("file_name") String file_name,
@@ -55,7 +55,7 @@ public class ApiFileUploadController {
     /**
      * 获取文件
      */
-    @RequestMapping(value = "/getFileUploadInfo", method = RequestMethod.POST)
+    @PostMapping(value = "/getFileUploadInfo", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getUploadInfo(@RequestBody SuploadFile suploadFile) throws Exception {
         PageInfo<SuploadFile> pageinfo = apiFileUploadService.selectFileByUserId(suploadFile.getAaa002(),suploadFile.getAaa004());
         return AjaxReturnMsg.success(pageinfo);
@@ -65,7 +65,7 @@ public class ApiFileUploadController {
      * 删除文件
      * @return
      */
-    @RequestMapping(value = "/fileUploadInfo/delete", method = RequestMethod.POST)
+    @PostMapping(value = "/fileUploadInfo/delete", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg deleteFileById(@RequestBody SuploadFile suploadFile) {
         apiFileUploadService.deleteFileByID(suploadFile);
         return AjaxReturnMsg.success("成功");
@@ -73,7 +73,7 @@ public class ApiFileUploadController {
     /**
      * 获取特定文件列表
      */
-    @RequestMapping(value = "/getFileUploadInfoList", method = RequestMethod.POST)
+    @PostMapping(value = "/getFileUploadInfoList", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getFileUploadInfoList(@RequestBody SuploadFile suploadFile) throws Exception {
         List<SuploadFile> list = apiFileUploadService.getFileUploadInfoList(suploadFile);
         return AjaxReturnMsg.success(list);
@@ -82,7 +82,7 @@ public class ApiFileUploadController {
     /**
      * 获取文件列表
      */
-    @RequestMapping(value = "/getFileUploadInfoListAll", method = RequestMethod.POST)
+    @PostMapping(value = "/getFileUploadInfoListAll", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getFileUploadInfoListAll(@RequestBody SuploadFile suploadFile) throws Exception {
         List<SuploadFile> list = apiFileUploadService.getFileUploadInfoListAll(suploadFile);
         return AjaxReturnMsg.success(list);
@@ -92,7 +92,7 @@ public class ApiFileUploadController {
     /**
      * 获取文件流
      */
-    @RequestMapping(value = "/getFileInfoByte", method = RequestMethod.POST)
+    @PostMapping(value = "/getFileInfoByte", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getFileInfoByte(@RequestBody SuploadFile suploadFile) throws Exception {
         byte[] filebyte = apiFileUploadService.download(suploadFile.getAaa007());
         suploadFile.setFilearray(filebyte);
@@ -104,7 +104,7 @@ public class ApiFileUploadController {
      *
      * @param suploadFile
      */
-    @RequestMapping(value = "/UploadFileNumberInfo", method = RequestMethod.POST)
+    @PostMapping(value = "/UploadFileNumberInfo", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getFileInfo(@RequestBody SuploadFile suploadFile) {
         FileNumberInfo fileNumberInfo = apiFileUploadService.getUploadFileInfoNumber(suploadFile);
         return AjaxReturnMsg.success(fileNumberInfo);

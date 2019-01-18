@@ -1,23 +1,18 @@
 package com.insigma.cloud.catalogue.serviceimpl;
 
-import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.insigma.cloud.catalogue.dao.ApiServiceCatalogueMapper;
 import com.insigma.cloud.catalogue.service.ApiServiceCatalogueService;
 import com.insigma.cloud.common.context.SUserUtil;
-import com.insigma.cloud.common.dto.AjaxReturnMsg;
-import com.insigma.mvc.model.SUser;
+import com.insigma.cloud.common.utils.IdWorker;
 import com.insigma.mvc.model.catalogue.*;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -143,7 +138,6 @@ public class ApiServiceCatalogueServiceImpl implements ApiServiceCatalogueServic
     /**
      * getById
      * @param cataId
-     * @param userId
      * @return
      * @throws Exception
      */
@@ -237,6 +231,38 @@ public class ApiServiceCatalogueServiceImpl implements ApiServiceCatalogueServic
         List<ServiceCollection> list =  serviceCatalogueMapper.getListByUserId(collection.getUserId());
         PageInfo<ServiceCollection> pageInfo = new PageInfo<>(list);
         return pageInfo;
+    }
+
+    /**
+     * 启动事项办理
+     * @param serviceDesk
+     * @return
+     */
+    @Override
+    public String startCataDesk(ServiceDesk serviceDesk) {
+        serviceDesk.setDesk_code(IdWorker.getSerialNumber(serviceDesk.getCata_code()));
+        serviceCatalogueMapper.startCataDesk(serviceDesk);
+        return serviceDesk.getDesk_code();
+    }
+
+    /**
+     * 更新事项办结状态
+     * @param serviceDesk
+     */
+    @Override
+    public int updateCataDesk(ServiceDesk serviceDesk) {
+       return serviceCatalogueMapper.updateCataDesk(serviceDesk);
+    }
+
+    /**
+     * 查询事项状态
+     * @param serviceDesk
+     * @return
+     */
+    @Override
+    public List<ServiceDesk> queryCataDeskList(ServiceDesk serviceDesk) {
+        return serviceCatalogueMapper.queryCataDeskList(serviceDesk);
+
     }
 
 

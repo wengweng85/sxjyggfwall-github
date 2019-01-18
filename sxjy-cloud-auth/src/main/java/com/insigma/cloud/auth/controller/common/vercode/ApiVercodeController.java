@@ -5,9 +5,9 @@ import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.mvc.model.SVerCode;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -26,8 +26,8 @@ public class ApiVercodeController  {
      * 发送短信
      * @throws Exception
      */
-	@ApiOperation(value = "发送短信", notes = "发送短信")
-    @RequestMapping(value = "/api/person/vercode/send", method = RequestMethod.POST)
+	@ApiOperation(value = "发送短信", notes = "发送短信", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/api/person/vercode/send", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg send(@RequestBody  SVerCode sVerCode) throws Exception {
     	 return AjaxReturnMsg.success(apiCodeValidatorService.sendVerCode(sVerCode.getMobile()));
     }

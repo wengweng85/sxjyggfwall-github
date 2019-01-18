@@ -4,8 +4,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author bootdo 1992lcg@163.com
- * @version V1.0
+ * @author admin
+ * @version v1.0
  */
 public class TokenUtils {
     String getCurrent(HttpServletRequest request) {

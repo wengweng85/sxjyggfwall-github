@@ -29,7 +29,7 @@ public class IndexController extends MvcHelper {
      * @param request
      * @return
      */
-    @RequestMapping("/")
+    @PostMapping("/")
     public ModelAndView gotoAdminIndex(HttpServletRequest request, Model model) throws Exception {
         ModelAndView modelAndView=new ModelAndView("index/admin_index");
         modelAndView.addObject("SYS_TITLE", "公共服务平台");
@@ -44,7 +44,7 @@ public class IndexController extends MvcHelper {
      *
      * @return
      */
-    @RequestMapping("/404")
+    @PostMapping("/404")
     public String error404() {
         return "error/404";
     }
@@ -54,7 +54,7 @@ public class IndexController extends MvcHelper {
      *
      * @return
      */
-    @RequestMapping("/500")
+    @PostMapping("/500")
     public String error500() {
         return "error/500";
     }
@@ -64,7 +64,7 @@ public class IndexController extends MvcHelper {
      *
      * @return
      */
-    @RequestMapping("/unrecognized")
+    @PostMapping("/unrecognized")
     public String unrecognized() {
         return "error/unrecognized";
     }

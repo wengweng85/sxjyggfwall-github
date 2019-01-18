@@ -10,10 +10,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -37,7 +34,7 @@ public class ApiCodeTypeController  {
      * @throws AppException
      */
     @ApiOperation(value = "获取参数类别列表", notes = "获取参数类别列表", produces = MediaType.APPLICATION_JSON_VALUE)
-    @RequestMapping(value = "/codetype/getInitcodetypeList", method = RequestMethod.POST)
+    @PostMapping(value = "/codetype/getInitcodetypeList", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getInitcodetypeList() throws AppException {
         return AjaxReturnMsg.success(apiCodeTypeService.getInitcodetypeList());
     }
@@ -49,7 +46,7 @@ public class ApiCodeTypeController  {
      * @throws AppException
      */
     @ApiOperation(value = "根据参数类别获取该类参数的列表", notes = "根据参数类别获取该类参数的列表，如参数类别为AAC011，返回学历信息的列表", produces = MediaType.APPLICATION_JSON_VALUE)
-    @RequestMapping(value = "/codetype/getInitCodeValueList", method = RequestMethod.POST)
+    @PostMapping(value = "/codetype/getInitCodeValueList", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getInitCodeValueList(@RequestBody CodeType codetype) throws AppException {
         //throw new AppException("发生异常了");
         return AjaxReturnMsg.success(apiCodeTypeService.getInitCodeValueList(codetype));
@@ -67,7 +64,7 @@ public class ApiCodeTypeController  {
         @ApiImplicitParam(name = "code_type", value = "参数类别的值", required = true, paramType = "query"),
         @ApiImplicitParam(name = "code_value", value = "参数值", required = true, paramType = "query")
     })
-    @RequestMapping(value = "/codetype/getChildrenByParentId", method = RequestMethod.POST)
+    @PostMapping(value = "/codetype/getChildrenByParentId", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getChildrenByParentId(@RequestBody CodeValue codevalue) throws Exception {
         String codeValue = new String(codevalue.getCode_value().getBytes("iso-8859-1"), "utf-8");
         return AjaxReturnMsg.success(apiCodeTypeService.getChildrenByParentId(codevalue.getCode_type(), codeValue));
@@ -84,7 +81,7 @@ public class ApiCodeTypeController  {
     @ApiImplicitParams({
         @ApiImplicitParam(name = "code_type", value = "参数类别", required = true, paramType = "path")
     })
-    @RequestMapping(value = "/codetype/getMulticodeValuebyType", method = RequestMethod.POST)
+    @PostMapping(value = "/codetype/getMulticodeValuebyType", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getMulticodeValuebyType(@RequestBody CodeType codetype) throws AppException {
         return AjaxReturnMsg.success(apiCodeTypeService.getMulticodeValuebyType(codetype.getCode_type()));
     }
@@ -95,7 +92,7 @@ public class ApiCodeTypeController  {
      * @throws AppException
      */
     @ApiOperation(value = "根据代码类型及代码父类名获取代码值", notes = "根据代码类型及代码父类名获取代码值", produces = MediaType.APPLICATION_JSON_VALUE)
-    @RequestMapping(value = "/codetype/queryCodeValueByCodeTypeAndParent", method = RequestMethod.POST)
+    @PostMapping(value = "/codetype/queryCodeValueByCodeTypeAndParent", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg queryCodeValueByCodeTypeAndParent(@RequestBody CodeValue codevalue) throws Exception {
         return AjaxReturnMsg.success(apiCodeTypeService.queryCodeValueByCodeTypeAndParent(codevalue));
     }
@@ -107,7 +104,7 @@ public class ApiCodeTypeController  {
      * @throws AppException
      */
     @ApiOperation(value = "代码树", notes = "代码树", produces = MediaType.APPLICATION_JSON_VALUE)
-	@RequestMapping(value = "/codetype/treedata")
+	@RequestMapping(value = "/codetype/treedata", produces = MediaType.APPLICATION_JSON_VALUE)
 	public AjaxReturnMsg treedata(HttpServletRequest request, HttpServletResponse response,@RequestBody CodeValue codevalue) throws AppException {
 		return AjaxReturnMsg.success(apiCodeTypeService.getCodeValueTree(codevalue));
 	}

@@ -12,6 +12,8 @@
     <org.mapstruct.version>1.1.0.Final</org.mapstruct.version>
   </properties>
   <modules>
+    <module>sxjyggfw-common-model</module>
+
 	<module>sxjy-cloud-common</module>
 	<module>sxjy-cloud-server</module>
 	<module>sxjy-cloud-zuul</module>

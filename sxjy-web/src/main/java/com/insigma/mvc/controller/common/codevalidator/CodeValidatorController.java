@@ -39,7 +39,7 @@ public class CodeValidatorController extends MvcHelper {
      * @return
      * @throws AppException
      */
-    @RequestMapping(value = "/create")
+    @PostMapping(value = "/create")
     public void upload(HttpServletResponse response) throws AppException {
         //»ØÓ¦Îªimage
         response.setContentType("image/jpeg");
@@ -147,7 +147,7 @@ public class CodeValidatorController extends MvcHelper {
      * @param response
      * @throws AppException
      */
-    @RequestMapping(value = "/check")
+    @PostMapping(value = "/check")
     public void check(HttpServletRequest request, HttpServletResponse response) throws AppException {
         PrintWriter out = null;
         try {

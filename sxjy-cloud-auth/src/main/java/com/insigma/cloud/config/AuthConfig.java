@@ -10,23 +10,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 
 @Configuration
 public class AuthConfig extends WebMvcConfigurationSupport {
-    @Bean
-    public AuthUnNecessaryIntercepter authIntercepter() {
-        return new AuthUnNecessaryIntercepter();
-    }
-
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        InterceptorRegistration addInterceptor = registry.addInterceptor(authIntercepter());
-        // 排除配置
-        addInterceptor.excludePathPatterns("/v2/api-docs");
-        addInterceptor.excludePathPatterns("/swagger-resources/**");
-        addInterceptor.excludePathPatterns("/configuration/**");
-        addInterceptor.excludePathPatterns("/webjars/**");
-        addInterceptor.excludePathPatterns("/swagger-ui.html");
-        // 拦截配置
-        addInterceptor.addPathPatterns("/**");
-    }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

@@ -7,6 +7,9 @@ spring:
      multipart:
        max-file-size: 30Mb
        max-request-size: 30Mb
+  cloud:
+     client:
+        ipAddres: 127.0.0.1
 mybatis:
   mapper-locations: mapper/**/*Mapper.xml
   typeAliasesPackage: com.insigma.mvc.model

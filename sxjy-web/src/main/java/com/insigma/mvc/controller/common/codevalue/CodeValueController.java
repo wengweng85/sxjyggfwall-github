@@ -297,7 +297,7 @@ public class CodeValueController extends MvcHelper {
 	  * @return
 	  * @throws AppException
 	  */
-	 @RequestMapping(value = "/sys/codetype/queryByCodeTypeAndParent")
+	 @PostMapping(value = "/sys/codetype/queryByCodeTypeAndParent")
 	 @ResponseBody
 	 public List<CodeValue> queryByCodeTypeAndParent(HttpServletRequest request, HttpServletResponse response,CodeValue codevalue) throws AppException {
 		   String url = "/codetype/queryCodeValueByCodeTypeAndParent";
@@ -314,7 +314,7 @@ public class CodeValueController extends MvcHelper {
 	  * @return
 	  * @throws AppException
 	  */
-	 @RequestMapping(value = "/sys/codetype/getCodeValueList")
+	 @PostMapping(value = "/sys/codetype/getCodeValueList")
 	 @ResponseBody
 	 public List<CodeValue> getCodeValueList(HttpServletRequest request, HttpServletResponse response,CodeValue codevalue) throws AppException {
 		   String url = "/codetype/getInitCodeValueList";
