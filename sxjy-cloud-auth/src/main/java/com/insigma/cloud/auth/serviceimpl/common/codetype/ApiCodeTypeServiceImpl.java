@@ -12,6 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * 参数服务
  * @author admin
  */
 @Service
@@ -34,6 +35,12 @@ public class ApiCodeTypeServiceImpl implements ApiCodeTypeService {
         return list;
     }
 
+    /**
+     * getChildrenByParentId
+     * @param code_type
+     * @param code_value
+     * @return
+     */
     @Override
     public List<CodeValue> getChildrenByParentId(String code_type, String code_value) {
         if ("AAB301".equals(code_type) && isContainChinese(code_value)) {
@@ -42,6 +49,11 @@ public class ApiCodeTypeServiceImpl implements ApiCodeTypeService {
         return apiCodeTypeMapper.getChildrenByParentId(code_type, code_value);
     }
 
+    /**
+     * getMulticodeValuebyType
+     * @param code_type
+     * @return
+     */
     @Override
     public List<CodeValue> getMulticodeValuebyType(String code_type) {
         CodeType codetype = apiCodeTypeMapper.getCodeTypeInfo(code_type);
@@ -53,7 +65,7 @@ public class ApiCodeTypeServiceImpl implements ApiCodeTypeService {
 
 
     /**
-     *
+     * getChildredCodeValueList
      * @param code_type
      * @param code_value
      * @return

@@ -12,7 +12,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 /**
  * MyApplicationContextUtil
  *
- * @author xxx
+ * @author  admin
  */
 @Component
 public class MyApplicationContextUtil implements ApplicationContextAware {

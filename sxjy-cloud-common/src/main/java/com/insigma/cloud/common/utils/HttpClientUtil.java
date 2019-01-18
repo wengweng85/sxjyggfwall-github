@@ -26,7 +26,7 @@ import java.util.Map;
 
 /**
  * ����HttpClient����post����Ĺ�����
- * @author xxx
+ * @author  admin
  *
  */
 public class HttpClientUtil {

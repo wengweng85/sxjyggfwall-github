@@ -20,7 +20,7 @@ import com.insigma.resolver.AppException;
 /**
  * Ê×Ò³contoller
  *
- * @author xxx
+ * @author  admin
  */
 @Controller
 public class TestController extends MvcHelper {

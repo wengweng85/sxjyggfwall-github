@@ -1,172 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.insigma.cloud.auth.dao.common.svercord.ApiSvercordMapper">
-  <resultMap id="BaseResultMap" type="com.insigma.mvc.model.Svercord">
-    <id column="VERCODEID" jdbcType="VARCHAR" property="vercodeid" />
-    <result column="USERLOGID" jdbcType="VARCHAR" property="userlogid" />
-    <result column="OPTYPE" jdbcType="VARCHAR" property="optype" />
-    <result column="MOBILE" jdbcType="VARCHAR" property="mobile" />
-    <result column="VERCODE" jdbcType="VARCHAR" property="vercode" />
-    <result column="CREATEDATE" jdbcType="TIMESTAMP" property="createdate" />
-    <result column="ENDDATE" jdbcType="TIMESTAMP" property="enddate" />
-    <result column="AAE100" jdbcType="VARCHAR" property="aae100" />
-    <result column="INPUTCODE" jdbcType="VARCHAR" property="inputcode" />
-    <result column="INPUTTIME" jdbcType="TIMESTAMP" property="inputtime" />
-    <result column="VERRESULT" jdbcType="VARCHAR" property="verresult" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    VERCODEID, USERLOGID, OPTYPE, MOBILE, VERCODE, CREATEDATE, ENDDATE, AAE100, INPUTCODE, 
-    INPUTTIME, VERRESULT
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from S_VERCORD
-    where VERCODEID = #{vercodeid,jdbcType=VARCHAR}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from S_VERCORD
-    where VERCODEID = #{vercodeid,jdbcType=VARCHAR}
+
+  <!-- 保存验证码 -->
+  <insert id="saveSVerCode" parameterType="com.insigma.mvc.model.SVerCode">
+    <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="vercodeid">
+      SELECT sys_guid() FROM dual
+    </selectKey>
+    INSERT INTO S_VERCORD(
+    vercodeid,
+    userlogid,
+    optype,
+    mobile,
+    vercode,
+    createdate,
+    enddate,
+    aae100,
+    verresult
+    )
+    VALUES (
+    #{vercodeid},
+    #{userlogid},
+    #{optype},
+    #{mobile},
+    #{vercode},
+    #{createdate},
+    #{enddate},
+    #{aae100},
+    #{verresult}
+    )
+  </insert>
+
+  <!-- 将历史验证码设置为无效 -->
+  <delete id="deleteSVerCode" parameterType="com.insigma.mvc.model.SVerCode">
+    update s_vercord set aae100='0' where mobile=#{mobile} and optype=#{optype} and aae100='1'
   </delete>
-  <insert id="insert" parameterType="com.insigma.mvc.model.Svercord">
-    insert into S_VERCORD (VERCODEID, USERLOGID, OPTYPE, 
-      MOBILE, VERCODE, CREATEDATE, 
-      ENDDATE, AAE100, INPUTCODE, 
-      INPUTTIME, VERRESULT)
-    values (#{vercodeid,jdbcType=VARCHAR}, #{userlogid,jdbcType=VARCHAR}, #{optype,jdbcType=VARCHAR}, 
-      #{mobile,jdbcType=VARCHAR}, #{vercode,jdbcType=VARCHAR}, #{createdate,jdbcType=TIMESTAMP}, 
-      #{enddate,jdbcType=TIMESTAMP}, #{aae100,jdbcType=VARCHAR}, #{inputcode,jdbcType=VARCHAR}, 
-      #{inputtime,jdbcType=TIMESTAMP}, #{verresult,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.insigma.mvc.model.Svercord">
-    insert into S_VERCORD
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="vercodeid != null">
-        VERCODEID,
-      </if>
-      <if test="userlogid != null">
-        USERLOGID,
-      </if>
-      <if test="optype != null">
-        OPTYPE,
-      </if>
-      <if test="mobile != null">
-        MOBILE,
-      </if>
-      <if test="vercode != null">
-        VERCODE,
-      </if>
-      <if test="createdate != null">
-        CREATEDATE,
-      </if>
-      <if test="enddate != null">
-        ENDDATE,
-      </if>
-      <if test="aae100 != null">
-        AAE100,
-      </if>
-      <if test="inputcode != null">
-        INPUTCODE,
-      </if>
-      <if test="inputtime != null">
-        INPUTTIME,
-      </if>
-      <if test="verresult != null">
-        VERRESULT,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="vercodeid != null">
-        #{vercodeid,jdbcType=VARCHAR},
-      </if>
-      <if test="userlogid != null">
-        #{userlogid,jdbcType=VARCHAR},
-      </if>
-      <if test="optype != null">
-        #{optype,jdbcType=VARCHAR},
-      </if>
-      <if test="mobile != null">
-        #{mobile,jdbcType=VARCHAR},
-      </if>
-      <if test="vercode != null">
-        #{vercode,jdbcType=VARCHAR},
-      </if>
-      <if test="createdate != null">
-        #{createdate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="enddate != null">
-        #{enddate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="aae100 != null">
-        #{aae100,jdbcType=VARCHAR},
-      </if>
-      <if test="inputcode != null">
-        #{inputcode,jdbcType=VARCHAR},
-      </if>
-      <if test="inputtime != null">
-        #{inputtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="verresult != null">
-        #{verresult,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.insigma.mvc.model.Svercord">
-    update S_VERCORD
-    <set>
-      <if test="userlogid != null">
-        USERLOGID = #{userlogid,jdbcType=VARCHAR},
-      </if>
-      <if test="optype != null">
-        OPTYPE = #{optype,jdbcType=VARCHAR},
-      </if>
-      <if test="mobile != null">
-        MOBILE = #{mobile,jdbcType=VARCHAR},
-      </if>
-      <if test="vercode != null">
-        VERCODE = #{vercode,jdbcType=VARCHAR},
-      </if>
-      <if test="createdate != null">
-        CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="enddate != null">
-        ENDDATE = #{enddate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="aae100 != null">
-        AAE100 = #{aae100,jdbcType=VARCHAR},
-      </if>
-      <if test="inputcode != null">
-        INPUTCODE = #{inputcode,jdbcType=VARCHAR},
-      </if>
-      <if test="inputtime != null">
-        INPUTTIME = #{inputtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="verresult != null">
-        VERRESULT = #{verresult,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where VERCODEID = #{vercodeid,jdbcType=VARCHAR}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.insigma.mvc.model.Svercord">
-    update S_VERCORD
-    set USERLOGID = #{userlogid,jdbcType=VARCHAR},
-      OPTYPE = #{optype,jdbcType=VARCHAR},
-      MOBILE = #{mobile,jdbcType=VARCHAR},
-      VERCODE = #{vercode,jdbcType=VARCHAR},
-      CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
-      ENDDATE = #{enddate,jdbcType=TIMESTAMP},
-      AAE100 = #{aae100,jdbcType=VARCHAR},
-      INPUTCODE = #{inputcode,jdbcType=VARCHAR},
-      INPUTTIME = #{inputtime,jdbcType=TIMESTAMP},
-      VERRESULT = #{verresult,jdbcType=VARCHAR}
-    where VERCODEID = #{vercodeid,jdbcType=VARCHAR}
-  </update>
-  
-  <!-- 根据手机号码查询手机验证码信息 -->
-  <select id="querySvercordListByMobile" parameterType="java.lang.String" resultMap="BaseResultMap">
-  	select 
-    <include refid="Base_Column_List" />
-    from S_VERCORD
-    where mobile = #{mobile,jdbcType=VARCHAR}
+
+  <!-- 获取最新验证码信息 -->
+  <select id="getMobileVerCode" parameterType="com.insigma.mvc.model.SVerCode" resultType="com.insigma.mvc.model.SVerCode">
+    SELECT
+    vercodeid,
+    userlogid,
+    optype,
+    mobile,
+    vercode,
+    createdate,
+    enddate,
+    aae100,
+    inputcode,
+    inputtime,
+    verresult
+    FROM s_vercord
+    WHERE mobile=#{mobile}
+    and optype=#{optype}
+    and aae100='1'
+    ORDER BY createdate desc
   </select>
+
+  <!-- 更新验证码状态等信息 -->
+  <update id="updateSVerCode" parameterType="com.insigma.mvc.model.SVerCode">
+    UPDATE s_vercord
+    SET
+    aae100=#{aae100},
+    inputcode=#{inputcode},
+    inputtime=#{inputtime},
+    verresult=#{verresult}
+    WHERE vercodeid=#{vercodeid}
+  </update>
 </mapper>

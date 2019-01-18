@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 认证接口
  *
- * @author xxx
+ * @author  admin
  */
 public interface ApiTokenService {
 
@@ -31,8 +31,4 @@ public interface ApiTokenService {
     //获取token
     SUser getUser(String username,String password) throws Exception;
 
-
-
-    
-    
 }

@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 import java.util.UUID;
 
 /**
- * Created by xxx on 2015-01-14.
+ * Created by  admin on 2015-01-14.
  */
 @Controller
 public class TokenController extends MvcHelper {

@@ -1,6 +1,6 @@
 package com.insigma.cloud.auth.controller.common.vercode;
 
-import com.insigma.cloud.auth.service.common.codevalidator.ApiCodeValidatorService;
+import com.insigma.cloud.auth.service.common.svercord.ApiSvercordService;
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.mvc.model.SVerCode;
 import io.swagger.annotations.Api;
@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 public class ApiVercodeController  {
     
 	@Resource
-	private ApiCodeValidatorService apiCodeValidatorService;
+	private ApiSvercordService apiSvercordService;
     
     /**
      * 发送短信
@@ -28,8 +28,8 @@ public class ApiVercodeController  {
      */
 	@ApiOperation(value = "发送短信", notes = "发送短信", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "/api/person/vercode/send", produces = MediaType.APPLICATION_JSON_VALUE)
-    public AjaxReturnMsg send(@RequestBody  SVerCode sVerCode) throws Exception {
-    	 return AjaxReturnMsg.success(apiCodeValidatorService.sendVerCode(sVerCode.getMobile()));
+    public AjaxReturnMsg send(@RequestBody SVerCode sVerCode) throws Exception {
+    	 return AjaxReturnMsg.success(apiSvercordService.sendVerCode(sVerCode.getMobile()));
     }
     
 }

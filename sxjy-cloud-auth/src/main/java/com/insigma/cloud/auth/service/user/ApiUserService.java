@@ -6,11 +6,10 @@ import com.insigma.mvc.model.SUser;
 /**
  * 用户登录注册相关服务
  *
- * @author xxx
+ * @author  admin
  */
 public interface ApiUserService {
 
-    public SUser getUserByIdForGgfw(SUser suser);
-    
-    
+    SUser getUserByIdForGgfw(SUser suser);
+
 }

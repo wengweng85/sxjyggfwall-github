@@ -13,24 +13,24 @@ import java.util.List;
  */
 public interface ApiFileUploadService {
 
-	    SuploadFile uploadFilejy(MultipartFile multipartFile, String file_bus_type, String file_bus_name, String file_bus_id, String businessType, String fileRandomFlag) throws Exception;
-	    
-	    public byte[] download(String file_path) ;
-	    
-	    void deleteFileByID(String aaa001);
+	SuploadFile uploadFilejy(MultipartFile multipartFile, String file_bus_type, String file_bus_name, String file_bus_id, String businessType, String fileRandomFlag) throws Exception;
 
-	    SuploadFile uploadImage(MultipartFile file,String file_name,String file_bus_type, String file_bus_id, String fileRandomFlag, String desc) throws Exception;
+	byte[] download(String file_path) ;
 
-		PageInfo<SuploadFile> selectFileByUserId(String aaa002, String aaa004);
+	void deleteFileByID(String aaa001);
 
-		List<SuploadFile> getAllFileByUserId(String aaa002, String aaa010, String aaa011);
-		
-		void deleteFileByID(SuploadFile suploadFile);
+	SuploadFile uploadImage(MultipartFile file,String file_name,String file_bus_type, String file_bus_id, String fileRandomFlag, String desc) throws Exception;
 
-		List<SuploadFile> getFileUploadInfoList(SuploadFile suploadFile);
-	
-		List<SuploadFile> getFileUploadInfoListAll(SuploadFile suploadFile);
+	PageInfo<SuploadFile> selectFileByUserId(String aaa002, String aaa004);
 
-		FileNumberInfo getUploadFileInfoNumber(SuploadFile suploadFile);
+	List<SuploadFile> getAllFileByUserId(String aaa002, String aaa010, String aaa011);
+
+	void deleteFileByID(SuploadFile suploadFile);
+
+	List<SuploadFile> getFileUploadInfoList(SuploadFile suploadFile);
+
+	List<SuploadFile> getFileUploadInfoListAll(SuploadFile suploadFile);
+
+	FileNumberInfo getUploadFileInfoNumber(SuploadFile suploadFile);
 
 }

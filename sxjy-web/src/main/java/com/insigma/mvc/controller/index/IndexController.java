@@ -15,7 +15,7 @@ import com.insigma.mvc.MvcHelper;
 /**
  * Ê×Ò³contoller
  *
- * @author xxx
+ * @author  admin
  */
 @Controller
 public class IndexController extends MvcHelper {

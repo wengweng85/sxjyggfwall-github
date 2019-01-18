@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * 登录service接口
  *
- * @author xxx
+ * @author  admin
  */
 
 @Service
@@ -31,7 +31,8 @@ public class ApiTokenServiceImpl implements ApiTokenService {
     private ApiUserMapper apiUserMapper;
 
     /**
-     * findRolesStr
+     * 通过用户名获取角色
+     * @param username 用户名
      */
     @Override
     public List<SRole> findRolesStr(String username) {
@@ -40,7 +41,8 @@ public class ApiTokenServiceImpl implements ApiTokenService {
     }
 
     /**
-     * findPermissionStr
+     * 通过用户名获取权限
+     * @param username 用户名
      */
     @Override
     public List<SPermission> findPermissionStr(String username) {
@@ -49,7 +51,8 @@ public class ApiTokenServiceImpl implements ApiTokenService {
     }
 
     /**
-     * findPermissionStr
+     * 通过用户名获取菜单
+     * @param username 用户名
      */
     @Override
     public List<SPermission> findMenuTree(String username) {
@@ -58,6 +61,13 @@ public class ApiTokenServiceImpl implements ApiTokenService {
     }
 
 
+    /**
+     * 通过用户名及密码获取jwt token
+     * @param username 用户名
+     * @param password md5加密后的密码
+     * @return <code>AccessToken</code>
+     * @throws Exception
+     */
     @Override
     public AccessToken getToken(String username,String password) throws Exception {
         AccessToken accessToken = null;
@@ -78,6 +88,13 @@ public class ApiTokenServiceImpl implements ApiTokenService {
         return accessToken;
     }
 
+    /**
+     * 通过用户名及密码获取jwt token
+     * @param username 用户名
+     * @param password md5加密后的密码
+     * @return <code>SUser</code>
+     * @throws Exception
+     */
     @Override
     public SUser getUser(String username,String password) throws Exception {
         AccessToken accessToken = null;
@@ -110,7 +127,6 @@ public class ApiTokenServiceImpl implements ApiTokenService {
     public static List<SPermission> filterPersmList(List< SPermission > permlist){
         List<SPermission> resultlist=new ArrayList<SPermission>();
         List<SPermission> firstTempPermlist=new ArrayList<SPermission>();
-
         //过滤掉按钮节点
         for(int i=0;i<permlist.size();i++) {
             if("3".equals(permlist.get(i).getPermtype())){
@@ -164,8 +180,6 @@ public class ApiTokenServiceImpl implements ApiTokenService {
             }
             resultlist.add(firstTempPerm);
         }
-
-
         return resultlist;
     }
 

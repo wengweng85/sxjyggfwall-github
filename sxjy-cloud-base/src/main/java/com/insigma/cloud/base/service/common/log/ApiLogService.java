@@ -11,12 +11,14 @@ import org.springframework.stereotype.Repository;
  *
  * @author admin
  */
-@Repository
 public interface ApiLogService {
 
     String saveSErrorLog(SErrorLog sErrorLog);
+
     PageInfo<SErrorLog>  getErrorLogList(SErrorLog sErrorLog);
+
     String saveSLog(SLog sLog);
+
     String saveUserLog(SUserLog sUserLog);
 
 }

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 登录service接口
  *
- * @author xxx
+ * @author  admin
  */
 @Mapper
 public interface ApiUserMapper {
@@ -18,6 +18,7 @@ public interface ApiUserMapper {
      * 通过用户名获取会员表信息
      *
      * @param username
+     * @param password
      * @return 用户表
      * @throws Exception
      */
@@ -27,6 +28,7 @@ public interface ApiUserMapper {
     /**
      * 通过用户id获取用户角色集合
      *
+     * @param username
      * @return 角色集合
      * @throws Exception
      */
@@ -36,6 +38,7 @@ public interface ApiUserMapper {
     /**
      * 通过用户id获取用户权限集合
      *
+     * @param  username
      * @return 权限集合
      * @throws Exception
      */
@@ -50,11 +53,31 @@ public interface ApiUserMapper {
      */
     void updateLogintimes(SUser user);
 
+    /**
+     * getUserByUserNameForGgfw
+     * @param user
+     * @return
+     */
     SUser getUserByUserNameForGgfw(SUser user);
-    
+
+    /**
+     * addSUserForGgfw
+     * @param suser
+     * @return
+     */
     int  addSUserForGgfw(SUser suser);
-    
+
+    /**
+     * getAc01ByAac002ForGgfw
+     * @param aac002
+     * @return
+     */
     Ac01 getAc01ByAac002ForGgfw(String aac002);
-    
+
+    /**
+     * getAb01ByAab998ForGgfw
+     * @param aac002
+     * @return
+     */
     Ab01 getAb01ByAab998ForGgfw(String aac002);
 }

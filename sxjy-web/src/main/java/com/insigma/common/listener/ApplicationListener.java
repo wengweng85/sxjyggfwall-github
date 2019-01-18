@@ -12,7 +12,7 @@ import org.apache.commons.logging.LogFactory;
 /**
  * 项目初始化
  *
- * @author xxx
+ * @author  admin
  */
 public class ApplicationListener implements ServletContextListener {
 

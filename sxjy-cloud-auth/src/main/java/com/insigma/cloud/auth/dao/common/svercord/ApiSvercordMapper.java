@@ -2,6 +2,7 @@ package com.insigma.cloud.auth.dao.common.svercord;
 
 import java.util.List;
 
+import com.insigma.mvc.model.SVerCode;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -9,18 +10,12 @@ import com.insigma.mvc.model.Svercord;
 
 @Mapper
 public interface ApiSvercordMapper {
-    int deleteByPrimaryKey(String vercodeid);
 
-    int insert(Svercord record);
+    void saveSVerCode(SVerCode sVerCode);
 
-    int insertSelective(Svercord record);
+    void deleteSVerCode(SVerCode sVerCode);
 
-    Svercord selectByPrimaryKey(String vercodeid);
+    List<SVerCode> getMobileVerCode(SVerCode sVerCode);
 
-    int updateByPrimaryKeySelective(Svercord record);
-
-    int updateByPrimaryKey(Svercord record);
-    
-    //根据手机号码查询发送的验证码信息
-    List<Svercord> querySvercordListByMobile(@Param("mobile") String mobile);
+    void updateSVerCode(SVerCode sVerCode);
 }

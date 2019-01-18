@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * @author xxx
+ * @author  admin
  */
 @Mapper
 public interface ApiCodeTypeMapper {

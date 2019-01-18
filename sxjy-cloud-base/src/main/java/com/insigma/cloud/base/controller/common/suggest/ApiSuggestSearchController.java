@@ -19,10 +19,9 @@ import javax.servlet.http.HttpServletResponse;
  * 建议搜索controller
  */
 @RestController
-@Api(description = "建议搜索")
+@Api(description = "搜索建议")
 @RequestMapping(value = "/api")
 public class ApiSuggestSearchController  {
-
 
 
     @Resource
@@ -33,7 +32,7 @@ public class ApiSuggestSearchController  {
     */
     @ApiOperation(value = "根据类型建议搜索", notes = "根据类型建议搜索", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "/common/suggest/searchcode", produces = MediaType.APPLICATION_JSON_VALUE)
-	public AjaxReturnMsg searchcodebykey(HttpServletRequest request, HttpServletResponse response, @RequestBody SysSuggestKey key) throws Exception {
+	public AjaxReturnMsg searchcodebykey(@RequestBody SysSuggestKey key) throws Exception {
 		return AjaxReturnMsg.success(suggestSearchService.searchByKey(key));
 	}
 

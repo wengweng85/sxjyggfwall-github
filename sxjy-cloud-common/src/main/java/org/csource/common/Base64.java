@@ -234,7 +234,7 @@ public class Base64
             break;
 
          case 2:
-            // Two leftover bytes generates xxx=
+            // Two leftover bytes generates  admin=
             // Start a new line if next 4 chars won't fit on the current line
             linePos += 4;
             if ( linePos > lineLength )

@@ -1,24 +1,31 @@
 package com.insigma.cloud.auth.service.common.svercord;
 
-import com.insigma.mvc.model.Svercord;
-
-import java.util.List;
+import com.insigma.mvc.model.SVerCode;
 
 public interface ApiSvercordService {
-	
-	int deleteByPrimaryKey(String vercodeid);
 
-	int insert(Svercord record);
 
-	int insertSelective(Svercord record);
+	/**
+	 * 发送验证码
+	 * @param mobile
+	 * @return
+	 */
+	String sendVerCode(String mobile);
 
-	Svercord selectByPrimaryKey(String vercodeid);
+	/**
+	 * 保存验证码信息
+	 * @param sVerCode
+	 * @return
+	 */
+	String saveSVerCode(SVerCode sVerCode);
 
-	int updateByPrimaryKeySelective(Svercord record);
-
-	int updateByPrimaryKey(Svercord record);
-
-	//根据手机号码查询发送的验证码信息
-	List<Svercord> querySvercordListByMobile(String mobile);
+	/**
+	 * 校验验证码
+	 * @param mobile 手机号码
+	 * @param vercode 验证码
+	 * @param optype 业务类型
+	 * @return
+	 */
+	boolean checkMobileVerCode(String mobile, String vercode, String optype);
 
 }

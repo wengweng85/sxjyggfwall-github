@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * ÈÕÖ¾¼ÇÂ¼mapper
  *
- * @author xxx
+ * @author  admin
  */
 @Mapper
 public interface ApiLogMapper {

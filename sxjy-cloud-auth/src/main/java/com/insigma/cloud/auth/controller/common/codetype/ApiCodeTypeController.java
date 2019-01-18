@@ -104,8 +104,8 @@ public class ApiCodeTypeController  {
      * @throws AppException
      */
     @ApiOperation(value = "´úÂëÊ÷", notes = "´úÂëÊ÷", produces = MediaType.APPLICATION_JSON_VALUE)
-	@RequestMapping(value = "/codetype/treedata", produces = MediaType.APPLICATION_JSON_VALUE)
-	public AjaxReturnMsg treedata(HttpServletRequest request, HttpServletResponse response,@RequestBody CodeValue codevalue) throws AppException {
+	@PostMapping(value = "/codetype/treedata", produces = MediaType.APPLICATION_JSON_VALUE)
+	public AjaxReturnMsg treedata(@RequestBody CodeValue codevalue) throws AppException {
 		return AjaxReturnMsg.success(apiCodeTypeService.getCodeValueTree(codevalue));
 	}
 

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  *
  * ac11 mapper
- * @author xxx
+ * @author  admin
  */
 @Mapper
 public interface ApiAc11Mapper {
