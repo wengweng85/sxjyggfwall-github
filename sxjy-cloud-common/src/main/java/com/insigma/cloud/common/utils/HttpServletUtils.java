@@ -1,5 +1,7 @@
 package com.insigma.cloud.common.utils;
 
+import org.apache.commons.lang3.StringUtils;
+
 import javax.servlet.http.HttpServletRequest;
 
 public class HttpServletUtils {

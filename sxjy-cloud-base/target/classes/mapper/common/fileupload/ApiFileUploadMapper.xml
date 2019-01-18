@@ -90,8 +90,8 @@
             a.aaa005,
             a.aaa007
         FROM
-        s_uploadfile a
+           s_uploadfile a
         WHERE
-        a.aaa001=#{aaa001}
+           a.aaa001=#{aaa001}
     </select>
 </mapper>

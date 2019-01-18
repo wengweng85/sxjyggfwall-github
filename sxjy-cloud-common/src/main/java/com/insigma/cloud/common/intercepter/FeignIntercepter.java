@@ -7,6 +7,9 @@ import feign.RequestTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * FeignIntercepter
+ */
 public class FeignIntercepter implements RequestInterceptor {
     private static final Logger logger = LoggerFactory.getLogger(FeignIntercepter.class);
 

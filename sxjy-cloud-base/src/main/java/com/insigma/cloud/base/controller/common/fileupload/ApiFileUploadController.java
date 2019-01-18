@@ -57,7 +57,7 @@ public class ApiFileUploadController {
      */
     @PostMapping(value = "/getFileUploadInfo", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getUploadInfo(@RequestBody SuploadFile suploadFile) throws Exception {
-        PageInfo<SuploadFile> pageinfo = apiFileUploadService.selectFileByUserId(suploadFile.getAaa002(),suploadFile.getAaa004());
+        PageInfo<SuploadFile> pageinfo = apiFileUploadService.selectFileByUserId(suploadFile.getAaa004());
         return AjaxReturnMsg.success(pageinfo);
     }
 

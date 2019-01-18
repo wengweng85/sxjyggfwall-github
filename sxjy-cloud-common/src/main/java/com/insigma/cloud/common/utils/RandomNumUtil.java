@@ -2,10 +2,12 @@ package com.insigma.cloud.common.utils;
 
 import java.util.Random;
 
+/**
+ * 工具类
+ */
 public class RandomNumUtil {
 
 	/**
-	 * ������֤��
 	 * @param size
 	 * @return
 	 */
@@ -19,7 +21,7 @@ public class RandomNumUtil {
 		return sb.toString();
 	}
 
-	public static String getRandomString(int length) { //length��ʾ�����ַ����ĳ���
+	public static String getRandomString(int length) {
 		String base = "abcdefghijklmnopqrstuvwxyz0123456789";
 		Random random = new Random();
 		StringBuffer sb = new StringBuffer();

@@ -21,9 +21,9 @@ public interface ApiFileUploadService {
 
 	SuploadFile uploadImage(MultipartFile file,String file_name,String file_bus_type, String file_bus_id, String fileRandomFlag, String desc) throws Exception;
 
-	PageInfo<SuploadFile> selectFileByUserId(String aaa002, String aaa004);
+	PageInfo<SuploadFile> selectFileByUserId( String aaa004);
 
-	List<SuploadFile> getAllFileByUserId(String aaa002, String aaa010, String aaa011);
+	List<SuploadFile> getAllFileByUserId(String aaa010, String aaa011);
 
 	void deleteFileByID(SuploadFile suploadFile);
 

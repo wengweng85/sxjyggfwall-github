@@ -1,15 +1,13 @@
 package com.insigma.cloud.common.context;
 
 
-import com.alibaba.fastjson.JSONArray;
 import com.insigma.cloud.common.constants.CommonConstants;
-import com.insigma.mvc.model.SPermission;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * SUserUtil
+ * 基于threalocal的线程副本工具类
  */
 public class SUserUtil {
 

@@ -1,7 +1,9 @@
 package com.insigma.cloud.common.utils;
 
 /**
- * Created by wengsh on 2019/1/18.
+ * @author admin
+ *
+ * 流水号生成器
  */
 public class IdWorker {
 

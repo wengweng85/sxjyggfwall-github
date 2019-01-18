@@ -1,10 +1,7 @@
 package com.insigma.cloud.common.exception;
 
 /**
- * 自定义项目异常
- * @author admin
- * @date 2014-11-25
- *
+ * 鑷畾涔夊紓甯哥被
  */
 public class AppException extends Exception {  
 	  

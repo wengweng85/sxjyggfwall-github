@@ -44,7 +44,7 @@ public class SysLogAspect {
         logger.debug("请求地址 : " +request.getRequestURL().toString());
         logger.debug("HTTP METHOD : " + request.getMethod());
         // 获取真实的ip地址
-        //logger.info("IP : " + IPAddressUtil.getClientIpAddress(request));
+        logger.info("IP : " + IPUtils.getIpAddr(request));
         logger.debug("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
         logger.debug("参数 : " + Arrays.toString(joinPoint.getArgs()));
     }

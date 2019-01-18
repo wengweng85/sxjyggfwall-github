@@ -5,9 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author admin
- * @version v1.0
  */
 public class TokenUtils {
+
     String getCurrent(HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
         for (Cookie cookie : cookies) {

@@ -127,13 +127,12 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
 
     /**
      * 查询上传文件信息列表
-     *
-     * @param aaa002
      * @param aaa004
      */
-    public com.github.pagehelper.PageInfo<SuploadFile> selectFileByUserId(String aaa002,String aaa004) {
+    @Override
+    public com.github.pagehelper.PageInfo<SuploadFile> selectFileByUserId(String aaa004) {
         SuploadFile suploadFile1 = new SuploadFile();
-        suploadFile1.setAaa002(aaa002);
+        suploadFile1.setAaa002(SUserUtil.getUserId());
         suploadFile1.setAaa004(aaa004);
         PageHelper.startPage(suploadFile1.getCurpage(), suploadFile1.getLimit());
         System.out.println(suploadFile1.getAaa002()+","+suploadFile1.getAaa004());
@@ -167,6 +166,7 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
      */
     @Override
     public List<SuploadFile> getFileUploadInfoList(SuploadFile suploadFile) {
+        suploadFile.setAaa002(SUserUtil.getUserId());
         List<SuploadFile> suploadFileList = apiFileUploadMapper.selectFileByUserId(suploadFile);
         return suploadFileList;
     }
@@ -178,6 +178,7 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
      */
     @Override
     public List<SuploadFile> getFileUploadInfoListAll(SuploadFile suploadFile) {
+        suploadFile.setAaa002(SUserUtil.getUserId());
         List<SuploadFile> suploadFileList = apiFileUploadMapper.selectFileByUser(suploadFile);
         return suploadFileList;
     }
@@ -189,21 +190,13 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
      */
     @Override
     public FileNumberInfo getUploadFileInfoNumber(SuploadFile suploadFile) {
+        suploadFile.setAaa002(SUserUtil.getUserId());
         FileNumberInfo fileNumberInfo = new FileNumberInfo();
         int uploadImageNumber = apiFileUploadMapper.getFileCount(suploadFile);
         fileNumberInfo.setUploadImageNumber(uploadImageNumber);
         return fileNumberInfo;
     }
 
-    public static void main(String[] args){
-        try{
-            byte[] sda = new ApiFileUploadServiceImpl() .download("/group1/M00/00/05/CrxBTVvRcpSAeB_XAACdxuJeo1I081.png");
-            System.out.println(sda);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-    }
 
     /**
      * 下载
@@ -231,6 +224,23 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
         }
     }
 
+
+
+    @Override
+    public List<SuploadFile> getAllFileByUserId( String aaa010,String aaa011) {
+        SuploadFile suploadFile1 = new SuploadFile();
+        suploadFile1.setAaa002(SUserUtil.getUserId());
+        suploadFile1.setAaa010(aaa010);
+        suploadFile1.setAaa011(aaa011);
+        List<SuploadFile> suploadFileList = apiFileUploadMapper.selectFileByUserId(suploadFile1);
+        for (SuploadFile suploadFile : suploadFileList) {
+            double file_length = suploadFile.getAaa006();
+            // 单位字节转为兆
+            suploadFile.setAaa006_str(String.format("%.2f", file_length / (1024 * 1024)) + "MB");
+        }
+        return suploadFileList;
+    }
+
     /**
      * 根据fastDFS返回的path得到文件的组名
      * @param path fastDFS返回的path
@@ -249,20 +259,5 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
         String path_temp = path.substring(path.indexOf("/")+1);
         path_temp = path_temp.substring(path_temp.indexOf("/")+1);
         return path_temp;
-    }
-
-    @Override
-    public List<SuploadFile> getAllFileByUserId(String aaa002, String aaa010,String aaa011) {
-        SuploadFile suploadFile1 = new SuploadFile();
-        suploadFile1.setAaa002(aaa002);
-        suploadFile1.setAaa010(aaa010);
-        suploadFile1.setAaa011(aaa011);
-        List<SuploadFile> suploadFileList = apiFileUploadMapper.selectFileByUserId(suploadFile1);
-        for (SuploadFile suploadFile : suploadFileList) {
-            double file_length = suploadFile.getAaa006();
-            // 单位字节转为兆
-            suploadFile.setAaa006_str(String.format("%.2f", file_length / (1024 * 1024)) + "MB");
-        }
-        return suploadFileList;
     }
 }

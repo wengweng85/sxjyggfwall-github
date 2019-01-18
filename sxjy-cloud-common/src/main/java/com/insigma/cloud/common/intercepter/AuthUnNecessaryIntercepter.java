@@ -17,6 +17,7 @@ import java.io.PrintWriter;
 /**
  * 权限过滤器 非必须
  * 如果header中没有token也可通过校验
+ * @author admin
  */
 public class AuthUnNecessaryIntercepter extends HandlerInterceptorAdapter {
     private static final Logger logger = LoggerFactory.getLogger(AuthUnNecessaryIntercepter.class);
