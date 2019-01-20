@@ -12,7 +12,7 @@ import java.util.List;
  * @author  admin
  */
 @Mapper
-public interface ApiUserMapper {
+public interface ApiUserMapper  {
 
     /**
      * 通过用户名获取会员表信息

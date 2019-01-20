@@ -1,11 +1,11 @@
 package com.insigma.cloud.auth.controller.token;
 
 import com.alibaba.fastjson.JSONArray;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.insigma.cloud.auth.service.token.ApiTokenService;
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.cloud.common.dto.CasUser;
+import com.insigma.cloud.common.exception.AppException;
 import com.insigma.cloud.common.utils.JSONUtils;
 import com.insigma.mvc.model.AccessToken;
 import com.insigma.mvc.model.SPermission;
@@ -20,7 +20,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -175,7 +178,7 @@ public class ApiTokenController {
      * @return
      * @throws UnsupportedEncodingException
      */
-    private CasUser obtainUserFormHeader(HttpHeaders httpHeaders) throws UnsupportedEncodingException {
+    private CasUser obtainUserFormHeader(HttpHeaders httpHeaders) throws UnsupportedEncodingException,AppException {
         /**
          *
          * This allows the CAS server to reach to a remote REST endpoint via a POST for verification of credentials.
@@ -183,8 +186,11 @@ public class ApiTokenController {
          */
         //当请求过来时，会通过把用户信息放在请求头authorization中，并且通过Basic认证方式加密
         String authorization = httpHeaders.getFirst ("Authorization");//将得到 Basic Base64(用户名:密码)
+        if(null==authorization){
+            throw new AppException("非法请求,请求头中没有认证信息");
+        }
         String baseCredentials = authorization.split(" ")[1];
-        String  usernamePassword = new String(Base64.decodeBase64(baseCredentials));//用户名:密码
+        String usernamePassword = new String(Base64.decodeBase64(baseCredentials));//用户名:密码
         LOGGER.debug("login user: {}", usernamePassword);
         CasUser casUser=new CasUser();
         String credentials[] = usernamePassword.split(":");

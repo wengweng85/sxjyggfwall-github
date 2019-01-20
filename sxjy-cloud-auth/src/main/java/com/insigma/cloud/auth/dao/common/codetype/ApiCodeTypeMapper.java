@@ -12,7 +12,7 @@ import java.util.List;
  * @author  admin
  */
 @Mapper
-public interface ApiCodeTypeMapper {
+public interface ApiCodeTypeMapper  {
 
 	CodeType  getCodeTypeInfo(String codeType);
 	

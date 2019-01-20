@@ -26,6 +26,7 @@ public class CommonExceptionHandler {
 
     private static final Logger logger = LoggerFactory.getLogger(CommonExceptionHandler.class);
 
+    private static final String ignorePath="/errorlog,/slog,/userlog";
 
     @Autowired
     private LogRpcService logRpcService;
@@ -36,24 +37,17 @@ public class CommonExceptionHandler {
      */
     @ExceptionHandler(value=Exception.class)
     AjaxReturnMsg exception(Exception e, HttpServletRequest request) {
-        logger.error(e.getMessage());
-        e.printStackTrace();
-        saveErrorLog(e,request);
+        //判断哪些地址不记录日志
+        final String requestUri = request.getRequestURI();
+        logger.debug("requestUri="+requestUri);
+        if (!isStartWith(requestUri)) {
+            logger.error(e.getMessage());
+            e.printStackTrace();
+            saveErrorLog(e,request);
+        }
         return AjaxReturnMsg.error500();
     }
 
-    /**
-     * appexception
-     * @param e
-     * @return
-     */
-    @ExceptionHandler(value=AppException.class)
-    AjaxReturnMsg appException(AppException e, HttpServletRequest request) {
-        logger.error(e.getMessage());
-        e.printStackTrace();
-        saveErrorLog(e,request);
-        return AjaxReturnMsg.error500();
-    }
 
     /**
      * 记录全局异常日志
@@ -102,6 +96,22 @@ public class CommonExceptionHandler {
             return sw.toString();
         }
         return "";
+    }
+
+    /**
+     * isStartWith
+     * @param requestUri
+     * @return
+     */
+    private boolean isStartWith(String requestUri) {
+        boolean flag = false;
+        for (String s : ignorePath.split(",")) {
+            if (requestUri.startsWith(s)) {
+                flag= true;
+                break;
+            }
+        }
+        return flag;
     }
 
 }

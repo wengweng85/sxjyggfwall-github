@@ -1,5 +1,6 @@
 package com.insigma.cloud.config;
 
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.github.pagehelper.PageHelper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,5 +23,13 @@ public class MybatisConfig {
         p.setProperty("reasonable", "true");
         pageHelper.setProperties(p);
         return pageHelper;
+    }
+
+    /**
+     * 分页插件
+     */
+    @Bean
+    public PaginationInterceptor paginationInterceptor() {
+        return new PaginationInterceptor();
     }
 }
