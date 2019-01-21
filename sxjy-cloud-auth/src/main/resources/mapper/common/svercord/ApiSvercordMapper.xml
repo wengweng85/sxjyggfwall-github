@@ -8,26 +8,26 @@
       SELECT sys_guid() FROM dual
     </selectKey>
     INSERT INTO S_VERCORD(
-    vercodeid,
-    userlogid,
-    optype,
-    mobile,
-    vercode,
-    createdate,
-    enddate,
-    aae100,
-    verresult
+      vercodeid,
+      userlogid,
+      optype,
+      mobile,
+      vercode,
+      createdate,
+      enddate,
+      aae100,
+      verresult
     )
-    VALUES (
-    #{vercodeid},
-    #{userlogid},
-    #{optype},
-    #{mobile},
-    #{vercode},
-    #{createdate},
-    #{enddate},
-    #{aae100},
-    #{verresult}
+      VALUES (
+      #{vercodeid},
+      #{userlogid},
+      #{optype},
+      #{mobile},
+      #{vercode},
+      #{createdate},
+      #{enddate},
+      #{aae100},
+      #{verresult}
     )
   </insert>
 
@@ -38,18 +38,18 @@
 
   <!-- 获取最新验证码信息 -->
   <select id="getMobileVerCode" parameterType="com.insigma.mvc.model.SVerCode" resultType="com.insigma.mvc.model.SVerCode">
-    SELECT
-    vercodeid,
-    userlogid,
-    optype,
-    mobile,
-    vercode,
-    createdate,
-    enddate,
-    aae100,
-    inputcode,
-    inputtime,
-    verresult
+      SELECT
+      vercodeid,
+      userlogid,
+      optype,
+      mobile,
+      vercode,
+      createdate,
+      enddate,
+      aae100,
+      inputcode,
+      inputtime,
+      verresult
     FROM s_vercord
     WHERE mobile=#{mobile}
     and optype=#{optype}
@@ -59,12 +59,13 @@
 
   <!-- 更新验证码状态等信息 -->
   <update id="updateSVerCode" parameterType="com.insigma.mvc.model.SVerCode">
-    UPDATE s_vercord
+    UPDATE
+      s_vercord
     SET
-    aae100=#{aae100},
-    inputcode=#{inputcode},
-    inputtime=#{inputtime},
-    verresult=#{verresult}
+      aae100=#{aae100},
+      inputcode=#{inputcode},
+      inputtime=#{inputtime},
+      verresult=#{verresult}
     WHERE vercodeid=#{vercodeid}
   </update>
 </mapper>

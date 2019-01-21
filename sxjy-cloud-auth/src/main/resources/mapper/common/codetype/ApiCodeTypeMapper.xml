@@ -79,12 +79,12 @@
 	<!-- 代码树 -->
 	<select id="getCodeValueTree"  parameterType="CodeValue" resultType="CodeValue" >
 		select 
-		code_type ,
-		code_value id,
-		code_name  name, 
-		code_column_name code_describe,
-		sub_code_value pid,
-		decode(sign((select count(*) from code_value s where s.sub_code_value=t.code_value)),'1','true','false') isparent
+            code_type ,
+            code_value id,
+            code_name  name,
+            code_column_name code_describe,
+            sub_code_value pid,
+            decode(sign((select count(*) from code_value s where s.sub_code_value=t.code_value)),'1','true','false') isparent
 		from 
 		code_value t where t.code_type=#{code_type} and sub_code_value=#{sub_code_value} order by t.code_value
 	</select>

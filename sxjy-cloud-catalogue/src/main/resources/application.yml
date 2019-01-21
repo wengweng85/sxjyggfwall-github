@@ -22,5 +22,5 @@ pagehelper:
 logging:
   level:
     root: info
-    com.insigma: debug
+    com.insigma: info
   learning: trace

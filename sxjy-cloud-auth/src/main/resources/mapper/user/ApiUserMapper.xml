@@ -23,7 +23,6 @@
         select b.rolecode from s_user a,s_role b ,s_user_role c where a.username=#{username}  and a.userid=c.userid and b.roleid=c.roleid  and b.rolecode is not null
     </select>
 
-
     <!-- 个人用户权限查询  -->
     <select id="findPermissionStr" parameterType="String" resultType="com.insigma.mvc.model.SPermission">
         select * from (
@@ -54,19 +53,19 @@
 
     <select id="getUserByUserNameForGgfw" parameterType="com.insigma.mvc.model.SUser" resultType="com.insigma.mvc.model.SUser">
         SELECT
-        a.userid,
-        a.username,
-        a.password,
-        a.usertype,
-        a.baseinfoid,
-        a.isblacklist,
-        a.name
+            a.userid,
+            a.username,
+            a.password,
+            a.usertype,
+            a.baseinfoid,
+            a.isblacklist,
+            a.name
         FROM
-        v_s_user  a
+            v_s_user  a
         WHERE
-        a.username = #{username} AND
-        a.usertype=#{usertype} AND
-        a.enabled = '1'
+            a.username = #{username} AND
+            a.usertype=#{usertype} AND
+            a.enabled = '1'
     </select>
 
     <insert id="addSUserForGgfw"  parameterType="com.insigma.mvc.model.SUser" >
@@ -74,52 +73,51 @@
             SELECT sys_guid() from dual
         </selectKey>
         insert into s_user(
-        userid	,
-        username	,
-        password	 ,
-        usertype	,
-        enabled	,
-        registtime	,
-        fromaddr		,
-        ismainaccount,
-        ISBLACKLIST,
-        baseinfoid,
-        email,
-        mobile,
-        name
-
+            userid	,
+            username	,
+            password	 ,
+            usertype	,
+            enabled	,
+            registtime	,
+            fromaddr		,
+            ismainaccount,
+            ISBLACKLIST,
+            baseinfoid,
+            email,
+            mobile,
+            name
         )
         values (
-        #{userid}	,
-        #{username}	,
-        #{username}	 ,
-        #{usertype}	,
-        '1'	,
-        sysdate	,
-        'sxjyggfw'		,
-        '1',
-        '0',
-        #{baseinfoid},
-        #{email},
-        #{mobile},
-        #{name}
+            #{userid}	,
+            #{username}	,
+            #{username}	 ,
+            #{usertype}	,
+            '1'	,
+            sysdate	,
+            'sxjyggfw'		,
+            '1',
+            '0',
+            #{baseinfoid},
+            #{email},
+            #{mobile},
+            #{name}
         )
     </insert>
 
     <select id="getAc01ByAac002ForGgfw" parameterType="String" resultType="com.insigma.mvc.model.Ac01">
         SELECT
-        aac001
+           aac001
         FROM
-        ac01  a
+           ac01  a
         WHERE
         aac002 = #{aac002}
     </select>
 
     <select id="getAb01ByAab998ForGgfw" parameterType="String" resultType="com.insigma.mvc.model.Ab01">
         SELECT
-        aab001
+           aab001
         FROM
-        ab01  a
+           ab01  a
         WHERE
         aab998 = #{aac002}
     </select>
