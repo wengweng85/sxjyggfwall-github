@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -125,7 +126,7 @@ public class ApiTokenController {
      */
     @ApiOperation(value = "cas单点登录", notes = "cas单点登录", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "/cas" , produces = MediaType.APPLICATION_JSON_VALUE)
-    public void castoken(@RequestHeader HttpHeaders httpHeaders,HttpServletResponse response) throws Exception {
+    public void castoken(@RequestHeader HttpHeaders httpHeaders, HttpServletRequest request, HttpServletResponse response) throws Exception {
         LOGGER.info("Rest api login.");
         LOGGER.debug("request headers: {}", httpHeaders);
         Object result = null;
@@ -219,7 +220,6 @@ public class ApiTokenController {
                 //设定状态码表
                 response.setStatus(status.value());
             }
-
             ObjectMapper mapper = new ObjectMapper(); //转换器
             //获取到转化后的JSON 数据
             String json = mapper.writeValueAsString(object);
@@ -227,7 +227,6 @@ public class ApiTokenController {
             writer.write(json);
             //刷新，表示全部写完，把缓存数据都刷出去
             writer.flush();
-
             //关闭writer
             writer.close();
         } catch (IOException e) {

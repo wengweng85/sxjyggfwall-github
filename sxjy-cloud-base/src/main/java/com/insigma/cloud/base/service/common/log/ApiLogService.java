@@ -1,6 +1,7 @@
 package com.insigma.cloud.base.service.common.log;
 
 import com.github.pagehelper.PageInfo;
+import com.insigma.mvc.model.SAppLog;
 import com.insigma.mvc.model.SErrorLog;
 import com.insigma.mvc.model.SLog;
 import com.insigma.mvc.model.SUserLog;
@@ -20,5 +21,7 @@ public interface ApiLogService {
     String saveSLog(SLog sLog);
 
     String saveUserLog(SUserLog sUserLog);
+
+    String saveAppLog(SAppLog sAppLog);
 
 }

@@ -7,6 +7,14 @@ spring:
     multipart:
       max-file-size: 100Mb
       max-request-size: 100Mb
+mybatis:
+  mapper-locations: mapper/**/*Mapper.xml
+  typeAliasesPackage: com.insigma.mvc.model
+pagehelper:
+    dialect: oracle
+    offsetAsPageNum: true
+    rowBoundsWithCount: true
+    reasonable: true
 ribbon:
     ReadTimeout: 60000
     ConnectTimeout: 60000
@@ -16,7 +24,7 @@ feign:
 logging:
   level:
     root: info
-    com.insigma: debug
+    com.insigma: info
 hystrix:
     command:
       default:
@@ -28,7 +36,10 @@ zuul:
     sensitiveHeaders:
     SendErrorFilter:
         error:
-            disable: false
+          disable: false
+    AppkeyFilter:
+        pre:
+          disable: false
     SignatrueFilter:
         pre:
           disable: true

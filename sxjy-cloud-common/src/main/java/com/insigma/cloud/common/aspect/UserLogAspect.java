@@ -54,7 +54,6 @@ public class UserLogAspect {
      * @throws InterruptedException
      */
     void saveLog(ProceedingJoinPoint joinPoint,Date beginTime) throws InterruptedException {
-        logger.debug("保存用户操作日志");
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
         SUserLog sUserLog = new SUserLog();

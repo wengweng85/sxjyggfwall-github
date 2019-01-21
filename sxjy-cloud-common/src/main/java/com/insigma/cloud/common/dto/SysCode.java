@@ -7,7 +7,8 @@ public enum SysCode  {
 	
 	SYS_CODE_200(200,"成功"),
 	SYS_APPKEY_EMPTY(401,"appkey为空"),
-	SYS_APPKEY_ERROR(402,"appkey不正确"),
+	SYS_APPKEY_ERROR(402,"appkey或appsecret不正确"),
+	SYS_APPKEY_NO_PERM(408,"没有访问此微服务权限"),
 	SYS_TOKEN_EMPTY(403,"token为空,请先登录"),
 	SYS_TOKEN_ERROR(404,"token值不正确或已经过期,请重新登录"),
 	SYS_USERID_ERROR(405,"登录信息与token信息不匹配,非法请求请确认"),

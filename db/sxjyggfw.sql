@@ -1,6 +1,6 @@
 ----------------------------------------------
 -- Export file for user SXJYGGFW@ORCL101    --
--- Created by wengsh on 2019/1/15, 18:12:33 --
+-- Created by wengsh on 2019/1/21, 18:13:57 --
 ----------------------------------------------
 
 set define off
@@ -661,7 +661,8 @@ create table SER_DESK
   createtime DATE not null,
   status     VARCHAR2(20) not null,
   desk_desc  VARCHAR2(4000),
-  yw_id      VARCHAR2(200)
+  yw_id      VARCHAR2(200),
+  version    VARCHAR2(20)
 )
 ;
 comment on table SER_DESK
@@ -677,11 +678,13 @@ comment on column SER_DESK.userid
 comment on column SER_DESK.createtime
   is '服务事项业务办理开始时间';
 comment on column SER_DESK.status
-  is '服务事项业务办理有效状态代码(1:有效、0:无效)';
+  is '服务事项业务办理有效状态代码(1 启动 2受理 3办结）';
 comment on column SER_DESK.desk_desc
   is '服务事项业务办理内容描述';
 comment on column SER_DESK.yw_id
   is '服务事项业务办理经办系统业务编号';
+comment on column SER_DESK.version
+  is '版本号';
 alter table SER_DESK
   add primary key (DESK_ID);
 
@@ -964,7 +967,8 @@ create table SYS_API_INTERFACE
   addtime               DATE,
   auditid               VARCHAR2(100),
   audittime             DATE,
-  interface_detail_type VARCHAR2(10)
+  interface_detail_type VARCHAR2(10),
+  par_interface_id      VARCHAR2(36)
 )
 ;
 comment on table SYS_API_INTERFACE
@@ -997,6 +1001,8 @@ comment on column SYS_API_INTERFACE.audittime
   is '审核时间';
 comment on column SYS_API_INTERFACE.interface_detail_type
   is '服务小类类型';
+comment on column SYS_API_INTERFACE.par_interface_id
+  is '父服务基本信息编号(uuid)';
 alter table SYS_API_INTERFACE
   add constraint PK_S_API_INTERFACE primary key (INTERFACE_ID);
 
@@ -1730,6 +1736,63 @@ comment on column SYS_USER_TABLE.abz182
   is '网格编号';
 alter table SYS_USER_TABLE
   add constraint PK_SYS_USER primary key (USERID);
+
+prompt
+prompt Creating table S_APP_LOG
+prompt ========================
+prompt
+create table S_APP_LOG
+(
+  logid   VARCHAR2(36) not null,
+  logtime DATE,
+  url     VARCHAR2(1000) not null,
+  appkey  VARCHAR2(36)
+)
+;
+comment on table S_APP_LOG
+  is '就业公共服务业务表之接口访问日志记录表';
+comment on column S_APP_LOG.logid
+  is '日志编号(uuid)';
+comment on column S_APP_LOG.logtime
+  is '发生时间';
+comment on column S_APP_LOG.url
+  is '请求的地址';
+comment on column S_APP_LOG.appkey
+  is '渠道编号';
+alter table S_APP_LOG
+  add constraint PK_S_APP_LOG primary key (LOGID);
+
+prompt
+prompt Creating table S_APP_SSO
+prompt ========================
+prompt
+create table S_APP_SSO
+(
+  ssoid        VARCHAR2(36),
+  systypeid    VARCHAR2(36),
+  ssoappname   VARCHAR2(200),
+  appid        VARCHAR2(200),
+  appsecret    VARCHAR2(200),
+  ssoappvalid  VARCHAR2(20),
+  ssoclienturl VARCHAR2(200)
+)
+;
+comment on table S_APP_SSO
+  is '就业公共服务(外网)-单点登录应用客户端配置表';
+comment on column S_APP_SSO.ssoid
+  is '单点登录应用配置编号(编码规则:UUID)';
+comment on column S_APP_SSO.systypeid
+  is '应用系统类型编号(编码规则:UUID)';
+comment on column S_APP_SSO.ssoappname
+  is '单点登录应用客户端名称';
+comment on column S_APP_SSO.appid
+  is '单点登录应用客户端APPID';
+comment on column S_APP_SSO.appsecret
+  is '单点登录应用客户端APPSECRET';
+comment on column S_APP_SSO.ssoappvalid
+  is '是否有效';
+comment on column S_APP_SSO.ssoclienturl
+  is '单点登录应用客户端地址';
 
 prompt
 prompt Creating table S_EMAILLOG

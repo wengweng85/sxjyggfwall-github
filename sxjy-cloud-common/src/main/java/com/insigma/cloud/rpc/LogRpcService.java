@@ -2,6 +2,7 @@ package com.insigma.cloud.rpc;
 
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.cloud.common.intercepter.FeignIntercepter;
+import com.insigma.mvc.model.SAppLog;
 import com.insigma.mvc.model.SErrorLog;
 import com.insigma.mvc.model.SLog;
 import com.insigma.mvc.model.SUserLog;
@@ -33,4 +34,10 @@ public interface LogRpcService {
     @Async
     @PostMapping("userlog")
     AjaxReturnMsg saveSUserLog(SUserLog sUserLog);
+
+
+    @ApiOperation(value = "保存渠道端访问日志", notes = "保存渠道端访问日志", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Async
+    @PostMapping("sapplog")
+    AjaxReturnMsg saveSAppLog(SAppLog sAppLog);
 }

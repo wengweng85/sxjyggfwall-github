@@ -1,6 +1,5 @@
 package com.insigma.cloud.zuul.filter;
 
-import com.alibaba.fastjson.JSON;
 import com.google.common.util.concurrent.RateLimiter;
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.cloud.common.dto.SysCode;
@@ -10,10 +9,8 @@ import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 

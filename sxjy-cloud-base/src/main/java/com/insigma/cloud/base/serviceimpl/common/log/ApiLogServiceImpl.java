@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.insigma.cloud.base.dao.common.log.ApiLogMapper;
 import com.insigma.cloud.base.service.common.log.ApiLogService;
+import com.insigma.mvc.model.SAppLog;
 import com.insigma.mvc.model.SErrorLog;
 import com.insigma.mvc.model.SLog;
 import com.insigma.mvc.model.SUserLog;
@@ -63,6 +64,12 @@ public class ApiLogServiceImpl implements ApiLogService {
     public String saveUserLog(SUserLog sUserLog)  {
         logMapper.saveUserLog(sUserLog);
         return sUserLog.getLogid();
+    }
+
+    @Override
+    public String saveAppLog(SAppLog sAppLog) {
+        logMapper.saveAppLog(sAppLog);
+        return sAppLog.getLogid();
     }
 
 }

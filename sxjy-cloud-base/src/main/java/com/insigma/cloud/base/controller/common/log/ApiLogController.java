@@ -4,6 +4,7 @@ import com.insigma.cloud.base.service.common.log.ApiLogService;
 import com.insigma.cloud.common.context.SUserUtil;
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.cloud.common.exception.AppException;
+import com.insigma.mvc.model.SAppLog;
 import com.insigma.mvc.model.SErrorLog;
 import com.insigma.mvc.model.SLog;
 import com.insigma.mvc.model.SUserLog;
@@ -60,6 +61,17 @@ public class ApiLogController  {
     @PostMapping(value = "/slog", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg saveSLog(@RequestBody SLog sLog) throws AppException {
         return AjaxReturnMsg.success(apiLogService.saveSLog(sLog));
+    }
+
+    /**
+     * 保存渠道端访问日志
+     * @return
+     * @throws AppException
+     */
+    @ApiOperation(value = "保存渠道端访问日志", notes = "保存渠道端访问日志", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/sapplog", produces = MediaType.APPLICATION_JSON_VALUE)
+    public AjaxReturnMsg saveSAppLog(@RequestBody SAppLog sAppLog) throws AppException {
+        return AjaxReturnMsg.success(apiLogService.saveAppLog(sAppLog));
     }
 
     /**

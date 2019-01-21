@@ -62,7 +62,7 @@ public class SysLogAspect {
         // 执行时长(毫秒)
         long time = System.currentTimeMillis() - startTime;
         //异步保存日志
-        saveLog(pjp, time);
+        //saveLog(pjp, time);
         return ob;
     }
 

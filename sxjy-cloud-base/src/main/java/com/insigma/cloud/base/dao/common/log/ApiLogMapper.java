@@ -1,5 +1,6 @@
 package com.insigma.cloud.base.dao.common.log;
 
+import com.insigma.mvc.model.SAppLog;
 import com.insigma.mvc.model.SErrorLog;
 import com.insigma.mvc.model.SLog;
 import com.insigma.mvc.model.SUserLog;
@@ -22,5 +23,7 @@ public interface ApiLogMapper {
     void saveSLog(SLog sLog);
 
     void saveUserLog(SUserLog sUserLog);
+
+    void saveAppLog(SAppLog sAppLog);
 
 }

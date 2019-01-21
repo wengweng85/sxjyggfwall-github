@@ -1,8 +1,10 @@
 package com.insigma.cloud.zuul;
 
+import com.insigma.cloud.zuul.filter.AppkeyFilter;
 import com.insigma.cloud.zuul.filter.RateLimitFilter;
 import com.insigma.cloud.zuul.filter.SignatrueFilter;
 import com.insigma.cloud.zuul.filter.TokenFilter;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -15,20 +17,25 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 @EnableHystrixDashboard
-@EnableFeignClients
+@EnableFeignClients(basePackages = {"com.insigma.cloud.rpc"})
 @EnableZuulProxy
 @EnableEurekaClient
 @SpringBootApplication
+@MapperScan(basePackages = {"com.insigma.cloud.*.dao"})
 public class CloudZuulApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CloudZuulApplication.class, args);
 	}
 
-
 	@Bean
 	public RateLimitFilter rateLimitFilter(){
 		return new RateLimitFilter();
+	}
+
+	@Bean
+	public AppkeyFilter appkeyFilter(){
+		return new AppkeyFilter();
 	}
 
 	@Bean

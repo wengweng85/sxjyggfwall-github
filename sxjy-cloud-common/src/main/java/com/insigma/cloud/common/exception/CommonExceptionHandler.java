@@ -26,7 +26,7 @@ public class CommonExceptionHandler {
 
     private static final Logger logger = LoggerFactory.getLogger(CommonExceptionHandler.class);
 
-    private static final String ignorePath="/errorlog,/slog,/userlog";
+    private static final String ignorePath="/errorlog,/slog,/userlog,/sapplog";
 
     @Autowired
     private LogRpcService logRpcService;

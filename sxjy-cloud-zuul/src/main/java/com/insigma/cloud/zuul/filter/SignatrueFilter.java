@@ -38,7 +38,7 @@ public class SignatrueFilter extends ZuulFilter {
 
     @Override
     public int filterOrder() {
-        return 1;
+        return 2;
     }
 
     @Override
@@ -66,7 +66,7 @@ public class SignatrueFilter extends ZuulFilter {
                     //计算接口时间是否过期
                     Date nowTime = new Date(System.currentTimeMillis());
                     Date timestamp_Time= new Date(new Long(timestamp));
-                    logger.debug("nowTime :{} timestamp_Time : {}" ,nowTime.toLocaleString(),timestamp_Time.toLocaleString());
+                    logger.debug("nowTime :{} timestamp_Time : {}" ,nowTime.getTime(),timestamp_Time.getTime());
                     if(timestamp_Time.after(nowTime)){
                         return null;
                     }else{

@@ -281,6 +281,21 @@ public class AjaxReturnMsg  {
      * 异常返回
      * @return
      */
+    public static AjaxReturnMsg error401(){
+        return error(SysCode.SYS_APPKEY_EMPTY);
+    }
+
+    /**
+     * 异常返回
+     * @return
+     */
+    public static AjaxReturnMsg error402(){
+        return error(SysCode.SYS_APPKEY_ERROR);
+    }
+    /**
+     * 异常返回
+     * @return
+     */
     public static AjaxReturnMsg error403(){
         return error(SysCode.SYS_TOKEN_EMPTY);
     }
@@ -291,6 +306,14 @@ public class AjaxReturnMsg  {
      */
     public static AjaxReturnMsg error404(){
         return error(SysCode.SYS_TOKEN_ERROR);
+    }
+
+    /**
+     * 异常返回
+     * @return
+     */
+    public static AjaxReturnMsg error408(){
+        return error(SysCode.SYS_APPKEY_NO_PERM);
     }
     /**
      * 异常返回

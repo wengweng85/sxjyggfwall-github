@@ -10,6 +10,8 @@ public class CommonConstants {
     public final static String EXPIRES_TIME =  "expires";
     public final static String TOKEN = "token";
 
+    public final static String CONTEXT_APPKEY="appkey";
+
     //签名相关参数
     public final static String SIGN_SIGNATURE="signature";
     public final static String SIGN_TIMESTAMP="timestamp";

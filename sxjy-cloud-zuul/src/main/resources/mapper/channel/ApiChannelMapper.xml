@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.insigma.cloud.zuul.dao.channel.ApiChannelMapper">
+
+
+  <select id="getApiChannelByAppkey" parameterType="java.lang.String" resultType="SysApiChannel">
+    select
+    from SYS_API_CHANNEL
+    where CHANNEL_APPKEY = #{channelAppkey,jdbcType=VARCHAR}
+  </select>
+
+
+  <select id="selectByUrl" resultType="SysApiInterface">
+    select
+      a.INTERFACE_ID,
+      a.INTERFACE_CODE
+    from SYS_API_INTERFACE a,SYS_API_CHANNEL b,sys_api_channel_interface c
+    where a.interface_id=c.interface_id
+    and b.channel_id=c.channel_id
+    and c.isvalid='1'
+    and a.INTERFACE_STATUS='1'
+    and b.channel_status='1'
+    and regexp_like(#{url,jdbcType=VARCHAR},a.INTERFACE_URL )  and b.CHANNEL_APPKEY = #{appkey,jdbcType=VARCHAR}
+  </select>
+</mapper>
