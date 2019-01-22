@@ -13,9 +13,7 @@ import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -67,7 +65,9 @@ public class AppkeyFilter extends ZuulFilter {
             setFailedRequest(AjaxReturnMsg.error401(), 200);
             return null;
         }
-        if(!isUrlValid(requestUri,appkey)){
+        // 微服务编号
+        String interface_id= getInterfaceId(requestUri,appkey);
+        if(interface_id.equals("")){
             setFailedRequest(AjaxReturnMsg.error408(), 200);
             return null;
         }
@@ -75,6 +75,7 @@ public class AppkeyFilter extends ZuulFilter {
         try{
             //异步保存渠道端访问日志
             SAppLog sAppLog=new SAppLog();
+            sAppLog.setInterface_id(interface_id);
             sAppLog.setAppkey(appkey);
             sAppLog.setUrl(requestUri);
             logRpcService.saveSAppLog(sAppLog);
@@ -132,21 +133,21 @@ public class AppkeyFilter extends ZuulFilter {
      * 当前渠道是否有访问对应微服务权限
      * @param appkey
      * @param url
-     * @return
+     * @return interface_id 空代表没有匹配到
      */
-    private boolean isUrlValid(String url,String appkey){
-        boolean isvalid=false;
+    private String getInterfaceId(String url, String appkey){
+        String interface_id="";
         SysApiChannel sysApiChannel=(SysApiChannel)CacheMap.get(appkey);
         if(sysApiChannel!=null){
             List<SysApiInterface> sysApiInterfaceList= sysApiChannel.getUrls();
             for(int i=0;i<sysApiInterfaceList.size();i++){
                 if(url.startsWith(sysApiInterfaceList.get(i).getInterfaceUrl())){
                     logger.debug("currentUrl={}",sysApiInterfaceList.get(i).getInterfaceUrl());
-                    isvalid=true;
+                    interface_id=sysApiInterfaceList.get(i).getInterfaceId();
                     break;
                 }
             }
         }
-        return isvalid;
+        return interface_id;
     }
 }

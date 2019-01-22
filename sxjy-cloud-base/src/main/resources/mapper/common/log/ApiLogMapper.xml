@@ -143,13 +143,15 @@
 			logid,
 			logtime,
 			appkey,
-			url
+			url,
+		    interface_id
 		)
 		values (
 			#{logid, jdbcType=VARCHAR},
 			sysdate,
 			#{appkey, jdbcType=VARCHAR},
-			#{url, jdbcType=VARCHAR}
+			#{url, jdbcType=VARCHAR},
+		    #{interface_id, jdbcType=VARCHAR}
 		)
 	</insert>
 </mapper>

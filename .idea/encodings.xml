@@ -63,6 +63,7 @@
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/SignUtils.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/utils/CustomFilePart.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/utils/JWT_Server.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/utils/SerializeUtil.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/org/csource/common/Base64.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-config-client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-config-client/src/main/resources/application.yml" charset="GBK" />

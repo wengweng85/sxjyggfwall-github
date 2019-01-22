@@ -25,7 +25,8 @@
 
   <select id="selectAllUrlByAppkey" resultType="com.insigma.mvc.model.SysApiInterface">
     select
-      a.INTERFACE_URL as interfaceUrl
+      a.INTERFACE_URL as interfaceUrl,
+      a.INTERFACE_ID  as interfaceId
     from SYS_API_INTERFACE a,SYS_API_CHANNEL b,sys_api_channel_interface c
     where a.interface_id=c.interface_id
     and b.channel_id=c.channel_id
@@ -38,7 +39,8 @@
 
   <select id="selectByUrl" resultType="com.insigma.mvc.model.SysApiInterface">
     select
-      a.INTERFACE_ID as interfaceId
+      a.INTERFACE_URL as interfaceUrl,
+      a.INTERFACE_ID  as interfaceId
     from SYS_API_INTERFACE a,SYS_API_CHANNEL b,sys_api_channel_interface c
     where a.interface_id=c.interface_id
     and b.channel_id=c.channel_id

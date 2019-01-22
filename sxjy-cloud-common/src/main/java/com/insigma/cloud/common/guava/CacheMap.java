@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 
 /**
- * 基于guava的缓存类
+ * 基于guava的缓存
  */
 public class CacheMap {
     private static final Logger log = LoggerFactory.getLogger(CacheMap.class);
@@ -23,21 +23,22 @@ public class CacheMap {
      */
     private static Cache<String,Object> cache;
 
+
+    //初始化
     static {
-        cache = CacheBuilder.newBuilder().maximumSize(10000)
-                .expireAfterWrite(24, TimeUnit.HOURS)
-                .initialCapacity(10)
-                .removalListener(new RemovalListener<String, Object>() {
-                    @Override
-                    public void onRemoval(RemovalNotification<String, Object> rn) {
-                        if(log.isInfoEnabled()){
-                            log.info("被移除缓存{}:{}",rn.getKey(),rn.getValue());
-                        }
-                    }
-                }).build();
+        cache=CacheBuilder.newBuilder().maximumSize(10000).expireAfterWrite(24,TimeUnit.HOURS)
+        .initialCapacity(10).removalListener(new RemovalListener<String, Object>() {
+            @Override
+            public void onRemoval(RemovalNotification<String, Object> notification) {
+                if(log.isInfoEnabled()){
+                    log.info("被移除缓存{}:{}",notification.getKey(),notification.getValue());
+                }
+
+            }
+        }).build();
     }
 
-    /**
+   /**
      * @desction: 获取缓存
      */
     public  static Object get(String key){
