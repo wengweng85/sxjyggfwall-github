@@ -1,4 +1,4 @@
-package com.insigma.cloud.common.utils;
+package com.insigma.cloud.common.http;
 
 import org.apache.commons.httpclient.methods.multipart.FilePart;
 import org.apache.commons.httpclient.util.EncodingUtil;
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**   
-*解决中文文件名乱码   
+* 解决中文文件名乱码
 */    
 public class CustomFilePart extends FilePart {     
 	public CustomFilePart(String fileName, File file) throws FileNotFoundException {
@@ -19,7 +19,8 @@ public class CustomFilePart extends FilePart {
     public CustomFilePart(String name, String fileName, File file) throws FileNotFoundException {
         super(name, fileName, file);
     }  
-    
+
+    @Override
     protected void sendDispositionHeader(OutputStream out) throws IOException {     
         super.sendDispositionHeader(out);     
         String filename = getSource().getFileName();     

@@ -24,7 +24,7 @@ feign:
 logging:
   level:
     root: info
-    com.insigma: info
+    com.insigma: debug
 hystrix:
     command:
       default:
@@ -36,7 +36,10 @@ zuul:
     sensitiveHeaders:
     SendErrorFilter:
         error:
-            disable: false
+          disable: false
+    AppkeyFilter:
+        pre:
+          disable: false
     SignatrueFilter:
         pre:
           disable: true

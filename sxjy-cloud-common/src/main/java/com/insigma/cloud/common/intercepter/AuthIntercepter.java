@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * 权限过滤器
+ * 自定义权限过滤器
  */
 public class AuthIntercepter extends HandlerInterceptorAdapter {
     private static final Logger logger = LoggerFactory.getLogger(AuthIntercepter.class);

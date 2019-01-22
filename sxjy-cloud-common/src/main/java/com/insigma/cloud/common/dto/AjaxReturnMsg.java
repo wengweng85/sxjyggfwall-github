@@ -12,7 +12,7 @@ import org.springframework.validation.FieldError;
 import java.util.HashMap;
 
 /**
- * 信息返回
+ * 接口通用返回类
  *
  * @author admin
  */

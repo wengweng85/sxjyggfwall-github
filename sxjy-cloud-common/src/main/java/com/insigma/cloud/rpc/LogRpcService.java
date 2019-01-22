@@ -14,8 +14,10 @@ import org.springframework.http.MediaType;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
-@Api(description = "远程调用服务-日志服务")
+/**
+ * 远程调用服务-事项服务
+ */
+@Api(description = "远程调用服务-事项服务")
 @Headers("Content-Type:application/json")
 @FeignClient(name = "api-base", configuration = FeignIntercepter.class)
 public interface LogRpcService {

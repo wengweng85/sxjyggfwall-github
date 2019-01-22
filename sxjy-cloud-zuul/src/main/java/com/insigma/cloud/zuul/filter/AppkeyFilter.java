@@ -2,21 +2,25 @@ package com.insigma.cloud.zuul.filter;
 
 import com.insigma.cloud.common.constants.CommonConstants;
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
+import com.insigma.cloud.common.guava.CacheMap;
 import com.insigma.cloud.common.utils.JSONUtils;
 import com.insigma.cloud.rpc.LogRpcService;
-import com.insigma.cloud.zuul.service.channel.ApiChannelService;
 import com.insigma.mvc.model.SAppLog;
+import com.insigma.mvc.model.SysApiChannel;
+import com.insigma.mvc.model.SysApiInterface;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
+import java.util.List;
 
 /**
  * appkey过滤器
@@ -27,9 +31,6 @@ public class AppkeyFilter extends ZuulFilter {
     private final static Logger logger = LoggerFactory.getLogger(AppkeyFilter.class);
 
     private String ignorePath = "/api-auth/cas";
-
-    @Autowired
-    private ApiChannelService apiChannelService;
 
     @Autowired
     private LogRpcService logRpcService;
@@ -134,6 +135,18 @@ public class AppkeyFilter extends ZuulFilter {
      * @return
      */
     private boolean isUrlValid(String url,String appkey){
-        return apiChannelService.isUrlValid(url,appkey);
+        boolean isvalid=false;
+        SysApiChannel sysApiChannel=(SysApiChannel)CacheMap.get(appkey);
+        if(sysApiChannel!=null){
+            List<SysApiInterface> sysApiInterfaceList= sysApiChannel.getUrls();
+            for(int i=0;i<sysApiInterfaceList.size();i++){
+                if(url.startsWith(sysApiInterfaceList.get(i).getInterfaceUrl())){
+                    logger.debug("currentUrl={}",sysApiInterfaceList.get(i).getInterfaceUrl());
+                    isvalid=true;
+                    break;
+                }
+            }
+        }
+        return isvalid;
     }
 }

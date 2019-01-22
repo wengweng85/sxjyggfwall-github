@@ -24,7 +24,7 @@ feign:
 logging:
   level:
     root: info
-    com.insigma: info
+    com.insigma: debug
 hystrix:
     command:
       default:

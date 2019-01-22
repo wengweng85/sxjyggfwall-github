@@ -12,5 +12,9 @@ public interface ApiChannelMapper {
 
     SysApiChannel getApiChannelByAppkey(String appkey);
 
+    List<SysApiChannel> getAllApiChannel();
+
     List<SysApiInterface> selectByUrl(@Param("url") String url, @Param("appkey") String appkey);
+
+    List<SysApiInterface> selectAllUrlByAppkey(String appkey);
 }

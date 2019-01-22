@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * CasUser
+ * 单点登录返回用户信息类
  * @author  wengsh
  */
 public class CasUser {

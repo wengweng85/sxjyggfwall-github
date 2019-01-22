@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 
 /**
+ * 远程调用服务-事项服务
  * @author admin
  */
 @Api(description = "远程调用服务-事项服务")

@@ -30,6 +30,11 @@ public class ApiChannelServiceImpl implements ApiChannelService {
     }
 
     @Override
+    public List<SysApiChannel> getAllApiChannel() {
+        return apiChannelMapper.getAllApiChannel();
+    }
+
+    @Override
     public boolean isUrlValid(String url, String appkey) {
         List<SysApiInterface> list = apiChannelMapper.selectByUrl(url, appkey);
         if (list.size()>0) {
@@ -37,5 +42,10 @@ public class ApiChannelServiceImpl implements ApiChannelService {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public List<SysApiInterface> selectAllUrlByAppkey(String appkey) {
+        return apiChannelMapper.selectAllUrlByAppkey(appkey);
     }
 }

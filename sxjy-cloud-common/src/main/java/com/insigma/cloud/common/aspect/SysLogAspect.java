@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 /**
- * 系统运行日志
+ * 系统运行日志全局aop
  */
 @Aspect
 @Component

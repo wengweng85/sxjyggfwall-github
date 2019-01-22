@@ -4,10 +4,10 @@
   <!-- searchByKey查询 -->
   <select id="searchByKey" parameterType="SysSuggestKey" resultType="SysSuggestKey">
     select 
-    id,
-    key,
-    name,
-    showname  
+        id,
+        key,
+        name,
+        showname
     from v_suggest_data 
        <where>
            <if test="keytype!=null">

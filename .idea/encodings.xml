@@ -17,10 +17,8 @@
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/common/codetype/ApiCodeTypeController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/common/vercode/ApiVercodeController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/controller/token/ApiTokenController.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/dao/channel/ApiChannelMapper.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/dao/common/svercord/ApiSvercordMapper.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/dao/user/ApiUserMapper.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/service/channel/ApiChannelService.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/service/common/codetype/ApiCodeTypeService.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/service/common/svercord/ApiSvercordService.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/service/token/ApiTokenService.java" charset="GBK" />
@@ -28,7 +26,6 @@
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/serviceimpl/token/ApiTokenServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/auth/serviceimpl/user/ApiUserServiceImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/java/com/insigma/cloud/config/SwaggerConfig.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/sxjy-cloud-auth/src/main/resources/mapper/channel/ApiChannelMapper.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/fileupload/ApiFileUploadController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-base/src/main/java/com/insigma/cloud/base/controller/common/item/ApiItemController.java" charset="GBK" />
@@ -58,6 +55,7 @@
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/MessageType.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/dto/SysCode.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/fastdfs/Fastdfs.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/http" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/CharUtil.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/MD5Util.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/sxjy-cloud-common/src/main/java/com/insigma/cloud/common/rsa/PublicKeyMap.java" charset="GBK" />

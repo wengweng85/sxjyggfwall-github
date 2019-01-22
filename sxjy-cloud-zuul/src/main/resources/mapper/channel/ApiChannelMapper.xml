@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.insigma.cloud.zuul.dao.channel.ApiChannelMapper">
+  <cache >
+    <property name="eviction" value="LRU" />
+    <property name="flushInterval" value="6000000" />
+    <property name="size" value="1024" />
+    <property name="readOnly" value="false" />
+  </cache>
 
-
-  <select id="getApiChannelByAppkey" parameterType="java.lang.String" resultType="SysApiChannel">
+  <select id="getApiChannelByAppkey" parameterType="java.lang.String" resultType="com.insigma.mvc.model.SysApiChannel">
     select
+       CHANNEL_APPKEY as channelAppkey
     from SYS_API_CHANNEL
     where CHANNEL_APPKEY = #{channelAppkey,jdbcType=VARCHAR}
+    and   channel_status='1'
+  </select>
+
+  <select id="getAllApiChannel" parameterType="java.lang.String" resultType="com.insigma.mvc.model.SysApiChannel">
+    select
+        CHANNEL_APPKEY as channelAppkey
+    from SYS_API_CHANNEL
+    where channel_status='1'
+  </select>
+
+  <select id="selectAllUrlByAppkey" resultType="com.insigma.mvc.model.SysApiInterface">
+    select
+      a.INTERFACE_URL as interfaceUrl
+    from SYS_API_INTERFACE a,SYS_API_CHANNEL b,sys_api_channel_interface c
+    where a.interface_id=c.interface_id
+    and b.channel_id=c.channel_id
+    and c.isvalid='1'
+    and a.INTERFACE_STATUS='1'
+    and b.channel_status='1'
+    and b.CHANNEL_APPKEY = #{appkey,jdbcType=VARCHAR}
   </select>
 
 
-  <select id="selectByUrl" resultType="SysApiInterface">
+  <select id="selectByUrl" resultType="com.insigma.mvc.model.SysApiInterface">
     select
-      a.INTERFACE_ID,
-      a.INTERFACE_CODE
+      a.INTERFACE_ID as interfaceId
     from SYS_API_INTERFACE a,SYS_API_CHANNEL b,sys_api_channel_interface c
     where a.interface_id=c.interface_id
     and b.channel_id=c.channel_id

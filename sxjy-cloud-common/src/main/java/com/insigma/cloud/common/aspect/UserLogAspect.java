@@ -20,7 +20,7 @@ import java.lang.reflect.Method;
 import java.util.Date;
 
 /**
- * 用户操作日志
+ * 用户操作日志全局aop
  */
 @Aspect
 @Component
