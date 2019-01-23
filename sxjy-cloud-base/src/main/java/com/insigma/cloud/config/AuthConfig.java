@@ -1,6 +1,6 @@
 package com.insigma.cloud.config;
 
-import com.insigma.cloud.common.intercepter.AuthUnNecessaryIntercepter;
+import com.insigma.cloud.common.intercepter.AuthIntercepter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
@@ -11,8 +11,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 @Configuration
 public class AuthConfig extends WebMvcConfigurationSupport {
     @Bean
-    public AuthUnNecessaryIntercepter authIntercepter() {
-        return new AuthUnNecessaryIntercepter();
+    public AuthIntercepter authIntercepter() {
+        return new AuthIntercepter();
     }
 
     @Override

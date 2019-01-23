@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class JwtUtils {
 
-    public static final long MAX_AGE = 1000 * 60 * 60 * 24; //1天
+    public static final long MAX_AGE = 1000 * 60 * 60 * 24/24/12; //24小时
     /**
      * generateToken
      * @param accessToken

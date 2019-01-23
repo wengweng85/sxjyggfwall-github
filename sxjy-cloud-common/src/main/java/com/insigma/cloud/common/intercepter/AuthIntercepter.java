@@ -8,6 +8,7 @@ import com.insigma.cloud.common.utils.JwtUtils;
 import com.insigma.mvc.model.AccessToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,10 +26,12 @@ public class AuthIntercepter extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         final String requestUri = request.getRequestURI();
         logger.debug("requestUri="+requestUri);
-        String token = request.getHeader(CommonConstants.CONTEXT_TOKEN);
+        String token = request.getHeader(CommonConstants.CONTEXT_AUTHORIZATION)==null?"":
+                request.getHeader(CommonConstants.CONTEXT_AUTHORIZATION).replaceAll(CommonConstants.CONTEXT_BEARE,"")
+                .trim();
         //logger.debug("token="+token);
-        if (null == token) {
-            setFailedRequest(AjaxReturnMsg.error403(),response);
+        if(null==token||token.equals("null")||token.equals("")){
+            setFailedRequest(AjaxReturnMsg.error403(), HttpStatus.OK.value(),response);
             return false;
         }else{
             try {
@@ -40,7 +43,7 @@ public class AuthIntercepter extends HandlerInterceptorAdapter {
                 SUserUtil.setName(accessToken.getName());
                 SUserUtil.setUserId(accessToken.getUserid());
             } catch (Exception e) {
-                setFailedRequest(AjaxReturnMsg.error404(), response);
+                setFailedRequest(AjaxReturnMsg.error404(),HttpStatus.OK.value(), response);
                 return false;
             }
         }
@@ -59,7 +62,8 @@ public class AuthIntercepter extends HandlerInterceptorAdapter {
      * setFailedRequest
      * @param body
      */
-    private void setFailedRequest(Object body,  HttpServletResponse response) {
+    private void setFailedRequest(Object body,  int code,HttpServletResponse response) {
+        response.setStatus(code);
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json; charset=utf-8");
         PrintWriter out = null;

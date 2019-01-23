@@ -17,7 +17,7 @@ public class FeignIntercepter implements RequestInterceptor {
     public void apply(RequestTemplate requestTemplate) {
         logger.debug("Thread.currentThread().getName()="+Thread.currentThread().getName());
         if(null!=SUserUtil.getToken()){
-            requestTemplate.header(CommonConstants.CONTEXT_TOKEN, SUserUtil.getToken());
+            requestTemplate.header(CommonConstants.CONTEXT_AUTHORIZATION, SUserUtil.getToken());
         }
     }
 }

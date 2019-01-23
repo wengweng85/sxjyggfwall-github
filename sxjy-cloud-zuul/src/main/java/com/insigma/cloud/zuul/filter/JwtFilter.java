@@ -7,6 +7,7 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,12 +15,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * token 过滤 tokenFilter
+ * jwt过滤器
  * @Author admin
  */
-public class TokenFilter extends ZuulFilter {
+public class JwtFilter extends ZuulFilter {
 
-    private final static Logger logger = LoggerFactory.getLogger(TokenFilter.class);
+    private final static Logger logger = LoggerFactory.getLogger(JwtFilter.class);
 
     private String ignorePath = "/api-auth,/api-cata";
 
@@ -49,13 +50,12 @@ public class TokenFilter extends ZuulFilter {
         if (isStartWith(requestUri)) {
             return null;
         }
-        String token = request.getHeader(CommonConstants.CONTEXT_TOKEN);
+        String token = request.getHeader(CommonConstants.CONTEXT_AUTHORIZATION)==null?"":
+                request.getHeader(CommonConstants.CONTEXT_AUTHORIZATION).replaceAll(CommonConstants.CONTEXT_BEARE,"")
+                .trim();
         logger.debug("token="+token);
-        if(null == token || token == ""){
-            token = request.getParameter(CommonConstants.TOKEN);
-        }
-        if (null == token) {
-            setFailedRequest(AjaxReturnMsg.error403(), 200);
+        if(null==token||token.equals("null")||token.equals("")){
+            setFailedRequest(AjaxReturnMsg.error403(), HttpStatus.OK.value());
             return null;
         }
         return null;

@@ -32,12 +32,12 @@ public class SUserUtil {
     }
 
     public static String getToken() {
-        Object value = get(CommonConstants.CONTEXT_TOKEN);
+        Object value = get(CommonConstants.CONTEXT_AUTHORIZATION);
         return returnObjectValue(value);
     }
 
     public static void setToken(String token) {
-        set(CommonConstants.CONTEXT_TOKEN, token);
+        set(CommonConstants.CONTEXT_AUTHORIZATION, token);
     }
 
     public static String getUserId() {

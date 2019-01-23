@@ -2,7 +2,6 @@ package com.insigma.cloud.common.intercepter;
 
 import com.insigma.cloud.common.constants.CommonConstants;
 import com.insigma.cloud.common.context.SUserUtil;
-import com.insigma.cloud.common.utils.JSONUtils;
 import com.insigma.cloud.common.utils.JwtUtils;
 import com.insigma.mvc.model.AccessToken;
 import org.slf4j.Logger;
@@ -11,8 +10,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  * 权限过滤器 非必须
@@ -26,7 +23,7 @@ public class AuthUnNecessaryIntercepter extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         final String requestUri = request.getRequestURI();
         logger.debug("requestUri="+requestUri);
-        String token = request.getHeader(CommonConstants.CONTEXT_TOKEN);
+        String token = request.getHeader(CommonConstants.CONTEXT_AUTHORIZATION);
         if (null != token) {
             try {
                 //截取掉"Bearer "
@@ -48,28 +45,5 @@ public class AuthUnNecessaryIntercepter extends HandlerInterceptorAdapter {
         logger.debug("------------------------------afterCompletion------------------------------------");
         SUserUtil.remove();
         super.afterCompletion(request, response, handler, ex);
-    }
-
-    /**
-     * setFailedRequest
-     * @param body
-     */
-    private void setFailedRequest(Object body,  HttpServletResponse response) {
-        response.setCharacterEncoding("UTF-8");
-        response.setContentType("application/json; charset=utf-8");
-        PrintWriter out = null;
-        try{
-            out = response.getWriter();
-            String result= JSONUtils.beanToJson(body);
-            out.write(result);
-            out.flush();
-        }catch(IOException e){
-            e.printStackTrace();
-        } finally {
-            if (out != null) {
-                out.close();
-            }
-        }
-
     }
 }

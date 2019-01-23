@@ -3,7 +3,7 @@ package com.insigma.cloud.zuul;
 import com.insigma.cloud.zuul.filter.AppkeyFilter;
 import com.insigma.cloud.zuul.filter.RateLimitFilter;
 import com.insigma.cloud.zuul.filter.SignatrueFilter;
-import com.insigma.cloud.zuul.filter.TokenFilter;
+import com.insigma.cloud.zuul.filter.JwtFilter;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -44,8 +44,8 @@ public class CloudZuulApplication {
 	}
 
 	@Bean
-	public TokenFilter tokenFilter(){
-		return new TokenFilter();
+	public JwtFilter tokenFilter(){
+		return new JwtFilter();
 	}
 
 	@Bean
