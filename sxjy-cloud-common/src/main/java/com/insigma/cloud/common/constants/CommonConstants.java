@@ -1,7 +1,7 @@
 package com.insigma.cloud.common.constants;
 
 /**
- * 全局异常
+ * 全局参数
  */
 public class CommonConstants {
     //jwt相关参数

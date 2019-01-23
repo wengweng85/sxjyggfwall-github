@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.insigma</groupId>
-	<artifactId>sxjy-cloud-config</artifactId>
+	<artifactId>sxjy-cloud-config-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sxjy-cloud-config-server</name>
 	<description>sxjy-cloud-config-server</description>
