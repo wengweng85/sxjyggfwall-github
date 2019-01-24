@@ -2,7 +2,7 @@ spring:
   application:
     name: api-sxjysy
   profiles:
-      active: pro
+      active: dev
   servlet:
      multipart:
        max-file-size: 30Mb
@@ -50,5 +50,5 @@ pagehelper:
 logging:
   level:
     root: info
-    com.insigma: debug
+    com.insigma: info
   learning: trace

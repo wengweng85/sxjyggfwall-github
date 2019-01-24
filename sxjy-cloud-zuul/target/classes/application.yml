@@ -2,7 +2,7 @@ spring:
   application:
     name: api-gateway
   profiles:
-      active: pro
+      active: dev
   servlet:
     multipart:
       max-file-size: 100Mb
@@ -39,7 +39,7 @@ zuul:
           disable: false
     AppkeyFilter:
         pre:
-          disable: false
+          disable: true
     SignatrueFilter:
         pre:
           disable: true

@@ -37,6 +37,7 @@ public class CommonExceptionHandler {
      */
     @ExceptionHandler(value=Exception.class)
     AjaxReturnMsg exception(Exception e, HttpServletRequest request) {
+        e.printStackTrace();
         //判断哪些地址不记录日志
         final String requestUri = request.getRequestURI();
         logger.debug("requestUri="+requestUri);

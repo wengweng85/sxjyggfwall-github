@@ -2,7 +2,6 @@ package com.insigma.cloud.auth.serviceimpl.token;
 
 import com.insigma.cloud.auth.dao.user.ApiUserMapper;
 import com.insigma.cloud.auth.service.token.ApiTokenService;
-import com.insigma.cloud.common.utils.JWT_Server;
 import com.insigma.cloud.common.utils.JwtUtils;
 import com.insigma.mvc.model.AccessToken;
 import com.insigma.mvc.model.SPermission;
@@ -79,8 +78,6 @@ public class ApiTokenServiceImpl implements ApiTokenService {
             accessToken.setUserid(user.getUserid());
             accessToken.setUsername(user.getUsername());
             accessToken.setName(user.getName());
-            //过期时间
-            accessToken.setExpires(System.currentTimeMillis() + JWT_Server.MAX_AGE);
             String token = JwtUtils.generateToken(accessToken);
             logger.debug("jwt=" + token);
             accessToken.setToken(token);
@@ -102,14 +99,12 @@ public class ApiTokenServiceImpl implements ApiTokenService {
         if (user != null) {
             apiUserMapper.updateLogintimes(user);
             //过期时间
-            user.setExpires(System.currentTimeMillis() + JWT_Server.MAX_AGE);
+            user.setExpires(System.currentTimeMillis() + JwtUtils.MAX_AGE);
             //给用户jwt加密生成token
             accessToken = new AccessToken();
             accessToken.setUserid(user.getUserid());
             accessToken.setUsername(user.getUsername());
             accessToken.setName(user.getName());
-            //过期时间
-            accessToken.setExpires(System.currentTimeMillis() + JWT_Server.MAX_AGE);
             String token = JwtUtils.generateToken(accessToken);
             logger.debug("jwt=" + token);
             user.setToken(token);

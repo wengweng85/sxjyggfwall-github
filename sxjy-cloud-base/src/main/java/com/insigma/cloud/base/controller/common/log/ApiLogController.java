@@ -11,11 +11,12 @@ import com.insigma.mvc.model.SUserLog;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 日志记录
@@ -38,6 +39,16 @@ public class ApiLogController  {
     @PostMapping(value = "/errorlogs", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getErrorLogList(@RequestBody SErrorLog sErrorLog) throws AppException {
         return AjaxReturnMsg.success(apiLogService.getErrorLogList(sErrorLog));
+    }
+
+    /**
+     * 通过日志编号获取异常日志明细信息
+     * @return
+     */
+    @ApiOperation(value = "获取所有异常日志", notes = "获取所有异常日志", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value="/getErrorLogById", produces = MediaType.APPLICATION_JSON_VALUE)
+    public AjaxReturnMsg getErrorLogById(@RequestBody SErrorLog sErrorLog) throws AppException {
+        return AjaxReturnMsg.success(apiLogService.queryErrorLogById(sErrorLog.getLogid()));
     }
 
     /**

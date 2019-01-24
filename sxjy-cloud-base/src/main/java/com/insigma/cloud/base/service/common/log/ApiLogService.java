@@ -18,6 +18,8 @@ public interface ApiLogService {
 
     PageInfo<SErrorLog>  getErrorLogList(SErrorLog sErrorLog);
 
+    SErrorLog queryErrorLogById(String id);
+
     String saveSLog(SLog sLog);
 
     String saveUserLog(SUserLog sUserLog);

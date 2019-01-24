@@ -2,7 +2,7 @@ spring:
   application:
     name: api-auth
   profiles:
-      active: pro
+      active: dev
   servlet:
      multipart:
        max-file-size: 30Mb
@@ -19,5 +19,5 @@ pagehelper:
 logging:
   level:
     root: info
-    com.insigma: info
+    com.insigma: debug
   learning: trace

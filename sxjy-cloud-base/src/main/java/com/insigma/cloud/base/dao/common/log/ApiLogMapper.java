@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 /**
- * ÈÕÖ¾¼ÇÂ¼mapper
+ * ï¿½ï¿½Ö¾ï¿½ï¿½Â¼mapper
  *
  * @author  admin
  */
@@ -19,6 +19,8 @@ public interface ApiLogMapper {
     void saveSErrorLog(SErrorLog sErrorLog);
 
     List<SErrorLog> getErrorLogList();
+
+    SErrorLog queryErrorLogById(String id);
 
     void saveSLog(SLog sLog);
 

@@ -48,6 +48,19 @@
 		from S_ERRORLOG
 	</select>
 
+	<!-- 通过日志编号查询日志详情 -->
+	<select id="queryErrorLogById" parameterType="String" resultType="SErrorLog">
+		select
+			t.logid,
+			to_char(logtime,'yyyy-MM-dd HH:mm:ss') logtime_string,
+			t.message,
+			t.usergent,
+			t.url,
+		    t.exceptiontype,
+		    t.stackmsg
+		from s_errorlog  t where  t.logid=#{logid}
+	</select>
+
 
 	<!-- 保存运行日志 -->
 	<insert id="saveSLog" parameterType="SLog">

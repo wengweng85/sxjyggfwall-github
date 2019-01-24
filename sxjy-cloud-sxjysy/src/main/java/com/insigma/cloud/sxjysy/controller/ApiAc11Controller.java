@@ -50,7 +50,6 @@ public class ApiAc11Controller  {
     @ApiOperation(value = "ac11", notes = "ac11", produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "/ac11", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg detail(@RequestBody Ac11 ac11) throws AppException {
-        //throw new AppException("发生异常了");
         return AjaxReturnMsg.success(apiAc11Service.getById(ac11.getEec001()));
     }
 

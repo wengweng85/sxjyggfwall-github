@@ -27,8 +27,6 @@ public class ApiLogServiceImpl implements ApiLogService {
     @Resource
     private ApiLogMapper logMapper;
 
-    SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss:SSS");
-
     /**
      * 应用异常日志
      */
@@ -40,12 +38,16 @@ public class ApiLogServiceImpl implements ApiLogService {
 
     @Override
     public PageInfo<SErrorLog> getErrorLogList( SErrorLog sErrorLog) {
-        PageHelper.startPage(sErrorLog.getCurpage(), sErrorLog.getLimit());
+        PageHelper.offsetPage(sErrorLog.getOffset(), sErrorLog.getLimit());
         List<SErrorLog> list =logMapper.getErrorLogList();
         PageInfo<SErrorLog> pageinfo = new PageInfo<>(list);
         return pageinfo;
     }
 
+    @Override
+    public SErrorLog queryErrorLogById(String id) {
+        return logMapper.queryErrorLogById(id);
+    }
 
     /**
      * 运行日志

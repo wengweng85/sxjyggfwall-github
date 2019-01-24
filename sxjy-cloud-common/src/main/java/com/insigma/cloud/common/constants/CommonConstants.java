@@ -11,7 +11,7 @@ public class CommonConstants {
     public final static String CONTEXT_USERNAME="username";
     public final static String CONTEXT_USER_ID="userid";
     public final static String CONTEXT_NAME="name";
-    public final static String JWT_PRIVATE_KEY ="sxjy-cloud";
+    public final static String JWT_PRIVATE_KEY ="jwt-private-key-cloud";
     public final static String EXPIRES_TIME =  "expires";
     public final static String CONTEXT_TOKEN = "token";
 

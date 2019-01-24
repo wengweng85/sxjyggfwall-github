@@ -36,7 +36,7 @@ public class AuthIntercepter extends HandlerInterceptorAdapter {
         }else{
             try {
                 //截取掉"Bearer "
-                AccessToken accessToken = JwtUtils.getInfoFromToken(token.substring(7, token.length()));
+                AccessToken accessToken = JwtUtils.getInfoFromToken(token);
                 SUserUtil.setToken(token);
                 logger.debug("Thread.currentThread().getName()="+Thread.currentThread().getName());
                 SUserUtil.setUsername(accessToken.getUsername());
