@@ -46,7 +46,7 @@ public class ApiLogController  {
      * @return
      */
     @ApiOperation(value = "获取所有异常日志", notes = "获取所有异常日志", produces = MediaType.APPLICATION_JSON_VALUE)
-    @PostMapping(value="/getErrorLogById", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value="/q_errorlog", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getErrorLogById(@RequestBody SErrorLog sErrorLog) throws AppException {
         return AjaxReturnMsg.success(apiLogService.queryErrorLogById(sErrorLog.getLogid()));
     }

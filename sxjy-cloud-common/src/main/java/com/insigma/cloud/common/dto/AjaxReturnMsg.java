@@ -20,6 +20,11 @@ import java.util.HashMap;
 @ApiModel(value="接口通用返回类形态为json")
 public class AjaxReturnMsg  {
 
+    private static final String DefaultSuccessMessage="成功";
+
+    private static final String DefaultFailMessage="失败";
+
+
     private static final Logger logger = LoggerFactory.getLogger(AjaxReturnMsg.class);
 
     private static final long serialVersionUID = 1L;
@@ -95,6 +100,15 @@ public class AjaxReturnMsg  {
         dto.setObj(fielderror.getField());
         logger.debug(JSONUtils.beanToJson(dto));
         return dto;
+    }
+
+    /**
+     * 成功返回
+     *
+     * @return
+     */
+    public static AjaxReturnMsg success() {
+        return success(DefaultSuccessMessage);
     }
 
     /**
@@ -193,6 +207,14 @@ public class AjaxReturnMsg  {
         return hashmap;
     }
 
+    /**
+     * 失败返回
+     *
+     * @return
+     */
+    public static AjaxReturnMsg fail() {
+       return fail(DefaultFailMessage);
+    }
     /**
      * 失败返回
      *

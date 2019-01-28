@@ -17,7 +17,7 @@ public class JwtUtils {
 
     private final static Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-    //public static final long MAX_AGE = 1000 * 60 * 60 * 24/24/12; //24小时
+    //public static final long MAX_AGE = 1000 * 60 * 60 * 24/24/12; //5 minute
     public static final long MAX_AGE = 1000 * 60 * 60 * 24; //24小时
     /**
      * generateToken
@@ -27,7 +27,6 @@ public class JwtUtils {
      */
     public static String generateToken(AccessToken accessToken) throws Exception {
         Date expiredate=new Date(System.currentTimeMillis()+MAX_AGE);
-
         String token = Jwts.builder()
                 .setSubject(accessToken.getUsername())
                 .claim(CommonConstants.CONTEXT_USER_ID, accessToken.getUserid())

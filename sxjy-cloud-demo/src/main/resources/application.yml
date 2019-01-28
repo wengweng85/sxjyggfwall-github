@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: api-demo
+  profiles:
+      active: dev
+  servlet:
+     multipart:
+       max-file-size: 30Mb
+       max-request-size: 30Mb
+mybatis:
+  mapper-locations: mapper/**/*Mapper.xml
+  typeAliasesPackage: com.insigma.mvc.model
+#pagehelper分页插件
+pagehelper:
+    dialect: oracle
+    offsetAsPageNum: true
+    rowBoundsWithCount: true
+    reasonable: true
+logging:
+  level:
+    root: info
+    com.insigma: debug
+  learning: trace

@@ -34,6 +34,7 @@ public class AuthUnNecessaryIntercepter extends HandlerInterceptorAdapter {
                 SUserUtil.setName(accessToken.getName());
                 SUserUtil.setUserId(accessToken.getUserid());
             } catch (Exception e) {
+                logger.debug(e.getMessage());
             }
         }
         return super.preHandle(request, response, handler);
