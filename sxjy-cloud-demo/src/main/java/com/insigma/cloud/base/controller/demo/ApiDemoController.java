@@ -53,7 +53,6 @@ public class ApiDemoController  {
 		}else{
 			return AjaxReturnMsg.fail("Ê§°Ü");
 		}
-
 	}
 	
 	/**

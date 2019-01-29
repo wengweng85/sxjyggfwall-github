@@ -25,8 +25,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("陕西就业公共服务接口平台-认证服务")
-                .description("陕西就业公共服务平台相关数据接口-认证服务")
+                .title("陕西就业公共服务接口平台-授权服务")
+                .description("陕西就业公共服务平台相关数据接口-授权服务")
                 .version("1.0")
                 .build();
     }

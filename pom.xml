@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>com.insigma</groupId>
   <artifactId>wxjy-web-cloud-all</artifactId>
   <packaging>pom</packaging>
@@ -12,24 +11,20 @@
     <org.mapstruct.version>1.1.0.Final</org.mapstruct.version>
   </properties>
   <modules>
-    <module>sxjyggfw-common-model</module>
-
 	<module>sxjy-cloud-common</module>
 	<module>sxjy-cloud-server</module>
 	<module>sxjy-cloud-zuul</module>
 
     <module>sxjy-cloud-auth</module>
+    <module>sxjy-cloud-authorize</module>
+    <module>sxjy-cloud-code</module>
 
 	<module>sxjy-cloud-base</module>
 	<module>sxjy-cloud-sxjysy</module>
-
     <module>sxjy-cloud-catalogue</module>
-
     <module>sxjy-cloud-demo</module>
 
-    <!--cloud-config-->
-    <module>sxjy-cloud-config-server</module>
-    <module>sxjy-cloud-config-client</module>
+    <module>sxjyggfw-common-model</module>
 
   </modules>
   <!-- 发布命令   mvn deploy -Dmaven.test.skip=true -->
