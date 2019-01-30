@@ -2,13 +2,14 @@ package com.insigma.cloud.base.serviceimpl.common.fileupload;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.github.pagehelper.StringUtil;
 import com.insigma.cloud.base.dao.common.fileupload.ApiFileUploadMapper;
 import com.insigma.cloud.base.service.common.fileupload.ApiFileUploadService;
 import com.insigma.cloud.common.context.SUserUtil;
 import com.insigma.cloud.common.fastdfs.FastDFSClient;
-import com.insigma.mvc.model.FileNumberInfo;
-import com.insigma.mvc.model.SuploadFile;
+import com.insigma.mvc.model.*;
 import org.apache.commons.io.IOUtils;
+import org.apache.tomcat.util.http.fileupload.FileUploadBase;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,21 +34,162 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
     private ApiFileUploadMapper apiFileUploadMapper;
 
     @Override
-    public SuploadFile uploadFilejy(MultipartFile multipartFile, String file_bus_type, String file_name, String userid, String businessType, String fileRandomFlag) throws Exception {
+    public SFileRecord uploadFile(MultipartFile multipartFile, String file_bus_type, String file_bus_name, String file_bus_id) throws Exception {
+        return uploadFile(multipartFile, file_bus_type, file_bus_name, file_bus_id, null);
+    }
+
+    @Override
+    public SFileRecord uploadFile(MultipartFile multipartFile, String file_bus_type, String file_bus_name, String file_bus_id, String desc) throws Exception {
+        SFileRecord sfilerecord = null;
+        if (StringUtil.isNotEmpty(file_bus_name)) {
+            file_bus_name = URLDecoder.decode(file_bus_name, "utf-8");
+        }
+        if (StringUtil.isNotEmpty(desc)) {
+            desc = URLDecoder.decode(desc, "utf-8");
+        }
+
+        SFileType sFileType = apiFileUploadMapper.getFileTypeInfo(file_bus_type);
+        if (sFileType == null) {
+            throw new Exception("æ–‡ä»¶ç±»å‹ç¼–å·ä¸å­˜åœ¨");
+        }
+
+        long MAX_SIZE = (long) (sFileType.getFileMaxSize() * 1024 * 1024);
+        try {
+            if (multipartFile.getSize() > MAX_SIZE) {
+                throw new Exception("æ–‡ä»¶å°ºå¯¸è¶…è¿‡è§„å®šå¤§å°:" + sFileType.getFileMaxSize() + "M");
+            }
+            // å¾—åˆ°å»é™¤è·¯å¾„çš„æ–‡ä»¶å
+            String originalFilename = multipartFile.getOriginalFilename();
+            int indexofdoute = originalFilename.lastIndexOf(".");
+            if (indexofdoute < 0) {
+                throw new Exception("æ–‡ä»¶æ ¼å¼é”™è¯¯");
+            }
+            // æ–‡ä»¶çš„åç¼€
+            String endfix = originalFilename.substring(indexofdoute).toLowerCase();
+           /* String[] arr = AppConfig.getProperties("limitFileType").split(",");
+            if (!Arrays.asList(arr).contains(endfix)) {
+                throw new Exception("æ–‡ä»¶æ ¼å¼ä¸æ­£ç¡®,è¯·ç¡®è®¤");
+            }*/
+
+            //ä¸Šä¼ å¹¶è®°å½•æ—¥å¿—
+            if (StringUtil.isNotEmpty(file_bus_id)) {
+                SFileRecord condition = new SFileRecord();
+                condition.setFile_bus_id(file_bus_id);
+                condition.setFile_bus_type(file_bus_type);
+                //æŸ¥è¯¢å·²ä¸Šä¼ æ–‡ä»¶åˆ—è¡¨
+                List<SFileRecord> list_file = apiFileUploadMapper.getBusFileRecordListByBusId(condition);
+
+                //å¦‚æœæœªä¸Šä¼ è¿‡æ–‡ä»¶
+                if (list_file.size() == 0) {
+                    sfilerecord = upload(file_bus_type, file_bus_id, multipartFile);
+                    sfilerecord.setFile_bus_name(file_bus_name);
+                    sfilerecord.setFile_bus_description(desc);
+                    apiFileUploadMapper.saveBusRecord(sfilerecord);
+                    return sfilerecord;
+                }
+
+                if (sFileType.getFileMaxNum() == 1) {
+                    //å¦‚æœåªèƒ½ä¸Šä¼ ä¸€ä¸ªæ–‡ä»¶ï¼Œåˆ™åˆ é™¤åŸæœ‰æ–‡ä»¶ï¼Œæ›´æ–°åŸæœ‰è®°å½•
+                    sfilerecord = upload(file_bus_type, file_bus_id, multipartFile);
+                    SFileRecord oldFile = list_file.get(0);
+                    //åˆ é™¤åŸæœ‰æ–‡ä»¶
+                    deleteFile(oldFile);
+                    sfilerecord.setBus_uuid(oldFile.getBus_uuid());
+                    //æ›´æ–°åŸæœ‰è®°å½•
+                    sfilerecord.setFile_bus_name(file_bus_name);
+                    sfilerecord.setFile_bus_description(desc);
+                    apiFileUploadMapper.updateBusRecord(sfilerecord);
+                    return sfilerecord;
+                } else if (list_file.size() >= sFileType.getFileMaxNum()) {
+                    // å¦‚æœä¸Šä¼ çš„æ–‡ä»¶å·²è¾¾åˆ°æœ€å¤§æ–‡ä»¶æ•°ï¼Œåˆ™æç¤º
+                    throw new Exception("å·²è¾¾åˆ°æœ€å¤§ä¸Šä¼ æ–‡ä»¶æ•°");
+                } else {
+                    sfilerecord = upload(file_bus_type, file_bus_id, multipartFile);
+                    sfilerecord.setFile_bus_name(file_bus_name);
+                    sfilerecord.setFile_bus_description(desc);
+                    apiFileUploadMapper.saveBusRecord(sfilerecord);
+                    return sfilerecord;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            // å¤„ç†æ–‡ä»¶å°ºå¯¸è¿‡å¤§å¼‚å¸¸
+            if (e instanceof FileUploadBase.SizeLimitExceededException) {
+                throw new Exception("æ–‡ä»¶å°ºå¯¸è¶…è¿‡è§„å®šå¤§å°:" + sFileType.getFileMaxSize() + "M");
+            }
+            throw new Exception(e.getMessage());
+        }
+        return sfilerecord;
+    }
+
+    @Override
+    public SFileType getFileType(String businessType) {
+        SFileType sFileType = apiFileUploadMapper.getFileTypeInfo(businessType);
+        return  sFileType;
+    }
+
+    /*
+    * ä¸Šä¼ æ–‡ä»¶
+    *
+    * @param file_bus_type
+    * @param file_bus_id
+    * @param multipartFile
+    * @return
+    * @throws Exception
+    */
+    public SFileRecord upload(String file_bus_type, String file_bus_id, MultipartFile multipartFile) throws Exception {
+        String originalFilename=multipartFile.getOriginalFilename();
+        String path=FastDFSClient.saveFile(multipartFile);
+        String fileName = path.substring(path.lastIndexOf("/")+1);
+        String file_path =  "/" + path;
+        SFileRecord sfilerecord=new SFileRecord();
+        sfilerecord.setFile_name(fileName);
+        sfilerecord.setFile_length(multipartFile.getSize());
+        sfilerecord.setFile_path(file_path);
+        sfilerecord.setFile_status("1");
+        sfilerecord.setFile_type(originalFilename.substring(originalFilename.lastIndexOf(".")+1));
+        sfilerecord.setFile_rel_path(file_path);
+        //ä¿å­˜æ–‡ä»¶è®°å½•
+        apiFileUploadMapper.saveFileRecord(sfilerecord);
+        sfilerecord.setFile_bus_name(originalFilename);// æ–‡ä»¶åŸå
+        sfilerecord.setFile_bus_id(file_bus_id);
+        sfilerecord.setFile_bus_type(file_bus_type);
+        return sfilerecord;
+    }
+
+    /**
+     * åˆ é™¤æ–‡ä»¶è®°å½•å’ŒçœŸå®æ–‡ä»¶
+     *
+     * @param sfilerecord
+     */
+    public void deleteFile(SFileRecord sfilerecord) {
+        try {
+            //åˆ é™¤æ–‡ä»¶è®°å½•
+            apiFileUploadMapper.deleteFileByFileUuid(sfilerecord.getFile_uuid());
+            String file_path = sfilerecord.getFile_path();
+            String groupName = getGroupFormFilePath(file_path);
+            String remoteFileName = getFileNameFormFilePath(file_path);
+            FastDFSClient.deleteFile(groupName, remoteFileName);
+            //FileUtil.delFileOnExist(sfilerecord.getFile_path());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Override
+    public SuploadFile uploadFileForBzh(MultipartFile multipartFile, String file_bus_type, String file_name, String userid, String businessType, String fileRandomFlag) throws Exception {
         SuploadFile suploadFile = null;
         if (null!=file_name&&!file_name.equals("")) {
             file_name = URLDecoder.decode(file_name, "utf-8");
         }
         try {
-            // µÃµ½È¥³ıÂ·¾¶µÄÎÄ¼şÃû
             String originalFilename = multipartFile.getOriginalFilename();
             int indexofdoute = originalFilename.lastIndexOf(".");
             if (indexofdoute < 0) {
-                throw new Exception("ÎÄ¼ş¸ñÊ½´íÎó");
+                throw new Exception("ï¿½Ä¼ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½");
             }
-            // ÎÄ¼şµÄºó×º
             String endfix = originalFilename.substring(indexofdoute).toLowerCase();
-            //ÉÏ´«²¢¼ÇÂ¼ÈÕÖ¾
             if (null!=userid&&!userid.equals("")) {
                 suploadFile = uploadjy(businessType,file_name,file_bus_type, userid, fileRandomFlag,multipartFile);
                 return suploadFile;
@@ -61,12 +203,10 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
     }
 
     /**
-     * É¾³ıÎÄ¼ş£¨×î¶àÅÜÒ»´Î£©
      */
     @Override
     public void deleteFileByID(String aaa001) {
         SuploadFile suploadFile = apiFileUploadMapper.getSuploadFileByID(aaa001);
-        //É¾³ıÕæÊµÎÄ¼ş
         String file_path = suploadFile.getAaa007();
         String groupName = getGroupFormFilePath(file_path);
         String remoteFileName = getFileNameFormFilePath(file_path);
@@ -78,7 +218,6 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
     }
 
     /**
-     * ÉÏ´«ÎÄ¼ş fastdfs
      *
      * @param file_bus_type
      * @param userid
@@ -100,14 +239,12 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
         suploadFile.setAaa009("1");
         suploadFile.setAaa010(businessType);
         suploadFile.setAaa011(fileRandomFlag);
-        //±£´æÎÄ¼ş¼ÇÂ¼
         apiFileUploadMapper.saveFileMessage(suploadFile);
         return suploadFile;
     }
 
 
     /**
-     *  ÉÏ´«¸½¼şÍ¼Æ¬
      * @param file
      * @param file_name
      * @param file_bus_type
@@ -118,15 +255,14 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
      * @throws Exception
      */
     @Override
-    public SuploadFile uploadImage(MultipartFile file,String file_name,String file_bus_type, String file_bus_id, String fileRandomFlag, String desc) throws Exception{
+    public SuploadFile uploadImageForBzh(MultipartFile file, String file_name, String file_bus_type, String file_bus_id, String fileRandomFlag, String desc) throws Exception{
         String userid = SUserUtil.getUserId();
-        SuploadFile suploadFile = uploadFilejy(file,file_bus_type, file_name, userid,file_bus_id,fileRandomFlag);
+        SuploadFile suploadFile = uploadFileForBzh(file,file_bus_type, file_name, userid,file_bus_id,fileRandomFlag);
         return suploadFile;
     }
 
 
     /**
-     * ²éÑ¯ÉÏ´«ÎÄ¼şĞÅÏ¢ÁĞ±í
      * @param aaa004
      */
     @Override
@@ -139,7 +275,6 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
         List<SuploadFile> suploadFileList = apiFileUploadMapper.selectFileByUserId(suploadFile1);
         for (SuploadFile suploadFile : suploadFileList) {
             double file_length = suploadFile.getAaa006();
-            // µ¥Î»×Ö½Ú×ªÎªÕ×
             suploadFile.setAaa006_str(String.format("%.2f", file_length / (1024 * 1024)) + "MB");
         }
         PageInfo<SuploadFile> pageInfo = new PageInfo<>(suploadFileList);
@@ -147,7 +282,6 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
     }
 
     /**
-     * É¾³ıÍ¼Æ¬ºÍ¸½¼şĞÅÏ¢±í
      *
      * @param suploadFile
      */
@@ -160,8 +294,6 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
         apiFileUploadMapper.deleteFileByID(suploadFile);
     }
     /**
-     * ²éÑ¯ÉÏ´«ÎÄ¼şĞÅÏ¢
-     *
      * @param suploadFile
      */
     @Override
@@ -172,7 +304,6 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
     }
 
     /**
-     * ²éÑ¯ÉÏ´«ÎÄ¼şĞÅÏ¢
      *
      * @param suploadFile
      */
@@ -184,7 +315,6 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
     }
 
     /**
-     * ²éÑ¯ÉÏ´«µ¥Î»Õ¹Ê¾ÊÓÆµºÍÍ¼Æ¬ĞÅÏ¢
      *
      * @param suploadFile
      */
@@ -199,7 +329,6 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
 
 
     /**
-     * ÏÂÔØ
      */
     @Override
     public byte[] download(String file_path) {
@@ -235,15 +364,12 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
         List<SuploadFile> suploadFileList = apiFileUploadMapper.selectFileByUserId(suploadFile1);
         for (SuploadFile suploadFile : suploadFileList) {
             double file_length = suploadFile.getAaa006();
-            // µ¥Î»×Ö½Ú×ªÎªÕ×
             suploadFile.setAaa006_str(String.format("%.2f", file_length / (1024 * 1024)) + "MB");
         }
         return suploadFileList;
     }
 
     /**
-     * ¸ù¾İfastDFS·µ»ØµÄpathµÃµ½ÎÄ¼şµÄ×éÃû
-     * @param path fastDFS·µ»ØµÄpath
      * @return
      */
     public String getGroupFormFilePath(String path){
@@ -251,13 +377,27 @@ public class ApiFileUploadServiceImpl  implements ApiFileUploadService {
     }
 
     /**
-     * ¸ù¾İfastDFS·µ»ØµÄpathµÃµ½ÎÄ¼şÃû
-     * @param path fastDFS·µ»ØµÄpath
      * @return
      */
     public String getFileNameFormFilePath(String path) {
         String path_temp = path.substring(path.indexOf("/")+1);
         path_temp = path_temp.substring(path_temp.indexOf("/")+1);
         return path_temp;
+    }
+
+    /**
+     * è·å–æ–‡ä»¶ä¸Šä¼ æ‰¹æ¬¡åˆ—è¡¨ä¿¡æ¯
+     */
+    @Override
+    public PageInfo<SysExcelBatch>  getExcelBatchList(SysExcelBatch sExcelBatch) {
+        PageHelper.offsetPage(sExcelBatch.getOffset(), sExcelBatch.getLimit());
+        List<SysExcelBatch> list = apiFileUploadMapper.getExcelBatchList(sExcelBatch);
+        PageInfo<SysExcelBatch> pageinfo = new PageInfo<SysExcelBatch>(list);
+        return pageinfo;
+    }
+
+    @Override
+    public SysExcelBatch getExcelBatchById(String excel_batch_id) {
+        return apiFileUploadMapper.getExcelBatchById(excel_batch_id);
     }
 }

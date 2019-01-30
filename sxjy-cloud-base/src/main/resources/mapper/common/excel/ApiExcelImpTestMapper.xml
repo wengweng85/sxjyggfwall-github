@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.insigma.cloud.base.dao.common.excel.ApiExcelImpTestMapper">
+	<insert id="insertExcelTempData" parameterType="DemoAc01ExcelTemp">
+		insert into demo_ac01_excel_temp(
+	        excel_temp_id	,--	导入临时表之临时表主键
+			excel_batch_number	,--	导入临时表之导入批次号
+			aac003	,--	导入临时表之姓名
+			aac002	,--	导入临时表之身份证号
+			aac004  ,
+			aac006  ,
+			aae009  ,
+			excel_isvalid	,--	导入临时表之是否正确数据
+			excel_rownum	,--	导入临时表之行数
+			excel_impdate	,--	导入临时表之导入日期
+			excel_isop	--	导入临时表之是否已经处理
+		)
+		values (
+		    #{excel_temp_id	,jdbcType=VARCHAR},--	导入临时表之临时表主键
+			#{excel_batch_number	,jdbcType=VARCHAR},--	导入临时表之导入批次号
+			#{aac003	,jdbcType=VARCHAR},--	导入临时表之姓名
+			#{aac002	,jdbcType=VARCHAR},--	导入临时表之身份证号
+			#{aac004	,jdbcType=VARCHAR},--	导入临时表之劳动者户口所在地
+			#{aac006	,jdbcType=VARCHAR},--	导入临时表之性别
+			#{aae009	,jdbcType=VARCHAR},--	导入临时表之民族
+			'1',--	导入临时表之是否正确数据
+			#{excel_rownum	,jdbcType=INTEGER},--	导入临时表之行数
+			sysdate,--	导入临时表之导入日期
+			'0'--	导入临时表之是否已经处理
+		)
+	</insert>
+
+	<!-- 将临时表导入正式表 -->
+	<select  id="executeProc" statementType="CALLABLE" parameterType="SysExcelBatch" timeout="3600">
+	    {call pkg_demo_ac01_excel_data_imp.demo_ac01_temp_imp_update(
+	    #{excel_batch_number,mode=IN,jdbcType=INTEGER},
+	    #{excel_batch_rt_code,mode=OUT,jdbcType=VARCHAR},
+	    #{excel_batch_rt_msg,mode=OUT,jdbcType=VARCHAR}
+	    )}
+	</select>
+	
+	<!-- 通用批次号查询导入的数据 -->
+	<select id="queryExcelInfoList" parameterType="DemoAc01ExcelTemp" resultType="DemoAc01ExcelTemp" >
+	   select
+	      aac003  ,-- 导入临时表之姓名
+	      aac002  ,-- 导入临时表之身份证号
+	      aac004  ,-- 导入临时表之性别
+	      aac006  ,-- 导入临时表之民族
+	      aae009  ,-- 导入临时表之年龄
+	      excel_isvalid ,-- 导入临时表之是否正确数据
+	      excel_errormsg  ,--
+	      excel_rownum  ,-- 导入临时表之行数
+	      excel_impdate ,-- 导入临时表之导入日期
+	      excel_isop  --  导入临时表之是否已经处理
+	     from DEMO_AC01_EXCEL_TEMP where excel_isvalid=#{excel_isvalid} and  excel_batch_number=#{excel_batch_number}  
+	     order by excel_rownum 
+	</select>
+</mapper>
