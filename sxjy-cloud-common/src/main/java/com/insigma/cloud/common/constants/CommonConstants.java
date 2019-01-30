@@ -22,4 +22,10 @@ public class CommonConstants {
     public final static String SIGN_SIGNATURE="signature";
     public final static String SIGN_TIMESTAMP="timestamp";
     public final static String SIGN_NONCE="nonce";
+
+    //response重定向
+    public final static String RESPONSE_HEADER_STATUSCODE="statuscode";
+    public final static String RESPONSE_TOKEN_ERROR = "token_error";
+    public final static String RESPONSE_HEADER_REDIRECTURL = "redirecturl";
+    public final static String RESPONSE_REDIRECTURL = "/web/gotologin";
 }

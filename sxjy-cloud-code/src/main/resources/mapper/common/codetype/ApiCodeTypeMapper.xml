@@ -4,6 +4,13 @@
 
 <mapper namespace="com.insigma.cloud.code.dao.common.codetype.ApiCodeTypeMapper">
 
+    <cache >
+        <property name="eviction" value="LRU" />
+        <property name="flushInterval" value="6000000" />
+        <property name="size" value="1024" />
+        <property name="readOnly" value="false" />
+    </cache>
+
     <!-- 得到代码类型列表 -->
     <select id="getInitcodetypeList" resultType="CodeType">
         SELECT aaa100 code_type

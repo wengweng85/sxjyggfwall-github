@@ -4,7 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.insigma.cloud.auth.service.ApiAuthenticationService;
 import com.insigma.cloud.common.dto.AjaxReturnMsg;
 import com.insigma.cloud.common.dto.CasUser;
+import com.insigma.cloud.common.dto.SysCode;
 import com.insigma.cloud.common.exception.AppException;
+import com.insigma.cloud.common.rsa.RSAUtils;
 import com.insigma.cloud.common.utils.JSONUtils;
 import com.insigma.mvc.model.AccessToken;
 import com.insigma.mvc.model.SUser;
@@ -47,7 +49,7 @@ public class ApiAuthenticationController {
      */
     @ApiOperation(value = "获取认证token", notes = "获取认证token",produces = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping(value = "/token",produces = MediaType.APPLICATION_JSON_VALUE)
-    public AjaxReturnMsg gettoken(@RequestBody SUser suser) throws Exception {
+    public AjaxReturnMsg token(@RequestBody SUser suser) throws Exception {
         AccessToken accessToken= apiAuthenticationService.getToken(suser.getUsername(),suser.getPassword());
         if(accessToken!=null){
             return AjaxReturnMsg.success(accessToken);
@@ -55,6 +57,31 @@ public class ApiAuthenticationController {
             return AjaxReturnMsg.fail("认证失败");
         }
     }
+
+    /**
+     * 根据用户名密码获取认证token
+     * @return
+     * @throws Exception
+     */
+    @ApiOperation(value = "获取认证token(用户名密码加密)", notes = "获取认证token(用户名密码加密)",produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/tokenencode",produces = MediaType.APPLICATION_JSON_VALUE)
+    public AjaxReturnMsg tokenencode(@RequestBody SUser suser) throws Exception {
+        try{
+            LOGGER.debug("before decrypt username:{} password:{}",suser.getUsername(),suser.getPassword());
+            String username= RSAUtils.decryptByPrivateKey(suser.getUsername());
+            String password= RSAUtils.decryptByPrivateKey(suser.getPassword());
+            LOGGER.debug("after decrypt  username:{} password:{}",username,password);
+            AccessToken accessToken= apiAuthenticationService.getToken(username,password);
+            if(accessToken!=null){
+                return AjaxReturnMsg.success(accessToken);
+            }else{
+                return AjaxReturnMsg.fail("认证失败,用户名密码错误");
+            }
+        }catch (Exception e){
+            return AjaxReturnMsg.error(SysCode.SYS_SIGN_ERROR);
+        }
+    }
+
 
 
     /**

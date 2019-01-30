@@ -31,9 +31,9 @@ public class ApiFallbackProvider implements FallbackProvider {
         logger.warning(String.format("route:%s,exceptionType:%s,stackTrace:%s", route, cause.getClass().getName(), cause.getStackTrace()));
         String message = "";
         if (cause instanceof HystrixTimeoutException) {
-            message = "服务超时";
+            message = "service timeout";
         } else {
-            message = "服务异常";
+            message = "service unavaliable";
         }
         return fallbackResponse(message);
     }
@@ -63,7 +63,7 @@ public class ApiFallbackProvider implements FallbackProvider {
 
             @Override
             public InputStream getBody() throws IOException {
-                String bodyText = String.format("{\"syscode\": 500,\"success\": false,\"message\": \"服务不可用:%s\"}", message);
+                String bodyText = String.format("{\"syscode\": 500,\"success\": false,\"message\": \"%s\"}", message);
                 return new ByteArrayInputStream(bodyText.getBytes());
             }
 

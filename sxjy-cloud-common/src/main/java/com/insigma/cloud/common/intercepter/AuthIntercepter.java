@@ -66,6 +66,12 @@ public class AuthIntercepter extends HandlerInterceptorAdapter {
         response.setStatus(code);
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json; charset=utf-8");
+        //通过CORS方式解决的ajax跨域,是获取不到请求头
+        response.addHeader("Access-Control-Expose-Headers", CommonConstants.RESPONSE_HEADER_STATUSCODE+","+CommonConstants.RESPONSE_HEADER_REDIRECTURL);
+        //告诉ajax这是重定向
+        response.addHeader(CommonConstants.RESPONSE_HEADER_STATUSCODE, CommonConstants.RESPONSE_TOKEN_ERROR);
+        //重定向地址
+        response.addHeader(CommonConstants.RESPONSE_HEADER_REDIRECTURL, CommonConstants.RESPONSE_REDIRECTURL);
         PrintWriter out = null;
         try{
             out = response.getWriter();
