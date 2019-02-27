@@ -24,7 +24,6 @@ public interface ApiAuthenticationMapper  {
      */
     SUser getUserByUsername(@Param("username") String username, @Param("password") String password);
 
-
     /**
      * ¼ÇÂ¼µÇÂ¼ÐÅÏ¢
      *

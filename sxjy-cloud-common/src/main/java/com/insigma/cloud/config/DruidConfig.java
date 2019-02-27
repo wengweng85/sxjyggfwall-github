@@ -14,6 +14,8 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Druid配置类
@@ -100,10 +102,18 @@ public class DruidConfig {
     @Bean
     public FilterRegistrationBean filterRegistrationBean() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+        Map<String, String> initParameters = new HashMap<>();
+        initParameters.put("resetEnable", "false"); //禁用HTML页面上的“Rest All”功能
+        initParameters.put("allow", "127.0.0.1");  //ip白名单（没有配置或者为空，则允许所有访问）
+        initParameters.put("loginUsername", "admin");  //++监控页面登录用户名
+        initParameters.put("loginPassword", "admin123456");  //++监控页面登录用户密码
+        initParameters.put("deny", ""); //ip黑名单
+        initParameters.put("exclusions", "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"); //配置那些资源不被拦截
+        initParameters.put("profileEnable", "true"); //ip黑名单
         filterRegistrationBean.setFilter(new WebStatFilter());
         filterRegistrationBean.addUrlPatterns("/*");
-        filterRegistrationBean.addInitParameter("exclusions", "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");  //配置那些资源不被拦截
-        filterRegistrationBean.addInitParameter("profileEnable", "true");
+        //如果某个ip同时存在，deny优先于allow
+        filterRegistrationBean.setInitParameters(initParameters);
         return filterRegistrationBean;
     }
 

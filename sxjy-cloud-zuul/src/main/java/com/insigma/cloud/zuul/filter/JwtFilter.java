@@ -22,7 +22,7 @@ public class JwtFilter extends ZuulFilter {
 
     private final static Logger logger = LoggerFactory.getLogger(JwtFilter.class);
 
-    private String ignorePath = "/api-auth/,/api-code/,/api-cata/";
+    private String ignorePath = "/api-auth/,/api-code/,/api-cata/,/api-jpa-demo/";
 
     @Override
     public String filterType() {

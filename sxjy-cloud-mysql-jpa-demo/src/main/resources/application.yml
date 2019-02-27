@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: api-jpa-demo
+  profiles:
+      active: dev
+  servlet:
+     multipart:
+       max-file-size: 30Mb
+       max-request-size: 30Mb
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql: TRACE

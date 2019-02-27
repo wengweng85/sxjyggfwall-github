@@ -23,6 +23,7 @@
 	<module>sxjy-cloud-sxjysy</module>
     <module>sxjy-cloud-catalogue</module>
     <module>sxjy-cloud-demo</module>
+    <module>sxjy-cloud-mysql-jpa-demo</module>
 
     <module>sxjyggfw-common-model</module>
 
