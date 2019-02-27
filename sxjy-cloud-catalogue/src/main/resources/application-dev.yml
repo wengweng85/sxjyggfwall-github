@@ -11,8 +11,9 @@ spring:
   datasource:
     url: jdbc:oracle:thin:@192.168.181.101:1521:orcl
     username: sxjyggfw
-    password: sxjyggfw
-    driver-class-name: oracle.jdbc.driver.OracleDriver
+    password: QaoFEqnoFS9na1ML6TXaolnBiVm727urh+0HiermQ5rh3gRoHbV81C2Ef21bq+yBByduXe8ZDFgIwIJDvXDPqw==
+    publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAK5oyDNLfdT7W7pVBeX6hspSyGLAAknO7Ts77gt+5UcFEJT85IQehxzBQsCqHgdJhwbB+9usRzajnRlpU5ldQM8CAwEAAQ==
+    driverClassName : oracle.jdbc.driver.OracleDriver
     ###################以下为druid增加的配置###########################
     type: com.alibaba.druid.pool.DruidDataSource
     # 下面为连接池的补充设置，应用到上面所有数据源中
@@ -34,11 +35,12 @@ spring:
     poolPreparedStatements: true
     maxPoolPreparedStatementPerConnectionSize: 20
     # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
-    filters: stat,wall,log4j
-    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
-    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    filters: stat,wall,log4j,config
     # 合并多个DruidDataSource的监控数据
     useGlobalDataSourceStat: true
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000;config.decrpt=true;
+    logSlowSql: true
     ###############以上为配置druid添加的配置########################################
   redis:
     host: 192.168.70.158
