@@ -24,8 +24,8 @@ public class SignUtils {
 
 	private final static String SIGN_NONCE="nonce";
 
-	//时间戳有效果期
-	public static final long TIMESTAMP=5*60*1000;
+	//时间戳有效期60s
+	public static final long TIMESTAMPEXPIRED=1*60*1000;
     
 	/**
 	 * 根据给定摘要算法名称创建一个消息摘要实例
@@ -141,7 +141,7 @@ public class SignUtils {
 	public static String signature() {
          HashMap map=new HashMap();
          String nonce= RandomNumUtil.getRandomString(16);
-         String timestamp=new Long(System.currentTimeMillis()+TIMESTAMP).toString();
+         String timestamp=new Long(System.currentTimeMillis()+TIMESTAMPEXPIRED).toString();
          map.put(SIGN_NONCE, nonce);
          map.put(SIGN_TIMESTAMP,timestamp);
          String sign=signature(timestamp,nonce);

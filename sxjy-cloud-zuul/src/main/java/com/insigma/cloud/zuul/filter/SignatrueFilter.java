@@ -52,17 +52,17 @@ public class SignatrueFilter extends ZuulFilter {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         //校验签名
-        String signature=request.getParameter(CommonConstants.SIGN_SIGNATURE);
-        String timestamp=request.getParameter(CommonConstants.SIGN_TIMESTAMP);
-        String nonce=request.getParameter(CommonConstants.SIGN_NONCE);
+        String signature=request.getParameter(CommonConstants.SIGN_SIGNATURE)==null?request.getHeader(CommonConstants.SIGN_SIGNATURE):request.getParameter(CommonConstants.SIGN_SIGNATURE);
+        String timestamp=request.getParameter(CommonConstants.SIGN_TIMESTAMP)==null?request.getHeader(CommonConstants.SIGN_TIMESTAMP):request.getParameter(CommonConstants.SIGN_TIMESTAMP);
+        String nonce=request.getParameter(CommonConstants.SIGN_NONCE)==null?request.getHeader(CommonConstants.SIGN_NONCE):request.getParameter(CommonConstants.SIGN_NONCE);
         logger.debug(String.format("signature:%s,timestamp:%s,nonce:%s",signature,timestamp,nonce));
         if(null!=signature&&null!=timestamp&&null!=nonce){
             if(SignUtils.checkSignature(signature,timestamp,nonce)){
                 //判断此签名是否出现,做幂等设计
                 String redis_sign=redisTemplate.opsForValue().get(signature);
                 if(redis_sign==null){
-                    //5分钟过期。因为5分钟后签名过期
-                    redisTemplate.opsForValue().set(signature,"1",SignUtils.TIMESTAMP, TimeUnit.MILLISECONDS);
+                    //1分钟过期。因为1分钟后签名过期
+                    redisTemplate.opsForValue().set(signature,"1",SignUtils.TIMESTAMPEXPIRED, TimeUnit.MILLISECONDS);
                     //计算接口时间是否过期
                     Date nowTime = new Date(System.currentTimeMillis());
                     Date timestamp_Time= new Date(new Long(timestamp));
@@ -82,7 +82,7 @@ public class SignatrueFilter extends ZuulFilter {
                 return null;
             }
         }else{
-            setFailedRequest(AjaxReturnMsg.error(SysCode.SYS_SIGN_PARAM_EMPTY), 200);
+            //setFailedRequest(AjaxReturnMsg.error(SysCode.SYS_SIGN_PARAM_EMPTY), 200);
             return null;
         }
     }

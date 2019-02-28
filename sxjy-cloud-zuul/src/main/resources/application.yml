@@ -42,7 +42,7 @@ zuul:
           disable: true
     SignatrueFilter:
         pre:
-          disable: true
+          disable: false
     TokenFilter:
         pre:
           disable: false
