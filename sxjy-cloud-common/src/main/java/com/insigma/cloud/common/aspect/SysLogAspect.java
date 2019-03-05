@@ -44,7 +44,7 @@ public class SysLogAspect {
         logger.debug("请求地址 : " +request.getRequestURL().toString());
         logger.debug("HTTP METHOD : " + request.getMethod());
         // 获取真实的ip地址
-        logger.info("IP : " + IPUtils.getIpAddr(request));
+        logger.debug("IP : " + IPUtils.getIpAddr(request));
         logger.debug("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
         logger.debug("参数 : " + Arrays.toString(joinPoint.getArgs()));
     }
@@ -97,7 +97,7 @@ public class SysLogAspect {
         // 设置IP地址
         sLog.setIpaddr (IPUtils.getIpAddr(request));
         sLog.setUserid(SUserUtil.getUserId() == null ? "000000" : SUserUtil.getUserId());
-        sLog.setCost (new Long(time).toString());
+        sLog.setCost(new Long(time).toString());
         sLog.setUsergent(request.getHeader("user-agent"));
         // 系统当前时间
         Date date = new Date();

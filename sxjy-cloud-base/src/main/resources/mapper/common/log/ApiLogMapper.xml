@@ -61,6 +61,9 @@
 		from s_errorlog  t where  t.logid=#{logid}
 	</select>
 
+	<delete id="deleteErrorLog" parameterType="String" >
+		DELETE from s_errorlog s where s.logid=#{logid}
+	</delete>
 
 	<!-- 保存运行日志 -->
 	<insert id="saveSLog" parameterType="SLog">

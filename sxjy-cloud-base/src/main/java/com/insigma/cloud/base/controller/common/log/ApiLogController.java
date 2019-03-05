@@ -42,6 +42,18 @@ public class ApiLogController  {
     }
 
     /**
+     * 获取所有日志
+     * @return
+     * @throws AppException
+     */
+    @ApiOperation(value = "获取所有异常日志", notes = "获取所有异常日志", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/errorlogs2", produces = MediaType.APPLICATION_JSON_VALUE)
+    public AjaxReturnMsg getErrorLogList2(@RequestBody SErrorLog sErrorLog) throws AppException {
+        return AjaxReturnMsg.success(apiLogService.getErrorLogListByPage(sErrorLog));
+    }
+
+
+    /**
      * 通过日志编号获取异常日志明细信息
      * @return
      */
@@ -49,6 +61,16 @@ public class ApiLogController  {
     @PostMapping(value="/q_errorlog", produces = MediaType.APPLICATION_JSON_VALUE)
     public AjaxReturnMsg getErrorLogById(@RequestBody SErrorLog sErrorLog) throws AppException {
         return AjaxReturnMsg.success(apiLogService.queryErrorLogById(sErrorLog.getLogid()));
+    }
+
+    /**
+     * 通过日志编号获取异常日志明细信息
+     * @return
+     */
+    @ApiOperation(value = "删除日志", notes = "删除日志", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value="/delete_errorlog", produces = MediaType.APPLICATION_JSON_VALUE)
+    public AjaxReturnMsg delete_errorlog(@RequestBody SErrorLog sErrorLog) throws AppException {
+        return AjaxReturnMsg.success(apiLogService.deleteErrorLog(sErrorLog.getLogid()));
     }
 
     /**

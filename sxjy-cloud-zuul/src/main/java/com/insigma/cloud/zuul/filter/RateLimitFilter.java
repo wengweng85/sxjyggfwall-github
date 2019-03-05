@@ -49,7 +49,8 @@ public class RateLimitFilter extends ZuulFilter {
         RequestContext requestContext = RequestContext.getCurrentContext();
         if(!rateLimit.tryAcquire()){
             logger.debug("超过流量{}/s,限流中",RATELIMIT_NUM);
-            requestContext.setSendZuulResponse(false);//不通过
+            //不通过
+            requestContext.setSendZuulResponse(false);
             setFailedRequest(AjaxReturnMsg.error(SysCode.SYS_REQUEST_LIMIT), 200);
             return null;
         }

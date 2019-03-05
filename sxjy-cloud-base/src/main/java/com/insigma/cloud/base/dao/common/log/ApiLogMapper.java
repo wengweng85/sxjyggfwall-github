@@ -22,6 +22,8 @@ public interface ApiLogMapper {
 
     SErrorLog queryErrorLogById(String id);
 
+    int deleteErrorLog(String id);
+
     void saveSLog(SLog sLog);
 
     void saveUserLog(SUserLog sUserLog);

@@ -24,7 +24,8 @@
 # Folders #
 dababase
 target
-sxjy-cloud-view
+dist
+node_modules
 sxjyggfw-common-model
 .mvn
 .idea

@@ -45,8 +45,21 @@ public class ApiLogServiceImpl implements ApiLogService {
     }
 
     @Override
+    public PageInfo<SErrorLog> getErrorLogListByPage( SErrorLog sErrorLog) {
+        PageHelper.startPage(sErrorLog.getCurpage(),sErrorLog.getLimit());
+        List<SErrorLog> list =logMapper.getErrorLogList();
+        PageInfo<SErrorLog> pageinfo = new PageInfo<>(list);
+        return pageinfo;
+    }
+
+    @Override
     public SErrorLog queryErrorLogById(String id) {
         return logMapper.queryErrorLogById(id);
+    }
+
+    @Override
+    public int deleteErrorLog(String id) {
+        return logMapper.deleteErrorLog(id);
     }
 
     /**
