@@ -56,9 +56,6 @@ public class ApiAuthorizeServiceImpl implements ApiAuthorizeService {
         return filterPersmList(list);
     }
 
-
-
-
     /**
      * 过滤菜单
      * @param permlist

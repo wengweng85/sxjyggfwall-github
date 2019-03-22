@@ -16,19 +16,19 @@ public class SwaggerConfig {
     @Bean
     public Docket userApi() {
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
-                .select()
-                .paths(PathSelectors.any())
-                .build();
+            .apiInfo(apiInfo())
+            .select()
+            .paths(PathSelectors.any())
+            .build();
         return docket;
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("陕西就业公共服务接口平台-授权服务")
-                .description("陕西就业公共服务平台相关数据接口-授权服务")
-                .version("1.0")
-                .build();
+            .title("陕西就业公共服务接口平台-授权服务")
+            .description("陕西就业公共服务平台相关数据接口-授权服务")
+            .version("1.0")
+            .build();
     }
 
 }

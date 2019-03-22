@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+      gateway:
+        routes:
+        - id: host_route
+          uri: http://ityouknow.com
+          predicates:
+          - Path=/about
+          filters:
+          - StripPrefix=1
+        - id: host_route
+          uri: http://localhost:8082
+          predicates:
+          - Path=/b/**
+          filters:
+          - StripPrefix=1
+server:
+  port: 8002

@@ -22,5 +22,4 @@ public interface ApiAuthorizeService {
     //»ñÈ¡²Ëµ¥Ê÷
     List<SPermission> findMenuTree(String username);
 
-
 }

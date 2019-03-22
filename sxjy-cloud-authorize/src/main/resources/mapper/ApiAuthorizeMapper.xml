@@ -10,17 +10,17 @@
     <!-- 个人用户权限查询  -->
     <select id="findPermissionStr" parameterType="String" resultType="com.insigma.mvc.model.SPermission">
         select * from (
-        select distinct d.permcode, d.url, d.permtype, nvl(d.iconcss,'fa-file-o') iconcss , d.permissionid,d.parentid, d.permname,d.sortnum
-        from s_user a,s_role b ,s_user_role c,s_permission d ,s_role_permission e
-        where a.username=#{username}
-        and a.userid=c.userid
-        and b.roleid=c.roleid  and b.roleid=e.roleid
-        and d.permissionid=e.permissionid  and d.permcode is not null and d.parentid is not null and d.enabled='1'
-        union
-        select distinct c.permcode, c.url, c.permtype, nvl(c.iconcss,'fa-file-o') iconcss, c.permissionid, c.parentid, c.permname,c.sortnum
-        from s_user a, s_user_permission b, s_permission  c
-        where a.username =#{username}
-        and a.userid = b.userid and c.permissionid=b.permissionid and c.permcode is not null and c.parentid is not null and c.enabled='1'
+            select distinct d.permcode, d.url, d.permtype, nvl(d.iconcss,'fa-file-o') iconcss , d.permissionid,d.parentid, d.permname,d.sortnum
+            from s_user a,s_role b ,s_user_role c,s_permission d ,s_role_permission e
+            where a.username=#{username}
+            and a.userid=c.userid
+            and b.roleid=c.roleid  and b.roleid=e.roleid
+            and d.permissionid=e.permissionid  and d.permcode is not null and d.parentid is not null and d.enabled='1'
+            union
+            select distinct c.permcode, c.url, c.permtype, nvl(c.iconcss,'fa-file-o') iconcss, c.permissionid, c.parentid, c.permname,c.sortnum
+            from s_user a, s_user_permission b, s_permission  c
+            where a.username =#{username}
+            and a.userid = b.userid and c.permissionid=b.permissionid and c.permcode is not null and c.parentid is not null and c.enabled='1'
         )
         order by sortnum
     </select>

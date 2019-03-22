@@ -13,8 +13,6 @@ import java.util.List;
  */
 @Mapper
 public interface ApiAuthorizeMapper {
-
-
     /**
      * 通过用户id获取用户角色集合
      *

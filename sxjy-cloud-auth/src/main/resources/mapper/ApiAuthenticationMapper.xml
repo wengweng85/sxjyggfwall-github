@@ -25,6 +25,7 @@
         t.lastlogintime = sysdate
         WHERE t.userid = #{userid}
     </update>
+    
 
 
     <select id="getUserByUserNameForGgfw" parameterType="com.insigma.mvc.model.SUser" resultType="com.insigma.mvc.model.SUser">
