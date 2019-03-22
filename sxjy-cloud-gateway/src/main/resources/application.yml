@@ -1,20 +1,17 @@
+server:
+  port: 8002
 spring:
   application:
     name: api-gateway
   cloud:
-      gateway:
-        routes:
-        - id: host_route
-          uri: http://ityouknow.com
-          predicates:
-          - Path=/about
-          filters:
-          - StripPrefix=1
-        - id: host_route
-          uri: http://localhost:8082
-          predicates:
-          - Path=/b/**
-          filters:
-          - StripPrefix=1
-server:
-  port: 8002
+    gateway:
+     discovery:
+        locator:
+         enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
