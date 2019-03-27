@@ -16,7 +16,7 @@ public class TestController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         System.out.println(auth);
         YYModel yy = new YYModel();
-        yy.setYy("����");
+        yy.setYy("yy");
         yy.setZz(3);
         return yy;
     }
@@ -24,7 +24,7 @@ public class TestController {
     @GetMapping("/test")
     public String getTest() {
         YYModel yy = new YYModel();
-        yy.setYy("����");
+        yy.setYy("yy");
         yy.setZz(3);
         return yy.toJSONString();
     }

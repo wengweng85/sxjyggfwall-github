@@ -4,7 +4,6 @@ package com.insigma.springboot.entity;
 import com.alibaba.fastjson.JSONObject;
 
 /**
- * Created by wengsh on 2019/3/26.
  */
 public class YYModel {
     private String yy;
