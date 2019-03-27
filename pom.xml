@@ -17,6 +17,8 @@
 	<module>sxjy-cloud-zuul</module>
 
     <module>sxjy-cloud-auth</module>
+    <module>sxjy-cloud-oauth2</module>
+    <module>sxjy-boot-oauth2</module>
     <module>sxjy-cloud-authorize</module>
     <module>sxjy-cloud-code</module>
 
@@ -26,7 +28,8 @@
     <module>sxjy-cloud-demo</module>
     <module>sxjy-cloud-mysql-jpa-demo</module>
 
-    <module>sxjyggfw-common-model</module>
+    <module>sxjy-cloud-mysql-jpa-demo</module>
+    <module>sxjy-cloud-mockserver</module>
 
   </modules>
   <!-- 发布命令   mvn deploy -Dmaven.test.skip=true -->

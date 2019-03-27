@@ -21,7 +21,6 @@ public class CloudGateWayApplication {
         SpringApplication.run(CloudGateWayApplication.class, args);
     }
 
-
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         StripPrefixGatewayFilterFactory.Config config = new StripPrefixGatewayFilterFactory.Config();
