@@ -33,19 +33,19 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 		String finalSecret = "{bcrypt}"+new BCryptPasswordEncoder().encode("123456");
 		//配置两个客户端,一个用于password认证一个用于client认证
 		clients.inMemory()
-				.withClient("client_1")
-				.resourceIds(DEMO_RESOURCE_ID)
-				.authorizedGrantTypes("client_credentials", "refresh_token")
-				.scopes("select")
-				.authorities("oauth2")
-				.secret(finalSecret)
-				.and()
-				.withClient("client_2")
-				.resourceIds(DEMO_RESOURCE_ID)
-				.authorizedGrantTypes("password", "refresh_token")
-				.scopes("select")
-				.authorities("oauth2")
-				.secret(finalSecret);
+			.withClient("client_1")
+			.resourceIds(DEMO_RESOURCE_ID)
+			.authorizedGrantTypes("client_credentials", "refresh_token")
+			.scopes("select")
+			.authorities("oauth2")
+			.secret(finalSecret)
+			.and()
+			.withClient("client_2")
+			.resourceIds(DEMO_RESOURCE_ID)
+			.authorizedGrantTypes("password", "refresh_token")
+			.scopes("select")
+			.authorities("oauth2")
+			.secret(finalSecret);
 	}
 
 	@Override
