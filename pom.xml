@@ -18,7 +18,7 @@
 
     <module>sxjy-cloud-auth</module>
     <module>sxjy-cloud-oauth2</module>
-    <module>sxjy-boot-oauth2</module>
+
     <module>sxjy-cloud-authorize</module>
     <module>sxjy-cloud-code</module>
 
@@ -30,6 +30,12 @@
 
     <module>sxjy-cloud-mysql-jpa-demo</module>
     <module>sxjy-cloud-mockserver</module>
+
+    <module>sxjy-cloud-mockserver</module>
+
+    <module>sxjy-boot-oauth2</module>
+    <module>sxjy-boot-mybatis</module>
+    <module>sxjy-boot-jpa</module>
 
   </modules>
   <!-- 发布命令   mvn deploy -Dmaven.test.skip=true -->
