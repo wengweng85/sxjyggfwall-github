@@ -7,5 +7,5 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface G04Dao extends JpaRepository<G04,String> {
+public interface G04Jpa extends BaseJPA<G04> {
 }

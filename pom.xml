@@ -37,6 +37,9 @@
     <module>sxjy-boot-mybatis</module>
     <module>sxjy-boot-jpa</module>
 
+    <module>hrned-service-provider</module>
+    <module>dubbo-common</module>
+
   </modules>
   <!-- 发布命令   mvn deploy -Dmaven.test.skip=true -->
   <!-- nexus私服配置 -->

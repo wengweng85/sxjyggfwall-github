@@ -1,12 +1,15 @@
 package com.groupwork.web;
 
-import com.groupwork.dao.G04Dao;
+import com.groupwork.dao.G04Jpa;
 import com.groupwork.entity.G04;
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.PostConstruct;
+import javax.persistence.EntityManager;
 import java.util.HashMap;
 import java.util.List;
 
@@ -15,7 +18,21 @@ import java.util.List;
 public class GwyController {
 
     @Autowired
-    G04Dao g04Dao;
+    G04Jpa g04jpa;
+
+
+    //实体管理者
+    @Autowired
+    private EntityManager entityManager;
+
+    //JPA查询工厂
+    private JPAQueryFactory queryFactory;
+
+    @PostConstruct
+    public void initFactory() {
+        queryFactory = new JPAQueryFactory(entityManager);
+        System.out.println("init JPAQueryFactory successfully");
+    }
 
     /**
      * qrcode
@@ -23,7 +40,7 @@ public class GwyController {
      */
     @RequestMapping("/list")
     public String list(Model model){
-        List<G04> g04List=g04Dao.findAll();
+        List<G04> g04List=g04jpa.findAll();
         HashMap map=new HashMap();
         map.put("g04list",g04List);
         model.addAllAttributes(map);
