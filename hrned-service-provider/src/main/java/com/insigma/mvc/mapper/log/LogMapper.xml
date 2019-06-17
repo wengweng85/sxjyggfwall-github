@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.insigma.mvc.dao.log.LogMapper">
+	<!-- 保存 -->
+	<insert id="add"  parameterType="Log">
+	    <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="jkId"> 
+            SELECT sys_guid() from dual 
+        </selectKey>
+		 insert into jk_log(
+            jk_id, --接口日志表主键
+            jk_key, --业务流水号
+            jk_send_xml,--接口请求数据xml head
+            jk_type, --接口类型
+            jk_sender,--接口调用方
+            jk_call_begin--接口调用开始时间
+        )
+        values(
+            #{jkId}, --接口日志表主键
+            #{jkkey}, --业务流水号
+            #{jkSendXml},--接口请求数据xml head
+            #{jkType}, --接口类型
+            #{jkSender},--接口调用方
+            sysdate--接口调用开始时间
+           )
+	</insert>
+	
+	<!-- 保存 -->
+	<insert id="update"  parameterType="Log">
+	 update jk_log t set
+       t.jk_call_end=sysdate,
+       jk_result=  #{jkResult}, ,
+       jk_return_xml=  #{jkReturnXml},,
+       jk_return_code=  #{jkReturnCode},,
+       jk_return_msg=  #{jkReturnMsg},
+       where jk_id=  #{jkId},;
+	</insert>
+</mapper>

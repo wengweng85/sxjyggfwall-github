@@ -66,7 +66,9 @@ public class Data {
     }
 
     public static void main(String [] args){
-        Data data=new Data("{aac002:'sdfsfsdfds'}");
+        Data data=new Data("{\"aac002\":\"362326198702244545\",\"aac003\":\"翁绍辉\"}");
         System.out.println(data.beanToJson());
+        String result=data.beanToJson();
+        data.jsonToBean(result);
     }
 }

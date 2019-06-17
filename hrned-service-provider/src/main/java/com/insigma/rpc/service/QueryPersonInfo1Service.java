@@ -1,4 +1,4 @@
-package com.insigma.service;
+package com.insigma.rpc.service;
 
 
 

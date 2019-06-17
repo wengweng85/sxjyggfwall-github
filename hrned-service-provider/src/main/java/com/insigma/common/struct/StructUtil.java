@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import com.insigma.common.constraint.SMContraint;
-import com.insigma.common.util.JsonUtils;
 
 public class StructUtil {
 	
@@ -14,7 +13,7 @@ public class StructUtil {
 	 * @param r
 	 * @return
 	 */
-	public static String RtoResponseData(Data request,R r){
+	public static Data RtoResponseData(Data request,R r){
 	    Data response=new Data();
         Header header=request.getHeader();
         Calendar calendar= Calendar.getInstance();
@@ -27,7 +26,7 @@ public class StructUtil {
         header.setBusiStatus(r.getBusiStatus());
         response.setHeader(header);
         response.setBody(r.getBody());
-        return JsonUtils.objectToJson(response);
+        return response;
 	}
 
 }

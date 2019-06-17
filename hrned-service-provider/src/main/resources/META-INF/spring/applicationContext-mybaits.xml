@@ -23,16 +23,17 @@
 	    http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         "> 
         
-	<!-- jdbc配置文件 -->
-	<bean id="propertyConfigurer" class="com.insigma.config.CustomizedPropertyConfigurer">
-		<property name="locations" >
-				<list>
-					<value>classpath:/config/app/app.properties</value>
-					<value>classpath:/config/jdbc/jdbc.properties</value>
-				</list>
-		</property>
+    <!-- 配置Mybatis的文件 ，mapperLocations配置**Mapper.xml文件位置，configLocation配置mybatis-config文件位置-->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+        <property name="mapperLocations" value="classpath*:com/insigma/mvc/mapper/**/*.xml"/>  
+		<property name="configLocation" value="classpath:config/mybatis/mybatis-config.xml" />
+		<property name="typeAliasesPackage" value="com.insigma.mvc.model"/> 
 	</bean>
 	
-	<context:component-scan base-package="com.insigma"  annotation-config="true" use-default-filters="true"/>
-	
+	<!-- 自动扫描了所有的XxxxMapper.xml对应的mapper接口文件，这样就不用一个一个手动配置Mpper的映射了，只要Mapper接口类和Mapper映射文件对应起来就可以了。 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.insigma.mvc.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+	</bean>
 </beans>
