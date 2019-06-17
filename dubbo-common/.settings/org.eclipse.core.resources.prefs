@@ -1,10 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
-encoding//src/main/java/com/insigma/common/enums/BusiStatus.java=gbk
-encoding//src/main/java/com/insigma/common/enums/CommStatus.java=gbk
-encoding//src/main/java/com/insigma/common/struct/R.java=gbk
-encoding//src/main/java/com/insigma/common/util/JsonUtils.java=gbk
-encoding//src/main/java/com/insigma/common/util/Util.java=gbk
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8
 encoding/src=gbk

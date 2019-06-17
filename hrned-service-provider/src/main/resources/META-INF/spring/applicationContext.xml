@@ -28,11 +28,10 @@
 		<property name="locations" >
 				<list>
 					<value>classpath:/config/app/app.properties</value>
-					<value>classpath:/config/jdbc/jdbc.properties</value>
 				</list>
 		</property>
 	</bean>
 	
-	<context:component-scan base-package="com.insigma.mvc" annotation-config="true" use-default-filters="true"/>
+	<context:component-scan base-package="com.insigma"  annotation-config="true" use-default-filters="true"/>
 	
 </beans>
