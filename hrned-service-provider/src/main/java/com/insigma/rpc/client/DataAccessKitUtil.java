@@ -16,8 +16,8 @@ import java.util.List;
 public class DataAccessKitUtil {
 
 	/**
-	 * æ ¹æ®è°ƒç”¨æ•°æ®è®¿é—®æ¥å£æœåŠ¡è¿”å›çš„xmlæ ¼å¼çš„æ•°æ®é›†è·å–æ•°æ®è®¿é—®æ¥å£æ–¹æ¡ˆä¿¡æ¯å¤´
-	 * @param XMLDATA        å®¢æˆ·ç«¯ä¼ å…¥çš„XMLæ•°æ®é›†å­—ç¬¦ä¸²
+	 * ¸ù¾İµ÷ÓÃÊı¾İ·ÃÎÊ½Ó¿Ú·şÎñ·µ»ØµÄxml¸ñÊ½µÄÊı¾İ¼¯»ñÈ¡Êı¾İ·ÃÎÊ½Ó¿Ú·½°¸ĞÅÏ¢Í·
+	 * @param XMLDATA        ¿Í»§¶Ë´«ÈëµÄXMLÊı¾İ¼¯×Ö·û´®
 	 * @return               List<Head>
 	 * @throws Exception
 	 */
@@ -27,7 +27,7 @@ public class DataAccessKitUtil {
 		Document  document = null;
 		try {
 			reader = new SAXReader();
-			document = reader.read(new ByteArrayInputStream(XMLDATA.getBytes("UTF-8")));
+			document = reader.read(new ByteArrayInputStream(XMLDATA.getBytes("GBK")));
 			Element rootElm = document.getRootElement();
 			List<Element> faHeadElms = rootElm.elements("FAHEAD");
 			if(faHeadElms!=null && !faHeadElms.isEmpty()){
@@ -58,8 +58,8 @@ public class DataAccessKitUtil {
 	}
 
 	/**
-	 * æ ¹æ®è°ƒç”¨æ•°æ®è®¿é—®æ¥å£æœåŠ¡è¿”å›çš„xmlæ ¼å¼çš„æ•°æ®é›†è·å–æ•°æ®è®¿é—®æ¥å£æ–¹æ¡ˆè„šæœ¬ä¿¡æ¯å¤´
-	 * @param XMLDATA        å®¢æˆ·ç«¯ä¼ å…¥çš„XMLæ•°æ®é›†å­—ç¬¦ä¸²
+	 * ¸ù¾İµ÷ÓÃÊı¾İ·ÃÎÊ½Ó¿Ú·şÎñ·µ»ØµÄxml¸ñÊ½µÄÊı¾İ¼¯»ñÈ¡Êı¾İ·ÃÎÊ½Ó¿Ú·½°¸½Å±¾ĞÅÏ¢Í·
+	 * @param XMLDATA        ¿Í»§¶Ë´«ÈëµÄXMLÊı¾İ¼¯×Ö·û´®
 	 * @return               List<Head>
 	 * @throws Exception
 	 */
@@ -101,10 +101,10 @@ public class DataAccessKitUtil {
 	}
 
 	/**
-	 * è§£æWebServiceså®¢æˆ·ç«¯å‘è¿‡æ¥çš„è¡¨ä¿¡æ¯XMLå­—ç¬¦ä¸²
-	 * @param xmlData å®¢æˆ·ç«¯ä¼ å…¥çš„XMLå­—ç¬¦ä¸²
-	 * @param tabName æ•°æ®é›†åç§°
-	 * @return è¿”å›è§£æåè¡¨ä¿¡æ¯
+	 * ½âÎöWebServices¿Í»§¶Ë·¢¹ıÀ´µÄ±íĞÅÏ¢XML×Ö·û´®
+	 * @param xmlData ¿Í»§¶Ë´«ÈëµÄXML×Ö·û´®
+	 * @param tabName Êı¾İ¼¯Ãû³Æ
+	 * @return ·µ»Ø½âÎöºó±íĞÅÏ¢
 	 * @throws Exception
 	 */
 	public static List<Table> praseXml(String xmlData, String tabName) throws Exception{
@@ -112,7 +112,7 @@ public class DataAccessKitUtil {
 		Document  document = null;
 		try {
 			reader = new SAXReader();
-			document = reader.read(new ByteArrayInputStream(xmlData.getBytes("UTF-8")));
+			document = reader.read(new ByteArrayInputStream(xmlData.getBytes("GBK")));
 			Element rootElm = document.getRootElement();
 			Element DataElm = rootElm.element("Data");
 			List<Element> tableElms = DataElm.elements("Table");

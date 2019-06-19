@@ -11,7 +11,7 @@
 	<dubbo:application name="hrned-service-provider" />
 	<!-- 使用zookeeper注册中心暴露服务地址 -->
 	
-	<dubbo:protocol name="dubbo" port="20880" ></dubbo:protocol> 
+	<dubbo:protocol name="dubbo"    port="20880" ></dubbo:protocol> 
 	<dubbo:registry address="${zookeeperurl}" check="false"/>
 	<!-- <dubbo:registry address="multicast://224.5.6.7:1234" /> -->
 	<!-- 用dubbo协议在20880端口暴露服务 -->
@@ -21,14 +21,4 @@
 	<dubbo:service  interface="com.insigma.rpc.service.QueryPersonInfo3Service"  ref="QueryPersonInfo3Service"  timeout="100000"/>
 	<dubbo:service  interface="com.insigma.rpc.service.QueryPersonInfo4Service"  ref="QueryPersonInfo4Service"  timeout="100000"/>
 	<dubbo:service  interface="com.insigma.rpc.service.QueryPersonInfo5Service"  ref="QueryPersonInfo5Service"  timeout="100000"/> 
-	
-<!-- 
-	<dubbo:protocol name="hessian" port="8091" server="servlet" contextpath="hrned-service-provider/hessian"></dubbo:protocol>
-	<dubbo:service protocol="hessian"  interface="com.insigma.service.QueryPersonInfo1Service"  ref="QueryPersonInfo1Service"  timeout="100000"/>
-	<dubbo:service protocol="hessian"  interface="com.insigma.service.QueryPersonInfo2Service"  ref="QueryPersonInfo2Service"  timeout="100000"/>
-	<dubbo:service protocol="hessian"  interface="com.insigma.service.QueryPersonInfo3Service"  ref="QueryPersonInfo3Service"  timeout="100000"/>
-	<dubbo:service protocol="hessian"  interface="com.insigma.service.QueryPersonInfo4Service"  ref="QueryPersonInfo4Service"  timeout="100000"/>
-	<dubbo:service protocol="hessian"  interface="com.insigma.service.QueryPersonInfo5Service"  ref="QueryPersonInfo5Service"  timeout="100000"/> 
--->
-
 </beans>

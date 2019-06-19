@@ -1,16 +1,14 @@
 package com.insigma.rpc.serviceimp;
 
 
-import javax.annotation.Resource;
-
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 
-import com.insigma.common.enums.JkType;
 import com.insigma.common.struct.Data;
 import com.insigma.common.struct.R;
 import com.insigma.common.struct.StructUtil;
 import com.insigma.common.util.JsonUtils;
-import com.insigma.mvc.service.log.LogService;
 import com.insigma.rpc.ServiceCall;
 import com.insigma.rpc.service.QueryPersonInfo3Service;
 
@@ -21,13 +19,11 @@ import com.insigma.rpc.service.QueryPersonInfo3Service;
 @Component("QueryPersonInfo3Service")
 public class QueryPersonInfo3ServiceImpl implements QueryPersonInfo3Service {
 
-	
-	@Resource
-	private LogService logService;
+	private Log log=LogFactory.getLog(QueryPersonInfo5ServiceImpl.class);
 	
 	public String exec(String request) {
+		log.info("request=>"+request);
 		Data data=JsonUtils.jsonToPojo(request, Data.class);
-		String jkId=logService.add(data, request, JkType.queryPersonInfo3);
 		   //数据访问接口参数
         //String QUERY_PARAM = "[{paramBM:\"AAC002\",paramValue:\"610425198909152612\",paramType:\"String\",paramMC:\"身份证号码\"}]";
         //方案编码
@@ -37,7 +33,7 @@ public class QueryPersonInfo3ServiceImpl implements QueryPersonInfo3Service {
         R r=  new ServiceCall().callService(INTERFACE_CONFIG_ID,INTERFACE_SCRIPT_ID,data.getBody());
         Data response=  StructUtil.RtoResponseData(data, r);
         String result=JsonUtils.objectToJson(response);
-        logService.update(response, result, jkId);
+        log.info("result=>"+result);
         return result;
 	}
 }

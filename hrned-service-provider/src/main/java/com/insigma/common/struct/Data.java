@@ -5,7 +5,6 @@ import java.util.Calendar;
 
 import com.insigma.common.constraint.SMContraint;
 import com.insigma.common.util.JsonUtils;
-import com.insigma.common.util.SM4Utils;
 
 /**
  * Created by wengsh on 2019/6/5.
@@ -17,7 +16,6 @@ public class Data {
     public Data(String body){
         this.header=initHeader();
         this.body=body;
-        sign();
     }
 
     public Data(){
@@ -52,10 +50,7 @@ public class Data {
         header.setServiceReqId(SMContraint.APPCODE+dateFormat.format(calendar.getTime()));
         return header;
     }
-
-    private void sign(){
-        this.header.setSignature(SM4Utils.encryptData_ECB(JsonUtils.objectToJson(body)));
-    }
+  
 
     public String beanToJson(){
        return JsonUtils.objectToJson(this);

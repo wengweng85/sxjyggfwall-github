@@ -20,7 +20,7 @@ public class StructUtil {
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyyMMddhhmmss");
         header.setServiceResTime(dateFormat.format(calendar.getTime()));
         dateFormat= new SimpleDateFormat("yyyyMMdd");
-        header.setServiceResId(SMContraint.APPCODE+dateFormat.format(calendar.getTime()));
+        header.setServiceResId(SMContraint.APPCODE+dateFormat.format(calendar.getTime())+SerialNumberTool.getInstance().generaterNextNumber(9));
         response.setHeader(request.getHeader());
         header.setCommStatus(r.getCommStatus());
         header.setBusiStatus(r.getBusiStatus());

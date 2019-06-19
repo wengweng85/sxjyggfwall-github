@@ -30,92 +30,93 @@ import com.insigma.rpc.client.entity.Table;
 public class ServiceCall {
 
     /**
-     * è°ƒç”¨çœå…å°±ä¸šåˆ›ä¸šæ¥å£ç›¸å…³æœåŠ¡
-     * @param INTERFACE_CONFIG_ID æ–¹æ¡ˆç¼–å·
-     * @param INTERFACE_SCRIPT_ID è„šæœ¬ç¼–å·
-     * @param requestmap è¯·æ±‚æ•°æ® hashmapæ ¼å¼
+     * µ÷ÓÃÊ¡Ìü¾ÍÒµ´´Òµ½Ó¿ÚÏà¹Ø·şÎñ
+     * @param INTERFACE_CONFIG_ID ·½°¸±àºÅ
+     * @param INTERFACE_SCRIPT_ID ½Å±¾±àºÅ
+     * @param requestmap ÇëÇóÊı¾İ hashmap¸ñÊ½
      * @return
      */
     public  R callService(String INTERFACE_CONFIG_ID,String INTERFACE_SCRIPT_ID,String requestmap) {
         List<Row> list=new ArrayList<Row>();
         try {
-            //æ•°æ®è®¿é—®æ¥å£å‚æ•°
-            //String QUERY_PARAM = "[{paramBM:\"AAC002\",paramValue:\"610425198909152612\",paramType:\"String\",paramMC:\"èº«ä»½è¯å·ç \"}]";
-            //å°†hashmapæ•°æ®è½¬æ¢æˆå­—ç¬¦ä¸²
+            //Êı¾İ·ÃÎÊ½Ó¿Ú²ÎÊı
+            //String QUERY_PARAM = "[{paramBM:\"AAC002\",paramValue:\"610425198909152612\",paramType:\"String\",paramMC:\"Éí·İÖ¤ºÅÂë\"}]";
+            //½«hashmapÊı¾İ×ª»»³É×Ö·û´®
             String QUERY_PARAM=parseMapToQueryParam(requestmap);
-            //è°ƒç”¨æ¥å£
+            //µ÷ÓÃ½Ó¿Ú
             DataSourceSimpleDllServiceStub stub = new DataSourceSimpleDllServiceStub();
             DataSourceSimpleDllServiceStub.DSM_GENERAL dsm_generalSM_GENERAL = new DataSourceSimpleDllServiceStub.DSM_GENERAL();
-            //interface_config_id æ–¹æ¡ˆç¼–å·
+            //interface_config_id ·½°¸±àºÅ
             dsm_generalSM_GENERAL.setINTERFACE_CONFIG_ID(INTERFACE_CONFIG_ID);
-            //interface_script_id è„šæœ¬ç¼–å·
+            //interface_script_id ½Å±¾±àºÅ
             dsm_generalSM_GENERAL.setINTERFACE_SCRIPT_ID(INTERFACE_SCRIPT_ID);
-            //query_param å‚æ•°ä»·
+            //query_param ²ÎÊı¼Û
             dsm_generalSM_GENERAL.setQUERY_PARAM(QUERY_PARAM);
-            //è°ƒç”¨æ¥å£
+            //µ÷ÓÃ½Ó¿Ú
             DataSourceSimpleDllServiceStub.DSM_GENERALResponse resp = stub.dSM_GENERAL(dsm_generalSM_GENERAL);
-            //æ¥å£è¿”å›xml
+            //½Ó¿Ú·µ»Øxml
             String xmlData = resp.getDSM_GENERALReturn();
             System.out.println("response:"+xmlData);
 
-            //xmlDataæ˜¯è°ƒç”¨DataAccessKit.DSM_GENERALç”Ÿæˆçš„xmlä¿¡æ¯
+            //xmlDataÊÇµ÷ÓÃDataAccessKit.DSM_GENERALÉú³ÉµÄxmlĞÅÏ¢
 
-            //è·å–æ‰€æœ‰çš„å¤´ä¿¡æ¯
+            //»ñÈ¡ËùÓĞµÄÍ·ĞÅÏ¢
             List<Head> heads = DataAccessKitUtil.getFAHead(xmlData);
-            //æ‰“å°å‡ºå¤´ä¿¡æ¯ä¸­çš„flag(åé¦ˆä»£ç )å’ŒMess(åé¦ˆä¿¡æ¯)
+            //´òÓ¡³öÍ·ĞÅÏ¢ÖĞµÄflag(·´À¡´úÂë)ºÍMess(·´À¡ĞÅÏ¢)
             for (Head head : heads) {
                 System.out.println("head flag : " + head.getFlag());
                 System.out.println("head Mess : " + head.getMess());
                 if(!head.getFlag().equals("0001")){
-                    return  R.error("å…¨å›½å°±ä¸šç›‘æµ‹å›½å®¶æ•°æ®å…±äº«äº¤æ¢å¹³å°æ¥è°ƒç”¨å¤±è´¥");
+                    return  R.error("È«¹ú¾ÍÒµ¼à²â¹ú¼ÒÊı¾İ¹²Ïí½»»»Æ½Ì¨½Óµ÷ÓÃÊ§°Ü");
                 }
             }
 
             String tabName = "";
-            //xmlDataæ˜¯è°ƒç”¨DataAccessKit.DSM_GENERALç”Ÿæˆçš„xmlä¿¡æ¯
-            //è§£æå‡ºæ¥çš„è„šæœ¬å¤´ä¿¡æ¯å°è£…åœ¨HashMapä¸­Stringç±»å‹çš„è¡¨ç¤ºæ•°æ®é›†çš„åç§°
-            //Headç±»å‹è¡¨ç¤ºè„šæœ¬å¤´ä¿¡æ¯å…¶ä¸­flag:è¡¨ç¤ºè„šæœ¬å¤´åé¦ˆä»£ç 0002è¡¨ç¤ºè„šæœ¬æ‰§è¡ŒæˆåŠŸï¼Œå…·ä½“
-            //è¯·å‚è€ƒé™„å½•1ï¼ŒMessè¡¨ç¤ºåé¦ˆä¿¡æ¯
+            //xmlDataÊÇµ÷ÓÃDataAccessKit.DSM_GENERALÉú³ÉµÄxmlĞÅÏ¢
+            //½âÎö³öÀ´µÄ½Å±¾Í·ĞÅÏ¢·â×°ÔÚHashMapÖĞStringÀàĞÍµÄ±íÊ¾Êı¾İ¼¯µÄÃû³Æ
+            //HeadÀàĞÍ±íÊ¾½Å±¾Í·ĞÅÏ¢ÆäÖĞflag:±íÊ¾½Å±¾Í··´À¡´úÂë0002±íÊ¾½Å±¾Ö´ĞĞ³É¹¦£¬¾ßÌå
+            //Çë²Î¿¼¸½Â¼1£¬Mess±íÊ¾·´À¡ĞÅÏ¢
             HashMap<String, Head> head = DataAccessKitUtil.getScriptHead(xmlData);
             Set<Map.Entry<String, Head>> entrys = head.entrySet();
 
             String flag="";
             String mess="";
             for (Map.Entry<String, Head> entry : entrys) {
-                //æ‰“å°å‡ºæ•°æ®é›†åç§°
+                //´òÓ¡³öÊı¾İ¼¯Ãû³Æ
                 tabName = entry.getKey();
                 System.out.println(tabName);
-                //æ‰“å°å‡ºè„šæœ¬å¤´ä¿¡æ¯çš„åé¦ˆå‚æ•°å’Œåé¦ˆä¿¡æ¯
+                //´òÓ¡³ö½Å±¾Í·ĞÅÏ¢µÄ·´À¡²ÎÊıºÍ·´À¡ĞÅÏ¢
                 System.out.println("flag 1 :" + entry.getValue().getFlag() + ",mess 1 : " + entry.getValue().getMess());
                 flag=entry.getValue().getFlag();
             }
-            //flag ä¸º0002ä»£è¡¨è¯·æ±‚æˆåŠŸ è„šæœ¬æ‰§è¡ŒæˆåŠŸ
+            //flag Îª0002´ú±íÇëÇó³É¹¦ ½Å±¾Ö´ĞĞ³É¹¦
             if(flag.equals("0002")){
-                //xmlDataæ˜¯è°ƒç”¨DataAccessKit.DSM_GENERALç”Ÿæˆçš„xmlä¿¡æ¯ï¼Œ"DY01"ä¸ºæ•°æ®é›†åç§°
-                //Tableä¸­æœ‰ä¸‰ä¸ªå±æ€§åˆ†åˆ«æ˜¯name,columnså’Œkeysï¼Œæœ¬æ¥å£ä¸»è¦ç”¨åˆ°nameå’Œcolumnsä¸¤ä¸ªå±æ€§
-                //nameè¡¨ç¤ºæ•°æ®é›†çš„åç§°ï¼Œcolumsè¡¨ç¤ºå­—æ®µé›†List
-                //columnä¸­æœ‰ä¸‰ä¸ªå±æ€§åˆ†åˆ«æ˜¯name,typeå’Œvalue
+                //xmlDataÊÇµ÷ÓÃDataAccessKit.DSM_GENERALÉú³ÉµÄxmlĞÅÏ¢£¬"DY01"ÎªÊı¾İ¼¯Ãû³Æ
+                //TableÖĞÓĞÈı¸öÊôĞÔ·Ö±ğÊÇname,columnsºÍkeys£¬±¾½Ó¿ÚÖ÷ÒªÓÃµ½nameºÍcolumnsÁ½¸öÊôĞÔ
+                //name±íÊ¾Êı¾İ¼¯µÄÃû³Æ£¬colums±íÊ¾×Ö¶Î¼¯List
+                //columnÖĞÓĞÈı¸öÊôĞÔ·Ö±ğÊÇname,typeºÍvalue
 
-                //listæ˜¯è¿”å›çš„ç»“æœé›†
+                //listÊÇ·µ»ØµÄ½á¹û¼¯
                 List<Table> tableList = DataAccessKitUtil.praseXml(xmlData, tabName);
                 
                 list=parseTableToRow(tableList);
             }else{
-                return  R.error( "å…¨å›½å°±ä¸šç›‘æµ‹å›½å®¶æ•°æ®å…±äº«äº¤æ¢å¹³å°æ¥è°ƒç”¨å¤±è´¥!");
+                return  R.error( "È«¹ú¾ÍÒµ¼à²â¹ú¼ÒÊı¾İ¹²Ïí½»»»Æ½Ì¨½Óµ÷ÓÃÊ§°Ü!");
             }
         } catch (Exception e) {
             e.printStackTrace();
+            return  R.error( "È«¹ú¾ÍÒµ¼à²â¹ú¼ÒÊı¾İ¹²Ïí½»»»Æ½Ì¨½Óµ÷ÓÃÊ§°Ü!"+e.getMessage());
         }
-        //å¦‚æœè¿”å›ç»“æœåˆ—è¡¨å¤§äº1 è¯æ˜ä¸ºå¤šæ¡ç»“æœè¿”å›
+        //Èç¹û·µ»Ø½á¹ûÁĞ±í´óÓÚ1 Ö¤Ã÷Îª¶àÌõ½á¹û·µ»Ø
         if(list.size()>0){
             return  R.success(list.get(0));
         }else{
-            return  R.fail(BusiStatus.NODATA, "æ— æ•°æ®");
+            return  R.fail(BusiStatus.NODATA, "ÎŞÊı¾İ");
         }
     }
    
     /**
-     * å°†hashmapè½¬æ¢æˆä»¥ä¸‹"[{paramBM:\"AAC002\",paramValue:\"610425198909152612\",paramType:\"String\",paramMC:\"èº«ä»½è¯å·ç \"}]";
+     * ½«hashmap×ª»»³ÉÒÔÏÂ"[{paramBM:\"AAC002\",paramValue:\"610425198909152612\",paramType:\"String\",paramMC:\"Éí·İÖ¤ºÅÂë\"}]";
      * @param map
      * @return
      */
@@ -139,7 +140,7 @@ public class ServiceCall {
     }
 
     /**
-     * å°†kitæ¥å£è¿”å›å¯¹è±¡è½¬æ¢æˆrowå¯¹è±¡
+     * ½«kit½Ó¿Ú·µ»Ø¶ÔÏó×ª»»³Érow¶ÔÏó
      * @param tableList
      * @return
      */
@@ -149,13 +150,13 @@ public class ServiceCall {
             for (Table table : tableList) {
                 Row temprow = new Row();
                 String name = table.getName();
-                //System.out.println("tabName : " + name);   //æ‰“å°å‡ºæ•°æ®é›†åç§°
-                List<Column> columns = table.getColumns();//è·å–ç»“æœé›†æ¯å¼ è¡¨çš„ä¿¡æ¯
-                for (Column column : columns) {               //è·å–è¡¨çš„å…·ä½“ä¿¡æ¯
-                    //System.out.println(column.getName().toLowerCase());       //æ‰“å°å‡ºè®°å½•çš„åç§°
-                    //System.out.println(column.getValue());      //æ‰“å°å‡ºè®°å½•çš„å€¼
+                //System.out.println("tabName : " + name);   //´òÓ¡³öÊı¾İ¼¯Ãû³Æ
+                List<Column> columns = table.getColumns();//»ñÈ¡½á¹û¼¯Ã¿ÕÅ±íµÄĞÅÏ¢
+                for (Column column : columns) {               //»ñÈ¡±íµÄ¾ßÌåĞÅÏ¢
+                    //System.out.println(column.getName().toLowerCase());       //´òÓ¡³ö¼ÇÂ¼µÄÃû³Æ
+                    //System.out.println(column.getValue());      //´òÓ¡³ö¼ÇÂ¼µÄÖµ
                     try {
-                        //é€šè¿‡å¯¹è±¡åå°„æœºåˆ¶è®¾ç½®ä»·å€¼
+                        //Í¨¹ı¶ÔÏó·´Éä»úÖÆÉèÖÃ¼ÛÖµ
                         String method_name = "set" + column.getName().substring(0, 1) + column.getName().toLowerCase().substring(1).toLowerCase();
                         //System.out.println("method_name=" + method_name);
                         Method method = temprow.getClass().getMethod(method_name, column.getValue().getClass());

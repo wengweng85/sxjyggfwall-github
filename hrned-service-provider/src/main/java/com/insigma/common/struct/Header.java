@@ -33,7 +33,7 @@ public class Header {
     private String msg;//返回信息
 
     //数字签名
-    private String signature;
+    //private String signature;
 
     public String getServiceCode() {
         return serviceCode;
@@ -113,13 +113,5 @@ public class Header {
 
     public void setMsg(String msg) {
         this.msg = msg;
-    }
-
-    public String getSignature() {
-        return signature;
-    }
-
-    public void setSignature(String signature) {
-        this.signature = signature;
     }
 }
