@@ -16,6 +16,6 @@ public class SMContraint {
     public final static String CLIENT_SERVICEAREACODE="110000";
     
     //服务端
-    public final static String SERVER_APPCODE="SERVER1001010001";
+    public final static String SERVER_APPCODE="BJw1561023186532";
 
 }
