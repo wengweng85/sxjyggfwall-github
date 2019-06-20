@@ -9,16 +9,16 @@ import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * json×ª»»¹¤¾ßÀà
+ * jsonè½¬æ¢å·¥å…·ç±»
  */
 public class JsonUtils {
 
-    // ¶¨Òåjackson¶ÔÏó
+    // å®šä¹‰jacksonå¯¹è±¡
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
 
     /**
-     * ½«¶ÔÏó×ª»»³Éjson×Ö·û´®¡£
+     * å°†å¯¹è±¡è½¬æ¢æˆjsonå­—ç¬¦ä¸²ã€‚
      * <p>Title: pojoToJson</p>
      * <p>Description: </p>
      * @param data
@@ -26,7 +26,7 @@ public class JsonUtils {
      */
     public static String objectToJson(Object data) {
         try {
-            // ¹ıÂË¶ÔÏóµÄnullÊôĞÔ.
+            // è¿‡æ»¤å¯¹è±¡çš„nullå±æ€§.
             MAPPER.setSerializationInclusion(JsonInclude.Include.NON_NULL);
             String string = MAPPER.writeValueAsString(data);
             return string;
@@ -37,10 +37,10 @@ public class JsonUtils {
     }
 
     /**
-     * ½«json½á¹û¼¯×ª»¯Îª¶ÔÏó
+     * å°†jsonç»“æœé›†è½¬åŒ–ä¸ºå¯¹è±¡
      *
-     * @param jsonData jsonÊı¾İ
-     * @param beanType ¶ÔÏóÖĞµÄobjectÀàĞÍ
+     * @param jsonData jsonæ•°æ®
+     * @param beanType å¯¹è±¡ä¸­çš„objectç±»å‹
      * @return
      */
     public static <T> T jsonToPojo(String jsonData, Class<T> beanType) {
@@ -54,7 +54,7 @@ public class JsonUtils {
     }
 
     /**
-     * ½«jsonÊı¾İ×ª»»³Épojo¶ÔÏólist
+     * å°†jsonæ•°æ®è½¬æ¢æˆpojoå¯¹è±¡list
      * <p>Title: jsonToList</p>
      * <p>Description: </p>
      * @param jsonData
