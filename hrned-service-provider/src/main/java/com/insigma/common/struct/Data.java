@@ -40,14 +40,14 @@ public class Data {
 
 	private Header initHeader(){
         Header header=new Header();
-        header.setServiceCode(SMContraint.SERVICEAREACODE);
-        header.setAppCode(SMContraint.APPCODE);
-        header.setServiceAreaCode(SMContraint.SERVICEAREACODE);
+        header.setServiceCode(SMContraint.CLIENT_SERVICEAREACODE);
+        header.setAppCode(SMContraint.CLIENT_APPCODE);
+        header.setServiceAreaCode(SMContraint.CLIENT_SERVICEAREACODE);
         Calendar calendar= Calendar.getInstance();
         SimpleDateFormat dateFormat= new SimpleDateFormat("yyyyMMddhhmmss");
         header.setServiceReqTime(dateFormat.format(calendar.getTime()));
         dateFormat= new SimpleDateFormat("yyyyMMdd");
-        header.setServiceReqId(SMContraint.APPCODE+dateFormat.format(calendar.getTime()));
+        header.setServiceReqId(SMContraint.CLIENT_APPCODE+dateFormat.format(calendar.getTime()));
         return header;
     }
   
