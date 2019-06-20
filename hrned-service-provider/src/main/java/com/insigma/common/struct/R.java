@@ -8,7 +8,7 @@ import com.insigma.common.enums.CommStatus;
 import com.insigma.common.util.JsonUtils;
 
 /**
- * ½Ó¿ÚÍ¨ÓÃ·µ»ØÀà
+ * æ¥å£é€šç”¨è¿”å›ç±»
  *
  * @author admin
  */
@@ -19,9 +19,9 @@ public class R  {
 
     private static final long serialVersionUID = 1L;
 
-    private String commStatus; // ÏµÍ³·µ»Ø×´Ì¬Âë,Ä¬ÈÏ200
-    private boolean success; // ÒµÎñ×´Ì¬Âë£¬Ä¬ÈÏÎªtrue
-    private String message = ""; // ÒµÎñ×´Ì¬ÖĞÎÄËµÃ÷
+    private String commStatus; // ç³»ç»Ÿè¿”å›çŠ¶æ€ç ,é»˜è®¤200
+    private boolean success; // ä¸šåŠ¡çŠ¶æ€ç ï¼Œé»˜è®¤ä¸ºtrue
+    private String message = ""; // ä¸šåŠ¡çŠ¶æ€ä¸­æ–‡è¯´æ˜
     private String busiStatus;
     private String body;
 
@@ -77,13 +77,13 @@ public class R  {
 	
 	
 	private R() {
-        this.commStatus = CommStatus.OK.getCode(); // ÏµÍ³·µ»Ø×´Ì¬Âë,Ä¬ÈÏok
+        this.commStatus = CommStatus.OK.getCode(); // ç³»ç»Ÿè¿”å›çŠ¶æ€ç ,é»˜è®¤ok
         this.busiStatus = BusiStatus.SUCCESS.getCode();
-        this.success = true; // ÒµÎñ×´Ì¬Âë£¬Ä¬ÈÏÎªtrue
+        this.success = true; // ä¸šåŠ¡çŠ¶æ€ç ï¼Œé»˜è®¤ä¸ºtrue
     }
 
     /**
-     * ³É¹¦·µ»Ø
+     * æˆåŠŸè¿”å›
      *
      * @param message
      * @return
@@ -97,7 +97,7 @@ public class R  {
     }
     
     /**
-     * ³É¹¦·µ»Ø
+     * æˆåŠŸè¿”å›
      *
      * @param message
      * @return
@@ -111,7 +111,7 @@ public class R  {
     }
 
     /**
-     * ³É¹¦·µ»Ø
+     * æˆåŠŸè¿”å›
      *
      * @param
      * @return
@@ -127,7 +127,7 @@ public class R  {
 
     
     /**
-     * Òì³£·µ»Ø
+     * å¼‚å¸¸è¿”å›
      * @param commStatus
      * @param msg
      * @return
@@ -143,7 +143,7 @@ public class R  {
     }
 
     /**
-     * Òì³£·µ»Ø
+     * å¼‚å¸¸è¿”å›
      * @param sysCode
      * @return
      */
@@ -153,7 +153,7 @@ public class R  {
     
     
     /**
-     * Òì³£·µ»Ø
+     * å¼‚å¸¸è¿”å›
      * @param commStatus
      * @param msg
      * @return
@@ -168,7 +168,7 @@ public class R  {
     }
 
     /**
-     * Òì³£·µ»Ø
+     * å¼‚å¸¸è¿”å›
      * @param sysCode
      * @return
      */
@@ -177,7 +177,7 @@ public class R  {
     }
     
     /**
-     * Òì³£·µ»Ø
+     * å¼‚å¸¸è¿”å›
      * @param sysCode
      * @return
      */

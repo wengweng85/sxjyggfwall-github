@@ -6,13 +6,13 @@ package com.insigma.common.enums;
  */
 public enum  CommStatus {
 
-    OK("00", "成功"),
-    FAIL("10", "业务失败"),
-    ERROR("20", "系统错误"),
-    SIGNFAIL("30", "签名失败"),
-    DecryptionFail("40", "解密失败"),
-    INSUFFICIENTpRIVILEGES("50", "权限不足"),
-    OTHERFAIL("90", "其他错误");
+    OK("00", "鎴愬姛"),
+    FAIL("10", "涓氬姟澶辫触"),
+    ERROR("20", "绯荤粺閿欒"),
+    SIGNFAIL("30", "绛惧悕澶辫触"),
+    DecryptionFail("40", "瑙ｅ瘑澶辫触"),
+    INSUFFICIENTpRIVILEGES("50", "鏉冮檺涓嶈冻"),
+    OTHERFAIL("90", "鍏朵粬閿欒");
 
     private String code;
     private String name;

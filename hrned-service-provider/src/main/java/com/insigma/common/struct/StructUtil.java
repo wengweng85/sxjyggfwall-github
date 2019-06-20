@@ -24,6 +24,7 @@ public class StructUtil {
         response.setHeader(request.getHeader());
         header.setCommStatus(r.getCommStatus());
         header.setBusiStatus(r.getBusiStatus());
+        header.setMsg(r.getMessage());
         response.setHeader(header);
         response.setBody(r.getBody());
         return response;
