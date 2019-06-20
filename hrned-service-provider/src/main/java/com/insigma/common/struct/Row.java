@@ -10,7 +10,7 @@ public class Row {
     private String adc100;
     private String adc111;
     
-    private String adc015;
+    private String aac015;
     private String aac200;
     private String aac011;
     
@@ -36,11 +36,12 @@ public class Row {
 	public void setAdc111(String adc111) {
 		this.adc111 = adc111;
 	}
-	public String getAdc015() {
-		return adc015;
+
+	public String getAac015() {
+		return aac015;
 	}
-	public void setAdc015(String adc015) {
-		this.adc015 = adc015;
+	public void setAac015(String aac015) {
+		this.aac015 = aac015;
 	}
 	public String getAac200() {
 		return aac200;

@@ -114,14 +114,14 @@ public class IndexController  {
     }
 	
 	/**
-	 * dubbotest1≤‚ ‘
+	 * dubbotest5≤‚ ‘
 	 * @param request
 	 * @return
 	 */
 	@RequestMapping("/dubbotest5")
     @ResponseBody
     public String dubbotest5() {
-		Data data=new Data("{\"aac002\":\"110101197009102564\",\"aac003\":\"’‘√Œ\"}");
+		Data data=new Data("{\"aac002\":\"110101197009102564\",\"aac003\":\"’‘√Œ\",\"adc001\":\"1101010416000136\"}");
         System.out.println(data.beanToJson());
         String request=data.beanToJson();
         String response=queryPersonInfo5Service.exec(request);
