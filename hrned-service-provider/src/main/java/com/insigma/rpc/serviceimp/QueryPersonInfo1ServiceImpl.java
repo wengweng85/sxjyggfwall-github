@@ -34,13 +34,9 @@ public class QueryPersonInfo1ServiceImpl implements QueryPersonInfo1Service {
 		   //数据访问接口参数
         //String QUERY_PARAM = "[{paramBM:\"AAC002\",paramValue:\"610425198909152612\",paramType:\"String\",paramMC:\"身份证号码\"}]";
         //方案编码
-        /*String INTERFACE_CONFIG_ID = "queryPersonInfo1";
+        String INTERFACE_CONFIG_ID = "queryPersonInfo1";
         //脚本编码
-        String INTERFACE_SCRIPT_ID = "JB_000001";*/
-		
-		 String INTERFACE_CONFIG_ID = "0101";
-        //脚本编码
-        String INTERFACE_SCRIPT_ID = "JB_000002";
+        String INTERFACE_SCRIPT_ID = "JB_000001";
 		
         R r=  new ServiceCall().callService(INTERFACE_CONFIG_ID,INTERFACE_SCRIPT_ID,data.getBody());
         Data response=  StructUtil.RtoResponseData(data, r);

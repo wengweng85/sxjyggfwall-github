@@ -18,7 +18,7 @@ import javax.xml.stream.XMLStreamReader;
 public class DataSourceSimpleDllServiceStub extends org.apache.axis2.client.Stub {
 
     //正式地址
-    private static String jy_web_service_url="http://172.20.10.7:8080/DataSourceKit/services/DataSourceSimpleDllWebServices";
+    private static String jy_web_service_url="http://10.1.253.105:7040/DataSourceKit/services/DataSourceSimpleDllWebServices";
 
     private static int counter = 0;
     protected org.apache.axis2.description.AxisOperation[] _operations;
