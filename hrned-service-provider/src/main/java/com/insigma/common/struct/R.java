@@ -138,6 +138,7 @@ public class R  {
         dto.setCommStatus(CommStatus.FAIL.getCode());
         dto.setBusiStatus(busiStatus.getCode());
         dto.setMessage(msg);
+        dto.setBody("{}");
         logger.debug(JsonUtils.objectToJson(dto));
         return dto;
     }
@@ -162,7 +163,9 @@ public class R  {
         R dto=new R();
         dto.setSuccess(false);
         dto.setCommStatus(commStatus.getCode());
+        dto.setBusiStatus(BusiStatus.NODATA.getCode());
         dto.setMessage(msg);
+        dto.setBody("{}");
         logger.debug(JsonUtils.objectToJson(dto));
         return dto;
     }

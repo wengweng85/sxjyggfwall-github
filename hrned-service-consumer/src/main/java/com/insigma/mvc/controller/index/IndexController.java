@@ -54,7 +54,7 @@ public class IndexController  {
 	}
 	
 	/**
-	 * dubbotest1测试
+	 * 2.2.1	查询就业登记状态和就业形式接口 测试
 	 * @param request
 	 * @return
 	 */
@@ -69,7 +69,7 @@ public class IndexController  {
     }
 	
 	/**
-	 * dubbotest1测试
+	 * 2.2.2	查询职业资格等级、专业技术职务和学历接口测试
 	 * @param request
 	 * @return
 	 */
@@ -84,7 +84,7 @@ public class IndexController  {
     }
 	
 	/**
-	 * dubbotest1测试
+	 * 2.2.3	查询就业援助对象的类型和就业援助对象认定日期接口
 	 * @param request
 	 * @return
 	 */
@@ -99,7 +99,7 @@ public class IndexController  {
     }
 	
 	/**
-	 * dubbotest1测试
+	 * 2.2.4	查询享受政策类型接口
 	 * @param request
 	 * @return
 	 */
@@ -114,7 +114,7 @@ public class IndexController  {
     }
 	
 	/**
-	 * dubbotest5测试
+	 * 2.2.5	查询发证机构和发证日期接口
 	 * @param request
 	 * @return
 	 */

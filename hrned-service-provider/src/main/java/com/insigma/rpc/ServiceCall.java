@@ -106,11 +106,11 @@ public class ServiceCall {
                 
                 list=parseTableToRow(tableList);
             }else{
-                return  R.error( "全国就业监测国家数据共享交换平台接调用失败!");
+                return  R.error( "全国就业监测国家数据共享交换平台接口调用失败!");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return  R.error( "全国就业监测国家数据共享交换平台接调用失败!"+e.getMessage());
+            return  R.error( "全国就业监测国家数据共享交换平台接口调用失败!"+e.getMessage());
         }
         //如果返回结果列表大于1 证明为多条结果返回
         if(list.size()>0){

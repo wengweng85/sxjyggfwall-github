@@ -11,7 +11,6 @@
 		<javax-activation.version>1.1</javax-activation.version>
 		<spring.version>4.0.0.RELEASE</spring.version>
 		<shiro.version>1.3.2</shiro.version>
-		<activiti.version>5.22.0</activiti.version>
 		<spring-data.version>1.3.0.RELEASE</spring-data.version>
 		<mysql-connector-java.version>5.1.14</mysql-connector-java.version>
 	</properties>
@@ -25,7 +24,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
-			<version>2.8.5.7</version>
+			<version>2.6.2</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework</groupId>
@@ -105,15 +104,15 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.zookeeper</groupId>
-			<artifactId>zookeeper</artifactId>
-			<version>3.3.3</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.sgroschupf</groupId>
-			<artifactId>zkclient</artifactId>
-			<version>0.1</version>
-		</dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>2.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>2.8.0</version>
+        </dependency>
 
 		<dependency>
 			<groupId>commons-lang</groupId>
@@ -174,12 +173,12 @@
 			<version>2.4</version>
 			<classifier>jdk15</classifier>
 		</dependency>
-		<dependency>
+	    <dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 			<version>1.4.4</version>
 		</dependency>
-		<dependency>
+				<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-email</artifactId>
 			<version>1.2</version>
@@ -283,12 +282,6 @@
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-transport-http</artifactId>
 			<version>1.6.2</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>javax.mail-api</artifactId>
-			<version>1.6.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.ws.commons.axiom/axiom-api -->
 		<dependency>

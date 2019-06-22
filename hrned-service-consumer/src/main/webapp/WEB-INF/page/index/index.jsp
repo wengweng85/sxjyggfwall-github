@@ -34,11 +34,11 @@
                           <label for="exampleInputPassword2" class="sr-only">姓名</label>
                           <input type="text" placeholder="请输入姓名" id="aac003" name="aac003" value="刘亚娜" class="form-control">
                       </div>
-                      <button class="btn btn-primary"  onclick="dubbotest1()">dubbo接口1测试</button>
-                      <button class="btn btn-primary"  onclick="dubbotest2()">dubbo接口2测试</button>
-                      <button class="btn btn-primary"  onclick="dubbotest3()">dubbo接口3测试</button>
-                      <button class="btn btn-primary"  onclick="dubbotest4()">dubbo接口4测试</button>
-                      <button class="btn btn-primary"  onclick="dubbotest5()">dubbo接口5测试</button>
+                      <button class="btn btn-primary"  onclick="dubbotest1()">1.查询就业登记状态和就业形式</button>
+                      <button class="btn btn-primary"  onclick="dubbotest2()">2.查询职业资格等级、专业技术职务和学历</button>
+                      <button class="btn btn-primary"  onclick="dubbotest3()">3.查询就业援助对象的类型和就业援助对象认定日期</button>
+                      <button class="btn btn-primary"  onclick="dubbotest4()">4.查询享受政策类型</button>
+                      <button class="btn btn-primary"  onclick="dubbotest5()">5.查询发证机构和发证日期</button>
               </div>
         </div>
         <div class="ibox float-e-margins">

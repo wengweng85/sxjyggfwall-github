@@ -48,6 +48,7 @@ public class Data {
         header.setServiceReqTime(dateFormat.format(calendar.getTime()));
         dateFormat= new SimpleDateFormat("yyyyMMdd");
         header.setServiceReqId(SMContraint.CLIENT_APPCODE+dateFormat.format(calendar.getTime()));
+        header.setSignature("nosign");
         return header;
     }
   

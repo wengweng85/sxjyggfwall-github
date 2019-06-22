@@ -19,8 +19,11 @@ public class DataSourceSimpleDllServiceStub extends org.apache.axis2.client.Stub
 
     //正式地址
     private static String jy_web_service_url="http://10.1.253.105:7040/DataSourceKit/services/DataSourceSimpleDllWebServices";
+    
+    //测试地址
+    //private static String jy_web_service_url="http://127.0.0.1:8010/DataSourceKit/services/DataSourceSimpleDllWebServices";
 
-    private static int counter = 0;
+    private static int counter = 0; 
     protected org.apache.axis2.description.AxisOperation[] _operations;
 
     //hashmaps to keep the fault mapping
