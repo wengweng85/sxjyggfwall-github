@@ -41,6 +41,7 @@ public class QueryPersonInfo1ServiceImpl implements QueryPersonInfo1Service {
         R r=  new ServiceCall().callService(INTERFACE_CONFIG_ID,INTERFACE_SCRIPT_ID,data.getBody());
         Data response=  StructUtil.RtoResponseData(data, r);
         String result=JsonUtils.objectToJson(response);
+    	log.info("result=>"+result);
         return result;
 	}
 }

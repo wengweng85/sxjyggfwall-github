@@ -27,7 +27,7 @@ public class JsonUtils {
     public static String objectToJson(Object data) {
         try {
             // 过滤对象的null属性.
-            MAPPER.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+            MAPPER.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
             String string = MAPPER.writeValueAsString(data);
             return string;
         } catch (JsonProcessingException e) {
