@@ -39,6 +39,10 @@ public class QueryPersonInfo1ServiceImpl implements QueryPersonInfo1Service {
         String INTERFACE_SCRIPT_ID = "JB_000001";
 		
         R r=  new ServiceCall().callService(INTERFACE_CONFIG_ID,INTERFACE_SCRIPT_ID,data.getBody());
+       /* Row row=new Row();
+        row.setAac002("sfsdfsdfdsfdsf22");
+        row.setAac003("翁绍辉");
+        R r=R.success(row);*/
         Data response=  StructUtil.RtoResponseData(data, r);
         String result=JsonUtils.objectToJson(response);
     	log.info("result=>"+result);
