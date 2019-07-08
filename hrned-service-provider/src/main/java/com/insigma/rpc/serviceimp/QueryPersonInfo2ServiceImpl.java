@@ -19,7 +19,7 @@ import com.insigma.rpc.service.QueryPersonInfo2Service;
 @Component("QueryPersonInfo2Service")
 public class QueryPersonInfo2ServiceImpl implements QueryPersonInfo2Service {
 
-	private Log log=LogFactory.getLog(QueryPersonInfo5ServiceImpl.class);
+	private Log log=LogFactory.getLog(QueryPersonInfo2ServiceImpl.class);
 	
 	public String exec(String request) {
 		log.info("request=>"+request);

@@ -16,7 +16,5 @@ public class Param {
 	public void setAac003(String aac003) {
 		this.aac003 = aac003;
 	}
-	
-	
 
 }

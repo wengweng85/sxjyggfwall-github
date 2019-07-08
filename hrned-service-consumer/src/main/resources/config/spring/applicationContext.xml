@@ -36,9 +36,9 @@
 	<!-- jdbc配置文件 -->
 	<bean id="propertyConfigurer" class="com.insigma.config.CustomizedPropertyConfigurer">
 		<property name="locations" >
-				<list>
-					<value>classpath:/config/app/app.properties</value>
-				</list>
+			<list>
+				<value>classpath:/config/app/app.properties</value>
+			</list>
 		</property>
 	</bean>
 </beans>

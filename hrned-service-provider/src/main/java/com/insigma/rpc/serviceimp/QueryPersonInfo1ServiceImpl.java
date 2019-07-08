@@ -1,6 +1,7 @@
 package com.insigma.rpc.serviceimp;
 
 
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,7 @@ import com.insigma.common.util.JsonUtils;
 import com.insigma.rpc.ServiceCall;
 import com.insigma.rpc.service.QueryPersonInfo1Service;
 
+
 /**
  * @author wengsh
  *
@@ -19,7 +21,7 @@ import com.insigma.rpc.service.QueryPersonInfo1Service;
 @Component("QueryPersonInfo1Service")
 public class QueryPersonInfo1ServiceImpl implements QueryPersonInfo1Service {
 
-	private Log log=LogFactory.getLog(QueryPersonInfo5ServiceImpl.class);
+	private Log log=LogFactory.getLog(QueryPersonInfo1ServiceImpl.class);
 	
 	/**
 	 * [{paramBM:\"AAC002\",paramValue:\"320623198912110909\",paramType:\"String\",paramMC:\"公民身份证号码\"},{paramBM:\"AAC003\",paramValue:\"刘某某\",paramType:\"String\",paramMC:\"姓名\"}]
